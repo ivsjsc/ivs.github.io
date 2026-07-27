@@ -21,7 +21,7 @@
     "jsonwebtoken": "^9.0.3",
     "jwks-rsa": "^2.1.5",
     "minimist": "^1.2.8",
-    "morgan": "^1.10.0",
+    "morgan": "^1.11.0",
     "multer": "^2.2.0",
     "node-fetch": "^3.3.2"
   },
