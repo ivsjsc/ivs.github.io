@@ -11,16 +11,16 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
     // 1. TRẠNG THÁI READER & DỮ LIỆU
     let currentChapterIndex = 0;
     const chapterIds = [];
-    const chapterTitlesMap = new Map(); // Lưu trữ thông tin metadata của tất cả các chương
+    const chapterTitlesMap = new Map();
     const isPart1 = storyPath.includes('part1');
 
     // Default & Saved Settings
     const defaultSettings = {
-        fontSize: 17, // px
-        fontFamily: 'serif', // 'serif' | 'sans' | 'book'
-        theme: 'light', // 'light' | 'sepia' | 'dark' | 'midnight'
-        lineHeight: 'normal', // 'compact' | 'normal' | 'relaxed'
-        textAlign: 'justify', // 'justify' | 'left'
+        fontSize: 17,
+        fontFamily: 'serif',
+        theme: 'light',
+        lineHeight: 'normal',
+        textAlign: 'justify',
         speechRate: 1.0,
     };
 
@@ -46,21 +46,29 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
     // Scroll & Auto-hide states
     let lastScrollY = window.pageYOffset;
 
+    // Dynamic UI Container injection for Drawer, Toolbar, and Side Nav
+    injectReaderUIContainers();
+
     // 2. PHẦN TỬ DOM CẦN THIẾT
     const dynamicContent = document.getElementById('dynamic-chapter-content');
     const mainElement = document.querySelector('main');
     const progressBar = document.querySelector('.progress-bar');
+    
     const prevButtons = [
         document.getElementById('prev-chapter-btn'),
         document.getElementById('mobile-prev-chapter-btn'),
+        document.getElementById('top-prev-chapter-btn'),
+        document.getElementById('side-prev-chapter-btn'),
+        document.getElementById('mobile-btn-prev'),
     ].filter(Boolean);
+
     const nextButtons = [
         document.getElementById('next-chapter-btn'),
         document.getElementById('mobile-next-chapter-btn'),
+        document.getElementById('top-next-chapter-btn'),
+        document.getElementById('side-next-chapter-btn'),
+        document.getElementById('mobile-btn-next'),
     ].filter(Boolean);
-
-    // Dynamic UI Container injection for Drawer & Settings
-    injectReaderUIContainers();
 
     const drawerOverlay = document.getElementById('reader-drawer-overlay');
     const drawer = document.getElementById('reader-drawer');
@@ -124,29 +132,23 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
     function syncSettingsUIControls() {
         if (!settingsPanel) return;
 
-        // Sync theme pills
         settingsPanel.querySelectorAll('.theme-pill').forEach((pill) => {
             const isMatch = pill.dataset.theme === readerSettings.theme;
             pill.classList.toggle('is-selected', isMatch);
         });
 
-        // Sync Font Size display
         const fontSizeVal = settingsPanel.querySelector('#font-size-value');
         if (fontSizeVal) fontSizeVal.textContent = `${readerSettings.fontSize}px`;
 
-        // Sync Font Family select
         const fontSelect = settingsPanel.querySelector('#font-family-select');
         if (fontSelect) fontSelect.value = readerSettings.fontFamily;
 
-        // Sync Line Height select
         const lineSelect = settingsPanel.querySelector('#line-height-select');
         if (lineSelect) lineSelect.value = readerSettings.lineHeight;
 
-        // Sync Align select
         const alignSelect = settingsPanel.querySelector('#text-align-select');
         if (alignSelect) alignSelect.value = readerSettings.textAlign;
 
-        // Sync Speed select
         const speedSelect = settingsPanel.querySelector('#speech-rate-select');
         if (speedSelect) speedSelect.value = String(readerSettings.speechRate);
     }
@@ -162,17 +164,6 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
 
     function stripHtml(text) {
         return String(text ?? '').replace(/<[^>]*>/g, ' ');
-    }
-
-    function truncateText(text, maxLength = 130) {
-        const normalized = String(text ?? '').replace(/\s+/g, ' ').trim();
-        if (normalized.length <= maxLength) return normalized;
-        return `${normalized.slice(0, maxLength).trimEnd()}...`;
-    }
-
-    function getChapterNumberFromId(chapterId = '') {
-        if (!chapterId.startsWith('chapter-')) return 0;
-        return Number.parseInt(chapterId.split('-')[1], 10) || 0;
     }
 
     function parseChapterData(chapterData, fallbackChapterId = '') {
@@ -238,8 +229,21 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
         };
     }
 
-    // 4. INJECT HTML UI CONTAINERS FOR TOOLBAR & DRAWER
+    // 4. INJECT HTML UI CONTAINERS FOR TOOLBAR, DRAWER, AND SIDE FLOATING NAV
     function injectReaderUIContainers() {
+        // Create Side Floating Desktop Navigation Arrows
+        if (!document.getElementById('side-prev-chapter-btn')) {
+            const sideNavMarkup = `
+                <button id="side-prev-chapter-btn" class="side-nav-btn side-nav-left" title="${lang === 'vi' ? 'Chương trước (Phím ←)' : 'Previous Chapter (Left Arrow)'}">
+                    <i class="fas fa-chevron-left text-lg"></i>
+                </button>
+                <button id="side-next-chapter-btn" class="side-nav-btn side-nav-right" title="${lang === 'vi' ? 'Chương sau (Phím →)' : 'Next Chapter (Right Arrow)'}">
+                    <i class="fas fa-chevron-right text-lg"></i>
+                </button>
+            `;
+            document.body.insertAdjacentHTML('beforeend', sideNavMarkup);
+        }
+
         // Create Off-Canvas Drawer & Overlay
         if (!document.getElementById('reader-drawer-overlay')) {
             const drawerMarkup = `
@@ -304,26 +308,39 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
             document.body.insertAdjacentHTML('beforeend', mobileBar);
         }
 
-        // Build Sticky Toolbar inside Reader Header
+        // Build Sticky Toolbar inside Reader Header with Prev & Next Chapter buttons
         const toolbarPlaceholder = document.querySelector('.reader-toolbar');
         if (toolbarPlaceholder) {
             toolbarPlaceholder.innerHTML = `
                 <div class="reader-toolbar-container relative">
-                    <div class="flex items-center gap-2">
+                    <div class="flex items-center gap-1.5 sm:gap-2">
+                        <!-- Top Prev Chapter Button -->
+                        <button id="top-prev-chapter-btn" class="reader-btn reader-btn-nav" title="${lang === 'vi' ? 'Chương trước (Phím ←)' : 'Previous Chapter'}">
+                            <i class="fas fa-chevron-left"></i>
+                            <span class="hidden md:inline">${lang === 'vi' ? 'Trước' : 'Prev'}</span>
+                        </button>
+
                         <button id="btn-open-drawer" class="reader-btn text-slate-700 dark:text-slate-200" title="Mở danh sách chương">
                             <i class="fas fa-list-ul"></i>
-                            <span class="hidden sm:inline">${lang === 'vi' ? 'Mục Lục' : 'Chapters'}</span>
+                            <span class="hidden lg:inline">${lang === 'vi' ? 'Mục Lục' : 'Chapters'}</span>
                         </button>
-                        <select id="quick-chapter-select" class="text-xs sm:text-sm font-semibold py-1.5 px-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 max-w-[160px] sm:max-w-[220px]">
+                        
+                        <select id="quick-chapter-select" class="text-xs sm:text-sm font-semibold py-1.5 px-2 sm:px-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 max-w-[130px] sm:max-w-[200px]">
                             <!-- Chapters option -->
                         </select>
+
+                        <!-- Top Next Chapter Button -->
+                        <button id="top-next-chapter-btn" class="reader-btn reader-btn-nav" title="${lang === 'vi' ? 'Chương sau (Phím →)' : 'Next Chapter'}">
+                            <span class="hidden md:inline">${lang === 'vi' ? 'Sau' : 'Next'}</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
                     </div>
 
-                    <div class="flex items-center gap-2">
+                    <div class="flex items-center gap-1.5 sm:gap-2">
                         <!-- TTS Button -->
                         <button id="tts-toggle-btn" class="reader-btn reader-btn-primary shadow-sm" title="Nghe truyện bằng AI Voice">
                             <i id="tts-icon" class="fas fa-play"></i>
-                            <span id="tts-text">${lang === 'vi' ? 'Nghe truyện' : 'Read Audio'}</span>
+                            <span id="tts-text" class="hidden sm:inline">${lang === 'vi' ? 'Nghe truyện' : 'Audio'}</span>
                         </button>
 
                         <!-- Focus Mode Toggle -->
@@ -422,8 +439,6 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
         if (hasSpecialChapter) {
             chapterIds.push(isPart1 ? 'epilogue' : 'after-credit');
         }
-
-        const quickSelect = document.getElementById('quick-chapter-select');
 
         for (let i = 0; i < chapterIds.length; i++) {
             const id = chapterIds[i];
@@ -542,19 +557,15 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
         dynamicContent.innerHTML = contentHtml;
         document.title = `${parsed.fullTitle} - LEGNAXE Part ${partNumber}`;
 
-        // Re-apply Font size & Settings to rendered paragraphs
         applyReaderSettings();
 
-        // Update Quick select & Drawer UI
         const quickSelect = document.getElementById('quick-chapter-select');
         if (quickSelect) quickSelect.value = chapterId;
         renderDrawerItems();
 
-        // Scroll to reading start
         const headerOffset = 90;
         window.scrollTo({ top: mainElement.offsetTop - headerOffset, behavior: 'smooth' });
 
-        // Save Bookmark
         saveBookmark(chapterId);
     }
 
@@ -669,13 +680,13 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
 
         prevButtons.forEach((btn) => {
             btn.disabled = prevDisabled;
-            btn.classList.toggle('opacity-40', prevDisabled);
+            btn.classList.toggle('opacity-30', prevDisabled);
             btn.classList.toggle('cursor-not-allowed', prevDisabled);
         });
 
         nextButtons.forEach((btn) => {
             btn.disabled = nextDisabled;
-            btn.classList.toggle('opacity-40', nextDisabled);
+            btn.classList.toggle('opacity-30', nextDisabled);
             btn.classList.toggle('cursor-not-allowed', nextDisabled);
         });
     }
@@ -689,7 +700,6 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
 
     // 9. EVENT LISTENERS SETUP
     function bindEventListeners() {
-        // Prev / Next chapter buttons
         prevButtons.forEach(btn => btn.addEventListener('click', () => {
             if (currentChapterIndex > 0) navigateToChapter(chapterIds[currentChapterIndex - 1]);
         }));
@@ -698,7 +708,6 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
             if (currentChapterIndex < chapterIds.length - 1) navigateToChapter(chapterIds[currentChapterIndex + 1]);
         }));
 
-        // Drawer Toggle
         const openDrawerBtn = document.getElementById('btn-open-drawer');
         const mobileDrawerBtn = document.getElementById('mobile-btn-drawer');
 
@@ -714,10 +723,8 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
         closeDrawerBtn?.addEventListener('click', () => toggleDrawer(false));
         drawerOverlay?.addEventListener('click', () => toggleDrawer(false));
 
-        // Drawer Live Search
         drawerSearch?.addEventListener('input', (e) => renderDrawerItems(e.target.value));
 
-        // Drawer item click
         drawerList?.addEventListener('click', (e) => {
             const item = e.target.closest('a.drawer-chapter-item');
             if (item && item.dataset.chapterId) {
@@ -727,13 +734,11 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
             }
         });
 
-        // Quick Chapter Select Dropdown
         const quickSelect = document.getElementById('quick-chapter-select');
         quickSelect?.addEventListener('change', (e) => {
             navigateToChapter(e.target.value);
         });
 
-        // Settings Toggle Panel
         const toggleSettingsBtn = document.getElementById('btn-toggle-settings');
         const mobileSettingsBtn = document.getElementById('mobile-btn-settings');
 
@@ -757,7 +762,6 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
             }
         });
 
-        // Theme Pills Click
         settingsPanel?.querySelectorAll('.theme-pill').forEach(pill => {
             pill.addEventListener('click', () => {
                 readerSettings.theme = pill.dataset.theme;
@@ -765,7 +769,6 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
             });
         });
 
-        // Font Size Buttons
         document.getElementById('btn-font-dec')?.addEventListener('click', () => {
             if (readerSettings.fontSize > 14) {
                 readerSettings.fontSize -= 1;
@@ -783,13 +786,11 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
             saveSettings();
         });
 
-        // Font Family Select
         document.getElementById('font-family-select')?.addEventListener('change', (e) => {
             readerSettings.fontFamily = e.target.value;
             saveSettings();
         });
 
-        // Line Height & Align
         document.getElementById('line-height-select')?.addEventListener('change', (e) => {
             readerSettings.lineHeight = e.target.value;
             saveSettings();
@@ -799,16 +800,13 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
             saveSettings();
         });
 
-        // Speech Rate
         document.getElementById('speech-rate-select')?.addEventListener('change', (e) => {
             readerSettings.speechRate = parseFloat(e.target.value) || 1.0;
             saveSettings();
         });
 
-        // TTS Toggle
         document.getElementById('tts-toggle-btn')?.addEventListener('click', toggleSpeech);
 
-        // Focus / Fullscreen Mode
         const toggleFocusBtn = document.getElementById('btn-toggle-focus');
         const exitFocusBtn = document.getElementById('focus-exit-btn');
 
@@ -819,18 +817,10 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
         toggleFocusBtn?.addEventListener('click', () => toggleFocusMode(true));
         exitFocusBtn?.addEventListener('click', () => toggleFocusMode(false));
 
-        // Mobile Home & Prev/Next App Bar Buttons
         document.getElementById('mobile-btn-home')?.addEventListener('click', () => {
             window.location.href = '/Pages/apps/story/index.html';
         });
-        document.getElementById('mobile-btn-prev')?.addEventListener('click', () => {
-            if (currentChapterIndex > 0) navigateToChapter(chapterIds[currentChapterIndex - 1]);
-        });
-        document.getElementById('mobile-btn-next')?.addEventListener('click', () => {
-            if (currentChapterIndex < chapterIds.length - 1) navigateToChapter(chapterIds[currentChapterIndex + 1]);
-        });
 
-        // Smart Auto-Hide Mobile App Bar on Scroll Down
         window.addEventListener('scroll', () => {
             const currentY = window.pageYOffset;
             if (mobileAppBar) {
