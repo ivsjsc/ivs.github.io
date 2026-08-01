@@ -19,7 +19,7 @@
       "firebase-service-account.json"
     ],
     "redirects": [
-      { "source": "/Pages/webdesign.html", "destination": "https://ivstech.store/web-design", "type": 301 },
+      { "source": "/Pages/webdesign.html", "destination": "https://ivstech.store/thiet-ke-website", "type": 301 },
       { "source": "/Pages/tech_devices.html", "destination": "https://ivstech.store/devices", "type": 301 },
       { "source": "/Pages/apps/ivsapps.html", "destination": "https://ivstech.store/apps", "type": 301 },
       { "source": "/Pages/apps/ivscentercare.html", "destination": "https://ivstech.store/centercare", "type": 301 },
