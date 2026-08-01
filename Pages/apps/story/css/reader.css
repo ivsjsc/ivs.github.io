@@ -2,37 +2,39 @@
    IVS STORY READER - PROFESSIONAL TYPOGRAPHY & THEME SYSTEM
    ========================================================================== */
 
-/* 1. Theme CSS Variables */
+/* 1. Theme CSS Variables - Optimized for WCAG AAA Contrast */
 :root {
-  --reader-bg-gradient: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+  --reader-bg-gradient: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
   --reader-bg: #ffffff;
-  --reader-text: #1e293b;
-  --reader-muted: #64748b;
-  --reader-border: rgba(226, 232, 240, 0.8);
-  --reader-card-bg: rgba(255, 255, 255, 0.92);
+  --reader-text: #0f172a;
+  --reader-muted: #475569;
+  --reader-border: #cbd5e1;
+  --reader-card-bg: #ffffff;
   --reader-card-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.08);
-  --reader-accent: #2563eb;
-  --reader-accent-hover: #1d4ed8;
-  --reader-toolbar-bg: rgba(255, 255, 255, 0.88);
+  --reader-accent: #1d4ed8;
+  --reader-accent-hover: #1e40af;
+  --reader-toolbar-bg: rgba(255, 255, 255, 0.95);
   --reader-drawer-bg: #ffffff;
   --reader-highlight: #eff6ff;
+  --reader-select-bg: #f8fafc;
 }
 
 /* Sepia Theme */
 html.theme-sepia,
 body.theme-sepia {
-  --reader-bg-gradient: linear-gradient(180deg, #fcf6e8 0%, #f4ecd8 100%);
-  --reader-bg: #f9f2e4;
-  --reader-text: #433422;
-  --reader-muted: #8c765c;
-  --reader-border: rgba(212, 196, 168, 0.6);
-  --reader-card-bg: rgba(253, 248, 238, 0.95);
-  --reader-card-shadow: 0 20px 40px -15px rgba(67, 52, 34, 0.08);
-  --reader-accent: #92400e;
-  --reader-accent-hover: #78350f;
-  --reader-toolbar-bg: rgba(249, 242, 228, 0.92);
+  --reader-bg-gradient: linear-gradient(180deg, #faf3e0 0%, #f3e9d2 100%);
+  --reader-bg: #f5ebd7;
+  --reader-text: #2a1d0d;
+  --reader-muted: #68533a;
+  --reader-border: #d3c2a6;
+  --reader-card-bg: #fcf6e8;
+  --reader-card-shadow: 0 20px 40px -15px rgba(42, 29, 13, 0.12);
+  --reader-accent: #853100;
+  --reader-accent-hover: #612400;
+  --reader-toolbar-bg: rgba(250, 243, 224, 0.95);
   --reader-drawer-bg: #f5ebd7;
-  --reader-highlight: #f3e5c8;
+  --reader-highlight: #eddcc4;
+  --reader-select-bg: #f0e2cc;
 }
 
 html.theme-sepia body {
@@ -43,35 +45,37 @@ html.theme-sepia body {
 /* Dark Slate Theme */
 html.dark:not(.theme-midnight):not(.theme-sepia),
 body.dark:not(.theme-midnight):not(.theme-sepia) {
-  --reader-bg-gradient: linear-gradient(180deg, #0f172a 0%, #020617 100%);
-  --reader-bg: #0f172a;
-  --reader-text: #f1f5f9;
+  --reader-bg-gradient: linear-gradient(180deg, #0b1329 0%, #030712 100%);
+  --reader-bg: #0b1329;
+  --reader-text: #f8fafc;
   --reader-muted: #94a3b8;
-  --reader-border: rgba(51, 65, 85, 0.6);
-  --reader-card-bg: rgba(15, 23, 42, 0.88);
-  --reader-card-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  --reader-border: #334155;
+  --reader-card-bg: #0f172a;
+  --reader-card-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
   --reader-accent: #38bdf8;
   --reader-accent-hover: #0284c7;
-  --reader-toolbar-bg: rgba(15, 23, 42, 0.88);
+  --reader-toolbar-bg: rgba(15, 23, 42, 0.95);
   --reader-drawer-bg: #0f172a;
   --reader-highlight: #1e293b;
+  --reader-select-bg: #1e293b;
 }
 
 /* Midnight OLED Theme */
 html.theme-midnight,
 body.theme-midnight {
-  --reader-bg-gradient: linear-gradient(180deg, #000000 0%, #09090b 100%);
+  --reader-bg-gradient: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
   --reader-bg: #000000;
-  --reader-text: #e4e4e7;
-  --reader-muted: #71717a;
-  --reader-border: rgba(39, 39, 42, 0.8);
-  --reader-card-bg: rgba(18, 18, 20, 0.95);
-  --reader-card-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9);
-  --reader-accent: #a855f7;
-  --reader-accent-hover: #9333ea;
-  --reader-toolbar-bg: rgba(10, 10, 12, 0.94);
+  --reader-text: #f4f4f5;
+  --reader-muted: #a1a1aa;
+  --reader-border: #27272a;
+  --reader-card-bg: #09090b;
+  --reader-card-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.95);
+  --reader-accent: #c084fc;
+  --reader-accent-hover: #a855f7;
+  --reader-toolbar-bg: rgba(12, 12, 14, 0.95);
   --reader-drawer-bg: #09090b;
   --reader-highlight: #18181b;
+  --reader-select-bg: #18181b;
 }
 
 html.theme-midnight body {
@@ -479,3 +483,82 @@ body.focus-mode main {
 body.focus-mode .focus-exit-btn {
   display: flex;
 }
+
+/* 9. High Contrast & Dynamic Theme Styling Fixes */
+.novel-main-title {
+  color: var(--reader-text) !important;
+}
+
+.chapter-label-badge {
+  color: var(--reader-accent) !important;
+}
+
+.chapter-meta-info {
+  color: var(--reader-muted) !important;
+}
+
+.chapter-title {
+  color: var(--reader-text) !important;
+}
+
+/* Select & Dropdown Option Contrast Fixes */
+.reader-toolbar-container select,
+.reader-settings-panel select,
+.reader-drawer input {
+  background-color: var(--reader-select-bg) !important;
+  color: var(--reader-text) !important;
+  border-color: var(--reader-border) !important;
+}
+
+.reader-toolbar-container option,
+.reader-settings-panel option {
+  background-color: var(--reader-card-bg) !important;
+  color: var(--reader-text) !important;
+  padding: 8px 12px;
+}
+
+/* Drawer Chapter Items Contrast */
+.drawer-chapter-item {
+  color: var(--reader-text) !important;
+  background-color: transparent;
+}
+
+.drawer-chapter-item .chapter-item-title {
+  color: var(--reader-text) !important;
+}
+
+.drawer-chapter-item.is-current {
+  background: var(--reader-highlight) !important;
+  border-color: var(--reader-accent) !important;
+}
+
+.drawer-chapter-item.is-current .chapter-item-title {
+  color: var(--reader-accent) !important;
+}
+
+.drawer-chapter-item .chapter-item-time {
+  color: var(--reader-muted) !important;
+  background: var(--reader-highlight) !important;
+}
+
+/* Settings Panel Label & Button Colors */
+.reader-settings-panel label {
+  color: var(--reader-muted) !important;
+}
+
+.reader-settings-panel h4 {
+  color: var(--reader-text) !important;
+  border-color: var(--reader-border) !important;
+}
+
+.reader-settings-btn-action {
+  background-color: var(--reader-highlight) !important;
+  color: var(--reader-text) !important;
+  border: 1px solid var(--reader-border) !important;
+}
+
+.reader-settings-btn-action:hover {
+  background-color: var(--reader-accent) !important;
+  color: #ffffff !important;
+}
+

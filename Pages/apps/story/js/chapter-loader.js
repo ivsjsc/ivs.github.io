@@ -377,9 +377,9 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
                                         <span id="font-size-value" class="text-xs font-bold text-blue-600 dark:text-blue-400">17px</span>
                                     </div>
                                     <div class="flex items-center gap-2">
-                                        <button id="btn-font-dec" class="px-3 py-1 rounded-lg bg-slate-200 dark:bg-slate-700 font-bold text-sm hover:bg-slate-300">A-</button>
-                                        <button id="btn-font-reset" class="flex-1 py-1 rounded-lg bg-slate-200 dark:bg-slate-700 font-semibold text-xs hover:bg-slate-300">${lang === 'vi' ? 'Mặc định' : 'Reset'}</button>
-                                        <button id="btn-font-inc" class="px-3 py-1 rounded-lg bg-slate-200 dark:bg-slate-700 font-bold text-sm hover:bg-slate-300">A+</button>
+                                        <button id="btn-font-dec" class="reader-settings-btn-action px-3 py-1 rounded-lg font-bold text-sm">A-</button>
+                                        <button id="btn-font-reset" class="reader-settings-btn-action flex-1 py-1 rounded-lg font-semibold text-xs">${lang === 'vi' ? 'Mặc định' : 'Reset'}</button>
+                                        <button id="btn-font-inc" class="reader-settings-btn-action px-3 py-1 rounded-lg font-bold text-sm">A+</button>
                                     </div>
                                 </div>
 
@@ -487,7 +487,7 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
         });
 
         if (filtered.length === 0) {
-            drawerList.innerHTML = `<p class="text-xs text-center text-slate-400 p-4">${lang === 'vi' ? 'Không tìm thấy chương phù hợp' : 'No matching chapters found'}</p>`;
+            drawerList.innerHTML = `<p class="text-xs text-center p-4 chapter-meta-info">${lang === 'vi' ? 'Không tìm thấy chương phù hợp' : 'No matching chapters found'}</p>`;
             return;
         }
 
@@ -497,8 +497,8 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
             return `
                 <a href="#${id}" data-chapter-id="${id}" class="drawer-chapter-item ${isCurrent ? 'is-current' : ''}">
                     <div class="flex justify-between items-start">
-                        <span class="text-xs font-bold ${isCurrent ? 'text-blue-600 dark:text-blue-400' : 'text-slate-900 dark:text-slate-100'}">${escapeHtml(meta?.fullTitle || id)}</span>
-                        ${meta?.readTimeMinutes ? `<span class="text-[10px] text-slate-400 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded">~${meta.readTimeMinutes}p</span>` : ''}
+                        <span class="chapter-item-title text-xs font-bold">${escapeHtml(meta?.fullTitle || id)}</span>
+                        ${meta?.readTimeMinutes ? `<span class="chapter-item-time text-[10px] px-1.5 py-0.5 rounded font-medium">~${meta.readTimeMinutes}p</span>` : ''}
                     </div>
                 </a>
             `;
@@ -508,7 +508,7 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
     // 6. FETCH & RENDER CHAPTER CONTENT
     async function fetchChapterContent(chapterId) {
         dynamicContent.innerHTML = `
-            <div class="p-12 text-center text-slate-400">
+            <div class="p-12 text-center chapter-meta-info">
                 <i class="fas fa-spinner fa-spin text-3xl mb-3 text-blue-500"></i>
                 <p>${lang === 'vi' ? 'Đang tải nội dung chương...' : 'Loading chapter content...'}</p>
             </div>
@@ -540,13 +540,13 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
             <article class="chapter-article">
                 <header class="chapter-header mb-8 border-b border-slate-200/80 pb-6 dark:border-slate-800">
                     <div class="flex items-center justify-between mb-2">
-                        <span class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400">${escapeHtml(parsed.label)}</span>
-                        <div class="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400 font-medium">
+                        <span class="chapter-label-badge text-xs font-bold uppercase tracking-widest">${escapeHtml(parsed.label)}</span>
+                        <div class="chapter-meta-info flex items-center gap-3 text-xs font-medium">
                             <span><i class="far fa-clock mr-1"></i>~${parsed.readTimeMinutes} ${lang === 'vi' ? 'phút đọc' : 'min read'}</span>
                             <span><i class="fas fa-align-left mr-1"></i>${parsed.wordCount} ${lang === 'vi' ? 'từ' : 'words'}</span>
                         </div>
                     </div>
-                    <h2 class="chapter-title text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100">${escapeHtml(parsed.title)}</h2>
+                    <h2 class="chapter-title text-2xl sm:text-4xl font-extrabold">${escapeHtml(parsed.title)}</h2>
                 </header>
                 <div class="prose chapter-body max-w-none">
                     ${parsed.bodyHtml}
