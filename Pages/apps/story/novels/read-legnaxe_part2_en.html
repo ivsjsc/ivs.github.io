@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-lang-key="readnovel_part2_title">LEGNAXE: Heavenly, Human's Heart</title>
-    <meta name="description" content="LEGNAXE Part 2: Follow Healiangel and Lucifer in their fateful battle on Earth to claim the balance.">
-    <meta property="og:title" content="LEGNAXE: Heavenly, Human's Heart (Part 2)" data-lang-key="og_title_part2_full">
-    <meta property="og:description" content="Read LEGNAXE Part 2, discover the next events of the cosmic war." data-lang-key="og_description_part2_full">
+    <title data-lang-key="readnovel_part2_title">LEGNAXE: Heaven Above, Human Heart</title>
+    <meta name="description" content="LEGNAXE Part 2: Heaven Above, Human Heart. Follow Healiangel and Lucifer in the decisive battle on Earth for ultimate balance.">
+    <meta property="og:title" content="LEGNAXE: Heaven Above, Human Heart (Part 2)" data-lang-key="og_title_part2_full">
+    <meta property="og:description" content="Read LEGNAXE Part 2, discover the continuing saga of the celestial war.">
     <meta property="og:image" content="/images/pages/novels/legnaxe2horizontal.png">
     <meta property="og:url" content="https://ivs.id.vn/Pages/Novels/read-legnaxe_part2_en.html">
     <meta property="og:type" content="article">
-    <meta property="article:section" content="Long Story">
-    <meta property="article:author" content="NMT">
 
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,100 +38,49 @@
     </script>
 
     <link rel="stylesheet" href="/css/styles.css">
-    <style>
-        html { scroll-behavior: smooth; }
-        
-        /* Gradient Background for the entire page (Mobile First) */
-        body {
-            /* Light Mode Gradient: Tinh tế từ trắng ngà sang xám nhạt */
-            background: linear-gradient(180deg, #F9FAFB 0%, #E5E7EB 100%);
-            background-attachment: fixed;
-        }
-        /* Dark Mode Gradient: Chuyển từ đen than sang xám đậm */
-        .dark body {
-            background: linear-gradient(180deg, #111827 0%, #1F2937 100%);
-        }
-
-        /* Scrollbar Styling (Dark Mode) */
-        .dark ::-webkit-scrollbar { width: 10px; }
-        .dark ::-webkit-scrollbar-track { background: #111827; }
-        .dark ::-webkit-scrollbar-thumb { background-color: #4b5563; border-radius: 20px; border: 2px solid #111827; }
-        .dark ::-webkit-scrollbar-thumb:hover { background-color: #6b7280; }
-        
-        /* Typography for reading experience */
-        .prose h3 { font-size: 1.875rem; font-weight: 700; margin-bottom: 1.5rem; margin-top: 2rem; color: #111827; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.75rem; }
-        .dark .prose h3 { color: #ffffff; border-bottom-color: #374151; }
-        .prose p { margin-bottom: 1.5rem; line-height: 1.8; text-align: justify; }
-        .prose { max-width: none; font-family: 'Merriweather', serif; font-size: 1.1rem; }
-        .dark .prose { color: #ffffff; }
-
-        /* Modal Transitions */
-        #chapter-modal { transition: opacity 0.3s ease-in-out; }
-        #chapter-modal .modal-content { transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; }
-        #chapter-modal.modal-active { opacity: 1 !important; pointer-events: auto; }
-        #chapter-modal.modal-active .modal-content { transform: scale(1); opacity: 1; }
-    </style>
+    <link rel="stylesheet" href="../css/reader.css">
 </head>
 <body class="text-gray-800 dark:text-gray-200 transition-colors duration-300 ease-in-out font-sans antialiased" id="page-readnovel">
     <header id="header-placeholder"></header>
 
-    <main class="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-12">
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-center text-gray-800 dark:text-gray-100 mb-8" data-lang-key="readnovel_part2_title">LEGNAXE: Part 2 - Heavenly, Human's Heart</h1>
+    <!-- Top Fixed Progress Bar -->
+    <div class="progress-shell-fixed">
+        <div class="progress-bar progress-bar-glow h-1" style="width: 0%"></div>
+    </div>
+
+    <main class="max-w-4xl mx-auto px-4 pt-6 pb-28 sm:pb-12 sm:px-6 lg:px-8">
+        <h1 class="novel-main-title text-3xl sm:text-5xl font-extrabold text-center text-slate-900 dark:text-slate-100 mb-6 tracking-tight" data-lang-key="readnovel_part2_title">LEGNAXE: Part 2 - Heaven Above, Human Heart</h1>
         
-        <!-- Updated Image with correct path and Part 2 image -->
-        <img src="../images/legnaxe2horizontal.jpg" alt="LEGNAXE Part 2 Banner" class="mb-8 rounded-xl shadow-2xl w-full max-h-[300px] sm:max-h-[400px] object-cover border border-gray-200 dark:border-gray-700" 
+        <img src="../images/legnaxe2horizontal.jpg" alt="LEGNAXE Part 2 Banner" class="novel-banner-img mb-6 rounded-2xl shadow-xl w-full max-h-[300px] sm:max-h-[380px] object-cover border border-slate-200 dark:border-slate-800" 
              onerror="this.onerror=null; this.src='https://placehold.co/1200x400/374151/ffffff?text=LEGNAXE+Part+2+Banner';">
 
-        <div class="progress-bar h-1 bg-blue-600 dark:bg-blue-400 mb-6 rounded-full" style="width: 0%"></div>
+        <!-- Dynamic Sticky Toolbar Injected by JS -->
+        <div class="reader-toolbar mb-6"></div>
 
-        <!-- Cập nhật Font Size Controls để tích hợp TTS Button (Mobile-First) -->
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 mb-6 p-3 bg-white dark:bg-gray-800 rounded-lg shadow-inner">
-            <!-- 1. Font Size Controls Group -->
-            <div class="flex space-x-4">
-                <button id="decrease-font-btn" class="text-sm bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 py-1.5 px-3 rounded-full focus:outline-none focus:ring-2 focus:ring-primary" data-lang-key="font_size_decrease">A-</button>
-                <button id="reset-font-btn" class="text-base bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 py-1.5 px-3 rounded-full focus:outline-none focus:ring-2 focus:ring-primary" data-lang-key="font_size_reset">Reset</button>
-                <button id="increase-font-btn" class="text-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-300 py-1.5 px-3 rounded-full focus:outline-none focus:ring-2 focus:ring-primary" data-lang-key="font_size_increase">A+</button>
-            </div>
-            
-            <!-- 2. TTS Button (Play/Pause) -->
-            <button id="tts-toggle-btn" class="w-full sm:w-auto px-4 py-2 rounded-xl font-semibold text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50 transition-all duration-300 ease-in-out flex items-center justify-center dark:bg-indigo-700 dark:hover:bg-indigo-800" title="Text to Speech">
-                <i id="tts-icon" class="fas fa-play mr-2"></i>
-                <span id="tts-text">Read Story</span>
-            </button>
-        </div>
-
-        <div class="story-content-wrapper bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-xl shadow-2xl transition-colors duration-300 ease-in-out">
+        <div class="story-content-wrapper p-5 sm:p-10 rounded-3xl transition-all duration-300">
             <!-- Dynamic Chapter Content Area -->
             <div id="dynamic-chapter-content">
-                <p class="text-center text-gray-500 dark:text-gray-400">Loading chapter content...</p>
+                <p class="text-center text-gray-500 dark:text-gray-400">Loading story chapter...</p>
             </div>
 
-            <div class="navigation flex flex-col sm:flex-row justify-between items-center mt-10 mb-6 space-y-3 sm:space-y-0 sm:space-x-3">
-                <button id="list-chapter-btn" class="w-full sm:w-auto px-6 py-3 rounded-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-all duration-300 ease-in-out transform hover:scale-[1.02] flex items-center justify-center" data-lang-key="list_chapters_button">
-                    <i class="fas fa-list-ul mr-2"></i>Chapter List
-                </button>
-                <button id="prev-chapter-btn" class="w-full sm:w-auto px-6 py-3 rounded-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-all duration-300 ease-in-out transform hover:scale-[1.02] flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed" disabled data-lang-key="previous_chapter_button">
-                    <i class="fas fa-arrow-left mr-2"></i>Previous
-                </button>
-                <button id="next-chapter-btn" class="w-full sm:w-auto px-6 py-3 rounded-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-all duration-300 ease-in-out transform hover:scale-[1.02] flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed" data-lang-key="next_chapter_button">
-                    Next Chapter<i class="fas fa-arrow-right ml-2"></i>
-                </button>
+            <!-- Bottom Navigation Bar -->
+            <div class="navigation hidden sm:flex flex-col sm:flex-row justify-between items-center mt-10 mb-2 gap-3">
+                <a href="/Pages/apps/story/index.html" class="w-full sm:w-auto px-5 py-2.5 rounded-xl font-semibold text-white bg-slate-700 hover:bg-slate-800 transition-all flex items-center justify-center">
+                    <i class="fas fa-house mr-2"></i>Story Home
+                </a>
+                <div class="flex gap-3 w-full sm:w-auto">
+                    <button id="prev-chapter-btn" class="flex-1 sm:flex-initial px-6 py-2.5 rounded-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-all flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed">
+                        <i class="fas fa-arrow-left mr-2"></i>Previous Chapter
+                    </button>
+                    <button id="next-chapter-btn" class="flex-1 sm:flex-initial px-6 py-2.5 rounded-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-all flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed">
+                        Next Chapter<i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </main>
 
-    <!-- Modal for chapter list -->
-    <div id="chapter-modal" class="modal fixed inset-0 bg-black bg-opacity-70 dark:bg-opacity-80 flex items-center justify-center p-4 transition-opacity duration-300 ease-in-out opacity-0 pointer-events-none">
-        <div class="modal-content bg-white dark:bg-gray-900 p-6 sm:p-8 rounded-xl shadow-2xl w-full max-w-md relative transform transition-all duration-300 ease-in-out scale-95 opacity-0 border border-primary/20">
-            <span id="close-modal-btn" class="close absolute top-3 right-4 text-gray-500 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 text-3xl cursor-pointer transition-colors leading-none">&times;</span>
-            <h3 class="text-2xl font-semibold mb-6 text-gray-800 dark:text-white" data-lang-key="chapter_list_title">Chapter List</h3>
-            <ul id="modal-chapter-list" class="space-y-1 max-h-80 sm:max-h-96 overflow-y-auto pr-2">
-                <!-- Chapter list items will be populated by JS -->
-            </ul>
-        </div>
-    </div>
-   
-    <button id="scroll-to-top-btn" title="Go to top" class="hidden fixed bottom-5 right-5 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 z-50 transition-opacity duration-300 ease-in-out">
+    <button id="scroll-to-top-btn" title="Back to top" class="hidden fixed bottom-20 right-5 sm:right-6 sm:bottom-6 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-xl z-40 transition-all">
         <i class="fas fa-arrow-up"></i>
     </button>
 
@@ -142,86 +89,29 @@
     <!-- Scripts -->
     <script src="/js/utils.js"></script>
     <script src="/js/language.js"></script>
-    <script src="/js/loadComponents.js"></script>
-    <!-- Relative path to chapter-loader -->
+    <script src="/ai/js/loadComponents.js"></script>
     <script src="../js/chapter-loader.js"></script>
     
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const storyPath = 'legnaxe_part2'; // JSON directory name
-            const totalChapters = 40; 
-            const hasSpecialChapter = false; // Part 2 does not have a formal epilogue
-            const lang = 'en'; // English Language
+            const storyPath = 'legnaxe_part2';
+            const totalChapters = 40;
+            const hasSpecialChapter = false;
+            const lang = 'en';
 
-            // Initialize chapter loader
             if (typeof initializeChapterLoader === 'function') {
                 initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, lang);
             }
             
-            // --- UI LOGIC (Theme and Font Size) ---
-            const themeToggle = document.getElementById('theme-toggle');
-            const htmlElement = document.documentElement;
-            const themeIcon = themeToggle?.querySelector('i');
-
-            function applyTheme(isDark) {
-                htmlElement.classList.toggle('dark', isDark);
-                if (themeIcon) {
-                    themeIcon.classList.toggle('fa-moon', !isDark);
-                    themeIcon.classList.toggle('fa-sun', isDark);
-                }
-                localStorage.setItem('theme', isDark ? 'dark' : 'light');
-            }
-            
-            const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const savedTheme = localStorage.getItem('theme');
-            let currentIsDarkMode = savedTheme === 'dark' || (savedTheme === null && prefersDarkScheme);
-            applyTheme(currentIsDarkMode);
-
-            themeToggle?.addEventListener('click', () => {
-                currentIsDarkMode = !htmlElement.classList.contains('dark');
-                applyTheme(currentIsDarkMode);
-            });
-            
-            const decreaseFontBtn = document.getElementById('decrease-font-btn');
-            const resetFontBtn = document.getElementById('reset-font-btn');
-            const increaseFontBtn = document.getElementById('increase-font-btn');
-            const storyContentWrapper = document.querySelector('.story-content-wrapper');
-
-            const fontSizeLevels = [0.9, 1.0, 1.1, 1.2]; 
-            let currentFontLevel = 1; 
-
-            function updateFontSize(level) {
-                storyContentWrapper.style.fontSize = `${fontSizeLevels[level]}rem`;
-                currentFontLevel = level;
-                decreaseFontBtn.disabled = currentFontLevel === 0;
-                increaseFontBtn.disabled = currentFontLevel === fontSizeLevels.length - 1;
-                localStorage.setItem('novelFontSizeLevel', currentFontLevel);
-            }
-
-            const savedLevel = localStorage.getItem('novelFontSizeLevel');
-            if (savedLevel !== null) {
-                currentFontLevel = parseInt(savedLevel);
-            }
-            updateFontSize(currentFontLevel);
-
-            decreaseFontBtn?.addEventListener('click', () => {
-                if (currentFontLevel > 0) updateFontSize(currentFontLevel - 1);
-            });
-            resetFontBtn?.addEventListener('click', () => updateFontSize(1));
-            increaseFontBtn?.addEventListener('click', () => {
-                if (currentFontLevel < fontSizeLevels.length - 1) updateFontSize(currentFontLevel + 1);
-            });
-            
-            // Scroll to top logic
             const scrollToTopBtn = document.getElementById('scroll-to-top-btn');
             scrollToTopBtn?.addEventListener('click', () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
             window.addEventListener('scroll', () => {
                 if (window.pageYOffset > 300) {
-                    scrollToTopBtn.classList.remove('hidden');
+                    scrollToTopBtn?.classList.remove('hidden');
                 } else {
-                    scrollToTopBtn.classList.add('hidden');
+                    scrollToTopBtn?.classList.add('hidden');
                 }
             });
         });

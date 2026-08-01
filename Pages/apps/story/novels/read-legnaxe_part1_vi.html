@@ -6,12 +6,10 @@
     <title data-lang-key="readnovel_part1_title">LEGNAXE: Bí mật cuộc đại chiến Thiên Đàng</title>
     <meta name="description" content="LEGNAXE Phần 1: Khám phá nguồn gốc xung đột giữa các thiên thần, sự tạo dựng loài người và những lựa chọn định mệnh.">
     <meta property="og:title" content="LEGNAXE: Bí mật cuộc đại chiến Thiên Đàng (Phần 1)" data-lang-key="og_title_part1_full">
-    <meta property="og:description" content="Đọc LEGNAXE Phần 1, khám phá những sự kiện dẫn đến cuộc đại chiến vĩ đại trên Thiên Đàng." data-lang-key="og_description_part1_full">
+    <meta property="og:description" content="Đọc LEGNAXE Phần 1, khám phá những sự kiện dẫn đến cuộc đại chiến vĩ đại trên Thiên Đàng.">
     <meta property="og:image" content="/images/pages/novels/legnaxe1horizontal.png">
     <meta property="og:url" content="https://ivs.id.vn/Pages/Novels/read-legnaxe_part1_vi.html">
     <meta property="og:type" content="article">
-    <meta property="article:section" content="Long Story">
-    <meta property="article:author" content="NMT">
 
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,219 +38,49 @@
     </script>
 
     <link rel="stylesheet" href="/css/styles.css">
-    <style>
-        html { scroll-behavior: smooth; }
-        
-        /* Reading atmosphere */
-        body {
-            background:
-                radial-gradient(circle at top, rgba(125, 211, 252, 0.18), transparent 32%),
-                linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
-            background-attachment: fixed;
-        }
-        .dark body {
-            background:
-                radial-gradient(circle at top, rgba(56, 189, 248, 0.16), transparent 30%),
-                linear-gradient(180deg, #020617 0%, #0f172a 100%);
-        }
-
-        /* Scrollbar Styling (Dark Mode) */
-        .dark ::-webkit-scrollbar { width: 10px; }
-        .dark ::-webkit-scrollbar-track { background: #111827; }
-        .dark ::-webkit-scrollbar-thumb { background-color: #4b5563; border-radius: 20px; border: 2px solid #111827; }
-        .dark ::-webkit-scrollbar-thumb:hover { background-color: #6b7280; }
-        
-        .story-content-wrapper {
-            max-width: 54rem;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.86);
-            border: 1px solid rgba(148, 163, 184, 0.22);
-            box-shadow: 0 25px 60px rgba(15, 23, 42, 0.10);
-            backdrop-filter: blur(16px);
-        }
-        .dark .story-content-wrapper {
-            background: rgba(15, 23, 42, 0.78);
-            border-color: rgba(148, 163, 184, 0.14);
-            box-shadow: 0 25px 60px rgba(2, 6, 23, 0.45);
-        }
-        .reader-toolbar {
-            max-width: 54rem;
-            margin: 0 auto 1.25rem;
-            position: sticky;
-            top: 5rem;
-            z-index: 20;
-            backdrop-filter: blur(14px);
-        }
-        .chapter-body {
-            max-width: none;
-            font-family: 'Merriweather', serif;
-            font-size: 1.08rem;
-            color: #0f172a;
-        }
-        .dark .chapter-body { color: #f8fafc; }
-        .chapter-body p {
-            margin-bottom: 1.35rem;
-            line-height: 2;
-            text-align: justify;
-            text-wrap: pretty;
-        }
-        .chapter-title { text-wrap: balance; }
-        .progress-shell {
-            max-width: 54rem;
-            margin: 0 auto 1.5rem;
-            padding: 0.25rem;
-            border-radius: 9999px;
-            background: rgba(255,255,255,0.55);
-        }
-        .dark .progress-shell { background: rgba(15,23,42,0.7); }
-        .mobile-reader-nav {
-            position: fixed;
-            left: 1rem;
-            right: 6.75rem;
-            bottom: 1rem;
-            z-index: 90;
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 0.5rem;
-            padding: 0.6rem;
-            border-radius: 1.25rem;
-            border: 1px solid rgba(148, 163, 184, 0.22);
-            background: rgba(15, 23, 42, 0.86);
-            box-shadow: 0 18px 40px rgba(2, 6, 23, 0.35);
-            backdrop-filter: blur(18px);
-            opacity: 0;
-            pointer-events: none;
-            transform: translateY(18px) scale(0.96);
-            transform-origin: bottom right;
-            transition: opacity 0.28s ease, transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-        .mobile-reader-nav.is-open {
-            opacity: 1;
-            pointer-events: auto;
-            transform: translateY(0) scale(1);
-        }
-        .mobile-reader-nav button,
-        .mobile-reader-nav a {
-            width: 100%;
-            min-height: 4rem;
-            border-radius: 0.95rem;
-            padding: 0.6rem 0.45rem;
-            font-weight: 700;
-            color: #fff;
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.96), rgba(79, 70, 229, 0.96));
-            box-shadow: inset 0 1px 0 rgba(255,255,255,0.14);
-            text-decoration: none;
-        }
-        .mobile-reader-nav .mobile-nav-label {
-            display: block;
-            margin-top: 0.3rem;
-            font-size: 0.68rem;
-            line-height: 1rem;
-        }
-        .mobile-reader-nav button:disabled {
-            opacity: 0.55;
-            cursor: not-allowed;
-        }
-        .mobile-nav-toggle {
-            position: fixed;
-            right: 1rem;
-            bottom: 5.5rem;
-            z-index: 91;
-            width: 3rem;
-            height: 3rem;
-            border-radius: 9999px;
-            color: #fff;
-            background: rgba(15, 23, 42, 0.9);
-            box-shadow: 0 16px 32px rgba(2, 6, 23, 0.36);
-            backdrop-filter: blur(14px);
-        }
-
-        /* Modal Transitions */
-        #chapter-modal { transition: opacity 0.3s ease-in-out; }
-        #chapter-modal .modal-content { transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; }
-        #chapter-modal.modal-active { opacity: 1 !important; pointer-events: auto; }
-        #chapter-modal.modal-active .modal-content { transform: scale(1); opacity: 1; }
-    </style>
+    <link rel="stylesheet" href="../css/reader.css">
 </head>
 <body class="text-gray-800 dark:text-gray-200 transition-colors duration-300 ease-in-out font-sans antialiased" id="page-readnovel">
     <header id="header-placeholder"></header>
 
-    <main class="max-w-4xl mx-auto px-4 pt-8 pb-36 sm:pb-8 sm:px-6 lg:px-12">
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-center text-gray-800 dark:text-gray-100 mb-8" data-lang-key="readnovel_part1_title">LEGNAXE: Phần 1 - Bí mật cuộc đại chiến Thiên Đàng</h1>
+    <!-- Top Fixed Progress Bar -->
+    <div class="progress-shell-fixed">
+        <div class="progress-bar progress-bar-glow h-1" style="width: 0%"></div>
+    </div>
+
+    <main class="max-w-4xl mx-auto px-4 pt-6 pb-28 sm:pb-12 sm:px-6 lg:px-8">
+        <h1 class="novel-main-title text-3xl sm:text-5xl font-extrabold text-center text-slate-900 dark:text-slate-100 mb-6 tracking-tight" data-lang-key="readnovel_part1_title">LEGNAXE: Phần 1 - Bí mật cuộc đại chiến Thiên Đàng</h1>
         
-        <!-- Updated Image with correct path and Part 1 image -->
-        <img src="../images/legnaxe1horizontal.jpg" alt="LEGNAXE Part 1 Banner" class="mb-8 rounded-xl shadow-2xl w-full max-h-[300px] sm:max-h-[400px] object-cover border border-gray-200 dark:border-gray-700" 
+        <img src="../images/legnaxe1horizontal.jpg" alt="LEGNAXE Part 1 Banner" class="novel-banner-img mb-6 rounded-2xl shadow-xl w-full max-h-[300px] sm:max-h-[380px] object-cover border border-slate-200 dark:border-slate-800" 
              onerror="this.onerror=null; this.src='https://placehold.co/1200x400/374151/ffffff?text=LEGNAXE+Phần+1+Banner';">
 
-        <div class="progress-shell">
-            <div class="progress-bar h-1.5 bg-blue-600 dark:bg-blue-400 rounded-full" style="width: 0%"></div>
-        </div>
+        <!-- Dynamic Sticky Toolbar Injected by JS -->
+        <div class="reader-toolbar mb-6"></div>
 
-        <div class="reader-toolbar flex items-center justify-center p-3 bg-white/80 dark:bg-slate-900/75 rounded-2xl shadow-lg border border-slate-200/70 dark:border-slate-700/60">
-            <button id="tts-toggle-btn" class="w-full sm:w-auto px-4 py-2 rounded-xl font-semibold text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50 transition-all duration-300 ease-in-out flex items-center justify-center dark:bg-indigo-700 dark:hover:bg-indigo-800" title="Đọc văn bản">
-                <i id="tts-icon" class="fas fa-play mr-2"></i>
-                <span id="tts-text">Nghe truyện</span>
-            </button>
-        </div>
-
-        <div class="story-content-wrapper p-6 sm:p-10 rounded-[1.75rem] transition-colors duration-300 ease-in-out">
+        <div class="story-content-wrapper p-5 sm:p-10 rounded-3xl transition-all duration-300">
             <!-- Dynamic Chapter Content Area -->
             <div id="dynamic-chapter-content">
                 <p class="text-center text-gray-500 dark:text-gray-400">Đang tải chương truyện...</p>
             </div>
 
-            <div class="navigation hidden sm:flex flex-col sm:flex-row justify-between items-center mt-10 mb-6 space-y-3 sm:space-y-0 sm:space-x-3">
-                <a href="/Pages/apps/story/index.html" class="w-full sm:w-auto px-6 py-3 rounded-xl font-semibold text-white bg-slate-700 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-opacity-50 transition-all duration-300 ease-in-out transform hover:scale-[1.02] flex items-center justify-center">
+            <!-- Bottom Navigation Bar -->
+            <div class="navigation hidden sm:flex flex-col sm:flex-row justify-between items-center mt-10 mb-2 gap-3">
+                <a href="/Pages/apps/story/index.html" class="w-full sm:w-auto px-5 py-2.5 rounded-xl font-semibold text-white bg-slate-700 hover:bg-slate-800 transition-all flex items-center justify-center">
                     <i class="fas fa-house mr-2"></i>Trang Chủ Truyện
                 </a>
-                <button id="list-chapter-btn" class="w-full sm:w-auto px-6 py-3 rounded-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-all duration-300 ease-in-out transform hover:scale-[1.02] flex items-center justify-center" data-lang-key="list_chapters_button">
-                    <i class="fas fa-list-ul mr-2"></i>Danh Sách Chương
-                </button>
-                <button id="prev-chapter-btn" class="w-full sm:w-auto px-6 py-3 rounded-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-all duration-300 ease-in-out transform hover:scale-[1.02] flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed" disabled data-lang-key="previous_chapter_button">
-                    <i class="fas fa-arrow-left mr-2"></i>Chương Trước
-                </button>
-                <button id="next-chapter-btn" class="w-full sm:w-auto px-6 py-3 rounded-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-all duration-300 ease-in-out transform hover:scale-[1.02] flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed" data-lang-key="next_chapter_button">
-                    Chương Tiếp<i class="fas fa-arrow-right ml-2"></i>
-                </button>
+                <div class="flex gap-3 w-full sm:w-auto">
+                    <button id="prev-chapter-btn" class="flex-1 sm:flex-initial px-6 py-2.5 rounded-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-all flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed">
+                        <i class="fas fa-arrow-left mr-2"></i>Chương Trước
+                    </button>
+                    <button id="next-chapter-btn" class="flex-1 sm:flex-initial px-6 py-2.5 rounded-xl font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-all flex items-center justify-center disabled:opacity-40 disabled:cursor-not-allowed">
+                        Chương Tiếp<i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </main>
 
-    <!-- Modal for chapter list -->
-    <div id="chapter-modal" class="modal fixed inset-0 bg-black bg-opacity-70 dark:bg-opacity-80 flex items-center justify-center p-4 transition-opacity duration-300 ease-in-out opacity-0 pointer-events-none">
-        <div class="modal-content bg-white dark:bg-gray-900 p-6 sm:p-8 rounded-xl shadow-2xl w-full max-w-md relative transform transition-all duration-300 ease-in-out scale-95 opacity-0 border border-primary/20">
-            <span id="close-modal-btn" class="close absolute top-3 right-4 text-gray-500 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 text-3xl cursor-pointer transition-colors leading-none">&times;</span>
-            <h3 class="text-2xl font-semibold mb-6 text-gray-800 dark:text-white" data-lang-key="chapter_list_title">Danh Sách Chương</h3>
-            <ul id="modal-chapter-list" class="space-y-1 max-h-80 sm:max-h-96 overflow-y-auto pr-2">
-                <!-- Chapter list items will be populated by JS -->
-            </ul>
-        </div>
-    </div>
-   
-    <div id="mobile-reader-nav" class="mobile-reader-nav sm:hidden">
-        <a href="/Pages/apps/story/index.html" id="mobile-story-home-link" class="flex flex-col items-center justify-center text-center">
-            <i class="fas fa-house text-sm"></i>
-            <span class="mobile-nav-label">Trang chủ</span>
-        </a>
-        <button id="mobile-list-chapter-btn" type="button" class="flex flex-col items-center justify-center text-center">
-            <i class="fas fa-list-ul text-sm"></i>
-            <span class="mobile-nav-label">Chapter List</span>
-        </button>
-        <button id="mobile-prev-chapter-btn" type="button" class="flex flex-col items-center justify-center text-center" disabled>
-            <i class="fas fa-arrow-left text-sm"></i>
-            <span class="mobile-nav-label">Previous</span>
-        </button>
-        <button id="mobile-next-chapter-btn" type="button" class="flex flex-col items-center justify-center text-center">
-            <i class="fas fa-arrow-right text-sm"></i>
-            <span class="mobile-nav-label">Next Chapter</span>
-        </button>
-    </div>
-
-    <button id="mobile-nav-toggle" type="button" class="mobile-nav-toggle sm:hidden flex items-center justify-center" aria-expanded="false" aria-controls="mobile-reader-nav" title="Mở điều hướng chương">
-        <i class="fas fa-bars"></i>
-    </button>
-
-    <button id="scroll-to-top-btn" title="Lên đầu trang" class="hidden fixed bottom-5 right-4 sm:right-5 sm:bottom-5 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 z-[92] transition-opacity duration-300 ease-in-out">
+    <button id="scroll-to-top-btn" title="Lên đầu trang" class="hidden fixed bottom-20 right-5 sm:right-6 sm:bottom-6 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-xl z-40 transition-all">
         <i class="fas fa-arrow-up"></i>
     </button>
 
@@ -262,86 +90,28 @@
     <script src="/js/utils.js"></script>
     <script src="/js/language.js"></script>
     <script src="/ai/js/loadComponents.js"></script>
-    <!-- Relative path to chapter-loader -->
     <script src="../js/chapter-loader.js"></script>
     
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const storyPath = 'legnaxe_part1'; // Tên thư mục chứa JSON
-            const totalChapters = 16; // Đã gộp còn 16 chương
-            const hasSpecialChapter = false; // Không còn epilogue
-            const lang = 'vi'; // Ngôn ngữ Tiếng Việt
+            const storyPath = 'legnaxe_part1';
+            const totalChapters = 16;
+            const hasSpecialChapter = false;
+            const lang = 'vi';
 
-            // Khởi tạo bộ tải chương
             if (typeof initializeChapterLoader === 'function') {
                 initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, lang);
             }
             
-            // --- UI LOGIC ---
-            const themeToggle = document.getElementById('theme-toggle');
-            const htmlElement = document.documentElement;
-            const themeIcon = themeToggle?.querySelector('i');
-
-            function applyTheme(isDark) {
-                htmlElement.classList.toggle('dark', isDark);
-                if (themeIcon) {
-                    themeIcon.classList.toggle('fa-moon', !isDark);
-                    themeIcon.classList.toggle('fa-sun', isDark);
-                }
-                localStorage.setItem('theme', isDark ? 'dark' : 'light');
-            }
-            
-            const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const savedTheme = localStorage.getItem('theme');
-            let currentIsDarkMode = savedTheme === 'dark' || (savedTheme === null && prefersDarkScheme);
-            applyTheme(currentIsDarkMode);
-
-            themeToggle?.addEventListener('click', () => {
-                currentIsDarkMode = !htmlElement.classList.contains('dark');
-                applyTheme(currentIsDarkMode);
-            });
-            
-            // Scroll to top logic
             const scrollToTopBtn = document.getElementById('scroll-to-top-btn');
-            const mobileNavToggle = document.getElementById('mobile-nav-toggle');
-            const mobileReaderNav = document.getElementById('mobile-reader-nav');
-            const mobileStoryHomeLink = document.getElementById('mobile-story-home-link');
-            const mobileListChapterBtn = document.getElementById('mobile-list-chapter-btn');
-            const mobilePrevChapterBtn = document.getElementById('mobile-prev-chapter-btn');
-            const mobileNextChapterBtn = document.getElementById('mobile-next-chapter-btn');
-
-            function setMobileNavOpen(isOpen) {
-                if (!mobileNavToggle || !mobileReaderNav) return;
-                mobileReaderNav.classList.toggle('is-open', isOpen);
-                mobileNavToggle.setAttribute('aria-expanded', String(isOpen));
-                mobileNavToggle.innerHTML = `<i class="fas ${isOpen ? 'fa-times' : 'fa-bars'}"></i>`;
-            }
-
-            mobileNavToggle?.addEventListener('click', () => {
-                setMobileNavOpen(!mobileReaderNav.classList.contains('is-open'));
-            });
-
-            document.addEventListener('click', (event) => {
-                if (!mobileNavToggle || !mobileReaderNav) return;
-                if (!mobileReaderNav.classList.contains('is-open')) return;
-                if (mobileReaderNav.contains(event.target) || mobileNavToggle.contains(event.target)) return;
-                setMobileNavOpen(false);
-            });
-
-            [mobileStoryHomeLink, mobileListChapterBtn, mobilePrevChapterBtn, mobileNextChapterBtn].filter(Boolean).forEach((button) => {
-                button.addEventListener('click', () => {
-                    setMobileNavOpen(false);
-                });
-            });
-
             scrollToTopBtn?.addEventListener('click', () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
             window.addEventListener('scroll', () => {
                 if (window.pageYOffset > 300) {
-                    scrollToTopBtn.classList.remove('hidden');
+                    scrollToTopBtn?.classList.remove('hidden');
                 } else {
-                    scrollToTopBtn.classList.add('hidden');
+                    scrollToTopBtn?.classList.add('hidden');
                 }
             });
         });

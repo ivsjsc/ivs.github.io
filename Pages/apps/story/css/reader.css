@@ -1,0 +1,417 @@
+/* ==========================================================================
+   IVS STORY READER - PROFESSIONAL TYPOGRAPHY & THEME SYSTEM
+   ========================================================================== */
+
+/* 1. Theme CSS Variables */
+:root {
+  --reader-bg-gradient: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+  --reader-bg: #ffffff;
+  --reader-text: #1e293b;
+  --reader-muted: #64748b;
+  --reader-border: rgba(226, 232, 240, 0.8);
+  --reader-card-bg: rgba(255, 255, 255, 0.92);
+  --reader-card-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.08);
+  --reader-accent: #2563eb;
+  --reader-accent-hover: #1d4ed8;
+  --reader-toolbar-bg: rgba(255, 255, 255, 0.85);
+  --reader-drawer-bg: #ffffff;
+  --reader-highlight: #eff6ff;
+}
+
+/* Sepia Theme */
+html.theme-sepia,
+body.theme-sepia {
+  --reader-bg-gradient: linear-gradient(180deg, #fcf6e8 0%, #f4ecd8 100%);
+  --reader-bg: #f9f2e4;
+  --reader-text: #433422;
+  --reader-muted: #8c765c;
+  --reader-border: rgba(212, 196, 168, 0.6);
+  --reader-card-bg: rgba(253, 248, 238, 0.95);
+  --reader-card-shadow: 0 20px 40px -15px rgba(67, 52, 34, 0.08);
+  --reader-accent: #92400e;
+  --reader-accent-hover: #78350f;
+  --reader-toolbar-bg: rgba(249, 242, 228, 0.9);
+  --reader-drawer-bg: #f5ebd7;
+  --reader-highlight: #f3e5c8;
+}
+
+html.theme-sepia body {
+  background: var(--reader-bg-gradient) !important;
+  color: var(--reader-text) !important;
+}
+
+/* Dark Slate Theme */
+html.dark:not(.theme-midnight):not(.theme-sepia),
+body.dark:not(.theme-midnight):not(.theme-sepia) {
+  --reader-bg-gradient: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+  --reader-bg: #0f172a;
+  --reader-text: #f1f5f9;
+  --reader-muted: #94a3b8;
+  --reader-border: rgba(51, 65, 85, 0.6);
+  --reader-card-bg: rgba(15, 23, 42, 0.88);
+  --reader-card-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  --reader-accent: #38bdf8;
+  --reader-accent-hover: #0284c7;
+  --reader-toolbar-bg: rgba(15, 23, 42, 0.88);
+  --reader-drawer-bg: #0f172a;
+  --reader-highlight: #1e293b;
+}
+
+/* Midnight OLED Theme */
+html.theme-midnight,
+body.theme-midnight {
+  --reader-bg-gradient: linear-gradient(180deg, #000000 0%, #09090b 100%);
+  --reader-bg: #000000;
+  --reader-text: #e4e4e7;
+  --reader-muted: #71717a;
+  --reader-border: rgba(39, 39, 42, 0.8);
+  --reader-card-bg: rgba(18, 18, 20, 0.95);
+  --reader-card-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9);
+  --reader-accent: #a855f7;
+  --reader-accent-hover: #9333ea;
+  --reader-toolbar-bg: rgba(10, 10, 12, 0.92);
+  --reader-drawer-bg: #09090b;
+  --reader-highlight: #18181b;
+}
+
+html.theme-midnight body {
+  background: var(--reader-bg-gradient) !important;
+  color: var(--reader-text) !important;
+}
+
+/* 2. Reader Body & Typography Settings */
+.reader-font-serif .chapter-body {
+  font-family: 'Merriweather', Georgia, Cambria, serif;
+}
+
+.reader-font-sans .chapter-body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.reader-font-book .chapter-body {
+  font-family: 'Charter', 'Bitstream Charter', 'Sitka Text', Georgia, serif;
+}
+
+/* Line Heights */
+.line-height-compact .chapter-body p {
+  line-height: 1.65 !important;
+}
+.line-height-normal .chapter-body p {
+  line-height: 1.95 !important;
+}
+.line-height-relaxed .chapter-body p {
+  line-height: 2.3 !important;
+}
+
+/* Text Align */
+.text-align-justify .chapter-body p {
+  text-align: justify;
+  text-wrap: pretty;
+}
+.text-align-left .chapter-body p {
+  text-align: left;
+}
+
+/* Base Chapter Styling */
+.story-content-wrapper {
+  background-color: var(--reader-card-bg);
+  border: 1px solid var(--reader-border);
+  box-shadow: var(--reader-card-shadow);
+  backdrop-filter: blur(16px);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chapter-body p {
+  margin-bottom: 1.5rem;
+  color: var(--reader-text);
+  transition: font-size 0.2s ease, color 0.3s ease;
+}
+
+/* Paragraph First Letter / Drop Cap Effect for Chapter Intro */
+.chapter-body > p:first-of-type::first-letter {
+  font-size: 3.25em;
+  float: left;
+  line-height: 0.85;
+  margin-right: 0.15em;
+  margin-top: 0.05em;
+  font-weight: 700;
+  color: var(--reader-accent);
+}
+
+/* 3. Sticky Top Progress Shell */
+.progress-shell-fixed {
+  position: sticky;
+  top: 4rem;
+  z-index: 35;
+  backdrop-filter: blur(12px);
+  background: var(--reader-toolbar-bg);
+  border-bottom: 1px solid var(--reader-border);
+  transition: all 0.3s ease;
+}
+
+.progress-bar-glow {
+  background: linear-gradient(90deg, var(--reader-accent), #6366f1);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+  transition: width 0.15s ease-out;
+}
+
+/* 4. Reader Control Bar (Toolbar) */
+.reader-toolbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.6rem 1rem;
+  border-radius: 1.25rem;
+  background: var(--reader-toolbar-bg);
+  border: 1px solid var(--reader-border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(16px);
+  transition: all 0.3s ease;
+}
+
+/* Control Buttons */
+.reader-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.85rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  color: var(--reader-text);
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reader-btn:hover {
+  background: var(--reader-highlight);
+  border-color: var(--reader-border);
+}
+
+.reader-btn-primary {
+  background: var(--reader-accent);
+  color: #ffffff !important;
+}
+
+.reader-btn-primary:hover {
+  background: var(--reader-accent-hover);
+}
+
+/* 5. Reader Settings Modal / Popover */
+.reader-settings-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.5rem);
+  width: 320px;
+  max-width: 90vw;
+  padding: 1.25rem;
+  border-radius: 1.25rem;
+  background: var(--reader-card-bg);
+  border: 1px solid var(--reader-border);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(20px);
+  z-index: 50;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px) scale(0.96);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reader-settings-panel.is-active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+/* Theme Option Pills */
+.theme-pill {
+  flex: 1;
+  padding: 0.5rem 0.25rem;
+  border-radius: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme-pill.theme-pill-light { background: #f8fafc; color: #0f172a; border-color: #cbd5e1; }
+.theme-pill.theme-pill-sepia { background: #f9f2e4; color: #433422; border-color: #d4c4a8; }
+.theme-pill.theme-pill-dark { background: #0f172a; color: #f8fafc; border-color: #334155; }
+.theme-pill.theme-pill-midnight { background: #000000; color: #a855f7; border-color: #27272a; }
+
+.theme-pill.is-selected {
+  border-color: var(--reader-accent) !important;
+  box-shadow: 0 0 0 2px var(--reader-accent);
+}
+
+/* 6. Off-Canvas Chapter Drawer */
+.reader-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.reader-drawer-overlay.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.reader-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 420px;
+  z-index: 101;
+  background: var(--reader-drawer-bg);
+  color: var(--reader-text);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reader-drawer.is-active {
+  transform: translateX(0);
+}
+
+/* Mobile Drawer adjustments */
+@media (max-width: 640px) {
+  .reader-drawer {
+    top: auto;
+    left: 0;
+    max-width: 100%;
+    height: 85vh;
+    border-radius: 1.5rem 1.5rem 0 0;
+    transform: translateY(100%);
+  }
+  .reader-drawer.is-active {
+    transform: translateY(0);
+  }
+}
+
+/* Drawer Items */
+.drawer-chapter-item {
+  display: block;
+  padding: 0.85rem 1rem;
+  border-radius: 0.85rem;
+  margin-bottom: 0.4rem;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  color: var(--reader-text);
+}
+
+.drawer-chapter-item:hover {
+  background: var(--reader-highlight);
+  border-color: var(--reader-border);
+}
+
+.drawer-chapter-item.is-current {
+  background: var(--reader-highlight);
+  border-color: var(--reader-accent);
+  font-weight: 700;
+}
+
+/* 7. Mobile Floating App Bar */
+.mobile-app-bar {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(0);
+  z-index: 90;
+  width: calc(100% - 2rem);
+  max-width: 480px;
+  padding: 0.5rem;
+  border-radius: 1.5rem;
+  background: var(--reader-toolbar-bg);
+  border: 1px solid var(--reader-border);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.mobile-app-bar.is-hidden {
+  transform: translateX(-50%) translateY(120%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mobile-bar-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 1rem;
+  color: var(--reader-text);
+  font-size: 1.1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mobile-bar-btn:active {
+  transform: scale(0.92);
+  background: var(--reader-highlight);
+}
+
+.mobile-bar-btn .btn-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  margin-top: 0.2rem;
+  line-height: 1;
+}
+
+/* 8. Focus Mode (Distraction-Free Reading) */
+body.focus-mode #header-placeholder,
+body.focus-mode #footer-placeholder,
+body.focus-mode .novel-banner-img,
+body.focus-mode .novel-main-title {
+  display: none !important;
+}
+
+body.focus-mode main {
+  padding-top: 1rem !important;
+}
+
+/* Floating Focus Mode Exit Pill */
+.focus-exit-btn {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 99;
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: var(--reader-accent);
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+body.focus-mode .focus-exit-btn {
+  display: flex;
+}
