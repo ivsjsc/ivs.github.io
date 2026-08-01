@@ -159,15 +159,26 @@ html.theme-midnight body {
   transition: width 0.15s ease-out;
 }
 
-/* 4. Reader Control Bar (Toolbar) */
+/* 4. Reader Control Bar (Toolbar) – Sticky */
 .reader-toolbar {
-  position: relative;
-  z-index: 60;
+  position: sticky;
+  top: 4.25rem;   /* clears the site header (~68px) */
+  z-index: 70;
+  /* tiny vertical breathing room when it sticks */
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  /* glass backdrop that fills the sticky strip */
+  background: transparent;
+}
+
+/* When scrolled past origin, add a subtle shadow to signal stickiness */
+.reader-toolbar.is-stuck .reader-toolbar-container {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
 }
 
 .reader-toolbar-container {
   position: relative;
-  z-index: 60;
+  z-index: 70;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -177,8 +188,9 @@ html.theme-midnight body {
   background: var(--reader-toolbar-bg);
   border: 1px solid var(--reader-border);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-  backdrop-filter: blur(16px);
-  transition: all 0.3s ease;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: box-shadow 0.3s ease, background 0.3s ease;
 }
 
 /* Control Buttons */

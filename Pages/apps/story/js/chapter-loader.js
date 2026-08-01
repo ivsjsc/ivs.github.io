@@ -421,6 +421,22 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
                     </div>
                 </div>
             `;
+
+            // --- Sticky "is-stuck" detection via IntersectionObserver ---
+            // Place a 1-px invisible sentinel just ABOVE the toolbar.
+            // When the sentinel leaves the viewport the toolbar is stuck.
+            const toolbar = document.querySelector('.reader-toolbar');
+            if (toolbar && 'IntersectionObserver' in window) {
+                const sentinel = document.createElement('div');
+                sentinel.style.cssText = 'position:absolute;top:0;height:1px;width:1px;pointer-events:none;visibility:hidden;';
+                toolbar.parentElement.insertBefore(sentinel, toolbar);
+
+                const obs = new IntersectionObserver(
+                    ([entry]) => toolbar.classList.toggle('is-stuck', !entry.isIntersecting),
+                    { threshold: [1] }
+                );
+                obs.observe(sentinel);
+            }
         }
     }
 
