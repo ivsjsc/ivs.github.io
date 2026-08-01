@@ -70,14 +70,6 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
         document.getElementById('mobile-btn-next'),
     ].filter(Boolean);
 
-    const drawerOverlay = document.getElementById('reader-drawer-overlay');
-    const drawer = document.getElementById('reader-drawer');
-    const drawerList = document.getElementById('drawer-chapter-list');
-    const drawerSearch = document.getElementById('drawer-chapter-search');
-    const closeDrawerBtn = document.getElementById('close-drawer-btn');
-    const settingsPanel = document.getElementById('reader-settings-panel');
-    const mobileAppBar = document.getElementById('mobile-app-bar');
-
     // 3. HELPER FUNCTIONS
     function saveSettings() {
         try {
@@ -130,6 +122,7 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
     }
 
     function syncSettingsUIControls() {
+        const settingsPanel = document.getElementById('reader-settings-panel');
         if (!settingsPanel) return;
 
         settingsPanel.querySelectorAll('.theme-pill').forEach((pill) => {
@@ -475,6 +468,7 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
     }
 
     function renderDrawerItems(filterQuery = '') {
+        const drawerList = document.getElementById('drawer-chapter-list');
         if (!drawerList) return;
 
         const currentId = chapterIds[currentChapterIndex];
@@ -712,6 +706,8 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
         const mobileDrawerBtn = document.getElementById('mobile-btn-drawer');
 
         function toggleDrawer(open) {
+            const drawer = document.getElementById('reader-drawer');
+            const drawerOverlay = document.getElementById('reader-drawer-overlay');
             if (!drawer || !drawerOverlay) return;
             drawer.classList.toggle('is-active', open);
             drawerOverlay.classList.toggle('is-active', open);
@@ -720,12 +716,12 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
 
         openDrawerBtn?.addEventListener('click', () => toggleDrawer(true));
         mobileDrawerBtn?.addEventListener('click', () => toggleDrawer(true));
-        closeDrawerBtn?.addEventListener('click', () => toggleDrawer(false));
-        drawerOverlay?.addEventListener('click', () => toggleDrawer(false));
+        document.getElementById('close-drawer-btn')?.addEventListener('click', () => toggleDrawer(false));
+        document.getElementById('reader-drawer-overlay')?.addEventListener('click', () => toggleDrawer(false));
 
-        drawerSearch?.addEventListener('input', (e) => renderDrawerItems(e.target.value));
+        document.getElementById('drawer-chapter-search')?.addEventListener('input', (e) => renderDrawerItems(e.target.value));
 
-        drawerList?.addEventListener('click', (e) => {
+        document.getElementById('drawer-chapter-list')?.addEventListener('click', (e) => {
             const item = e.target.closest('a.drawer-chapter-item');
             if (item && item.dataset.chapterId) {
                 e.preventDefault();
@@ -743,6 +739,7 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
         const mobileSettingsBtn = document.getElementById('mobile-btn-settings');
 
         function toggleSettingsPanel() {
+            const settingsPanel = document.getElementById('reader-settings-panel');
             if (!settingsPanel) return;
             settingsPanel.classList.toggle('is-active');
         }
@@ -757,12 +754,13 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
         });
 
         document.addEventListener('click', (e) => {
+            const settingsPanel = document.getElementById('reader-settings-panel');
             if (settingsPanel && !settingsPanel.contains(e.target) && !toggleSettingsBtn?.contains(e.target)) {
                 settingsPanel.classList.remove('is-active');
             }
         });
 
-        settingsPanel?.querySelectorAll('.theme-pill').forEach(pill => {
+        document.getElementById('reader-settings-panel')?.querySelectorAll('.theme-pill').forEach(pill => {
             pill.addEventListener('click', () => {
                 readerSettings.theme = pill.dataset.theme;
                 saveSettings();
@@ -823,6 +821,7 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
 
         window.addEventListener('scroll', () => {
             const currentY = window.pageYOffset;
+            const mobileAppBar = document.getElementById('mobile-app-bar');
             if (mobileAppBar) {
                 if (currentY > lastScrollY && currentY > 200) {
                     mobileAppBar.classList.add('is-hidden');
@@ -837,6 +836,7 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
         // Desktop Keyboard Shortcuts
         document.addEventListener('keydown', (e) => {
             if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName)) return;
+            const drawer = document.getElementById('reader-drawer');
             if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') {
                 if (currentChapterIndex > 0) navigateToChapter(chapterIds[currentChapterIndex - 1]);
             } else if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') {
@@ -844,7 +844,7 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
             } else if (e.key === 'f' || e.key === 'F') {
                 toggleFocusMode(!document.body.classList.contains('focus-mode'));
             } else if (e.key === 'm' || e.key === 'M') {
-                toggleDrawer(!drawer.classList.contains('is-active'));
+                if (drawer) toggleDrawer(!drawer.classList.contains('is-active'));
             } else if (e.key === 's' || e.key === 'S') {
                 toggleSettingsPanel();
             }
