@@ -755,7 +755,7 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
 
         document.addEventListener('click', (e) => {
             const settingsPanel = document.getElementById('reader-settings-panel');
-            if (settingsPanel && !settingsPanel.contains(e.target) && !toggleSettingsBtn?.contains(e.target)) {
+            if (settingsPanel && !settingsPanel.contains(e.target) && !toggleSettingsBtn?.contains(e.target) && !mobileSettingsBtn?.contains(e.target)) {
                 settingsPanel.classList.remove('is-active');
             }
         });
