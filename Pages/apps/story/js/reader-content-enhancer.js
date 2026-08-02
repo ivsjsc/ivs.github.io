@@ -6,6 +6,7 @@
     'use strict';
 
     const DIALOGUE_START = /^[“"'‘—–-]/;
+    const QUOTED_DIALOGUE = /“[^”]+”|"[^"]+"/g;
     const SCENE_MARKER = /^(?:✦|✧|❖|◆|◇|⁂|\*\s*\*\s*\*)$/;
     const SENTENCE_END = /[.!?…:;”"']$/;
 
@@ -28,6 +29,66 @@
         if (!text || text.length > 72) return false;
         const words = text.split(/\s+/).filter(Boolean);
         return words.length <= 10 || (words.length <= 14 && SENTENCE_END.test(text));
+    }
+
+    function locateTextPosition(root, absoluteOffset) {
+        const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+        let traversed = 0;
+        let lastNode = null;
+
+        while (walker.nextNode()) {
+            const node = walker.currentNode;
+            const length = node.nodeValue?.length || 0;
+            const nextOffset = traversed + length;
+            lastNode = node;
+
+            if (absoluteOffset <= nextOffset) {
+                return {
+                    node,
+                    offset: Math.max(0, Math.min(length, absoluteOffset - traversed)),
+                };
+            }
+
+            traversed = nextOffset;
+        }
+
+        return lastNode
+            ? { node: lastNode, offset: lastNode.nodeValue?.length || 0 }
+            : null;
+    }
+
+    function isAlreadyItalicized(startNode, endNode) {
+        const italicAncestor = startNode?.parentElement?.closest('em, i, .dialogue-quote');
+        return Boolean(italicAncestor && italicAncestor.contains(endNode));
+    }
+
+    function italicizeQuotedDialogue(paragraph) {
+        if (!paragraph || paragraph.dataset.dialogueItalicized === 'true') return;
+
+        const rawText = String(paragraph.textContent || '');
+        const matches = Array.from(rawText.matchAll(QUOTED_DIALOGUE))
+            .filter((match) => match[0].slice(1, -1).trim().length > 0);
+
+        // Process from the end so character offsets before each match remain stable.
+        matches.reverse().forEach((match) => {
+            const startOffset = match.index;
+            const endOffset = startOffset + match[0].length;
+            const start = locateTextPosition(paragraph, startOffset);
+            const end = locateTextPosition(paragraph, endOffset);
+
+            if (!start || !end || isAlreadyItalicized(start.node, end.node)) return;
+
+            const range = document.createRange();
+            range.setStart(start.node, start.offset);
+            range.setEnd(end.node, end.offset);
+
+            const emphasis = document.createElement('em');
+            emphasis.className = 'dialogue-quote';
+            emphasis.appendChild(range.extractContents());
+            range.insertNode(emphasis);
+        });
+
+        paragraph.dataset.dialogueItalicized = 'true';
     }
 
     function createSceneBreak(paragraph) {
@@ -62,15 +123,19 @@
                 return;
             }
 
+            italicizeQuotedDialogue(paragraph);
             paragraph.classList.toggle('is-dialogue', DIALOGUE_START.test(text));
             paragraph.classList.toggle('is-short', isShortBeat(text));
             paragraph.classList.toggle('is-decree', isLikelyDecree(text));
 
+<<<<<<< HEAD
             // Wrap ONLY the spoken dialogue text inside double quotation marks with <span class="dialogue-quote"> for distinct italic styling, keeping narrative tags normal.
             if (paragraph.innerHTML.includes('"') || paragraph.innerHTML.includes('“') || paragraph.innerHTML.includes('”')) {
                 paragraph.innerHTML = paragraph.innerHTML.replace(/(?:“|")([^"”]+)(?:”|")/g, '<span class="dialogue-quote">“$1”</span>');
             }
 
+=======
+>>>>>>> df144b59c06359f319b5f4c62e1d1879a2086fd1
             if (afterSceneBreak) {
                 paragraph.classList.add('is-section-opening');
                 afterSceneBreak = false;

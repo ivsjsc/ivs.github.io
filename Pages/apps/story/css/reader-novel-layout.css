@@ -71,17 +71,24 @@
   margin-top: 0.42rem;
 }
 
-/* Dialogue receives a compact, stable rhythm without changing the text. */
+/* Dialogue receives a compact, stable rhythm without changing narration. */
 .chapter-body p.is-dialogue {
   margin-top: 0.22rem;
   margin-bottom: 0.68rem;
   text-wrap: pretty;
 }
 
+<<<<<<< HEAD
 /* Explicitly style only the spoken dialogue within quotation marks */
 .chapter-body .dialogue-quote {
   font-style: italic;
   letter-spacing: 0.005em;
+=======
+/* Only the exact text enclosed in double quotation marks is italicized. */
+.chapter-body .dialogue-quote {
+  font-style: italic;
+  font-synthesis: style;
+>>>>>>> df144b59c06359f319b5f4c62e1d1879a2086fd1
 }
 
 /* Divine decrees and similar all-caps pronouncements need visual hierarchy. */
