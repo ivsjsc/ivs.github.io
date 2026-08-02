@@ -374,6 +374,12 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
                             <span class="hidden xl:inline">${lang === 'vi' ? 'Trang Chủ' : 'Home'}</span>
                         </a>
 
+                        <!-- Language Switcher Button -->
+                        <a id="btn-switch-lang" href="${lang === 'vi' ? 'read-legnaxe_part1_en.html' : 'read-legnaxe_part1_vi.html'}" class="reader-btn reader-btn-nav text-slate-700 dark:text-slate-200 font-bold" title="${lang === 'vi' ? 'Đổi sang Tiếng Anh (English)' : 'Switch to Vietnamese (Tiếng Việt)'}">
+                            <i class="fas fa-globe"></i>
+                            <span class="text-xs uppercase">${lang === 'vi' ? 'EN' : 'VI'}</span>
+                        </a>
+
                         <!-- TTS Button -->
                         <button id="tts-toggle-btn" class="reader-btn reader-btn-primary shadow-sm" title="Nghe truyện bằng AI Voice">
                             <i id="tts-icon" class="fas fa-play"></i>
@@ -495,35 +501,7 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
         }
     }
 
-    // 5. LOAD ALL CHAPTER METADATA FOR DRAWER & SELECT
-    async function loadAllChapterMetadata() {
-        for (let i = 1; i <= totalChapters; i++) {
-            chapterIds.push(`chapter-${i}`);
-        }
-        if (hasSpecialChapter) {
-            chapterIds.push(isPart1 ? 'epilogue' : 'after-credit');
-        }
 
-        for (let i = 0; i < chapterIds.length; i++) {
-            const id = chapterIds[i];
-            let fileName = id.startsWith('chapter-') ? `chapter_${id.split('-')[1].padStart(2, '0')}.json` : `${id}.json`;
-            const path = `../data/novels/${storyPath}/${fileName}`;
-
-            try {
-                const res = await fetch(path);
-                if (res.ok) {
-                    const data = await res.json();
-                    const parsed = parseChapterData(data, id);
-                    chapterTitlesMap.set(id, parsed);
-                }
-            } catch (err) {
-                console.error('Error fetching metadata for', id, err);
-            }
-        }
-
-        renderDrawerItems();
-        renderQuickSelectOptions();
-    }
 
     function renderQuickSelectOptions() {
         const quickSelect = document.getElementById('quick-chapter-select');
@@ -570,8 +548,81 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
         }).join('');
     }
 
+    // Memory Cache for loaded JSON chapter data
+    const chapterDataCache = new Map();
+
+    // 5. LOAD ALL CHAPTER METADATA FOR DRAWER & SELECT (Async background loading)
+    function buildChapterIdsList() {
+        for (let i = 1; i <= totalChapters; i++) {
+            chapterIds.push(`chapter-${i}`);
+        }
+        if (hasSpecialChapter) {
+            chapterIds.push(isPart1 ? 'epilogue' : 'after-credit');
+        }
+    }
+
+    async function loadAllChapterMetadata() {
+        if (chapterIds.length === 0) buildChapterIdsList();
+        renderQuickSelectOptions(); // Initial quick render with default chapter IDs
+
+        // Load all chapter metadata concurrently using Promise.all in batches or asynchronously
+        const fetchTasks = chapterIds.map(async (id) => {
+            let fileName = id.startsWith('chapter-') ? `chapter_${id.split('-')[1].padStart(2, '0')}.json` : `${id}.json`;
+            const path = `../data/novels/${storyPath}/${fileName}`;
+            try {
+                // Reuse from cache if already loaded
+                let data = chapterDataCache.get(id);
+                if (!data) {
+                    const res = await fetch(path);
+                    if (res.ok) {
+                        data = await res.json();
+                        chapterDataCache.set(id, data);
+                    }
+                }
+                if (data) {
+                    const parsed = parseChapterData(data, id);
+                    chapterTitlesMap.set(id, parsed);
+                }
+            } catch (err) {
+                console.error('Error fetching metadata for', id, err);
+            }
+        });
+
+        await Promise.all(fetchTasks);
+        renderDrawerItems();
+        renderQuickSelectOptions();
+    }
+
+    // Prefetch adjacent chapters (previous & next) to make switching instant
+    function prefetchAdjacentChapters(currentIndex) {
+        const indicesToPrefetch = [currentIndex - 1, currentIndex + 1].filter(idx => idx >= 0 && idx < chapterIds.length);
+        indicesToPrefetch.forEach(idx => {
+            const id = chapterIds[idx];
+            if (!chapterDataCache.has(id)) {
+                let fileName = id.startsWith('chapter-') ? `chapter_${id.split('-')[1].padStart(2, '0')}.json` : `${id}.json`;
+                const path = `../data/novels/${storyPath}/${fileName}`;
+                fetch(path)
+                    .then(res => res.ok ? res.json() : null)
+                    .then(data => {
+                        if (data) {
+                            chapterDataCache.set(id, data);
+                            if (!chapterTitlesMap.has(id)) {
+                                chapterTitlesMap.set(id, parseChapterData(data, id));
+                            }
+                        }
+                    })
+                    .catch(() => {});
+            }
+        });
+    }
+
     // 6. FETCH & RENDER CHAPTER CONTENT
     async function fetchChapterContent(chapterId) {
+        // Return from cache if already loaded
+        if (chapterDataCache.has(chapterId)) {
+            return chapterDataCache.get(chapterId);
+        }
+
         dynamicContent.innerHTML = `
             <div class="p-12 text-center chapter-meta-info">
                 <i class="fas fa-spinner fa-spin text-3xl mb-3 text-blue-500"></i>
@@ -586,7 +637,9 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
         try {
             const res = await fetch(path);
             if (!res.ok) throw new Error(`HTTP Error ${res.status}`);
-            return await res.json();
+            const data = await res.json();
+            chapterDataCache.set(chapterId, data);
+            return data;
         } catch (err) {
             console.error('Fetch chapter failed:', err);
             dynamicContent.innerHTML = `<p class="p-6 text-center text-red-500">Lỗi không thể tải chương: ${chapterId}</p>`;
@@ -627,6 +680,12 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
         const quickSelect = document.getElementById('quick-chapter-select');
         if (quickSelect) quickSelect.value = chapterId;
         renderDrawerItems();
+
+        const langBtn = document.getElementById('btn-switch-lang');
+        if (langBtn) {
+            const targetPage = lang === 'vi' ? 'read-legnaxe_part1_en.html' : 'read-legnaxe_part1_vi.html';
+            langBtn.href = `${targetPage}#${chapterId}`;
+        }
 
         const headerOffset = 90;
         window.scrollTo({ top: mainElement.offsetTop - headerOffset, behavior: 'smooth' });
@@ -872,6 +931,7 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
             currentChapterIndex = chapterIds.indexOf(chapterId);
             renderChapter(data, chapterId);
             updateNavigationButtons();
+            prefetchAdjacentChapters(currentChapterIndex);
             if (window.location.hash.substring(1) !== chapterId) {
                 window.location.hash = chapterId;
             }
@@ -1106,15 +1166,19 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
     // 10. INITIALIZATION
     async function init() {
         applyReaderSettings();
-        await loadAllChapterMetadata();
+        buildChapterIdsList();
         bindEventListeners();
 
         const initialHash = window.location.hash.substring(1);
-        if (initialHash && chapterIds.includes(initialHash)) {
-            navigateToChapter(initialHash);
-        } else if (chapterIds.length > 0) {
-            navigateToChapter(chapterIds[0]);
+        const targetChapter = (initialHash && chapterIds.includes(initialHash)) ? initialHash : chapterIds[0];
+        
+        // Step 1: Render target chapter IMMEDIATELY (Highest Priority)
+        if (targetChapter) {
+            await navigateToChapter(targetChapter);
         }
+
+        // Step 2: Load all other metadata asynchronously in background without blocking UI
+        loadAllChapterMetadata();
     }
 
     init();
