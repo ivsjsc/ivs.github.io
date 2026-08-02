@@ -662,15 +662,35 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
         const voices = synth.getVoices();
         const targetLang = lang === 'vi' ? 'vi-VN' : 'en';
         availableVoices = lang === 'vi'
-            ? voices.filter(v => v.lang === 'vi-VN')
+            ? voices.filter(v => v.lang.toLowerCase().startsWith('vi'))
             : voices.filter(v => v.lang.startsWith('en-'));
 
         // Fallback: if no lang-specific voices, offer all
         if (availableVoices.length === 0) availableVoices = voices;
 
-        // Sort: Google/Natural voices first
+        // Sort voices to pick the best/most natural default voice
         availableVoices.sort((a, b) => {
-            const score = v => (v.name.includes('Google') ? 3 : 0) + (v.name.includes('Natural') ? 2 : 0) + (v.name.includes('Microsoft') ? 1 : 0);
+            const score = v => {
+                let s = 0;
+                const name = v.name.toLowerCase();
+                if (lang === 'vi') {
+                    if (name.includes('namminh') || name.includes('nam minh')) s += 100;
+                    if (name.includes('hoaimy') || name.includes('hoai my')) s += 50;
+                    if (name.includes('natural')) s += 30;
+                    if (name.includes('google')) s += 20;
+                    if (name.includes('microsoft')) s += 10;
+                } else {
+                    // English voices ranking
+                    if (name.includes('natural')) s += 50;
+                    if (name.includes('online')) s += 40;
+                    if (name.includes('aria') || name.includes('guy') || name.includes('jenny')) s += 30;
+                    if (name.includes('google')) s += 20;
+                    if (name.includes('neural')) s += 20;
+                    if (name.includes('premium') || name.includes('enhanced')) s += 15;
+                    if (name.includes('microsoft')) s += 10;
+                }
+                return s;
+            };
             return score(b) - score(a);
         });
 
@@ -681,9 +701,12 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
             return `<option value="${i}">${label} (${v.lang})</option>`;
         }).join('');
 
-        // Restore saved voice
+        // Restore saved voice, or set default to index 0 (top-scored best voice)
         if (readerSettings.voiceIndex !== undefined && availableVoices[readerSettings.voiceIndex]) {
             sel.value = String(readerSettings.voiceIndex);
+        } else {
+            sel.value = '0';
+            readerSettings.voiceIndex = 0;
         }
     }
 

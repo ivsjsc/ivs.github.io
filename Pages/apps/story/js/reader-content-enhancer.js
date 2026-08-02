@@ -66,9 +66,9 @@
             paragraph.classList.toggle('is-short', isShortBeat(text));
             paragraph.classList.toggle('is-decree', isLikelyDecree(text));
 
-            // Wrap quotes inside double quotation marks with <em> for italic style
+            // Wrap ONLY the spoken dialogue text inside double quotation marks with <span class="dialogue-quote"> for distinct italic styling, keeping narrative tags normal.
             if (paragraph.innerHTML.includes('"') || paragraph.innerHTML.includes('“') || paragraph.innerHTML.includes('”')) {
-                paragraph.innerHTML = paragraph.innerHTML.replace(/(?:“|")([^"”]+)(?:”|")/g, '<em>“$1”</em>');
+                paragraph.innerHTML = paragraph.innerHTML.replace(/(?:“|")([^"”]+)(?:”|")/g, '<span class="dialogue-quote">“$1”</span>');
             }
 
             if (afterSceneBreak) {

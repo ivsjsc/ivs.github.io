@@ -73,10 +73,15 @@
 
 /* Dialogue receives a compact, stable rhythm without changing the text. */
 .chapter-body p.is-dialogue {
-  margin-top: 0.18rem;
+  margin-top: 0.22rem;
   margin-bottom: 0.68rem;
   text-wrap: pretty;
+}
+
+/* Explicitly style only the spoken dialogue within quotation marks */
+.chapter-body .dialogue-quote {
   font-style: italic;
+  letter-spacing: 0.005em;
 }
 
 /* Divine decrees and similar all-caps pronouncements need visual hierarchy. */
