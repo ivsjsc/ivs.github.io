@@ -39,11 +39,11 @@
 
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="../css/reader.css">
+    <link rel="stylesheet" href="../css/reader-novel-layout.css?v=20260802">
 </head>
 <body class="text-gray-800 dark:text-gray-200 transition-colors duration-300 ease-in-out font-sans antialiased" id="page-readnovel">
     <header id="header-placeholder"></header>
 
-    <!-- Top Fixed Progress Bar -->
     <div class="progress-shell-fixed">
         <div class="progress-bar progress-bar-glow h-1" style="width: 0%"></div>
     </div>
@@ -54,16 +54,12 @@
         <img src="../images/legnaxe1horizontal.jpg" alt="LEGNAXE Part 1 Banner" class="novel-banner-img mb-6 rounded-2xl shadow-xl w-full max-h-[300px] sm:max-h-[380px] object-cover border border-slate-200 dark:border-slate-800" 
              onerror="this.onerror=null; this.src='https://placehold.co/1200x400/374151/ffffff?text=LEGNAXE+Phần+1+Banner';">
 
-        <!-- Dynamic Sticky Toolbar Injected by JS -->
         <div class="reader-toolbar mb-6"></div>
 
         <div class="story-content-wrapper p-5 sm:p-10 rounded-3xl transition-all duration-300">
-            <!-- Dynamic Chapter Content Area -->
             <div id="dynamic-chapter-content">
                 <p class="text-center text-gray-500 dark:text-gray-400">Đang tải chương truyện...</p>
             </div>
-
-
         </div>
     </main>
 
@@ -73,11 +69,11 @@
 
     <footer id="footer-placeholder"></footer>
 
-    <!-- Scripts -->
     <script src="/js/utils.js"></script>
     <script src="/js/language.js"></script>
     <script src="/ai/js/loadComponents.js"></script>
     <script src="../js/chapter-loader.js?v=20260802"></script>
+    <script src="../js/reader-content-enhancer.js?v=20260802"></script>
     
     <script>
         document.addEventListener('DOMContentLoaded', () => {
