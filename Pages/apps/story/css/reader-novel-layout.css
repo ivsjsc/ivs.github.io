@@ -76,6 +76,7 @@
   margin-top: 0.18rem;
   margin-bottom: 0.68rem;
   text-wrap: pretty;
+  font-style: italic;
 }
 
 /* Divine decrees and similar all-caps pronouncements need visual hierarchy. */

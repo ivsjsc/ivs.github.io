@@ -66,6 +66,11 @@
             paragraph.classList.toggle('is-short', isShortBeat(text));
             paragraph.classList.toggle('is-decree', isLikelyDecree(text));
 
+            // Wrap quotes inside double quotation marks with <em> for italic style
+            if (paragraph.innerHTML.includes('"') || paragraph.innerHTML.includes('“') || paragraph.innerHTML.includes('”')) {
+                paragraph.innerHTML = paragraph.innerHTML.replace(/(?:“|")([^"”]+)(?:”|")/g, '<em>“$1”</em>');
+            }
+
             if (afterSceneBreak) {
                 paragraph.classList.add('is-section-opening');
                 afterSceneBreak = false;
