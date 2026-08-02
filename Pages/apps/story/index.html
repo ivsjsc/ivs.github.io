@@ -3,314 +3,558 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-lang-key="story_repo_page_title">Kho Truyện Sáng Tạo IVS - Nơi Khơi Nguồn Trí Tuệ</title>
-    <meta name="description" data-lang-key="story_repo_meta_description" content="Khám phá kho tàng truyện kể từ IVS. Đắm mình vào những thế giới kỳ ảo, những câu chuyện ý nghĩa và những cuộc phiêu lưu đầy cảm hứng về Giáo dục, Công nghệ và AI.">
-    
-    <!-- Tải Tailwind CSS CDN cho styling hiện đại -->
+    <title>Kho Truyện LEGNAXE - IVS Creative Stories</title>
+    <meta name="description" content="Khám phá bộ tiểu thuyết LEGNAXE từ IVS — hành trình giữa Thiên Đàng và Trần Gian, giữa ánh sáng và bóng tối, giữa sứ mệnh và lòng người.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;1,14..32,400&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        // Cấu hình Tailwind cho Dark Mode và font Inter
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
-                    colors: {
-                        'ivs-primary': '#1D4ED8', // Blue-700
-                        'ivs-secondary': '#FBBF24', // Amber-400
-                        'ivs-dark': '#1F2937', // Gray-800
-                        'ivs-light': '#F9FAFB', // Gray-50
-                    },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
+                        display: ['Cinzel', 'serif'],
                     },
                 }
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+
     <style>
-        body { 
-            font-family: 'Inter', sans-serif; 
-            /* Light Mode Gradient: Tinh tế từ trắng ngà sang xám nhạt */
-            background: linear-gradient(180deg, #F9FAFB 0%, #E5E7EB 100%);
-            background-attachment: fixed;
+        :root {
+            --bg-page: #F4F3EF;
+            --bg-card: #FAFAF8;
+            --border-card: rgba(0,0,0,0.07);
+            --text-primary: #1a1a1a;
+            --text-muted: #6B7280;
+            --accent: #C9A96E;
+            --accent-dark: #A07840;
+            --glow: rgba(201,169,110,0.15);
         }
-        /* Dark Mode Gradient: Chuyển từ đen than sang xám đậm */
-        .dark body {
-            background: linear-gradient(180deg, #111827 0%, #1F2937 100%);
-        }
-        
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--bg-color, #f1f1f1); }
-        ::-webkit-scrollbar-thumb { background: var(--scroll-color, #888); border-radius: 4px; }
         .dark {
-            --bg-color: #1F2937;
-            --scroll-color: #4B5563;
+            --bg-page: #0F0E0C;
+            --bg-card: #1A1916;
+            --border-card: rgba(255,255,255,0.06);
+            --text-primary: #F0EDE6;
+            --text-muted: #9CA3AF;
+            --glow: rgba(201,169,110,0.12);
         }
-        :not(.dark) {
-            --bg-color: #F9FAFB;
-            --scroll-color: #D1D5DB;
+
+        * { box-sizing: border-box; }
+
+        html, body {
+            margin: 0;
+            padding: 0;
         }
-        /* Style cho Card */
-        .story-card { 
-            transition: transform 0.2s, box-shadow 0.2s; 
-            min-height: 250px; /* Đảm bảo chiều cao đồng đều */
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-page);
+            color: var(--text-primary);
+            transition: background-color 0.3s, color 0.3s;
+            min-height: 100vh;
         }
-        .story-card:hover { 
-            transform: translateY(-4px); 
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15); 
+
+        /* ========= HERO ========= */
+        .hero-section {
+            position: relative;
+            overflow: hidden;
+            padding: 80px 24px 64px;
+            text-align: center;
         }
-        .content-area { min-height: calc(100vh - 150px); }
-        .line-clamp-3 { 
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(201,169,110,0.18) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .dark .hero-section::before {
+            background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(201,169,110,0.10) 0%, transparent 70%);
+        }
+
+        .hero-eyebrow {
+            font-family: 'Cinzel', serif;
+            font-size: 11px;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 14px;
+            display: block;
+        }
+        .hero-title {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.2rem, 6vw, 4.2rem);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+            color: var(--text-primary);
+            margin: 0 0 16px;
+        }
+        .hero-title span {
+            color: var(--accent);
+        }
+        .hero-subtitle {
+            max-width: 520px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        /* Ornamental divider */
+        .ornament {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            max-width: 240px;
+            margin: 40px auto 36px;
+        }
+        .ornament::before,
+        .ornament::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--accent), transparent);
+            opacity: 0.4;
+        }
+        .ornament span {
+            color: var(--accent);
+            font-size: 16px;
+            opacity: 0.6;
+        }
+
+        /* ========= SEARCH BAR ========= */
+        .search-wrapper {
+            max-width: 500px;
+            margin: 0 auto 12px;
+            position: relative;
+            padding: 0 24px;
+        }
+        .search-wrapper input {
+            width: 100%;
+            padding: 13px 20px 13px 46px;
+            border-radius: 50px;
+            border: 1px solid var(--border-card);
+            background: var(--bg-card);
+            color: var(--text-primary);
+            font-size: 0.92rem;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            font-family: 'Inter', sans-serif;
+        }
+        .search-wrapper input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--glow);
+        }
+        .search-wrapper input::placeholder {
+            color: var(--text-muted);
+        }
+        .search-icon {
+            position: absolute;
+            left: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 14px;
+            pointer-events: none;
+        }
+
+        /* ========= NOVEL CARDS ========= */
+        .novels-grid {
+            max-width: 860px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+            padding: 0 24px 80px;
+        }
+
+        .novel-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+        .novel-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(201,169,110,0.25);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.10);
+        }
+        .dark .novel-card:hover {
+            box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+            border-color: rgba(201,169,110,0.20);
+        }
+
+        @media (min-width: 600px) {
+            .novel-card {
+                flex-direction: row;
+            }
+        }
+
+        /* Cover image */
+        .novel-cover {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            flex-shrink: 0;
+            display: block;
+        }
+        @media (min-width: 600px) {
+            .novel-cover {
+                width: 210px;
+                height: auto;
+                min-height: 200px;
+            }
+        }
+
+        /* Card body */
+        .novel-body {
+            padding: 22px 26px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        /* Header row */
+        .novel-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .novel-badge {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 50px;
+            background: rgba(201,169,110,0.12);
+            color: var(--accent-dark);
+            border: 1px solid rgba(201,169,110,0.25);
+        }
+        .dark .novel-badge {
+            color: var(--accent);
+        }
+        .novel-part {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 500;
+            letter-spacing: 0.03em;
+        }
+
+        /* Title & description */
+        .novel-title {
+            font-family: 'Cinzel', serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            line-height: 1.35;
+            color: var(--text-primary);
+            margin: 0;
+            transition: color 0.2s;
+        }
+        .novel-description {
+            font-size: 0.875rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            margin: 0;
             display: -webkit-box;
             -webkit-line-clamp: 3;
             line-clamp: 3;
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
-        /* Custom arrow cho select box */
-        .bg-filter-arrow {
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%234B5563'%3e%3cpath d='M7 7l3 3 3-3' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
-            background-size: 1.5rem;
-        }
-        .dark .bg-filter-arrow {
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%23D1D5DB'%3e%3cpath d='M7 7l3 3 3-3' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
-        }
-</style>
-    <meta property="og:url" content="https://ivsacademy.edu.vn/Pages/apps/story-repository.html" />
-</head>
-<body class="text-ivs-dark dark:text-ivs-light transition-colors duration-300">
 
-    <!-- 1. COMPONENT PLACEHOLDERS: Tải Header từ ivs/components/header.html -->
+        /* Footer row */
+        .novel-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: auto;
+        }
+
+        /* Language toggle */
+        .lang-toggle {
+            display: inline-flex;
+            align-items: center;
+            border-radius: 50px;
+            border: 1px solid var(--border-card);
+            overflow: hidden;
+            background: var(--bg-page);
+        }
+        .lang-btn {
+            padding: 7px 16px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            transition: background 0.18s, color 0.18s;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.02em;
+            line-height: 1;
+        }
+        .lang-btn:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: -2px;
+        }
+        .lang-btn.active {
+            background: var(--accent);
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+
+        /* Read button */
+        .read-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 9px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            text-decoration: none;
+            background: var(--accent);
+            color: #1a1a1a;
+            transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+            letter-spacing: 0.02em;
+            flex-shrink: 0;
+        }
+        .read-btn:hover {
+            background: var(--accent-dark);
+            color: #fff;
+            transform: translateX(2px);
+            box-shadow: 0 4px 16px rgba(160,120,64,0.3);
+        }
+
+        /* Author line */
+        .novel-author {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+        .novel-author strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* ========= NO RESULTS ========= */
+        .no-results {
+            text-align: center;
+            padding: 60px 24px;
+            color: var(--text-muted);
+            display: none;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .no-results.visible { display: block; }
+        .no-results i {
+            font-size: 2.2rem;
+            margin-bottom: 14px;
+            opacity: 0.35;
+            display: block;
+        }
+        .no-results p { margin: 0 0 6px; }
+
+        /* ========= SCROLLBAR ========= */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(201,169,110,0.3); border-radius: 3px; }
+    </style>
+
+    <meta property="og:url" content="https://ivsacademy.edu.vn/Pages/apps/story/index.html">
+    <meta property="og:title" content="Kho Truyện LEGNAXE - IVS Creative Stories">
+    <meta property="og:description" content="Khám phá bộ tiểu thuyết LEGNAXE — hành trình kỳ bí giữa Thiên Đàng và Trần Gian.">
+</head>
+<body>
+
+    <!-- Header -->
     <div id="header-placeholder"></div>
 
-    <main class="content-area max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <!-- Hero Section -->
-        <section class="text-center mb-12 p-6 bg-ivs-primary/10 dark:bg-ivs-primary/20 rounded-2xl shadow-lg">
-            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ivs-primary dark:text-ivs-secondary mb-3" data-lang-key="story_repo_title">Kho Truyện Sáng Tạo IVS</h1>
-            <p class="text-lg text-gray-700 dark:text-gray-300" data-lang-key="story_repo_subtitle">Nơi Khơi Nguồn Trí Tuệ và Cảm Hứng từ các dự án EdTech và AI.</p>
+    <main>
+        <!-- ===== HERO ===== -->
+        <section class="hero-section">
+            <span class="hero-eyebrow">IVS Creative Universe</span>
+            <h1 class="hero-title">Kho Truyện <span>LEGNAXE</span></h1>
+            <p class="hero-subtitle">
+                Hành trình kỳ bí giữa Thiên Đàng và Trần Gian, giữa ánh sáng và bóng tối —<br>
+                nơi sứ mệnh gặp lòng người.
+            </p>
         </section>
 
+        <!-- ===== SEARCH ===== -->
+        <div class="search-wrapper">
+            <i class="fas fa-search search-icon"></i>
+            <input
+                type="text"
+                id="storySearch"
+                placeholder="Tìm theo tiêu đề, tác giả..."
+                oninput="filterStories()"
+                autocomplete="off"
+            >
+        </div>
 
-        <!-- Search and Filter Section (Mobile-Optimized) -->
-        <section class="mb-8 p-4 bg-white dark:bg-gray-800 rounded-xl shadow-lg">
-            <div class="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
-                <!-- Search Input -->
-                <div class="flex-grow">
-                    <input type="text" id="storySearch" data-lang-key="story_repo_search_placeholder" placeholder="Tìm kiếm theo tiêu đề, tác giả..."
-                           class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-ivs-primary focus:border-ivs-primary dark:bg-gray-700 dark:text-ivs-light"
-                           onkeyup="filterStories()">
-                </div>
-                <!-- Filter Dropdown -->
-                <div class="sm:w-1/3 md:w-1/4">
-                    <select id="storyFilter" onchange="filterStories()"
-                            class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-ivs-primary focus:border-ivs-primary dark:bg-gray-700 dark:text-ivs-light appearance-none bg-no-repeat bg-[right_0.7rem_center] bg-filter-arrow">
-                        <!-- Options sẽ được dịch bởi language.js -->
-                        <option value="all" data-lang-key="filter_all">Tất cả Chủ đề</option>
-                        <option value="novel" data-lang-key="filter_novel">Tiểu Thuyết (LEGNAXE)</option>
-                        <option value="ai-edtech" data-lang-key="filter_ai_edtech">AI & EdTech</option>
-                        <option value="k12" data-lang-key="filter_k12">Chương trình K-12</option>
-                        <option value="business" data-lang-key="filter_business">Kinh doanh & Quản trị</option>
-                        <option value="life" data-lang-key="filter_life">Kỹ năng sống</option>
-                    </select>
-                </div>
-            </div>
-        </section>
+        <!-- ===== ORNAMENT DIVIDER ===== -->
+        <div class="ornament">
+            <span>✦</span>
+        </div>
 
-        <!-- Story Grid Container -->
-        <section id="storyGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Nội dung truyện sẽ được load bằng JavaScript vào đây -->
-            <div id="loadingIndicator" class="col-span-full p-8 text-center text-gray-500 dark:text-gray-400">
-                <p>Đang tải danh sách truyện...</p>
-            </div>
-        </section>
-        
-        <!-- Message for no results -->
-        <div id="noResults" class="hidden col-span-full p-8 text-center text-gray-500 dark:text-gray-400">
-            <svg class="mx-auto w-12 h-12 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-            <p class="text-lg font-medium" data-lang-key="no_results_title">Không tìm thấy truyện nào phù hợp.</p>
-            <p data-lang-key="no_results_subtitle">Vui lòng thử từ khóa hoặc bộ lọc khác.</p>
+        <!-- ===== NOVELS GRID ===== -->
+        <div class="novels-grid" id="novelsGrid">
+            <!-- Rendered by JS -->
+        </div>
+
+        <!-- No Results -->
+        <div class="no-results" id="noResults">
+            <i class="fas fa-search"></i>
+            <p style="font-size:1rem; font-weight:600;">Không tìm thấy truyện nào.</p>
+            <p style="font-size:0.875rem;">Thử tìm với từ khóa khác nhé.</p>
         </div>
     </main>
 
-    <!-- 2. FAB Assistant Placeholder: Tải FAB Container/Button từ ivs/components/fab-container.html -->
+    <!-- FAB & Footer -->
     <div id="fab-container-placeholder"></div>
+    <div id="footer-placeholder"></div>
 
-    <!-- 3. FOOTER PLACEHOLDER: Tải Footer từ ivs/components/footer.html -->
-    <div data-loading-text="Đang tải chân trang..." id="footer-placeholder"></div>
-
-    <!-- 4. EXTERNAL SCRIPT LINKS (Tuân thủ cấu trúc IVS) -->
-    <!-- Scripts cơ bản và Utils -->
+    <!-- External Scripts -->
     <script src="/js/utils.js"></script>
-    <!-- Language, Component Loader, và FAB Controller -->
     <script src="/js/language.js"></script>
     <script src="/js/fabController.js"></script>
     <script src="/js/loadComponents.js"></script>
-    
+
     <script>
-        // Dữ liệu đã được cập nhật với các phần truyện LEGNAXE
-        const allStoriesData = [
-            // LEGNAXE - TIỂU THUYẾT (Ưu tiên)
+        /**
+         * Dữ liệu truyện — chỉ những file thực sự tồn tại.
+         * Mỗi entry là một TÁC PHẨM, có cả phiên bản VI và EN.
+         */
+        const novelsData = [
             {
-                id: 'legnaxe-part1-vi',
-                title: 'LEGNAXE: Bí mật cuộc đại chiến Thiên Đàng (Phần 1 - Tiếng Việt)',
-                description: 'LEGNAXE Phần 1: Khám phá nguồn gốc xung đột giữa các thiên thần, sự tạo dựng loài người và những lựa chọn định mệnh.',
-                category: 'novel',
-                tag: 'Tiểu Thuyết',
-                link: 'novels/read-legnaxe_part1_vi.html',
+                id: 'legnaxe-part1',
+                part: 'Phần 1 / Part 1',
+                badge: 'Tiểu Thuyết',
+                title_vi: 'LEGNAXE: Bí Mật Cuộc Đại Chiến Thiên Đàng',
+                title_en: 'LEGNAXE: The Secret of Great Heaven War',
+                desc_vi: 'Phần 1 mở ra nguồn gốc xung đột giữa các thiên thần — sự tạo dựng loài người, những lựa chọn định mệnh, và hạt giống của cuộc đại chiến vĩ đại trên Thiên Đàng.',
+                desc_en: 'Part 1 unveils the origins of the great conflict between angels — the creation of humankind, fateful choices, and the seeds of the greatest war Heaven has ever known.',
+                langs: {
+                    vi: 'novels/read-legnaxe_part1_vi.html',
+                    en: 'novels/read-legnaxe_part1_en.html',
+                },
                 author: 'NMT',
-                tagColor: 'bg-red-500/20 text-red-500',
+                cover: 'images/legnaxe1horizontal.jpg',
+                coverFallback: 'https://placehold.co/420x240/1A1916/C9A96E?text=LEGNAXE+Part+1',
             },
             {
-                id: 'legnaxe-part1-en',
-                title: 'LEGNAXE: The Secret of Great Heaven War (Part 1 - English)',
-                description: 'LEGNAXE Part 1: Explore the origins of the conflict between angels, the creation of humankind, and fateful choices.',
-                category: 'novel',
-                tag: 'Novel (EN)',
-                link: 'novels/read-legnaxe_part1_en.html',
+                id: 'legnaxe-part2',
+                part: 'Phần 2 / Part 2',
+                badge: 'Tiểu Thuyết',
+                title_vi: 'LEGNAXE: Thiên Thượng, Lòng Người',
+                title_en: "LEGNAXE: Heavenly, Human's Heart",
+                desc_vi: 'Phần 2 theo chân Healiangel và Lucifer trên Trần Gian — trận chiến định mệnh cuối cùng để giành lấy sự cân bằng giữa hai thế giới.',
+                desc_en: 'Part 2 follows Healiangel and Lucifer on Earth — the final fateful battle to reclaim balance between two worlds.',
+                langs: {
+                    vi: 'novels/read-legnaxe_part2_vi.html',
+                    en: 'novels/read-legnaxe_part2_en.html',
+                },
                 author: 'NMT',
-                tagColor: 'bg-red-500/20 text-red-500',
+                cover: 'images/legnaxe2horizontal.jpg',
+                coverFallback: 'https://placehold.co/420x240/1A1916/C9A96E?text=LEGNAXE+Part+2',
             },
-            {
-                id: 'legnaxe-part2-vi',
-                title: 'LEGNAXE: Thiên Thượng, Lòng Người (Phần 2 - Tiếng Việt)',
-                description: 'LEGNAXE Phần 2: Theo chân Healiangel và Lucifer trong trận chiến định mệnh trên Trần Gian để giành lấy sự cân bằng.',
-                category: 'novel',
-                tag: 'Tiểu Thuyết',
-                link: 'novels/read-legnaxe_part2_vi.html',
-                author: 'NMT',
-                tagColor: 'bg-red-500/20 text-red-500',
-            },
-            {
-                id: 'legnaxe-part2-en',
-                title: 'LEGNAXE: Heavenly, Human\'s Heart (Part 2 - English)',
-                description: 'LEGNAXE Part 2: Follow Healiangel and Lucifer in their fateful battle on Earth to claim the balance.',
-                category: 'novel',
-                tag: 'Novel (EN)',
-                link: 'novels/read-legnaxe_part2_en.html',
-                author: 'NMT',
-                tagColor: 'bg-red-500/20 text-red-500',
-            },
-            // CÁC BÀI VIẾT VỀ GIÁO DỤC, CÔNG NGHỆ KHÁC (Giữ lại mock data để trang không trống)
-            {
-                id: 'ai-adaptive-learning',
-                title: 'Cá nhân hóa lộ trình học tập với AI Adaptive Learning',
-                description: 'Phân tích cách IVS tích hợp AI để tối ưu hóa trải nghiệm học tập, giúp học sinh phát triển theo tốc độ riêng.',
-                category: 'ai-edtech',
-                tag: 'AI & EdTech',
-                link: '/Pages/blogs/ai-thinking-guide.html',
-                author: 'IVS Team',
-                tagColor: 'bg-ivs-primary/20 text-ivs-primary',
-            },
-            {
-                id: 'steam-k12',
-                title: 'Bí quyết Xây dựng Chương trình STEAM toàn diện',
-                description: 'Những thách thức và thành công của IVS trong việc phát triển giáo trình STEAM từ Mầm non đến THPT.',
-                category: 'k12',
-                tag: 'Chương trình K-12',
-                link: '/Pages/rnd-curriculum.html',
-                author: 'IVS Education',
-                tagColor: 'bg-ivs-secondary/20 text-ivs-secondary',
-            },
-            {
-                id: 'business-strategy',
-                title: 'Chiến lược Tối ưu Vận hành Đa ngành cho Doanh nghiệp',
-                description: 'Kinh nghiệm quản trị vận hành từ Khách sạn, Du lịch đến Trung tâm Giáo dục của CEO Nguyễn Minh Triết.',
-                category: 'business',
-                tag: 'Kinh doanh & Quản trị',
-                link: '/Pages/consulting.html',
-                author: 'NMT',
-                tagColor: 'bg-indigo-500/20 text-indigo-500',
-            },
-            // Thêm các truyện/bài viết khác tại đây
         ];
 
-        /**
-         * Render một Story Card từ dữ liệu JSON.
-         * @param {object} story - Đối tượng chứa thông tin truyện.
-         * @returns {string} HTML string cho card.
-         */
-        function renderStoryCard(story) {
-            return `
-                <article class="story-card bg-white dark:bg-gray-800 rounded-xl shadow-xl overflow-hidden" 
-                         data-category="${story.category}" 
-                         data-title="${story.title}"
-                         data-author="${story.author}">
-                    <div class="p-6 flex flex-col justify-between h-full">
-                        <div>
-                            <span class="inline-block ${story.tagColor} text-xs font-semibold px-3 py-1 rounded-full mb-3">${story.tag}</span>
-                            <h2 class="text-xl font-bold mb-2 text-gray-900 dark:text-ivs-light">${story.title}</h2>
-                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3">${story.description}</p>
-                        </div>
-                        <a href="${story.link}" class="mt-4 inline-flex items-center text-ivs-primary dark:text-ivs-secondary font-semibold hover:underline">
-                            Đọc Tiếp 
-                            <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        </a>
-                        <p class="text-xs text-gray-400 mt-2">Tác giả: ${story.author}</p>
-                    </div>
-                </article>
-            `;
+        /** Trạng thái ngôn ngữ đang chọn cho mỗi card */
+        const cardLangs = {};
+        novelsData.forEach(n => { cardLangs[n.id] = 'vi'; });
+
+        /** Chuyển đổi ngôn ngữ của một card */
+        function setCardLang(novelId, lang) {
+            cardLangs[novelId] = lang;
+
+            const card = document.querySelector(`[data-novel-id="${novelId}"]`);
+            if (!card) return;
+            const novel = novelsData.find(n => n.id === novelId);
+            if (!novel) return;
+
+            card.querySelector('.novel-title').textContent = novel[`title_${lang}`];
+            card.querySelector('.novel-description').textContent = novel[`desc_${lang}`];
+            card.querySelector('.read-btn').href = novel.langs[lang];
+            card.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
         }
 
+        /** Render HTML cho một novel card */
+        function renderNovelCard(novel) {
+            const lang = cardLangs[novel.id] || 'vi';
+            return `
+<article class="novel-card" data-novel-id="${novel.id}" data-title-vi="${novel.title_vi}" data-title-en="${novel.title_en}" data-author="${novel.author}">
+    <img src="${novel.cover}" alt="${novel.title_vi}" class="novel-cover"
+         onerror="this.onerror=null;this.src='${novel.coverFallback}';" loading="lazy">
+    <div class="novel-body">
+        <div class="novel-header">
+            <span class="novel-badge">${novel.badge}</span>
+            <span class="novel-part">${novel.part}</span>
+        </div>
+        <div>
+            <h2 class="novel-title">${novel[`title_${lang}`]}</h2>
+            <p class="novel-description" style="margin-top:8px;">${novel[`desc_${lang}`]}</p>
+        </div>
+        <div class="novel-footer">
+            <div class="lang-toggle" role="group" aria-label="Chọn ngôn ngữ">
+                <button class="lang-btn ${lang === 'vi' ? 'active' : ''}" data-lang="vi"
+                        onclick="setCardLang('${novel.id}', 'vi')">🇻🇳 Tiếng Việt</button>
+                <button class="lang-btn ${lang === 'en' ? 'active' : ''}" data-lang="en"
+                        onclick="setCardLang('${novel.id}', 'en')">🇬🇧 English</button>
+            </div>
+            <a href="${novel.langs[lang]}" class="read-btn">
+                Đọc Ngay <i class="fas fa-arrow-right" style="font-size:11px;"></i>
+            </a>
+        </div>
+        <p class="novel-author">Tác giả: <strong>${novel.author}</strong></p>
+    </div>
+</article>`;
+        }
 
-        /**
-         * Lọc và Tìm kiếm truyện.
-         */
+        /** Lọc và render danh sách truyện */
         function filterStories() {
-            const searchTerm = document.getElementById('storySearch').value.toLowerCase().trim();
-            const filterValue = document.getElementById('storyFilter').value;
-            const storyGrid = document.getElementById('storyGrid');
+            const term = document.getElementById('storySearch').value.toLowerCase().trim();
+            const grid = document.getElementById('novelsGrid');
             const noResults = document.getElementById('noResults');
-            const loadingIndicator = document.getElementById('loadingIndicator');
 
-            // Ẩn indicator khi bắt đầu lọc
-            loadingIndicator.classList.add('hidden');
-            storyGrid.innerHTML = ''; // Xóa nội dung cũ
-
-            const filteredStories = allStoriesData.filter(story => {
-                const titleMatch = story.title.toLowerCase().includes(searchTerm);
-                const authorMatch = story.author.toLowerCase().includes(searchTerm);
-                const categoryMatch = filterValue === 'all' || story.category === filterValue;
-                
-                return (titleMatch || authorMatch) && categoryMatch;
+            const filtered = novelsData.filter(novel => {
+                if (!term) return true;
+                return (
+                    novel.title_vi.toLowerCase().includes(term) ||
+                    novel.title_en.toLowerCase().includes(term) ||
+                    novel.author.toLowerCase().includes(term)
+                );
             });
 
-            if (filteredStories.length > 0) {
-                // Render các card truyện
-                filteredStories.forEach(story => {
-                    storyGrid.innerHTML += renderStoryCard(story);
-                });
-                noResults.classList.add('hidden');
-            } else {
-                noResults.classList.remove('hidden');
-            }
-        }
-        
-        // Gắn sự kiện filter cho input và select
-        document.getElementById('storySearch').addEventListener('keyup', filterStories);
-        document.getElementById('storyFilter').addEventListener('change', filterStories);
+            grid.innerHTML = filtered.map(renderNovelCard).join('');
 
-
-        /**
-         * Tải và hiển thị danh sách truyện khi trang tải xong.
-         */
-        function loadStoryRepository() {
-            console.log("Đang tải danh sách truyện từ kho dữ liệu...");
-            
-            // Giả lập độ trễ tải data để hiển thị loading indicator
-            setTimeout(() => {
-                filterStories(); // Gọi filter để render tất cả truyện
-                document.getElementById('loadingIndicator').classList.add('hidden');
-            }, 300); 
+            noResults.classList.toggle('visible', filtered.length === 0);
         }
 
-        // Chờ DOMContentLoaded để đảm bảo các phần tử HTML đã sẵn sàng
-        document.addEventListener('DOMContentLoaded', loadStoryRepository);
-
-        // Giả định loadComponents.js sẽ gọi language.js, và language.js sẽ dịch các data-lang-key.
-        // Sau khi tất cả component tải xong, loadStoryRepository sẽ được gọi để tải data truyện.
+        document.addEventListener('DOMContentLoaded', filterStories);
     </script>
 </body>
 </html>

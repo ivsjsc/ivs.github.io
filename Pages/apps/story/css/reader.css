@@ -596,3 +596,203 @@ body.focus-mode .focus-exit-btn {
   color: #ffffff !important;
 }
 
+/* ============================================================
+   10. TTS (Text-to-Speech) ENHANCEMENTS
+   ============================================================ */
+
+/* Active paragraph highlight when being read */
+.chapter-body p.tts-active {
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.10) 0%,
+    rgba(99, 102, 241, 0.07) 100%
+  );
+  border-left: 3px solid var(--reader-accent);
+  padding-left: 0.9rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+  margin-left: -0.9rem;
+  transition: background 0.3s ease, border-color 0.3s ease;
+  box-shadow: inset 0 0 0 1px rgba(59,130,246,0.08);
+  scroll-margin-top: 120px;
+}
+
+/* Theme-specific highlight overrides */
+html.theme-sepia .chapter-body p.tts-active {
+  background: linear-gradient(
+    135deg,
+    rgba(133, 49, 0, 0.09) 0%,
+    rgba(133, 49, 0, 0.05) 100%
+  );
+  border-left-color: var(--reader-accent);
+}
+
+html.dark .chapter-body p.tts-active,
+html.theme-midnight .chapter-body p.tts-active {
+  background: linear-gradient(
+    135deg,
+    rgba(56, 189, 248, 0.10) 0%,
+    rgba(99, 102, 241, 0.07) 100%
+  );
+  border-left-color: var(--reader-accent);
+}
+
+/* Pulse animation on tts-active */
+@keyframes tts-pulse-border {
+  0%, 100% { border-left-color: var(--reader-accent); opacity: 1; }
+  50% { border-left-color: color-mix(in srgb, var(--reader-accent) 60%, transparent); opacity: 0.85; }
+}
+
+.chapter-body p.tts-active {
+  animation: tts-pulse-border 2s ease-in-out infinite;
+}
+
+/* Floating TTS Player Bar */
+#tts-player-bar {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(calc(100% + 2rem));
+  z-index: 95;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 9999px;
+  background: var(--reader-toolbar-bg);
+  border: 1px solid var(--reader-border);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  opacity: 0;
+  min-width: 280px;
+  max-width: calc(100vw - 2rem);
+  pointer-events: none;
+}
+
+#tts-player-bar.is-visible {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* On mobile, sit above the mobile-app-bar */
+@media (max-width: 640px) {
+  #tts-player-bar {
+    bottom: 5.5rem;
+    padding: 0.5rem 0.75rem;
+    min-width: 260px;
+  }
+}
+
+.tts-bar-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.tts-bar-btn-primary {
+  background: var(--reader-accent);
+  color: #fff;
+}
+
+.tts-bar-btn-primary:hover {
+  background: var(--reader-accent-hover);
+  transform: scale(1.08);
+}
+
+.tts-bar-btn-secondary {
+  background: var(--reader-highlight);
+  color: var(--reader-text);
+  border: 1px solid var(--reader-border);
+}
+
+.tts-bar-btn-secondary:hover {
+  background: var(--reader-accent);
+  color: #fff;
+  border-color: transparent;
+}
+
+.tts-bar-btn-danger {
+  background: transparent;
+  color: var(--reader-muted);
+  border: 1px solid var(--reader-border);
+}
+
+.tts-bar-btn-danger:hover {
+  background: #ef4444;
+  color: #fff;
+  border-color: transparent;
+}
+
+/* TTS Progress Info */
+.tts-progress-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  padding: 0 0.25rem;
+}
+
+.tts-progress-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--reader-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  margin-bottom: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tts-progress-track {
+  height: 3px;
+  background: var(--reader-border);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.tts-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--reader-accent), #6366f1);
+  border-radius: 9999px;
+  transition: width 0.3s ease;
+}
+
+/* TTS Voice Select inside settings panel */
+#tts-voice-select {
+  width: 100%;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--reader-border);
+  background: var(--reader-select-bg);
+  color: var(--reader-text);
+  cursor: pointer;
+  margin-top: 0.375rem;
+}
+
+#tts-voice-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--reader-accent);
+}
+
+/* TTS Speed Slider */
+#tts-speed-range {
+  width: 100%;
+  accent-color: var(--reader-accent);
+  margin-top: 0.375rem;
+  cursor: pointer;
+}
+

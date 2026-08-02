@@ -35,12 +35,14 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
     }
 
     // TTS Audio States
-    let isSpeaking = false;
+    let ttsState = 'stopped'; // 'stopped' | 'playing' | 'paused'
     let synth = window.speechSynthesis || null;
     let currentUtterance = null;
     let currentChapterData = null;
-    let vietnameseVoice = null;
-    let englishVoice = null;
+    let ttsParagraphs = [];     // Array of plain-text paragraphs
+    let ttsParagraphEls = [];   // Corresponding DOM <p> elements
+    let ttsCurrentIndex = 0;    // Which paragraph is playing
+    let availableVoices = [];   // All voices for current lang
     const speechSupported = 'speechSynthesis' in window;
 
     // Scroll & Auto-hide states
@@ -144,6 +146,15 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
 
         const speedSelect = settingsPanel.querySelector('#speech-rate-select');
         if (speedSelect) speedSelect.value = String(readerSettings.speechRate);
+
+        const speedRange = document.getElementById('tts-speed-range');
+        if (speedRange) speedRange.value = String(readerSettings.speechRate || 1.0);
+
+        const speedLabel = document.getElementById('tts-speed-label');
+        if (speedLabel) speedLabel.textContent = `${parseFloat(readerSettings.speechRate || 1.0).toFixed(1)}x`;
+
+        const voiceSel = document.getElementById('tts-voice-select');
+        if (voiceSel && readerSettings.voiceIndex !== undefined) voiceSel.value = String(readerSettings.voiceIndex);
     }
 
     function escapeHtml(text) {
@@ -264,6 +275,33 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
                 </aside>
             `;
             document.body.insertAdjacentHTML('beforeend', drawerMarkup);
+        }
+
+        // Create Floating TTS Player Bar
+        if (!document.getElementById('tts-player-bar')) {
+            const ttsBar = `
+                <div id="tts-player-bar">
+                    <button id="tts-bar-prev" class="tts-bar-btn tts-bar-btn-secondary" title="${lang === 'vi' ? 'Đoạn trước' : 'Prev paragraph'}">
+                        <i class="fas fa-step-backward"></i>
+                    </button>
+                    <button id="tts-bar-play" class="tts-bar-btn tts-bar-btn-primary" title="${lang === 'vi' ? 'Phát / Tạm dừng' : 'Play / Pause'}">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button id="tts-bar-next" class="tts-bar-btn tts-bar-btn-secondary" title="${lang === 'vi' ? 'Đoạn sau' : 'Next paragraph'}">
+                        <i class="fas fa-step-forward"></i>
+                    </button>
+                    <div class="tts-progress-info">
+                        <span id="tts-bar-label" class="tts-progress-label">${lang === 'vi' ? 'Đang đọc...' : 'Reading...'}</span>
+                        <div class="tts-progress-track">
+                            <div id="tts-bar-fill" class="tts-progress-fill" style="width:0%"></div>
+                        </div>
+                    </div>
+                    <button id="tts-bar-stop" class="tts-bar-btn tts-bar-btn-danger" title="${lang === 'vi' ? 'Dừng đọc' : 'Stop'}">
+                        <i class="fas fa-stop"></i>
+                    </button>
+                </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', ttsBar);
         }
 
         // Create Focus Exit Button
@@ -405,15 +443,26 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
                                     </div>
                                 </div>
 
-                                <!-- TTS Speed Select -->
+                                <!-- TTS Voice & Speed -->
+                                <div class="mb-3">
+                                    <label class="block text-xs font-semibold text-slate-500 dark:text-slate-400 mb-1">${lang === 'vi' ? 'GIỌNG ĐỌC' : 'VOICE'}</label>
+                                    <select id="tts-voice-select">
+                                        <option value="">${lang === 'vi' ? 'Đang tải giọng...' : 'Loading voices...'}</option>
+                                    </select>
+                                </div>
                                 <div>
-                                    <label class="block text-xs font-semibold text-slate-500 dark:text-slate-400 mb-1">${lang === 'vi' ? 'TỐC ĐỘ GIỌNG ĐỌC' : 'AUDIO SPEED'}</label>
-                                    <select id="speech-rate-select" class="w-full text-xs font-semibold py-1.5 px-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-200">
-                                        <option value="0.8">0.8x (Chậm)</option>
-                                        <option value="1.0">1.0x (Bình thường)</option>
-                                        <option value="1.2">1.2x (Nhanh vừa)</option>
-                                        <option value="1.5">1.5x (Nhanh)</option>
-                                        <option value="2.0">2.0x (Rất nhanh)</option>
+                                    <div class="flex justify-between items-center mb-1">
+                                        <label class="text-xs font-semibold text-slate-500 dark:text-slate-400">${lang === 'vi' ? 'TỐC ĐỘ ĐỌC' : 'SPEED'}</label>
+                                        <span id="tts-speed-label" class="text-xs font-bold text-blue-600 dark:text-blue-400">1.0x</span>
+                                    </div>
+                                    <input type="range" id="tts-speed-range" min="0.6" max="2.0" step="0.1" value="${readerSettings.speechRate || 1.0}">
+                                    <!-- hidden select kept for settings save compatibility -->
+                                    <select id="speech-rate-select" class="hidden">
+                                        <option value="0.8">0.8x</option>
+                                        <option value="1.0">1.0x</option>
+                                        <option value="1.2">1.2x</option>
+                                        <option value="1.5">1.5x</option>
+                                        <option value="2.0">2.0x</option>
                                     </select>
                                 </div>
                             </div>
@@ -591,87 +640,204 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
         }
     }
 
-    // 7. TTS AUDIO LOGIC
+    // 7. TTS AUDIO LOGIC — Paragraph-by-paragraph with highlight & scroll
     if (speechSupported) {
         synth = window.speechSynthesis;
         if (synth.onvoiceschanged !== undefined) {
-            synth.onvoiceschanged = setPreferredVoices;
+            synth.onvoiceschanged = () => { loadVoiceOptions(); };
         }
-        setPreferredVoices();
+        // Some browsers fire onvoiceschanged sync
+        setTimeout(loadVoiceOptions, 200);
     }
 
-    function setPreferredVoices() {
+    // --- Voice Loading ---
+    function loadVoiceOptions() {
         if (!synth) return;
         const voices = synth.getVoices();
-        vietnameseVoice = voices.find(v => v.lang === 'vi-VN' && (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Microsoft'))) || voices.find(v => v.lang === 'vi-VN');
-        englishVoice = voices.find(v => v.lang.startsWith('en-') && (v.name.includes('Natural') || v.name.includes('Google'))) || voices.find(v => v.lang.startsWith('en-'));
-    }
+        const targetLang = lang === 'vi' ? 'vi-VN' : 'en';
+        availableVoices = lang === 'vi'
+            ? voices.filter(v => v.lang === 'vi-VN')
+            : voices.filter(v => v.lang.startsWith('en-'));
 
-    function stopSpeaking() {
-        if (synth && synth.speaking) {
-            synth.cancel();
-            isSpeaking = false;
-            updateSpeechButtonState();
+        // Fallback: if no lang-specific voices, offer all
+        if (availableVoices.length === 0) availableVoices = voices;
+
+        // Sort: Google/Natural voices first
+        availableVoices.sort((a, b) => {
+            const score = v => (v.name.includes('Google') ? 3 : 0) + (v.name.includes('Natural') ? 2 : 0) + (v.name.includes('Microsoft') ? 1 : 0);
+            return score(b) - score(a);
+        });
+
+        const sel = document.getElementById('tts-voice-select');
+        if (!sel) return;
+        sel.innerHTML = availableVoices.map((v, i) => {
+            const label = v.name.replace(/^Microsoft\s+/i, '').replace(/\s*Online\s*/i, ' ').trim();
+            return `<option value="${i}">${label} (${v.lang})</option>`;
+        }).join('');
+
+        // Restore saved voice
+        if (readerSettings.voiceIndex !== undefined && availableVoices[readerSettings.voiceIndex]) {
+            sel.value = String(readerSettings.voiceIndex);
         }
     }
 
-    function updateSpeechButtonState() {
+    function getSelectedVoice() {
+        const sel = document.getElementById('tts-voice-select');
+        const idx = sel ? parseInt(sel.value, 10) : 0;
+        return (availableVoices[idx] || null);
+    }
+
+    // --- Player Bar UI ---
+    function showTTSBar() {
+        document.getElementById('tts-player-bar')?.classList.add('is-visible');
+    }
+    function hideTTSBar() {
+        document.getElementById('tts-player-bar')?.classList.remove('is-visible');
+    }
+
+    function updateTTSBarProgress() {
+        const label = document.getElementById('tts-bar-label');
+        const fill = document.getElementById('tts-bar-fill');
+        const total = ttsParagraphs.length;
+        if (label) label.textContent = total > 0 ? `${lang === 'vi' ? 'Đoạn' : 'Para'} ${ttsCurrentIndex + 1} / ${total}` : (lang === 'vi' ? 'Đang đọc...' : 'Reading...');
+        if (fill) fill.style.width = total > 0 ? `${((ttsCurrentIndex + 1) / total) * 100}%` : '0%';
+    }
+
+    function updateTTSToolbarBtn() {
         const btn = document.getElementById('tts-toggle-btn');
         const icon = document.getElementById('tts-icon');
         const text = document.getElementById('tts-text');
-
+        const barPlayBtn = document.getElementById('tts-bar-play');
         if (!btn || !icon || !text) return;
 
-        if (isSpeaking) {
-            icon.className = 'fas fa-pause mr-1';
+        if (ttsState === 'playing') {
+            icon.className = 'fas fa-pause';
             text.textContent = lang === 'vi' ? 'Tạm dừng' : 'Pause';
-            btn.classList.add('bg-amber-600', 'hover:bg-amber-700');
+            btn.classList.add('reader-btn-tts-active');
+            if (barPlayBtn) barPlayBtn.innerHTML = '<i class="fas fa-pause"></i>';
+        } else if (ttsState === 'paused') {
+            icon.className = 'fas fa-play';
+            text.textContent = lang === 'vi' ? 'Tiếp tục' : 'Resume';
+            btn.classList.remove('reader-btn-tts-active');
+            if (barPlayBtn) barPlayBtn.innerHTML = '<i class="fas fa-play"></i>';
         } else {
-            icon.className = 'fas fa-play mr-1';
-            text.textContent = lang === 'vi' ? 'Nghe truyện' : 'Read Audio';
-            btn.classList.remove('bg-amber-600', 'hover:bg-amber-700');
+            icon.className = 'fas fa-play';
+            text.textContent = lang === 'vi' ? 'Nghe truyện' : 'Listen';
+            btn.classList.remove('reader-btn-tts-active');
+            if (barPlayBtn) barPlayBtn.innerHTML = '<i class="fas fa-play"></i>';
         }
+    }
+
+    // --- Highlight ---
+    function highlightParagraph(index) {
+        ttsParagraphEls.forEach(el => el.classList.remove('tts-active'));
+        const el = ttsParagraphEls[index];
+        if (el) {
+            el.classList.add('tts-active');
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }
+
+    function clearHighlight() {
+        ttsParagraphEls.forEach(el => el.classList.remove('tts-active'));
+    }
+
+    // --- Core TTS: speak a single paragraph ---
+    function speakParagraph(index) {
+        if (!speechSupported || !synth || index < 0 || index >= ttsParagraphs.length) {
+            stopTTS();
+            return;
+        }
+
+        if (synth.speaking) synth.cancel();
+
+        ttsCurrentIndex = index;
+        ttsState = 'playing';
+        highlightParagraph(index);
+        updateTTSBarProgress();
+        updateTTSToolbarBtn();
+
+        const text = ttsParagraphs[index];
+        currentUtterance = new SpeechSynthesisUtterance(text);
+        currentUtterance.lang = lang === 'vi' ? 'vi-VN' : 'en-US';
+        currentUtterance.rate = parseFloat(readerSettings.speechRate) || 1.0;
+        const voice = getSelectedVoice();
+        if (voice) currentUtterance.voice = voice;
+
+        currentUtterance.onend = () => {
+            if (ttsState !== 'playing') return;
+            if (ttsCurrentIndex < ttsParagraphs.length - 1) {
+                speakParagraph(ttsCurrentIndex + 1);
+            } else {
+                // Finished entire chapter
+                stopTTS();
+            }
+        };
+        currentUtterance.onerror = (e) => {
+            if (e.error === 'interrupted') return; // user-triggered cancel, ignore
+            console.warn('TTS error:', e.error);
+            stopTTS();
+        };
+
+        synth.speak(currentUtterance);
+    }
+
+    // --- TTS Controls ---
+    function startTTS() {
+        if (!speechSupported || !currentChapterData) return;
+
+        // Build paragraph list from current chapter DOM
+        ttsParagraphEls = Array.from(document.querySelectorAll('.chapter-body p'));
+        ttsParagraphs = ttsParagraphEls.map(p => p.innerText.trim()).filter(t => t.length > 0);
+        // Filter out empties and re-sync el array
+        const validPairs = ttsParagraphEls
+            .map((el, i) => ({ el, text: el.innerText.trim() }))
+            .filter(pair => pair.text.length > 0);
+        ttsParagraphEls = validPairs.map(p => p.el);
+        ttsParagraphs = validPairs.map(p => p.text);
+
+        if (ttsParagraphs.length === 0) return;
+
+        showTTSBar();
+        speakParagraph(0);
+    }
+
+    function pauseTTS() {
+        if (!synth || ttsState !== 'playing') return;
+        synth.pause();
+        ttsState = 'paused';
+        updateTTSToolbarBtn();
+    }
+
+    function resumeTTS() {
+        if (!synth || ttsState !== 'paused') return;
+        synth.resume();
+        ttsState = 'playing';
+        updateTTSToolbarBtn();
+    }
+
+    function stopTTS() {
+        if (synth && synth.speaking) synth.cancel();
+        ttsState = 'stopped';
+        clearHighlight();
+        hideTTSBar();
+        updateTTSToolbarBtn();
     }
 
     function toggleSpeech() {
         if (!speechSupported || !currentChapterData) return;
-
-        if (isSpeaking) {
-            stopSpeaking();
-        } else {
-            if (synth.speaking) synth.cancel();
-
-            const parsed = parseChapterData(currentChapterData, chapterIds[currentChapterIndex]);
-            const plainContent = parsed.bodyText.replace(/\s{2,}/g, ' ').trim();
-            const textToSpeak = `${parsed.label}. ${parsed.title}. ${plainContent}`;
-
-            currentUtterance = new SpeechSynthesisUtterance(textToSpeak);
-            currentUtterance.lang = lang === 'vi' ? 'vi-VN' : 'en-US';
-            currentUtterance.rate = readerSettings.speechRate || 1.0;
-
-            if (lang === 'vi' && vietnameseVoice) currentUtterance.voice = vietnameseVoice;
-            if (lang === 'en' && englishVoice) currentUtterance.voice = englishVoice;
-
-            currentUtterance.onstart = () => {
-                isSpeaking = true;
-                updateSpeechButtonState();
-            };
-            currentUtterance.onend = () => {
-                isSpeaking = false;
-                updateSpeechButtonState();
-            };
-            currentUtterance.onerror = () => {
-                isSpeaking = false;
-                updateSpeechButtonState();
-            };
-
-            synth.speak(currentUtterance);
+        if (ttsState === 'stopped') {
+            startTTS();
+        } else if (ttsState === 'playing') {
+            pauseTTS();
+        } else if (ttsState === 'paused') {
+            resumeTTS();
         }
     }
 
     // 8. NAVIGATION LOGIC
     async function navigateToChapter(chapterId) {
-        stopSpeaking();
+        stopTTS();
         const data = await fetchChapterContent(chapterId);
         if (data) {
             currentChapterIndex = chapterIds.indexOf(chapterId);
@@ -819,7 +985,48 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
             saveSettings();
         });
 
+        // TTS Speed Range Slider
+        const speedRange = document.getElementById('tts-speed-range');
+        const speedLabel = document.getElementById('tts-speed-label');
+        if (speedRange) {
+            speedRange.value = String(readerSettings.speechRate || 1.0);
+            if (speedLabel) speedLabel.textContent = `${parseFloat(speedRange.value).toFixed(1)}x`;
+            speedRange.addEventListener('input', (e) => {
+                const val = parseFloat(e.target.value);
+                readerSettings.speechRate = val;
+                if (speedLabel) speedLabel.textContent = `${val.toFixed(1)}x`;
+                // Also sync hidden select
+                const rateSelect = document.getElementById('speech-rate-select');
+                if (rateSelect) {
+                    const closest = ['0.8','1.0','1.2','1.5','2.0'].reduce((prev, cur) => Math.abs(parseFloat(cur) - val) < Math.abs(parseFloat(prev) - val) ? cur : prev);
+                    rateSelect.value = closest;
+                }
+                saveSettings();
+                // If currently playing, restart current paragraph with new speed
+                if (ttsState === 'playing') speakParagraph(ttsCurrentIndex);
+            });
+        }
+
+        // TTS Voice Select
+        document.getElementById('tts-voice-select')?.addEventListener('change', (e) => {
+            readerSettings.voiceIndex = parseInt(e.target.value, 10);
+            saveSettings();
+            // Restart current paragraph with new voice
+            if (ttsState === 'playing') speakParagraph(ttsCurrentIndex);
+        });
+
+        // TTS Toolbar Toggle Button
         document.getElementById('tts-toggle-btn')?.addEventListener('click', toggleSpeech);
+
+        // TTS Player Bar Buttons
+        document.getElementById('tts-bar-play')?.addEventListener('click', toggleSpeech);
+        document.getElementById('tts-bar-stop')?.addEventListener('click', stopTTS);
+        document.getElementById('tts-bar-prev')?.addEventListener('click', () => {
+            if (ttsCurrentIndex > 0) speakParagraph(ttsCurrentIndex - 1);
+        });
+        document.getElementById('tts-bar-next')?.addEventListener('click', () => {
+            if (ttsCurrentIndex < ttsParagraphs.length - 1) speakParagraph(ttsCurrentIndex + 1);
+        });
 
         const toggleFocusBtn = document.getElementById('btn-toggle-focus');
         const exitFocusBtn = document.getElementById('focus-exit-btn');
