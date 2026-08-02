@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="vi">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Khóa học Lập trình Web, App & AI - IVS Academy</title>
+    <meta content="Đào tạo Lập trình chuyên nghiệp từ cơ bản đến nâng cao: Lập trình Web Frontend/Backend, Lập trình ứng dụng di động Mobile App (Flutter/React Native) và Trí tuệ nhân tạo (AI/Machine Learning)." name="description"/>
+    <meta content="lập trình web, lập trình app, học lập trình AI, python, javascript, react, flutter, IVS Academy" name="keywords"/>
+    <meta content="Đào tạo Lập trình (Web, App, AI) - IVS Academy" property="og:title"/>
+    <meta content="Chương trình đào tạo Lập trình toàn diện: Web Fullstack, Mobile App & AI." property="og:description"/>
+    <meta content="https://ivsacademy.edu.vn/Pages/it-programming.html" property="og:url"/>
+    <meta content="website" property="og:type"/>
+    <link href="../images/favicon.ico" rel="icon" type="image/x-icon"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="../css/tailwind.css" rel="stylesheet"/>
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" referrerpolicy="no-referrer" rel="stylesheet"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+    <script defer src="../js/language-init.js"></script>
+    <style>
+        :root {
+            --header-height: 80px;
+            --accent: #3b82f6;
+            --accent-cyan: #06b6d4;
+            --bg-dark: #07111F;
+            --bg-card: #0f1f35;
+        }
+        body {
+            background: var(--bg-dark);
+            color: #f1f5f9;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            padding-top: var(--header-height);
+            overflow-x: hidden;
+        }
+        #header-placeholder {
+            position: fixed; top: 0; left: 0; width: 100%;
+            height: var(--header-height); z-index: 1000;
+            background: rgba(7,17,31,0.95);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .hero-prog {
+            min-height: 70vh;
+            background: linear-gradient(135deg, #031327 0%, #071e3d 50%, #0c2b54 100%);
+            position: relative;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .course-box {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 1.25rem;
+            transition: all 0.3s ease;
+        }
+        .course-box:hover {
+            border-color: rgba(59,130,246,0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -10px rgba(59,130,246,0.2);
+        }
+        .btn-primary-prog {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: white; font-weight: 700; padding: 0.875rem 2rem;
+            border-radius: 0.875rem; transition: all 0.3s ease;
+            box-shadow: 0 10px 25px -5px rgba(37,99,235,0.4);
+        }
+        .btn-primary-prog:hover { transform: translateY(-2px); box-shadow: 0 15px 30px -5px rgba(37,99,235,0.5); }
+    </style>
+</head>
+<body>
+    <header id="header-placeholder"></header>
+
+    <section class="hero-prog text-center px-4 relative">
+        <div class="max-w-4xl mx-auto py-16" data-aos="fade-up">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-sm font-semibold mb-6">
+                <i class="fas fa-code"></i> Đào tạo Chuyên sâu
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+                Lập trình <span class="text-blue-400">Web</span>, <span class="text-cyan-400">App</span> & <span class="text-purple-400">AI</span>
+            </h1>
+            <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-8">
+                Trở thành lập trình viên hiện đại với các công nghệ tiên tiến hàng đầu thế giới. Thực chiến qua dự án thực tế và nhận sự dẫn dắt từ các Mentor giàu kinh nghiệm.
+            </p>
+            <a href="/contact.html" class="btn-primary-prog">
+                <i class="fas fa-paper-plane"></i> Đăng ký Tư vấn Học tập
+            </a>
+        </div>
+    </section>
+
+    <section class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-white text-center mb-12" data-aos="fade-up">Các Mô-đun Đào tạo Lập trình</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Module 1 -->
+                <div class="course-box p-8" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-14 h-14 bg-blue-500/20 text-blue-400 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">1. Lập trình Web Fullstack</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        Xây dựng ứng dụng web hoàn chỉnh từ giao diện (Frontend) đến hệ thống máy chủ và cơ sở dữ liệu (Backend).
+                    </p>
+                    <ul class="space-y-3 text-sm text-slate-300 border-t border-white/10 pt-6">
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-400"></i> HTML5, CSS3, TailwindCSS, JS (ES6+)</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-400"></i> React.js / Vue.js / Next.js</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-400"></i> Node.js / Express / Python Django</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-400"></i> MongoDB & MySQL Database</li>
+                    </ul>
+                </div>
+
+                <!-- Module 2 -->
+                <div class="course-box p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-cyan-500/20 text-cyan-400 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">2. Phát triển Mobile App</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        Tạo ra các ứng dụng di động đa nền tảng chạy mượt mà trên cả iOS và Android chỉ với một codebase.
+                    </p>
+                    <ul class="space-y-3 text-sm text-slate-300 border-t border-white/10 pt-6">
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-cyan-400"></i> Flutter & Dart Programming</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-cyan-400"></i> React Native Framework</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-cyan-400"></i> Quản lý trạng thái (Redux, Provider)</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-cyan-400"></i> Đưa App lên App Store & Google Play</li>
+                    </ul>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="course-box p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-purple-500/20 text-purple-400 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">3. Lập trình AI & Data Science</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        Nắm bắt làn sóng AI với kiến thức về Machine Learning, Deep Learning và tích hợp LLM vào ứng dụng thực tế.
+                    </p>
+                    <ul class="space-y-3 text-sm text-slate-300 border-t border-white/10 pt-6">
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-purple-400"></i> Python chuyên sâu cho Data & AI</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-purple-400"></i> Machine Learning với Scikit-Learn</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-purple-400"></i> Xử lý ngôn ngữ tự nhiên (NLP)</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-purple-400"></i> Tích hợp OpenAI / Gemini API vào App</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer-placeholder"></footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 700, once: true });
+        fetch('/components/header.html').then(r=>r.text()).then(h=>{ document.getElementById('header-placeholder').innerHTML=h; });
+        fetch('/components/footer.html').then(r=>r.text()).then(f=>{ document.getElementById('footer-placeholder').innerHTML=f; });
+    </script>
+</body>
+</html>

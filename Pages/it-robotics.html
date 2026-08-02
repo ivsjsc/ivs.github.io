@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="vi">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Khóa học Robotics & STEM - IVS Academy</title>
+    <meta content="Đào tạo Robotics, Tư duy Lập trình và Giáo dục STEM chuẩn quốc tế dành cho học sinh K-12. Thực hành chế tạo Robot Lego, VEX và thi đấu sáng tạo." name="description"/>
+    <meta content="học robotics, giáo dục stem, lập trình robot lego, vex robotics, stem k12, IVS Academy" name="keywords"/>
+    <meta content="Đào tạo Robotics & STEM - IVS Academy" property="og:title"/>
+    <meta content="Chương trình Đào tạo Robotics & STEM truyền cảm hứng sáng tạo công nghệ cho thế hệ trẻ." property="og:description"/>
+    <meta content="https://ivsacademy.edu.vn/Pages/it-robotics.html" property="og:url"/>
+    <meta content="website" property="og:type"/>
+    <link href="../images/favicon.ico" rel="icon" type="image/x-icon"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="../css/tailwind.css" rel="stylesheet"/>
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" referrerpolicy="no-referrer" rel="stylesheet"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+    <script defer src="../js/language-init.js"></script>
+    <style>
+        :root {
+            --header-height: 80px;
+            --accent: #ef4444;
+            --bg-dark: #07111F;
+            --bg-card: #0f1f35;
+        }
+        body {
+            background: var(--bg-dark);
+            color: #f1f5f9;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            padding-top: var(--header-height);
+            overflow-x: hidden;
+        }
+        #header-placeholder {
+            position: fixed; top: 0; left: 0; width: 100%;
+            height: var(--header-height); z-index: 1000;
+            background: rgba(7,17,31,0.95);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .hero-bot {
+            min-height: 70vh;
+            background: linear-gradient(135deg, #2b0707 0%, #4c0c0c 50%, #6f1212 100%);
+            position: relative;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .course-box {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 1.25rem;
+            transition: all 0.3s ease;
+        }
+        .course-box:hover {
+            border-color: rgba(239,68,68,0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -10px rgba(239,68,68,0.2);
+        }
+        .btn-primary-bot {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white; font-weight: 700; padding: 0.875rem 2rem;
+            border-radius: 0.875rem; transition: all 0.3s ease;
+            box-shadow: 0 10px 25px -5px rgba(220,38,38,0.4);
+        }
+        .btn-primary-bot:hover { transform: translateY(-2px); box-shadow: 0 15px 30px -5px rgba(220,38,38,0.5); }
+    </style>
+</head>
+<body>
+    <header id="header-placeholder"></header>
+
+    <section class="hero-bot text-center px-4 relative">
+        <div class="max-w-4xl mx-auto py-16" data-aos="fade-up">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-sm font-semibold mb-6">
+                <i class="fas fa-robot"></i> Đột phá Tư duy Công nghệ
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+                Robotics <span class="text-red-400">& Giáo dục STEM</span> K-12
+            </h1>
+            <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-8">
+                Khơi dậy niềm đam mê khoa học công nghệ cho học sinh thông qua trải nghiệm lắp ráp, lập trình điều khiển Robot và giải quyết vấn đề thực tế.
+            </p>
+            <a href="/contact.html" class="btn-primary-bot">
+                <i class="fas fa-magic"></i> Khám phá Khóa học STEM
+            </a>
+        </div>
+    </section>
+
+    <section class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-white text-center mb-12" data-aos="fade-up">Cấp độ Đào tạo Robotics & STEM</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Module 1 -->
+                <div class="course-box p-8" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-14 h-14 bg-red-500/20 text-red-400 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-cubes"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">1. STEM Khởi động (Tiểu học)</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        Dành cho học sinh từ 6 - 10 tuổi. Xây dựng tư duy logic, tiếp cận lập trình kéo thả trực quan và thế giới tự nhiên.
+                    </p>
+                    <ul class="space-y-3 text-sm text-slate-300 border-t border-white/10 pt-6">
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-red-400"></i> Lập trình kéo thả Scratch Jr / Scratch 3.0</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-red-400"></i> Lắp ráp Mô hình Lego Education Wedo 2.0</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-red-400"></i> Khám phá cơ cấu cơ học: Bánh răng, đòn đòn, ròng rọc</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-red-400"></i> Phát triển tư duy sáng tạo & kỹ năng thuyết trình</li>
+                    </ul>
+                </div>
+
+                <!-- Module 2 -->
+                <div class="course-box p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-rose-500/20 text-rose-400 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">2. Robotics Khám phá (THCS)</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        Dành cho học sinh từ 11 - 15 tuổi. Chế tạo Robot thông minh với cảm biến nâng cao và thuật toán điều khiển linh hoạt.
+                    </p>
+                    <ul class="space-y-3 text-sm text-slate-300 border-t border-white/10 pt-6">
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-rose-400"></i> Lego Mindstorms EV3 / Spike Prime</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-rose-400"></i> Thuật toán dò đường (Line Follower), Né vật cản</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-rose-400"></i> Lập trình Python ứng dụng điều khiển Robot</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-rose-400"></i> Kỹ năng làm việc nhóm & giải quyết thử thách</li>
+                    </ul>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="course-box p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-orange-500/20 text-orange-400 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">3. Robotics Chuyên nghiệp & Đấu trường</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        Dành cho học sinh THPT & CLB Robotics. Huấn luyện tham gia các giải thi đấu Robotics quốc gia và quốc tế (VEX / WRO).
+                    </p>
+                    <ul class="space-y-3 text-sm text-slate-300 border-t border-white/10 pt-6">
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-orange-400"></i> Thiết kế & Lắp ráp hệ thống VEX Robotics (VEX IQ/EDR)</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-orange-400"></i> Lập trình điều khiển tự động & Bằng tay (Driver control)</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-orange-400"></i> Tối ưu hóa chiến thuật thi đấu sa bàn</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-orange-400"></i> Cơ hội đại diện tham gia các giải WRO / VEX Worlds</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer-placeholder"></footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 700, once: true });
+        fetch('/components/header.html').then(r=>r.text()).then(h=>{ document.getElementById('header-placeholder').innerHTML=h; });
+        fetch('/components/footer.html').then(r=>r.text()).then(f=>{ document.getElementById('footer-placeholder').innerHTML=f; });
+    </script>
+</body>
+</html>

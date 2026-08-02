@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="vi">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Khóa học Phần mềm & Ứng dụng - IVS Academy</title>
+    <meta content="Đào tạo kỹ năng làm chủ Phần mềm văn phòng, Đồ họa thiết kế, Quản trị Hệ điều hành Windows/Linux và Công cụ chuyển đổi số doanh nghiệp." name="description"/>
+    <meta content="tin học văn phòng, thiết kế đồ họa, hệ điều hành linux, công cụ số, IVS Academy" name="keywords"/>
+    <meta content="Đào tạo Phần mềm & Ứng dụng - IVS Academy" property="og:title"/>
+    <meta content="Chương trình làm chủ Phần mềm Văn phòng, Đồ họa & Hệ điều hành." property="og:description"/>
+    <meta content="https://ivsacademy.edu.vn/Pages/it-software.html" property="og:url"/>
+    <meta content="website" property="og:type"/>
+    <link href="../images/favicon.ico" rel="icon" type="image/x-icon"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="../css/tailwind.css" rel="stylesheet"/>
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" referrerpolicy="no-referrer" rel="stylesheet"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+    <script defer src="../js/language-init.js"></script>
+    <style>
+        :root {
+            --header-height: 80px;
+            --accent: #a855f7;
+            --bg-dark: #07111F;
+            --bg-card: #0f1f35;
+        }
+        body {
+            background: var(--bg-dark);
+            color: #f1f5f9;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            padding-top: var(--header-height);
+            overflow-x: hidden;
+        }
+        #header-placeholder {
+            position: fixed; top: 0; left: 0; width: 100%;
+            height: var(--header-height); z-index: 1000;
+            background: rgba(7,17,31,0.95);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .hero-sw {
+            min-height: 70vh;
+            background: linear-gradient(135deg, #1b072b 0%, #300c4c 50%, #46126f 100%);
+            position: relative;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .course-box {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 1.25rem;
+            transition: all 0.3s ease;
+        }
+        .course-box:hover {
+            border-color: rgba(168,85,247,0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -10px rgba(168,85,247,0.2);
+        }
+        .btn-primary-sw {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            background: linear-gradient(135deg, #9333ea, #7e22ce);
+            color: white; font-weight: 700; padding: 0.875rem 2rem;
+            border-radius: 0.875rem; transition: all 0.3s ease;
+            box-shadow: 0 10px 25px -5px rgba(147,51,234,0.4);
+        }
+        .btn-primary-sw:hover { transform: translateY(-2px); box-shadow: 0 15px 30px -5px rgba(147,51,234,0.5); }
+    </style>
+</head>
+<body>
+    <header id="header-placeholder"></header>
+
+    <section class="hero-sw text-center px-4 relative">
+        <div class="max-w-4xl mx-auto py-16" data-aos="fade-up">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-400 text-sm font-semibold mb-6">
+                <i class="fas fa-desktop"></i> Ứng dụng & Năng suất
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+                Phần mềm <span class="text-purple-400">& Ứng dụng</span> Chuyên nghiệp
+            </h1>
+            <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-8">
+                Tối ưu hóa hiệu suất làm việc với tin học văn phòng nâng cao, thiết kế đồ họa truyền thông và hệ điều hành chuyên sâu.
+            </p>
+            <a href="/contact.html" class="btn-primary-sw">
+                <i class="fas fa-laptop"></i> Đăng ký Khóa học ngay
+            </a>
+        </div>
+    </section>
+
+    <section class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-white text-center mb-12" data-aos="fade-up">Các Khóa học Phần mềm</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Module 1 -->
+                <div class="course-box p-8" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-14 h-14 bg-purple-500/20 text-purple-400 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-file-excel"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">1. Tin học Văn phòng Nâng cao</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        Làm chủ công cụ Word, Excel, PowerPoint chuẩn quốc tế MOS / ICDL phục vụ công việc và học tập.
+                    </p>
+                    <ul class="space-y-3 text-sm text-slate-300 border-t border-white/10 pt-6">
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-purple-400"></i> Excel: Hàm nâng cao, PivotTable, Dashboard</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-purple-400"></i> Word: Soạn thảo hợp đồng, báo cáo chuẩn mực</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-purple-400"></i> PowerPoint: Thiết kế Slide thuyết trình ấn tượng</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-purple-400"></i> Tự động hóa tác vụ bằng Google Workspace / VBA</li>
+                    </ul>
+                </div>
+
+                <!-- Module 2 -->
+                <div class="course-box p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-fuchsia-500/20 text-fuchsia-400 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">2. Thiết kế Đồ họa & Truyền thông</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        Trang bị tư duy thẩm mỹ và kỹ năng sử dụng phần mềm đồ họa hàng đầu để tạo sản phẩm truyền thông chuyên nghiệp.
+                    </p>
+                    <ul class="space-y-3 text-sm text-slate-300 border-t border-white/10 pt-6">
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-fuchsia-400"></i> Adobe Photoshop: Chỉnh sửa ảnh & Banner</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-fuchsia-400"></i> Adobe Illustrator: Thiết kế Logo & Vector</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-fuchsia-400"></i> Canva Pro & Figma cho UX/UI cơ bản</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-fuchsia-400"></i> Biên tập Video ngắn bằng CapCut Pro / Premiere</li>
+                    </ul>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="course-box p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-pink-500/20 text-pink-400 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        <i class="fab fa-linux"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">3. Quản trị Hệ điều hành</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                        Nắm vững kỹ năng cài đặt, cấu hình, tối ưu và bảo mật trên các môi trường hệ điều hành Windows và Linux.
+                    </p>
+                    <ul class="space-y-3 text-sm text-slate-300 border-t border-white/10 pt-6">
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-pink-400"></i> Cài đặt & Quản trị Windows 11 / Windows Server</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-pink-400"></i> Sử dụng câu lệnh Terminal Linux (Ubuntu/Debian)</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-pink-400"></i> Quản lý quyền người dùng, ổ đĩa & dịch vụ systemd</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-pink-400"></i> Sao lưu, khôi phục dữ liệu & Xử lý sự cố phần mềm</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer-placeholder"></footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 700, once: true });
+        fetch('/components/header.html').then(r=>r.text()).then(h=>{ document.getElementById('header-placeholder').innerHTML=h; });
+        fetch('/components/footer.html').then(r=>r.text()).then(f=>{ document.getElementById('footer-placeholder').innerHTML=f; });
+    </script>
+</body>
+</html>
