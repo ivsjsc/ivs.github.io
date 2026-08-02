@@ -365,15 +365,15 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
                             <span class="hidden md:inline">${lang === 'vi' ? 'Sau' : 'Next'}</span>
                             <i class="fas fa-chevron-right"></i>
                         </button>
+                    </div>
 
+                    <div class="flex items-center gap-1.5 sm:gap-2">
                         <!-- Story Home Button -->
                         <a href="/Pages/apps/story/index.html" class="reader-btn reader-btn-nav text-slate-700 dark:text-slate-200" title="${lang === 'vi' ? 'Trang Chủ Truyện' : 'Story Home'}">
                             <i class="fas fa-house"></i>
                             <span class="hidden xl:inline">${lang === 'vi' ? 'Trang Chủ' : 'Home'}</span>
                         </a>
-                    </div>
 
-                    <div class="flex items-center gap-1.5 sm:gap-2">
                         <!-- TTS Button -->
                         <button id="tts-toggle-btn" class="reader-btn reader-btn-primary shadow-sm" title="Nghe truyện bằng AI Voice">
                             <i id="tts-icon" class="fas fa-play"></i>
