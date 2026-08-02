@@ -1,0 +1,7 @@
+.venv
+node_modules
+.git
+.backups
+*.bak
+*.bak_auto*
+*.bak_before_*
