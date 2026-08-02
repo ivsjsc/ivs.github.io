@@ -44,7 +44,9 @@
         }
         .hero-it {
             min-height: 88vh;
-            background: linear-gradient(135deg, #020c1b 0%, #071a33 45%, #0a2246 100%);
+            background:
+                linear-gradient(135deg, rgba(2,12,27,0.82) 0%, rgba(7,26,51,0.78) 45%, rgba(10,34,70,0.75) 100%),
+                url('../images/pages/ivscelestech/it-learners.png') center center / cover no-repeat;
             position: relative;
             display: flex; align-items: center; justify-content: center;
             overflow: hidden;
@@ -52,8 +54,8 @@
         .hero-it::before {
             content: '';
             position: absolute; inset: 0;
-            background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(6,182,212,0.2) 0%, transparent 70%),
-                        radial-gradient(ellipse 50% 50% at 85% 90%, rgba(249,115,22,0.12) 0%, transparent 60%);
+            background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(6,182,212,0.18) 0%, transparent 70%),
+                        radial-gradient(ellipse 50% 50% at 85% 90%, rgba(249,115,22,0.10) 0%, transparent 60%);
             pointer-events: none;
         }
         .grid-overlay {
