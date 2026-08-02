@@ -1,155 +1,135 @@
-<!DOCTYPE html>
-<html class="scroll-smooth" lang="vi">
+<!doctype html>
+<html lang="vi" class="scroll-smooth">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Khóa học Robotics & STEM - IVS Academy</title>
-    <meta content="Đào tạo Robotics, Tư duy Lập trình và Giáo dục STEM chuẩn quốc tế dành cho học sinh K-12. Thực hành chế tạo Robot Lego, VEX và thi đấu sáng tạo." name="description"/>
-    <meta content="học robotics, giáo dục stem, lập trình robot lego, vex robotics, stem k12, IVS Academy" name="keywords"/>
-    <meta content="Đào tạo Robotics & STEM - IVS Academy" property="og:title"/>
-    <meta content="Chương trình Đào tạo Robotics & STEM truyền cảm hứng sáng tạo công nghệ cho thế hệ trẻ." property="og:description"/>
-    <meta content="https://ivsacademy.edu.vn/Pages/it-robotics.html" property="og:url"/>
-    <meta content="website" property="og:type"/>
-    <link href="../images/favicon.ico" rel="icon" type="image/x-icon"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet"/>
-    <link href="../css/tailwind.css" rel="stylesheet"/>
-    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" referrerpolicy="no-referrer" rel="stylesheet"/>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
-    <script defer src="../js/language-init.js"></script>
-    <style>
-        :root {
-            --header-height: 80px;
-            --accent: #ef4444;
-            --bg-dark: #07111F;
-            --bg-card: #0f1f35;
-        }
-        body {
-            background: var(--bg-dark);
-            color: #f1f5f9;
-            font-family: 'Be Vietnam Pro', sans-serif;
-            padding-top: var(--header-height);
-            overflow-x: hidden;
-        }
-        #header-placeholder {
-            position: fixed; top: 0; left: 0; width: 100%;
-            height: var(--header-height); z-index: 1000;
-            background: rgba(7,17,31,0.95);
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-        .hero-bot {
-            min-height: 70vh;
-            background: linear-gradient(135deg, #2b0707 0%, #4c0c0c 50%, #6f1212 100%);
-            position: relative;
-            display: flex; align-items: center; justify-content: center;
-        }
-        .course-box {
-            background: var(--bg-card);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 1.25rem;
-            transition: all 0.3s ease;
-        }
-        .course-box:hover {
-            border-color: rgba(239,68,68,0.4);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px -10px rgba(239,68,68,0.2);
-        }
-        .btn-primary-bot {
-            display: inline-flex; align-items: center; gap: 0.5rem;
-            background: linear-gradient(135deg, #dc2626, #b91c1c);
-            color: white; font-weight: 700; padding: 0.875rem 2rem;
-            border-radius: 0.875rem; transition: all 0.3s ease;
-            box-shadow: 0 10px 25px -5px rgba(220,38,38,0.4);
-        }
-        .btn-primary-bot:hover { transform: translateY(-2px); box-shadow: 0 15px 30px -5px rgba(220,38,38,0.5); }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Robotics &amp; STEM nền tảng cho học sinh THCS | IVS Academy</title>
+  <meta name="description" content="Khám phá cảm biến, điều khiển, phản hồi và thử thách STEM với micro:bit, servo và thiết bị điện áp thấp trong lộ trình 40 tuần.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#ef4444">
+  <link rel="canonical" href="https://ivsacademy.edu.vn/Pages/it-robotics.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:site_name" content="IVS Academy">
+  <meta property="og:title" content="Robotics &amp; STEM nền tảng cho học sinh THCS | IVS Academy">
+  <meta property="og:description" content="Khám phá cảm biến, điều khiển, phản hồi và thử thách STEM với micro:bit, servo và thiết bị điện áp thấp trong lộ trình 40 tuần.">
+  <meta property="og:url" content="https://ivsacademy.edu.vn/Pages/it-robotics.html">
+  <meta property="og:image" content="https://ivsacademy.edu.vn/images/pages/ivscelestech/it-learners.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Robotics &amp; STEM nền tảng cho học sinh THCS | IVS Academy">
+  <meta name="twitter:description" content="Khám phá cảm biến, điều khiển, phản hồi và thử thách STEM với micro:bit, servo và thiết bị điện áp thấp trong lộ trình 40 tuần.">
+  <meta name="twitter:image" content="https://ivsacademy.edu.vn/images/pages/ivscelestech/it-learners.png">
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tailwind.css">
+  <link rel="stylesheet" href="../css/it-training-v2.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script defer src="../js/language-init.js"></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Course", "name": "Robotics & STEM nền tảng", "description": "Khám phá cảm biến, điều khiển, phản hồi và thử thách STEM với micro:bit, servo và thiết bị điện áp thấp trong lộ trình 40 tuần.", "url": "https://ivsacademy.edu.vn/Pages/it-robotics.html", "inLanguage": "vi", "provider": {"@type": "EducationalOrganization", "name": "IVS Academy", "url": "https://ivsacademy.edu.vn/"}, "educationalLevel": "Nền tảng trong lộ trình IT Foundation & Discovery", "timeRequired": "P40W"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Có phải mua LEGO hoặc VEX ngay không?", "acceptedAnswer": {"@type": "Answer", "text": "Không. Robot kit là thiết bị mở rộng, chỉ mua khi có dự án và thiên hướng rõ."}}, {"@type": "Question", "name": "Học viên chưa biết lập trình có học Robotics được không?", "acceptedAnswer": {"@type": "Answer", "text": "Chương trình sắp Robotics sau Scratch, Python và IoT Foundation để học viên có đủ nền tảng logic."}}, {"@type": "Question", "name": "Có sử dụng điện lưới không?", "acceptedAnswer": {"@type": "Answer", "text": "Không. Giai đoạn nền tảng chỉ dùng nguồn và thiết bị điện áp thấp, có Mentor giám sát."}}, {"@type": "Question", "name": "Robotics có thể làm Capstone không?", "acceptedAnswer": {"@type": "Answer", "text": "Có thể, nếu Mentor phê duyệt phạm vi, thiết bị, an toàn và thời gian thực hiện."}}]}</script>
 </head>
-<body>
-    <header id="header-placeholder"></header>
+<body class="theme-robotics">
 
-    <section class="hero-bot text-center px-4 relative">
-        <div class="max-w-4xl mx-auto py-16" data-aos="fade-up">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-sm font-semibold mb-6">
-                <i class="fas fa-robot"></i> Đột phá Tư duy Công nghệ
-            </div>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
-                Robotics <span class="text-red-400">& Giáo dục STEM</span> K-12
-            </h1>
-            <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-8">
-                Khơi dậy niềm đam mê khoa học công nghệ cho học sinh thông qua trải nghiệm lắp ráp, lập trình điều khiển Robot và giải quyết vấn đề thực tế.
-            </p>
-            <a href="/contact.html" class="btn-primary-bot">
-                <i class="fas fa-magic"></i> Khám phá Khóa học STEM
-            </a>
-        </div>
-    </section>
+<a class="skip-link" href="#main-content">Bỏ qua điều hướng</a>
+<header id="header-placeholder" aria-label="Điều hướng chính">
+  <div class="fallback-header">
+    <div class="container">
+      <a class="brand" href="/" aria-label="IVS Academy - Trang chủ">
+        <span class="brand-mark">IVS</span>
+        <span>IVS Academy<small>Hệ thống đào tạo công nghệ</small></span>
+      </a>
+      <nav class="fallback-nav" aria-label="Điều hướng dự phòng">
+        <a href="/Pages/it-training.html">Đào tạo IT</a>
+        <a href="/Pages/it-programming.html">Lập trình</a>
+        <a href="/Pages/it-hardware.html">Phần cứng</a>
+        <a href="/Pages/it-network.html">Mạng</a>
+        <a href="/contact.html">Liên hệ</a>
+      </nav>
+    </div>
+  </div>
+</header>
+<main id="main-content">
+  <section class="hero">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="container hero-layout">
+      <div class="hero-copy">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Trang chủ</a><span>/</span><a href="/Pages/it-training.html">Đào tạo IT</a><span>/</span><span>Robotics & STEM</span></nav>
+        <div class="hero-badge"><i class="fa-solid fa-robot"></i> Track khám phá · Tuần 31 + nền tảng IoT tuần 27</div>
+        <h1>Biến ý tưởng thành chuyển động với <span class="gradient-text">Robotics &amp; STEM</span></h1>
+        <p>Học viên hiểu cách robot cảm nhận, ra quyết định và hành động; sau đó xây thử thách STEM nhỏ có kiểm thử và cải tiến.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="/Pages/it-training.html#consultation"><i class="fa-solid fa-calendar-check"></i> Đăng ký đánh giá đầu vào</a><a class="btn btn-secondary" href="#learning"><i class="fa-solid fa-list-check"></i> Xem nội dung học</a></div>
+      </div>
+      <aside class="hero-panel" aria-label="Tóm tắt chuyên đề"><p class="hero-panel-title"><strong>Vị trí trong lộ trình 40 tuần</strong></p><div class="hero-facts"><div class="hero-fact"><strong>Tuần 27</strong><span>Nền tảng cảm biến/IoT</span></div><div class="hero-fact"><strong>Tuần 31</strong><span>Robotics & STEM</span></div><div class="hero-fact"><strong>Điện áp thấp</strong><span>An toàn theo độ tuổi</span></div><div class="hero-fact"><strong>Theo dự án</strong><span>Robot kit không bắt buộc</span></div></div><div class="note" style="margin-top:1rem">LEGO/VEX/ROS2 là lựa chọn nâng cao sau đánh giá; không cần mua và không phải chuẩn đầu ra của chương trình nền tảng.</div></aside>
+    </div>
+  </section>
 
-    <section class="py-20 px-4">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-bold text-white text-center mb-12" data-aos="fade-up">Cấp độ Đào tạo Robotics & STEM</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Module 1 -->
-                <div class="course-box p-8" data-aos="fade-up" data-aos-delay="0">
-                    <div class="w-14 h-14 bg-red-500/20 text-red-400 rounded-2xl flex items-center justify-center text-2xl mb-6">
-                        <i class="fas fa-cubes"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">1. STEM Khởi động (Tiểu học)</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                        Dành cho học sinh từ 6 - 10 tuổi. Xây dựng tư duy logic, tiếp cận lập trình kéo thả trực quan và thế giới tự nhiên.
-                    </p>
-                    <ul class="space-y-3 text-sm text-slate-300 border-t border-white/10 pt-6">
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-red-400"></i> Lập trình kéo thả Scratch Jr / Scratch 3.0</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-red-400"></i> Lắp ráp Mô hình Lego Education Wedo 2.0</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-red-400"></i> Khám phá cơ cấu cơ học: Bánh răng, đòn đòn, ròng rọc</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-red-400"></i> Phát triển tư duy sáng tạo & kỹ năng thuyết trình</li>
-                    </ul>
-                </div>
+  <section id="learning" class="section">
+    <div class="container">
+      <div class="section-heading center"><span class="eyebrow">Nội dung nền tảng</span><h2 class="section-title">Từ cảm biến đến vòng lặp điều khiển</h2><p class="section-lead">Nội dung gắn tư duy thuật toán với vật thể thật: nhận tín hiệu, xử lý điều kiện, tạo hành động và quan sát phản hồi.</p></div>
+      <div class="grid-3"><article class="card"><div class="card-icon"><i class="fa-solid fa-eye"></i></div><h3>Cảm nhận</h3><p>Nhận biết vai trò của nút bấm, ánh sáng, nhiệt độ, khoảng cách và tín hiệu đầu vào.</p></article><article class="card"><div class="card-icon"><i class="fa-solid fa-microchip"></i></div><h3>Xử lý</h3><p>Dùng điều kiện, biến và logic để quyết định phản ứng của hệ thống.</p></article><article class="card"><div class="card-icon"><i class="fa-solid fa-gears"></i></div><h3>Hành động</h3><p>Điều khiển LED, buzzer, servo nhỏ hoặc cơ cấu điện áp thấp.</p></article><article class="card"><div class="card-icon"><i class="fa-solid fa-arrows-rotate"></i></div><h3>Phản hồi</h3><p>Quan sát kết quả, đo sai lệch, điều chỉnh ngưỡng và kiểm thử nhiều tình huống.</p></article><article class="card"><div class="card-icon"><i class="fa-solid fa-code"></i></div><h3>MakeCode & micro:bit</h3><p>Lập trình trực quan, kết nối cáp dữ liệu và nạp chương trình an toàn.</p></article><article class="card"><div class="card-icon"><i class="fa-solid fa-lightbulb"></i></div><h3>Thử thách STEM</h3><p>Xác định vấn đề, tạo prototype, thử nghiệm, ghi lỗi và cải tiến thiết kế.</p></article></div>
+    </div>
+  </section>
 
-                <!-- Module 2 -->
-                <div class="course-box p-8" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-14 h-14 bg-rose-500/20 text-rose-400 rounded-2xl flex items-center justify-center text-2xl mb-6">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">2. Robotics Khám phá (THCS)</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                        Dành cho học sinh từ 11 - 15 tuổi. Chế tạo Robot thông minh với cảm biến nâng cao và thuật toán điều khiển linh hoạt.
-                    </p>
-                    <ul class="space-y-3 text-sm text-slate-300 border-t border-white/10 pt-6">
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-rose-400"></i> Lego Mindstorms EV3 / Spike Prime</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-rose-400"></i> Thuật toán dò đường (Line Follower), Né vật cản</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-rose-400"></i> Lập trình Python ứng dụng điều khiển Robot</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-rose-400"></i> Kỹ năng làm việc nhóm & giải quyết thử thách</li>
-                    </ul>
-                </div>
+  <section class="section section-alt">
+    <div class="container split">
+      <div>
+        <div class="section-heading"><span class="eyebrow">Sản phẩm học tập</span><h2 class="section-title">Portfolio thay cho bài tập rời rạc</h2><p class="section-lead">Học viên lưu phiên bản, mô tả lỗi, cách xử lý và phản hồi cải tiến cho từng sản phẩm.</p></div>
+        <ul class="check-list"><li>Sơ đồ hệ thống cảm nhận–xử lý–hành động.</li><li>Chương trình micro:bit sử dụng nút bấm, LED hoặc cảm biến tích hợp.</li><li>Mô hình điều khiển servo/cảnh báo điện áp thấp nếu Lab cho phép.</li><li>Nhật ký test scenario và các lần điều chỉnh.</li><li>Mini STEM Challenge được trình bày bằng poster hoặc slide.</li></ul>
+      </div>
+      <aside class="callout"><h3>Tiêu chí đánh giá</h3><ul class="check-list"><li>Hiểu mục tiêu và quy trình thực hiện.</li><li>Tự thao tác trong phạm vi phù hợp.</li><li>Mô tả được lỗi, giả thuyết và cách kiểm tra.</li><li>Lưu đúng phiên bản và sao lưu sản phẩm.</li><li>Giải trình rõ phần AI hoặc Mentor đã hỗ trợ.</li></ul></aside>
+    </div>
+  </section>
 
-                <!-- Module 3 -->
-                <div class="course-box p-8" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-14 h-14 bg-orange-500/20 text-orange-400 rounded-2xl flex items-center justify-center text-2xl mb-6">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">3. Robotics Chuyên nghiệp & Đấu trường</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                        Dành cho học sinh THPT & CLB Robotics. Huấn luyện tham gia các giải thi đấu Robotics quốc gia và quốc tế (VEX / WRO).
-                    </p>
-                    <ul class="space-y-3 text-sm text-slate-300 border-t border-white/10 pt-6">
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-orange-400"></i> Thiết kế & Lắp ráp hệ thống VEX Robotics (VEX IQ/EDR)</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-orange-400"></i> Lập trình điều khiển tự động & Bằng tay (Driver control)</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-orange-400"></i> Tối ưu hóa chiến thuật thi đấu sa bàn</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-orange-400"></i> Cơ hội đại diện tham gia các giải WRO / VEX Worlds</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+  <section class="section">
+    <div class="container split">
+      <div>
+        <div class="section-heading"><span class="eyebrow">Tiến trình</span><h2 class="section-title">Robotics được đặt sau nền tảng thuật toán và IoT</h2><p class="section-lead">Học viên đã trải qua Scratch, Python và micro:bit trước khi thực hiện thử thách điều khiển vật thể.</p></div>
+        <div class="timeline"><div class="timeline-item"><span class="timeline-marker">17–20</span><div class="timeline-content"><h3>Logic bằng Scratch</h3><p>Sự kiện, điều kiện, vòng lặp và biến.</p></div></div><div class="timeline-item"><span class="timeline-marker">21–24</span><div class="timeline-content"><h3>Python Foundation</h3><p>Chuyển sang tư duy lập trình văn bản.</p></div></div><div class="timeline-item"><span class="timeline-marker">27</span><div class="timeline-content"><h3>IoT Foundation</h3><p>Cảm biến, đầu vào/đầu ra và micro:bit Lab.</p></div></div><div class="timeline-item"><span class="timeline-marker">31</span><div class="timeline-content"><h3>Robotics/STEM</h3><p>Hệ thống cảm nhận–hành động và thử thách STEM.</p></div></div><div class="timeline-item"><span class="timeline-marker">33–40</span><div class="timeline-content"><h3>Capstone tùy chọn</h3><p>Chọn Robotics nếu thiên hướng và điều kiện thiết bị phù hợp.</p></div></div></div>
+      </div>
+      <aside class="callout"><h3>Thiết bị & an toàn</h3><ul class="check-list"><li>Ưu tiên micro:bit và nguồn điện áp thấp.</li><li>Cáp USB phải có truyền dữ liệu, không chỉ sạc.</li><li>Mentor kiểm tra sơ đồ trước khi kết nối cảm biến/servo.</li><li>Robot kit chỉ mua khi có dự án cụ thể và phạm vi được duyệt.</li><li>Không đấu nối điện lưới hoặc thiết bị công suất cao.</li></ul><div class="note" style="margin-top:1rem">Tỷ lệ đề xuất: 1 micro:bit cho 1–2 học viên; robot kit nếu triển khai dùng chung cho 2–4 học viên.</div></aside>
+    </div>
+  </section>
 
-    <footer id="footer-placeholder"></footer>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 700, once: true });
-        fetch('/components/header.html').then(r=>r.text()).then(h=>{ document.getElementById('header-placeholder').innerHTML=h; });
-        fetch('/components/footer.html').then(r=>r.text()).then(f=>{ document.getElementById('footer-placeholder').innerHTML=f; });
-    </script>
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-heading center"><span class="eyebrow">Sau giai đoạn nền tảng</span><h2 class="section-title">Định hướng học tiếp theo thiên hướng</h2><p class="section-lead">Các công nghệ nâng cao dưới đây là hướng phát triển sau đánh giá, không phải chuẩn đầu ra bắt buộc của lộ trình nền tảng.</p></div>
+      <div class="grid-3"><article class="card"><h3>Educational Robotics</h3><p>Tiếp tục với kit robot giáo dục, cơ khí và nhiệm vụ điều khiển.</p><div class="meta-list"><span class="pill">micro:bit</span><span class="pill">Robot kit</span><span class="pill">Control</span></div></article><article class="card"><h3>IoT & Automation</h3><p>Mở rộng cảm biến, kết nối và dashboard theo dự án.</p><div class="meta-list"><span class="pill">Sensors</span><span class="pill">IoT</span><span class="pill">Automation</span></div></article><article class="card"><h3>Robotics Competition</h3><p>LEGO/VEX chỉ cân nhắc khi có mục tiêu, ngân sách và kế hoạch huấn luyện phù hợp.</p><div class="meta-list"><span class="pill">LEGO/VEX orientation</span><span class="pill">Teamwork</span><span class="pill">Competition</span></div></article></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading center"><span class="eyebrow">FAQ</span><h2 class="section-title">Câu hỏi thường gặp</h2></div>
+      <div class="faq"><details><summary>Có phải mua LEGO hoặc VEX ngay không?</summary><div class="faq-answer"><p>Không. Robot kit là thiết bị mở rộng, chỉ mua khi có dự án và thiên hướng rõ.</p></div></details>
+<details><summary>Học viên chưa biết lập trình có học Robotics được không?</summary><div class="faq-answer"><p>Chương trình sắp Robotics sau Scratch, Python và IoT Foundation để học viên có đủ nền tảng logic.</p></div></details>
+<details><summary>Có sử dụng điện lưới không?</summary><div class="faq-answer"><p>Không. Giai đoạn nền tảng chỉ dùng nguồn và thiết bị điện áp thấp, có Mentor giám sát.</p></div></details>
+<details><summary>Robotics có thể làm Capstone không?</summary><div class="faq-answer"><p>Có thể, nếu Mentor phê duyệt phạm vi, thiết bị, an toàn và thời gian thực hiện.</p></div></details></div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="cta-band"><div><h2>Kết nối tư duy thuật toán với thế giới vật lý</h2><p>Robotics giúp quan sát rõ mối quan hệ giữa lệnh, cảm biến, hành động và phản hồi.</p><div class="meta-list"><a class="card-link" href="/Pages/it-hardware.html">Xem Phần cứng & IoT <i class="fa-solid fa-arrow-right"></i></a><a class="card-link" href="/Pages/it-programming.html">Xem Lập trình <i class="fa-solid fa-arrow-right"></i></a></div></div><a class="btn btn-primary" href="/Pages/it-training.html#consultation"><i class="fa-solid fa-paper-plane"></i> Nhận tư vấn lộ trình</a></div>
+    </div>
+  </section>
+</main>
+
+<footer id="footer-placeholder">
+  <div class="fallback-footer">
+    <div class="container footer-grid">
+      <div><strong>IVS Academy</strong><br><span>Nền tảng vững · Khám phá đúng · Phát triển dài hạn</span></div>
+      <nav class="footer-links" aria-label="Liên kết cuối trang">
+        <a href="/Pages/it-training.html">Chương trình IT</a>
+        <a href="/contact.html">Tư vấn</a>
+        <a href="https://ivstech.store" target="_blank" rel="noopener">IVS TECH</a>
+      </nav>
+      <div>© <span data-current-year></span> IVS Academy</div>
+    </div>
+  </div>
+</footer>
+<div class="mobile-cta"><a class="btn btn-primary" href="/Pages/it-training.html#consultation"><i class="fa-solid fa-calendar-check"></i> Đăng ký tư vấn lộ trình</a></div>
+<script defer src="../js/it-training-v2.js"></script>
 </body>
 </html>

@@ -1,155 +1,135 @@
-<!DOCTYPE html>
-<html class="scroll-smooth" lang="vi">
+<!doctype html>
+<html lang="vi" class="scroll-smooth">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Khóa học Mạng máy tính & Bảo mật - IVS Academy</title>
-    <meta content="Đào tạo Quản trị Mạng máy tính Cisco, An ninh mạng Cybersecurity, Kiểm thử xâm nhập và Bảo mật thông tin cho cá nhân & doanh nghiệp." name="description"/>
-    <meta content="mạng máy tính, cisco ccna, an ninh mạng, cybersecurity, học bảo mật, IVS Academy" name="keywords"/>
-    <meta content="Đào tạo Mạng máy tính & Bảo mật - IVS Academy" property="og:title"/>
-    <meta content="Chương trình Quản trị Mạng & An ninh mạng Cybersecurity chuẩn quốc tế." property="og:description"/>
-    <meta content="https://ivsacademy.edu.vn/Pages/it-network.html" property="og:url"/>
-    <meta content="website" property="og:type"/>
-    <link href="../images/favicon.ico" rel="icon" type="image/x-icon"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet"/>
-    <link href="../css/tailwind.css" rel="stylesheet"/>
-    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" referrerpolicy="no-referrer" rel="stylesheet"/>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
-    <script defer src="../js/language-init.js"></script>
-    <style>
-        :root {
-            --header-height: 80px;
-            --accent: #22c55e;
-            --bg-dark: #07111F;
-            --bg-card: #0f1f35;
-        }
-        body {
-            background: var(--bg-dark);
-            color: #f1f5f9;
-            font-family: 'Be Vietnam Pro', sans-serif;
-            padding-top: var(--header-height);
-            overflow-x: hidden;
-        }
-        #header-placeholder {
-            position: fixed; top: 0; left: 0; width: 100%;
-            height: var(--header-height); z-index: 1000;
-            background: rgba(7,17,31,0.95);
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-        .hero-net {
-            min-height: 70vh;
-            background: linear-gradient(135deg, #032014 0%, #073a24 50%, #0c5435 100%);
-            position: relative;
-            display: flex; align-items: center; justify-content: center;
-        }
-        .course-box {
-            background: var(--bg-card);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 1.25rem;
-            transition: all 0.3s ease;
-        }
-        .course-box:hover {
-            border-color: rgba(34,197,94,0.4);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px -10px rgba(34,197,94,0.2);
-        }
-        .btn-primary-net {
-            display: inline-flex; align-items: center; gap: 0.5rem;
-            background: linear-gradient(135deg, #16a34a, #15803d);
-            color: white; font-weight: 700; padding: 0.875rem 2rem;
-            border-radius: 0.875rem; transition: all 0.3s ease;
-            box-shadow: 0 10px 25px -5px rgba(22,163,74,0.4);
-        }
-        .btn-primary-net:hover { transform: translateY(-2px); box-shadow: 0 15px 30px -5px rgba(22,163,74,0.5); }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mạng máy tính &amp; An toàn số nền tảng | IVS Academy</title>
+  <meta name="description" content="Hiểu Internet, router, website, tìm kiếm có kiểm chứng, bảo vệ tài khoản và mô hình mạng gia đình an toàn trong lộ trình IT Foundation &amp; Discovery.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#22c55e">
+  <link rel="canonical" href="https://ivsacademy.edu.vn/Pages/it-network.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:site_name" content="IVS Academy">
+  <meta property="og:title" content="Mạng máy tính &amp; An toàn số nền tảng | IVS Academy">
+  <meta property="og:description" content="Hiểu Internet, router, website, tìm kiếm có kiểm chứng, bảo vệ tài khoản và mô hình mạng gia đình an toàn trong lộ trình IT Foundation &amp; Discovery.">
+  <meta property="og:url" content="https://ivsacademy.edu.vn/Pages/it-network.html">
+  <meta property="og:image" content="https://ivsacademy.edu.vn/images/pages/ivscelestech/it-learners.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mạng máy tính &amp; An toàn số nền tảng | IVS Academy">
+  <meta name="twitter:description" content="Hiểu Internet, router, website, tìm kiếm có kiểm chứng, bảo vệ tài khoản và mô hình mạng gia đình an toàn trong lộ trình IT Foundation &amp; Discovery.">
+  <meta name="twitter:image" content="https://ivsacademy.edu.vn/images/pages/ivscelestech/it-learners.png">
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tailwind.css">
+  <link rel="stylesheet" href="../css/it-training-v2.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script defer src="../js/language-init.js"></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Course", "name": "Mạng máy tính & An toàn số nền tảng", "description": "Hiểu Internet, router, website, tìm kiếm có kiểm chứng, bảo vệ tài khoản và mô hình mạng gia đình an toàn trong lộ trình IT Foundation & Discovery.", "url": "https://ivsacademy.edu.vn/Pages/it-network.html", "inLanguage": "vi", "provider": {"@type": "EducationalOrganization", "name": "IVS Academy", "url": "https://ivsacademy.edu.vn/"}, "educationalLevel": "Nền tảng trong lộ trình IT Foundation & Discovery", "timeRequired": "P40W"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Chương trình có dạy hack không?", "acceptedAnswer": {"@type": "Answer", "text": "Không. Nội dung nền tảng chỉ tập trung phòng thủ, an toàn số, kiểm chứng và Lab hợp pháp được cấp phép."}}, {"@type": "Question", "name": "Học viên có được đổi cấu hình router gia đình không?", "acceptedAnswer": {"@type": "Answer", "text": "Không tự ý. Router chỉ dùng để quan sát; mọi thay đổi phải có người lớn/Mentor giám sát và phương án phục hồi."}}, {"@type": "Question", "name": "CCNA hoặc Security+ có phải đầu ra không?", "acceptedAnswer": {"@type": "Answer", "text": "Không. Đây là định hướng học tiếp sau nền tảng, không phải chuẩn đầu ra của lộ trình 40 tuần."}}, {"@type": "Question", "name": "Sản phẩm học tập có chứa thông tin mạng thật không?", "acceptedAnswer": {"@type": "Answer", "text": "Không. Bài nộp phải loại bỏ mật khẩu, địa chỉ nhạy cảm và dữ liệu có thể gây rủi ro."}}]}</script>
 </head>
-<body>
-    <header id="header-placeholder"></header>
+<body class="theme-network">
 
-    <section class="hero-net text-center px-4 relative">
-        <div class="max-w-4xl mx-auto py-16" data-aos="fade-up">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/30 text-green-400 text-sm font-semibold mb-6">
-                <i class="fas fa-network-wired"></i> Hạ tầng & An ninh
-            </div>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
-                Mạng máy tính <span class="text-green-400">& Bảo mật</span> Thông tin
-            </h1>
-            <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-8">
-                Xây dựng và bảo vệ hạ tầng mạng vững chắc cho tổ chức. Đào tạo kỹ năng thực chiến chuẩn chứng chỉ quốc tế Cisco & CompTIA Security+.
-            </p>
-            <a href="/contact.html" class="btn-primary-net">
-                <i class="fas fa-shield-alt"></i> Đăng ký Nhận Tư vấn
-            </a>
-        </div>
-    </section>
+<a class="skip-link" href="#main-content">Bỏ qua điều hướng</a>
+<header id="header-placeholder" aria-label="Điều hướng chính">
+  <div class="fallback-header">
+    <div class="container">
+      <a class="brand" href="/" aria-label="IVS Academy - Trang chủ">
+        <span class="brand-mark">IVS</span>
+        <span>IVS Academy<small>Hệ thống đào tạo công nghệ</small></span>
+      </a>
+      <nav class="fallback-nav" aria-label="Điều hướng dự phòng">
+        <a href="/Pages/it-training.html">Đào tạo IT</a>
+        <a href="/Pages/it-programming.html">Lập trình</a>
+        <a href="/Pages/it-hardware.html">Phần cứng</a>
+        <a href="/Pages/it-network.html">Mạng</a>
+        <a href="/contact.html">Liên hệ</a>
+      </nav>
+    </div>
+  </div>
+</header>
+<main id="main-content">
+  <section class="hero">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="container hero-layout">
+      <div class="hero-copy">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Trang chủ</a><span>/</span><a href="/Pages/it-training.html">Đào tạo IT</a><span>/</span><span>Mạng & an toàn số</span></nav>
+        <div class="hero-badge"><i class="fa-solid fa-network-wired"></i> Giai đoạn 4 · Tuần 13–16 + Track tuần 28</div>
+        <h1>Kết nối đúng, bảo vệ tốt với <span class="gradient-text">Mạng &amp; An toàn số</span></h1>
+        <p>Học viên hiểu đường đi từ thiết bị đến website, biết mô tả mạng gia đình, kiểm chứng thông tin và xử lý sự cố theo hướng phòng thủ.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="/Pages/it-training.html#consultation"><i class="fa-solid fa-calendar-check"></i> Đăng ký đánh giá đầu vào</a><a class="btn btn-secondary" href="#learning"><i class="fa-solid fa-list-check"></i> Xem nội dung học</a></div>
+      </div>
+      <aside class="hero-panel" aria-label="Tóm tắt chuyên đề"><p class="hero-panel-title"><strong>Vị trí trong lộ trình 40 tuần</strong></p><div class="hero-facts"><div class="hero-fact"><strong>Tuần 13–16</strong><span>Internet & an toàn số</span></div><div class="hero-fact"><strong>Tuần 28</strong><span>Mạng & hệ thống</span></div><div class="hero-fact"><strong>Phòng thủ</strong><span>Không khai thác trái phép</span></div><div class="hero-fact"><strong>2 sản phẩm</strong><span>Phiếu nguồn & nhật ký mạng</span></div></div><div class="note" style="margin-top:1rem">CCNA, Linux Server, Firewall, SOC và Ethical Hacking chỉ được giới thiệu như hướng nghề nghiệp, không phải chuẩn đầu ra thực hành của chương trình nền tảng.</div></aside>
+    </div>
+  </section>
 
-    <section class="py-20 px-4">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-bold text-white text-center mb-12" data-aos="fade-up">Chương trình Mạng & Bảo mật</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Module 1 -->
-                <div class="course-box p-8" data-aos="fade-up" data-aos-delay="0">
-                    <div class="w-14 h-14 bg-green-500/20 text-green-400 rounded-2xl flex items-center justify-center text-2xl mb-6">
-                        <i class="fas fa-project-diagram"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">1. Quản trị Mạng Doanh nghiệp</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                        Thiết kế, triển khai và quản lý hệ thống mạng LAN / WAN / Wi-Fi cho các văn phòng, trường học và trung tâm.
-                    </p>
-                    <ul class="space-y-3 text-sm text-slate-300 border-t border-white/10 pt-6">
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-400"></i> Mô hình OSI, TCP/IP, Chia subnets IPv4/IPv6</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-400"></i> Cấu hình Switch & Router Cisco (VLAN, Trunking)</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-400"></i> Định tuyến OSPF, BGP, VPN Site-to-Site</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-green-400"></i> Quản lý Wi-Fi Controller & Router MikroTik/Fortinet</li>
-                    </ul>
-                </div>
+  <section id="learning" class="section">
+    <div class="container">
+      <div class="section-heading center"><span class="eyebrow">Nội dung nền tảng</span><h2 class="section-title">Hiểu Internet trước khi học công cụ bảo mật</h2><p class="section-lead">Chương trình xây tư duy kết nối, kiểm chứng và bảo vệ dữ liệu; mọi Lab mạng được tách khỏi hệ thống/dữ liệu quan trọng.</p></div>
+      <div class="grid-3"><article class="card"><div class="card-icon"><i class="fa-solid fa-globe"></i></div><h3>Internet hoạt động thế nào</h3><p>Thiết bị, Wi‑Fi, router, nhà cung cấp mạng, địa chỉ và đường đi đến website.</p></article><article class="card"><div class="card-icon"><i class="fa-solid fa-window-maximize"></i></div><h3>Website, domain & hosting</h3><p>Hiểu thành phần website, trình duyệt và cách một tên miền trỏ tới dịch vụ.</p></article><article class="card"><div class="card-icon"><i class="fa-solid fa-magnifying-glass"></i></div><h3>Tìm kiếm & kiểm chứng</h3><p>Tạo từ khóa, so sánh nguồn, nhận diện nội dung thiếu căn cứ và ghi lại bằng chứng.</p></article><article class="card"><div class="card-icon"><i class="fa-solid fa-key"></i></div><h3>Tài khoản & mật khẩu</h3><p>Mật khẩu mạnh, xác thực nhiều lớp, quyền riêng tư và quy trình báo cáo sự cố.</p></article><article class="card"><div class="card-icon"><i class="fa-solid fa-triangle-exclamation"></i></div><h3>Phòng chống lừa đảo</h3><p>Nhận diện liên kết, tin nhắn và yêu cầu cung cấp thông tin đáng ngờ.</p></article><article class="card"><div class="card-icon"><i class="fa-solid fa-diagram-project"></i></div><h3>Mô hình mạng gia đình</h3><p>Vẽ sơ đồ kết nối, quan sát cổng, ghi nhật ký sự cố và kiểm tra từng lớp.</p></article></div>
+    </div>
+  </section>
 
-                <!-- Module 2 -->
-                <div class="course-box p-8" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-14 h-14 bg-emerald-500/20 text-emerald-400 rounded-2xl flex items-center justify-center text-2xl mb-6">
-                        <i class="fas fa-shield-virus"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">2. An ninh mạng (Cybersecurity)</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                        Hiểu các hình thức tấn công mạng phổ biến và cách xây dựng lá chắn bảo vệ dữ liệu an toàn cho hệ thống.
-                    </p>
-                    <ul class="space-y-3 text-sm text-slate-300 border-t border-white/10 pt-6">
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400"></i> Nguyên lý Firewall, IDS / IPS</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400"></i> Phòng chống Malware, Phishing & Ransomware</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400"></i> Mã hóa dữ liệu & Quản lý Chứng chỉ SSL/TLS</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-emerald-400"></i> Giám sát an ninh mạng với Wireshark & SIEM</li>
-                    </ul>
-                </div>
+  <section class="section section-alt">
+    <div class="container split">
+      <div>
+        <div class="section-heading"><span class="eyebrow">Sản phẩm học tập</span><h2 class="section-title">Portfolio thay cho bài tập rời rạc</h2><p class="section-lead">Học viên lưu phiên bản, mô tả lỗi, cách xử lý và phản hồi cải tiến cho từng sản phẩm.</p></div>
+        <ul class="check-list"><li>Sơ đồ mạng gia đình không chứa thông tin nhạy cảm.</li><li>Phiếu phân tích thành phần của một website.</li><li>Phiếu tìm kiếm và kiểm chứng tối thiểu hai nguồn.</li><li>Checklist bảo vệ tài khoản và nhận biết lừa đảo.</li><li>Nhật ký sự cố mạng: hiện tượng, giả thuyết, bước thử và kết quả.</li></ul>
+      </div>
+      <aside class="callout"><h3>Tiêu chí đánh giá</h3><ul class="check-list"><li>Hiểu mục tiêu và quy trình thực hiện.</li><li>Tự thao tác trong phạm vi phù hợp.</li><li>Mô tả được lỗi, giả thuyết và cách kiểm tra.</li><li>Lưu đúng phiên bản và sao lưu sản phẩm.</li><li>Giải trình rõ phần AI hoặc Mentor đã hỗ trợ.</li></ul></aside>
+    </div>
+  </section>
 
-                <!-- Module 3 -->
-                <div class="course-box p-8" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-14 h-14 bg-teal-500/20 text-teal-400 rounded-2xl flex items-center justify-center text-2xl mb-6">
-                        <i class="fas fa-user-secret"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">3. Kiểm thử Bảo mật (Ethical Hacking)</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                        Trang bị tư duy của Chuyên gia Kiểm thử (Penetration Tester) để chủ động tìm lỗ hổng trước khi bị kẻ xấu khai thác.
-                    </p>
-                    <ul class="space-y-3 text-sm text-slate-300 border-t border-white/10 pt-6">
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-teal-400"></i> Sử dụng hệ điều hành Kali Linux</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-teal-400"></i> Dò quét lỗ hổng bằng Nmap, Nessus, Metasploit</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-teal-400"></i> Kiểm thử an toàn ứng dụng Web (OWASP Top 10)</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-teal-400"></i> Viết báo cáo đánh giá an toàn thông tin</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+  <section class="section">
+    <div class="container split">
+      <div>
+        <div class="section-heading"><span class="eyebrow">Tiến trình</span><h2 class="section-title">Từ Internet đến vận hành mạng cơ bản</h2><p class="section-lead">Open Lab tuần 16 tập trung an toàn số; tuần 28 thực hành mô hình mạng trong môi trường Lab tách biệt.</p></div>
+        <div class="timeline"><div class="timeline-item"><span class="timeline-marker">13</span><div class="timeline-content"><h3>Internet & router</h3><p>Hiểu kết nối từ thiết bị đến mạng gia đình và website.</p></div></div><div class="timeline-item"><span class="timeline-marker">14</span><div class="timeline-content"><h3>Website & trình duyệt</h3><p>Domain, hosting và phân tích giao diện/luồng truy cập.</p></div></div><div class="timeline-item"><span class="timeline-marker">15</span><div class="timeline-content"><h3>Tìm kiếm & kiểm chứng</h3><p>Đánh giá nguồn và lưu bằng chứng xác nhận.</p></div></div><div class="timeline-item"><span class="timeline-marker">16</span><div class="timeline-content"><h3>Tài khoản & lừa đảo</h3><p>Bảo vệ danh tính số và phản ứng an toàn.</p></div></div><div class="timeline-item"><span class="timeline-marker">28</span><div class="timeline-content"><h3>Mạng & hệ thống</h3><p>Thiết kế sơ đồ và nhật ký sự cố mạng.</p></div></div></div>
+      </div>
+      <aside class="callout"><h3>Phạm vi Cybersecurity</h3><ul class="check-list"><li>Chỉ học nguyên tắc bảo vệ, kiểm tra và báo cáo trong môi trường được phép.</li><li>Không yêu cầu truy cập, vượt quyền hoặc khai thác hệ thống.</li><li>Không chia sẻ mật khẩu Wi‑Fi, IP công khai hoặc cấu hình nhạy cảm trong bài nộp.</li><li>Router/switch Lab phải tách khỏi mạng và dữ liệu quan trọng.</li><li>Thay đổi cấu hình chỉ khi Mentor phê duyệt và có phương án khôi phục.</li></ul><div class="note" style="margin-top:1rem">Mục tiêu nền tảng là hình thành thói quen phòng thủ và tư duy xử lý sự cố có hệ thống, không đào tạo pentest ở giai đoạn này.</div></aside>
+    </div>
+  </section>
 
-    <footer id="footer-placeholder"></footer>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 700, once: true });
-        fetch('/components/header.html').then(r=>r.text()).then(h=>{ document.getElementById('header-placeholder').innerHTML=h; });
-        fetch('/components/footer.html').then(r=>r.text()).then(f=>{ document.getElementById('footer-placeholder').innerHTML=f; });
-    </script>
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-heading center"><span class="eyebrow">Sau giai đoạn nền tảng</span><h2 class="section-title">Định hướng học tiếp theo thiên hướng</h2><p class="section-lead">Các công nghệ nâng cao dưới đây là hướng phát triển sau đánh giá, không phải chuẩn đầu ra bắt buộc của lộ trình nền tảng.</p></div>
+      <div class="grid-3"><article class="card"><h3>Network Administration</h3><p>Mở rộng về IP, subnet, switching, routing và vận hành hạ tầng.</p><div class="meta-list"><span class="pill">Networking</span><span class="pill">Cisco orientation</span><span class="pill">Operations</span></div></article><article class="card"><h3>System Administration</h3><p>Tiếp tục Windows/Linux, tài khoản, dịch vụ và sao lưu.</p><div class="meta-list"><span class="pill">Windows/Linux</span><span class="pill">Accounts</span><span class="pill">Backup</span></div></article><article class="card"><h3>Cybersecurity Defense</h3><p>Học hardening, giám sát, quản lý sự cố và bảo vệ dữ liệu.</p><div class="meta-list"><span class="pill">Blue Team</span><span class="pill">Hardening</span><span class="pill">Incident response</span></div></article></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading center"><span class="eyebrow">FAQ</span><h2 class="section-title">Câu hỏi thường gặp</h2></div>
+      <div class="faq"><details><summary>Chương trình có dạy hack không?</summary><div class="faq-answer"><p>Không. Nội dung nền tảng chỉ tập trung phòng thủ, an toàn số, kiểm chứng và Lab hợp pháp được cấp phép.</p></div></details>
+<details><summary>Học viên có được đổi cấu hình router gia đình không?</summary><div class="faq-answer"><p>Không tự ý. Router chỉ dùng để quan sát; mọi thay đổi phải có người lớn/Mentor giám sát và phương án phục hồi.</p></div></details>
+<details><summary>CCNA hoặc Security+ có phải đầu ra không?</summary><div class="faq-answer"><p>Không. Đây là định hướng học tiếp sau nền tảng, không phải chuẩn đầu ra của lộ trình 40 tuần.</p></div></details>
+<details><summary>Sản phẩm học tập có chứa thông tin mạng thật không?</summary><div class="faq-answer"><p>Không. Bài nộp phải loại bỏ mật khẩu, địa chỉ nhạy cảm và dữ liệu có thể gây rủi ro.</p></div></details></div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="cta-band"><div><h2>Xây tư duy kết nối và phòng thủ từ nền tảng</h2><p>Hiểu Internet, kiểm chứng thông tin và bảo vệ tài khoản là điều kiện trước khi học quản trị mạng hoặc Cybersecurity.</p><div class="meta-list"><a class="card-link" href="/Pages/it-hardware.html">Xem Phần cứng & IoT <i class="fa-solid fa-arrow-right"></i></a><a class="card-link" href="/Pages/it-training.html">Xem lộ trình 40 tuần <i class="fa-solid fa-arrow-right"></i></a></div></div><a class="btn btn-primary" href="/Pages/it-training.html#consultation"><i class="fa-solid fa-paper-plane"></i> Nhận tư vấn lộ trình</a></div>
+    </div>
+  </section>
+</main>
+
+<footer id="footer-placeholder">
+  <div class="fallback-footer">
+    <div class="container footer-grid">
+      <div><strong>IVS Academy</strong><br><span>Nền tảng vững · Khám phá đúng · Phát triển dài hạn</span></div>
+      <nav class="footer-links" aria-label="Liên kết cuối trang">
+        <a href="/Pages/it-training.html">Chương trình IT</a>
+        <a href="/contact.html">Tư vấn</a>
+        <a href="https://ivstech.store" target="_blank" rel="noopener">IVS TECH</a>
+      </nav>
+      <div>© <span data-current-year></span> IVS Academy</div>
+    </div>
+  </div>
+</footer>
+<div class="mobile-cta"><a class="btn btn-primary" href="/Pages/it-training.html#consultation"><i class="fa-solid fa-calendar-check"></i> Đăng ký tư vấn lộ trình</a></div>
+<script defer src="../js/it-training-v2.js"></script>
 </body>
 </html>

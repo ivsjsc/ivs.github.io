@@ -1,155 +1,135 @@
-<!DOCTYPE html>
-<html class="scroll-smooth" lang="vi">
+<!doctype html>
+<html lang="vi" class="scroll-smooth">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Khóa học Phần cứng & Điện tử - IVS Academy</title>
-    <meta content="Đào tạo kỹ năng Phần cứng máy tính, Điện tử ứng dụng, IoT, Vi điều khiển Arduino/Raspberry Pi và Sửa chữa PC/Laptop chuyên nghiệp." name="description"/>
-    <meta content="học phần cứng máy tính, điện tử vi điều khiển, arduino, iot, sửa chữa laptop, IVS Academy" name="keywords"/>
-    <meta content="Đào tạo Phần cứng & Điện tử - IVS Academy" property="og:title"/>
-    <meta content="Chương trình đào tạo Phần cứng máy tính, Điện tử & IoT thực chiến." property="og:description"/>
-    <meta content="https://ivsacademy.edu.vn/Pages/it-hardware.html" property="og:url"/>
-    <meta content="website" property="og:type"/>
-    <link href="../images/favicon.ico" rel="icon" type="image/x-icon"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet"/>
-    <link href="../css/tailwind.css" rel="stylesheet"/>
-    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" referrerpolicy="no-referrer" rel="stylesheet"/>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
-    <script defer src="../js/language-init.js"></script>
-    <style>
-        :root {
-            --header-height: 80px;
-            --accent: #f97316;
-            --bg-dark: #07111F;
-            --bg-card: #0f1f35;
-        }
-        body {
-            background: var(--bg-dark);
-            color: #f1f5f9;
-            font-family: 'Be Vietnam Pro', sans-serif;
-            padding-top: var(--header-height);
-            overflow-x: hidden;
-        }
-        #header-placeholder {
-            position: fixed; top: 0; left: 0; width: 100%;
-            height: var(--header-height); z-index: 1000;
-            background: rgba(7,17,31,0.95);
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-        .hero-hw {
-            min-height: 70vh;
-            background: linear-gradient(135deg, #1f0f03 0%, #3b1d07 50%, #522709 100%);
-            position: relative;
-            display: flex; align-items: center; justify-content: center;
-        }
-        .course-box {
-            background: var(--bg-card);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 1.25rem;
-            transition: all 0.3s ease;
-        }
-        .course-box:hover {
-            border-color: rgba(249,115,22,0.4);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px -10px rgba(249,115,22,0.2);
-        }
-        .btn-primary-hw {
-            display: inline-flex; align-items: center; gap: 0.5rem;
-            background: linear-gradient(135deg, #ea580c, #c2410c);
-            color: white; font-weight: 700; padding: 0.875rem 2rem;
-            border-radius: 0.875rem; transition: all 0.3s ease;
-            box-shadow: 0 10px 25px -5px rgba(234,88,12,0.4);
-        }
-        .btn-primary-hw:hover { transform: translateY(-2px); box-shadow: 0 15px 30px -5px rgba(234,88,12,0.5); }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Phần cứng máy tính &amp; IoT nền tảng | IVS Academy</title>
+  <meta name="description" content="Khám phá cấu tạo PC, đọc cấu hình, tháo lắp an toàn, chẩn đoán lỗi và micro:bit IoT trong lộ trình IT Foundation &amp; Discovery.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#f97316">
+  <link rel="canonical" href="https://ivsacademy.edu.vn/Pages/it-hardware.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:site_name" content="IVS Academy">
+  <meta property="og:title" content="Phần cứng máy tính &amp; IoT nền tảng | IVS Academy">
+  <meta property="og:description" content="Khám phá cấu tạo PC, đọc cấu hình, tháo lắp an toàn, chẩn đoán lỗi và micro:bit IoT trong lộ trình IT Foundation &amp; Discovery.">
+  <meta property="og:url" content="https://ivsacademy.edu.vn/Pages/it-hardware.html">
+  <meta property="og:image" content="https://ivsacademy.edu.vn/images/pages/ivscelestech/it-learners.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Phần cứng máy tính &amp; IoT nền tảng | IVS Academy">
+  <meta name="twitter:description" content="Khám phá cấu tạo PC, đọc cấu hình, tháo lắp an toàn, chẩn đoán lỗi và micro:bit IoT trong lộ trình IT Foundation &amp; Discovery.">
+  <meta name="twitter:image" content="https://ivsacademy.edu.vn/images/pages/ivscelestech/it-learners.png">
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tailwind.css">
+  <link rel="stylesheet" href="../css/it-training-v2.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script defer src="../js/language-init.js"></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Course", "name": "Phần cứng máy tính & IoT nền tảng", "description": "Khám phá cấu tạo PC, đọc cấu hình, tháo lắp an toàn, chẩn đoán lỗi và micro:bit IoT trong lộ trình IT Foundation & Discovery.", "url": "https://ivsacademy.edu.vn/Pages/it-hardware.html", "inLanguage": "vi", "provider": {"@type": "EducationalOrganization", "name": "IVS Academy", "url": "https://ivsacademy.edu.vn/"}, "educationalLevel": "Nền tảng trong lộ trình IT Foundation & Discovery", "timeRequired": "P40W"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Có tháo máy tính cá nhân của học viên không?", "acceptedAnswer": {"@type": "Answer", "text": "Không khuyến nghị. Thực hành dùng case PC cũ hoặc thiết bị Lab không chứa dữ liệu quan trọng."}}, {"@type": "Question", "name": "Có cần mua Arduino hoặc ESP32 ngay không?", "acceptedAnswer": {"@type": "Answer", "text": "Không. Chương trình ưu tiên micro:bit trước tuần 27; Arduino/ESP32 chỉ cân nhắc khi có dự án và thiên hướng phù hợp."}}, {"@type": "Question", "name": "Học viên có sửa nguồn máy tính không?", "acceptedAnswer": {"@type": "Answer", "text": "Không. Bộ nguồn, màn hình, pin hỏng và thiết bị điện áp cao nằm ngoài phạm vi tự thao tác."}}, {"@type": "Question", "name": "IoT trong chương trình có khó không?", "acceptedAnswer": {"@type": "Answer", "text": "Nội dung ở mức nền tảng: hiểu cảm biến–điều khiển–phản hồi và tạo mô hình điện áp thấp có Mentor hướng dẫn."}}]}</script>
 </head>
-<body>
-    <header id="header-placeholder"></header>
+<body class="theme-hardware">
 
-    <section class="hero-hw text-center px-4 relative">
-        <div class="max-w-4xl mx-auto py-16" data-aos="fade-up">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 text-sm font-semibold mb-6">
-                <i class="fas fa-microchip"></i> Kỹ thuật & Thực hành
-            </div>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
-                Phần cứng <span class="text-orange-400">& Điện tử</span> Ứng dụng
-            </h1>
-            <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-8">
-                Làm chủ nguyên lý mạch điện, lắp ráp máy tính, thiết kế hệ thống IoT và vi điều khiển thông minh với trang thiết bị thực hành hiện đại.
-            </p>
-            <a href="/contact.html" class="btn-primary-hw">
-                <i class="fas fa-tools"></i> Đăng ký Khóa thực hành
-            </a>
-        </div>
-    </section>
+<a class="skip-link" href="#main-content">Bỏ qua điều hướng</a>
+<header id="header-placeholder" aria-label="Điều hướng chính">
+  <div class="fallback-header">
+    <div class="container">
+      <a class="brand" href="/" aria-label="IVS Academy - Trang chủ">
+        <span class="brand-mark">IVS</span>
+        <span>IVS Academy<small>Hệ thống đào tạo công nghệ</small></span>
+      </a>
+      <nav class="fallback-nav" aria-label="Điều hướng dự phòng">
+        <a href="/Pages/it-training.html">Đào tạo IT</a>
+        <a href="/Pages/it-programming.html">Lập trình</a>
+        <a href="/Pages/it-hardware.html">Phần cứng</a>
+        <a href="/Pages/it-network.html">Mạng</a>
+        <a href="/contact.html">Liên hệ</a>
+      </nav>
+    </div>
+  </div>
+</header>
+<main id="main-content">
+  <section class="hero">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="container hero-layout">
+      <div class="hero-copy">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Trang chủ</a><span>/</span><a href="/Pages/it-training.html">Đào tạo IT</a><span>/</span><span>Phần cứng & IoT</span></nav>
+        <div class="hero-badge"><i class="fa-solid fa-microchip"></i> Giai đoạn 3 · Tuần 9–12 + Track tuần 27</div>
+        <h1>Hiểu đúng <span class="gradient-text">Phần cứng &amp; IoT</span></h1>
+        <p>Học viên quan sát, nhận diện và xử lý sự cố theo checklist trong môi trường Lab an toàn, sau đó trải nghiệm cảm biến và điều khiển bằng micro:bit.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="/Pages/it-training.html#consultation"><i class="fa-solid fa-calendar-check"></i> Đăng ký đánh giá đầu vào</a><a class="btn btn-secondary" href="#learning"><i class="fa-solid fa-list-check"></i> Xem nội dung học</a></div>
+      </div>
+      <aside class="hero-panel" aria-label="Tóm tắt chuyên đề"><p class="hero-panel-title"><strong>Vị trí trong lộ trình 40 tuần</strong></p><div class="hero-facts"><div class="hero-fact"><strong>Tuần 9–12</strong><span>Phần cứng máy tính</span></div><div class="hero-fact"><strong>Tuần 27</strong><span>IoT Foundation</span></div><div class="hero-fact"><strong>2 Open Lab</strong><span>Tuần 12 và 28</span></div><div class="hero-fact"><strong>Điện áp thấp</strong><span>Thiết bị giáo dục an toàn</span></div></div><div class="note" style="margin-top:1rem">Arduino/ESP32 và thiết bị nâng cao chỉ được cân nhắc sau khi đã có dữ liệu thiên hướng; micro:bit là lựa chọn nền tảng ưu tiên.</div></aside>
+    </div>
+  </section>
 
-    <section class="py-20 px-4">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-bold text-white text-center mb-12" data-aos="fade-up">Nội dung Khóa học Phần cứng & Điện tử</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Module 1 -->
-                <div class="course-box p-8" data-aos="fade-up" data-aos-delay="0">
-                    <div class="w-14 h-14 bg-orange-500/20 text-orange-400 rounded-2xl flex items-center justify-center text-2xl mb-6">
-                        <i class="fas fa-desktop"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">1. Lắp ráp & Bảo trì Máy tính</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                        Hiểu rõ linh kiện cấu thành máy tính, quy trình tối ưu hiệu năng, chẩn đoán lỗi phần cứng và xử lý sự cố.
-                    </p>
-                    <ul class="space-y-3 text-sm text-slate-300 border-t border-white/10 pt-6">
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-orange-400"></i> Kiến trúc CPU, RAM, GPU, Mainboard</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-orange-400"></i> Quy trình lắp ráp PC chuẩn phòng Lab</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-orange-400"></i> Chẩn đoán & thay thế linh kiện Laptop</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-orange-400"></i> Tối ưu tản nhiệt & BIOS / UEFI</li>
-                    </ul>
-                </div>
+  <section id="learning" class="section">
+    <div class="container">
+      <div class="section-heading center"><span class="eyebrow">Nội dung nền tảng</span><h2 class="section-title">Từ linh kiện PC đến hệ thống cảm biến</h2><p class="section-lead">Mục tiêu không phải sửa chữa chuyên nghiệp ngay, mà hình thành tư duy cấu tạo–nguyên nhân–kiểm chứng và quy trình an toàn.</p></div>
+      <div class="grid-3"><article class="card"><div class="card-icon"><i class="fa-solid fa-desktop"></i></div><h3>Cấu tạo case PC</h3><p>Nhận biết mainboard, CPU, RAM, SSD/HDD, cổng kết nối và chức năng từng bộ phận.</p></article><article class="card"><div class="card-icon"><i class="fa-solid fa-gauge-high"></i></div><h3>Cấu hình & hiệu năng</h3><p>Xem cấu hình máy, phân biệt RAM và lưu trữ, hiểu nhu cầu sử dụng.</p></article><article class="card"><div class="card-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div><h3>Tháo lắp an toàn</h3><p>Tắt máy, rút nguồn, chống tĩnh điện, chụp ảnh và quản lý ốc/lính kiện.</p></article><article class="card"><div class="card-icon"><i class="fa-solid fa-stethoscope"></i></div><h3>Chẩn đoán lỗi</h3><p>Mô tả hiện tượng, lập giả thuyết, thử bước đơn giản trước và ghi nhận kết quả.</p></article><article class="card"><div class="card-icon"><i class="fa-solid fa-satellite-dish"></i></div><h3>IoT Foundation</h3><p>Cảm biến, đầu vào/đầu ra, điều kiện và phản hồi trong hệ thống thiết bị.</p></article><article class="card"><div class="card-icon"><i class="fa-solid fa-code-branch"></i></div><h3>micro:bit Lab</h3><p>MakeCode, LED, nút bấm, cảm biến tích hợp và một mô hình điều khiển điện áp thấp.</p></article></div>
+    </div>
+  </section>
 
-                <!-- Module 2 -->
-                <div class="course-box p-8" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-14 h-14 bg-amber-500/20 text-amber-400 rounded-2xl flex items-center justify-center text-2xl mb-6">
-                        <i class="fas fa-microchip"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">2. Điện tử Căn bản & Mạch điện</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                        Nắm vững linh kiện điện tử, kỹ năng hàn mạch, đo đạc điện áp và thiết kế sơ đồ nguyên lý đơn giản.
-                    </p>
-                    <ul class="space-y-3 text-sm text-slate-300 border-t border-white/10 pt-6">
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-amber-400"></i> Điện trở, tụ điện, transistor, diode</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-amber-400"></i> Sử dụng đồng hồ VOM & Oscilloscope</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-amber-400"></i> Kỹ thuật hàn linh kiện dán (SMD) & cắm</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-amber-400"></i> Vẽ sơ đồ mạch bằng phần mềm Proteus/EasyEDA</li>
-                    </ul>
-                </div>
+  <section class="section section-alt">
+    <div class="container split">
+      <div>
+        <div class="section-heading"><span class="eyebrow">Sản phẩm học tập</span><h2 class="section-title">Portfolio thay cho bài tập rời rạc</h2><p class="section-lead">Học viên lưu phiên bản, mô tả lỗi, cách xử lý và phản hồi cải tiến cho từng sản phẩm.</p></div>
+        <ul class="check-list"><li>Báo cáo cấu hình máy tính và khuyến nghị sử dụng.</li><li>Sơ đồ linh kiện trong case PC thực hành.</li><li>Checklist tháo lắp an toàn và nhật ký thao tác.</li><li>Phiếu chẩn đoán một sự cố phần cứng đơn giản.</li><li>Mini prototype micro:bit với cảm biến hoặc tín hiệu đầu ra.</li></ul>
+      </div>
+      <aside class="callout"><h3>Tiêu chí đánh giá</h3><ul class="check-list"><li>Hiểu mục tiêu và quy trình thực hiện.</li><li>Tự thao tác trong phạm vi phù hợp.</li><li>Mô tả được lỗi, giả thuyết và cách kiểm tra.</li><li>Lưu đúng phiên bản và sao lưu sản phẩm.</li><li>Giải trình rõ phần AI hoặc Mentor đã hỗ trợ.</li></ul></aside>
+    </div>
+  </section>
 
-                <!-- Module 3 -->
-                <div class="course-box p-8" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-14 h-14 bg-yellow-500/20 text-yellow-400 rounded-2xl flex items-center justify-center text-2xl mb-6">
-                        <i class="fas fa-wifi"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">3. Vi điều khiển & Hệ thống IoT</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                        Lập trình vi điều khiển Arduino, ESP32, Raspberry Pi để tạo hệ thống Nhà thông minh và thiết bị tự động化.
-                    </p>
-                    <ul class="space-y-3 text-sm text-slate-300 border-t border-white/10 pt-6">
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-yellow-400"></i> Lập trình C/C++ cho Arduino & ESP32</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-yellow-400"></i> Giao tiếp Cảm biến & Động cơ (Relay, Servo)</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-yellow-400"></i> Kết nối Wi-Fi/Bluetooth, Giao thức MQTT</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-yellow-400"></i> Xây dựng Dashboard điều khiển qua Smartphone</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+  <section class="section">
+    <div class="container split">
+      <div>
+        <div class="section-heading"><span class="eyebrow">Tiến trình</span><h2 class="section-title">Học phần cứng theo quy trình an toàn</h2><p class="section-lead">Thiết bị thực hành tách khỏi máy chính và dữ liệu quan trọng; Mentor kiểm tra trước khi cấp điện.</p></div>
+        <div class="timeline"><div class="timeline-item"><span class="timeline-marker">9</span><div class="timeline-content"><h3>Khám phá bên trong case</h3><p>Nhận diện linh kiện và mở case đúng quy trình.</p></div></div><div class="timeline-item"><span class="timeline-marker">10</span><div class="timeline-content"><h3>CPU, RAM, SSD</h3><p>Đọc cấu hình và liên hệ với hiệu năng thực tế.</p></div></div><div class="timeline-item"><span class="timeline-marker">11</span><div class="timeline-content"><h3>Tháo lắp cơ bản</h3><p>Thao tác RAM/ổ lưu trữ trên thiết bị Lab.</p></div></div><div class="timeline-item"><span class="timeline-marker">12</span><div class="timeline-content"><h3>Chẩn đoán lỗi</h3><p>Xử lý tình huống đơn giản và Open Lab phần cứng.</p></div></div><div class="timeline-item"><span class="timeline-marker">27</span><div class="timeline-content"><h3>IoT Foundation</h3><p>Cảm biến, điều khiển và micro:bit Lab.</p></div></div></div>
+      </div>
+      <aside class="callout"><h3>An toàn bắt buộc</h3><ul class="check-list"><li>Không tháo bộ nguồn, màn hình hoặc thiết bị có điện áp cao.</li><li>Không thao tác pin phồng, rò rỉ hoặc hư hỏng.</li><li>Không thực hành trên máy chứa dữ liệu công việc/doanh nghiệp.</li><li>Luôn tắt máy, rút nguồn và có Mentor/người lớn giám sát.</li><li>Chỉ sử dụng thiết bị IoT điện áp thấp trong giai đoạn nền tảng.</li></ul><div class="note" style="margin-top:1rem">IVS Academy chuẩn bị case PC cũ, dụng cụ, linh kiện và thiết bị Lab dùng chung; phụ huynh không cần mua toàn bộ từ đầu.</div></aside>
+    </div>
+  </section>
 
-    <footer id="footer-placeholder"></footer>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 700, once: true });
-        fetch('/components/header.html').then(r=>r.text()).then(h=>{ document.getElementById('header-placeholder').innerHTML=h; });
-        fetch('/components/footer.html').then(r=>r.text()).then(f=>{ document.getElementById('footer-placeholder').innerHTML=f; });
-    </script>
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-heading center"><span class="eyebrow">Sau giai đoạn nền tảng</span><h2 class="section-title">Định hướng học tiếp theo thiên hướng</h2><p class="section-lead">Các công nghệ nâng cao dưới đây là hướng phát triển sau đánh giá, không phải chuẩn đầu ra bắt buộc của lộ trình nền tảng.</p></div>
+      <div class="grid-3"><article class="card"><h3>Hardware & PC Support</h3><p>Đi sâu chẩn đoán, bảo trì và quy trình hỗ trợ kỹ thuật.</p><div class="meta-list"><span class="pill">PC Support</span><span class="pill">Diagnostics</span><span class="pill">Maintenance</span></div></article><article class="card"><h3>IoT & Smart Home</h3><p>Mở rộng từ micro:bit sang Arduino/ESP32 và cảm biến theo dự án.</p><div class="meta-list"><span class="pill">Arduino/ESP32</span><span class="pill">Sensors</span><span class="pill">Smart Home</span></div></article><article class="card"><h3>Embedded/Robotics</h3><p>Kết hợp mạch, điều khiển và cơ cấu chấp hành khi thiên hướng rõ.</p><div class="meta-list"><span class="pill">Embedded</span><span class="pill">Servo</span><span class="pill">Robotics</span></div></article></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading center"><span class="eyebrow">FAQ</span><h2 class="section-title">Câu hỏi thường gặp</h2></div>
+      <div class="faq"><details><summary>Có tháo máy tính cá nhân của học viên không?</summary><div class="faq-answer"><p>Không khuyến nghị. Thực hành dùng case PC cũ hoặc thiết bị Lab không chứa dữ liệu quan trọng.</p></div></details>
+<details><summary>Có cần mua Arduino hoặc ESP32 ngay không?</summary><div class="faq-answer"><p>Không. Chương trình ưu tiên micro:bit trước tuần 27; Arduino/ESP32 chỉ cân nhắc khi có dự án và thiên hướng phù hợp.</p></div></details>
+<details><summary>Học viên có sửa nguồn máy tính không?</summary><div class="faq-answer"><p>Không. Bộ nguồn, màn hình, pin hỏng và thiết bị điện áp cao nằm ngoài phạm vi tự thao tác.</p></div></details>
+<details><summary>IoT trong chương trình có khó không?</summary><div class="faq-answer"><p>Nội dung ở mức nền tảng: hiểu cảm biến–điều khiển–phản hồi và tạo mô hình điện áp thấp có Mentor hướng dẫn.</p></div></details></div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="cta-band"><div><h2>Khám phá thiết bị bằng tư duy kỹ thuật an toàn</h2><p>Học viên hiểu cấu tạo và biết chẩn đoán trước khi đi sâu sửa chữa, IoT hoặc Robotics.</p><div class="meta-list"><a class="card-link" href="/Pages/it-robotics.html">Xem Robotics & STEM <i class="fa-solid fa-arrow-right"></i></a><a class="card-link" href="/Pages/it-training.html">Xem lộ trình 40 tuần <i class="fa-solid fa-arrow-right"></i></a></div></div><a class="btn btn-primary" href="/Pages/it-training.html#consultation"><i class="fa-solid fa-paper-plane"></i> Nhận tư vấn lộ trình</a></div>
+    </div>
+  </section>
+</main>
+
+<footer id="footer-placeholder">
+  <div class="fallback-footer">
+    <div class="container footer-grid">
+      <div><strong>IVS Academy</strong><br><span>Nền tảng vững · Khám phá đúng · Phát triển dài hạn</span></div>
+      <nav class="footer-links" aria-label="Liên kết cuối trang">
+        <a href="/Pages/it-training.html">Chương trình IT</a>
+        <a href="/contact.html">Tư vấn</a>
+        <a href="https://ivstech.store" target="_blank" rel="noopener">IVS TECH</a>
+      </nav>
+      <div>© <span data-current-year></span> IVS Academy</div>
+    </div>
+  </div>
+</footer>
+<div class="mobile-cta"><a class="btn btn-primary" href="/Pages/it-training.html#consultation"><i class="fa-solid fa-calendar-check"></i> Đăng ký tư vấn lộ trình</a></div>
+<script defer src="../js/it-training-v2.js"></script>
 </body>
 </html>

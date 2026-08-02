@@ -1,156 +1,135 @@
-<!DOCTYPE html>
-<html class="scroll-smooth" lang="vi">
+<!doctype html>
+<html lang="vi" class="scroll-smooth">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Khóa học Lập trình Web, App & AI - IVS Academy</title>
-    <meta content="Đào tạo Lập trình chuyên nghiệp từ cơ bản đến nâng cao: Lập trình Web Frontend/Backend, Lập trình ứng dụng di động Mobile App (Flutter/React Native) và Trí tuệ nhân tạo (AI/Machine Learning)." name="description"/>
-    <meta content="lập trình web, lập trình app, học lập trình AI, python, javascript, react, flutter, IVS Academy" name="keywords"/>
-    <meta content="Đào tạo Lập trình (Web, App, AI) - IVS Academy" property="og:title"/>
-    <meta content="Chương trình đào tạo Lập trình toàn diện: Web Fullstack, Mobile App & AI." property="og:description"/>
-    <meta content="https://ivsacademy.edu.vn/Pages/it-programming.html" property="og:url"/>
-    <meta content="website" property="og:type"/>
-    <link href="../images/favicon.ico" rel="icon" type="image/x-icon"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet"/>
-    <link href="../css/tailwind.css" rel="stylesheet"/>
-    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" referrerpolicy="no-referrer" rel="stylesheet"/>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
-    <script defer src="../js/language-init.js"></script>
-    <style>
-        :root {
-            --header-height: 80px;
-            --accent: #3b82f6;
-            --accent-cyan: #06b6d4;
-            --bg-dark: #07111F;
-            --bg-card: #0f1f35;
-        }
-        body {
-            background: var(--bg-dark);
-            color: #f1f5f9;
-            font-family: 'Be Vietnam Pro', sans-serif;
-            padding-top: var(--header-height);
-            overflow-x: hidden;
-        }
-        #header-placeholder {
-            position: fixed; top: 0; left: 0; width: 100%;
-            height: var(--header-height); z-index: 1000;
-            background: rgba(7,17,31,0.95);
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-        .hero-prog {
-            min-height: 70vh;
-            background: linear-gradient(135deg, #031327 0%, #071e3d 50%, #0c2b54 100%);
-            position: relative;
-            display: flex; align-items: center; justify-content: center;
-        }
-        .course-box {
-            background: var(--bg-card);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 1.25rem;
-            transition: all 0.3s ease;
-        }
-        .course-box:hover {
-            border-color: rgba(59,130,246,0.4);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px -10px rgba(59,130,246,0.2);
-        }
-        .btn-primary-prog {
-            display: inline-flex; align-items: center; gap: 0.5rem;
-            background: linear-gradient(135deg, #2563eb, #1d4ed8);
-            color: white; font-weight: 700; padding: 0.875rem 2rem;
-            border-radius: 0.875rem; transition: all 0.3s ease;
-            box-shadow: 0 10px 25px -5px rgba(37,99,235,0.4);
-        }
-        .btn-primary-prog:hover { transform: translateY(-2px); box-shadow: 0 15px 30px -5px rgba(37,99,235,0.5); }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Lập trình Scratch, Python, Web &amp; AI nền tảng | IVS Academy</title>
+  <meta name="description" content="Tư duy thuật toán, Scratch, Python, HTML/CSS và sử dụng AI có kiểm chứng trong lộ trình IT Foundation &amp; Discovery 40 tuần.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#3b82f6">
+  <link rel="canonical" href="https://ivsacademy.edu.vn/Pages/it-programming.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:site_name" content="IVS Academy">
+  <meta property="og:title" content="Lập trình Scratch, Python, Web &amp; AI nền tảng | IVS Academy">
+  <meta property="og:description" content="Tư duy thuật toán, Scratch, Python, HTML/CSS và sử dụng AI có kiểm chứng trong lộ trình IT Foundation &amp; Discovery 40 tuần.">
+  <meta property="og:url" content="https://ivsacademy.edu.vn/Pages/it-programming.html">
+  <meta property="og:image" content="https://ivsacademy.edu.vn/images/pages/ivscelestech/it-learners.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Lập trình Scratch, Python, Web &amp; AI nền tảng | IVS Academy">
+  <meta name="twitter:description" content="Tư duy thuật toán, Scratch, Python, HTML/CSS và sử dụng AI có kiểm chứng trong lộ trình IT Foundation &amp; Discovery 40 tuần.">
+  <meta name="twitter:image" content="https://ivsacademy.edu.vn/images/pages/ivscelestech/it-learners.png">
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tailwind.css">
+  <link rel="stylesheet" href="../css/it-training-v2.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <script defer src="../js/language-init.js"></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Course", "name": "Lập trình Scratch, Python, Web & AI nền tảng", "description": "Tư duy thuật toán, Scratch, Python, HTML/CSS và sử dụng AI có kiểm chứng trong lộ trình IT Foundation & Discovery 40 tuần.", "url": "https://ivsacademy.edu.vn/Pages/it-programming.html", "inLanguage": "vi", "provider": {"@type": "EducationalOrganization", "name": "IVS Academy", "url": "https://ivsacademy.edu.vn/"}, "educationalLevel": "Nền tảng trong lộ trình IT Foundation & Discovery", "timeRequired": "P40W"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Học viên chưa biết lập trình có theo được không?", "acceptedAnswer": {"@type": "Answer", "text": "Có. Chương trình bắt đầu bằng thuật toán đời sống và Scratch trước khi chuyển sang Python."}}, {"@type": "Question", "name": "Có học React, Node.js hoặc Flutter trong 40 tuần không?", "acceptedAnswer": {"@type": "Answer", "text": "Các công nghệ này chỉ được giới thiệu như hướng tiếp theo; chuẩn đầu ra nền tảng là Scratch, Python và HTML/CSS cơ bản."}}, {"@type": "Question", "name": "AI có viết code thay học viên không?", "acceptedAnswer": {"@type": "Answer", "text": "Không. AI có thể giải thích lỗi, gợi ý thuật toán hoặc test case; học viên phải tự viết, chạy thử và giải trình."}}, {"@type": "Question", "name": "Học viên tạo được sản phẩm gì?", "acceptedAnswer": {"@type": "Answer", "text": "Game Scratch, các chương trình Python nhỏ, website cá nhân và có thể chọn một Capstone theo thiên hướng."}}]}</script>
 </head>
-<body>
-    <header id="header-placeholder"></header>
+<body class="theme-programming">
 
-    <section class="hero-prog text-center px-4 relative">
-        <div class="max-w-4xl mx-auto py-16" data-aos="fade-up">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-sm font-semibold mb-6">
-                <i class="fas fa-code"></i> Đào tạo Chuyên sâu
-            </div>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
-                Lập trình <span class="text-blue-400">Web</span>, <span class="text-cyan-400">App</span> & <span class="text-purple-400">AI</span>
-            </h1>
-            <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-8">
-                Trở thành lập trình viên hiện đại với các công nghệ tiên tiến hàng đầu thế giới. Thực chiến qua dự án thực tế và nhận sự dẫn dắt từ các Mentor giàu kinh nghiệm.
-            </p>
-            <a href="/contact.html" class="btn-primary-prog">
-                <i class="fas fa-paper-plane"></i> Đăng ký Tư vấn Học tập
-            </a>
-        </div>
-    </section>
+<a class="skip-link" href="#main-content">Bỏ qua điều hướng</a>
+<header id="header-placeholder" aria-label="Điều hướng chính">
+  <div class="fallback-header">
+    <div class="container">
+      <a class="brand" href="/" aria-label="IVS Academy - Trang chủ">
+        <span class="brand-mark">IVS</span>
+        <span>IVS Academy<small>Hệ thống đào tạo công nghệ</small></span>
+      </a>
+      <nav class="fallback-nav" aria-label="Điều hướng dự phòng">
+        <a href="/Pages/it-training.html">Đào tạo IT</a>
+        <a href="/Pages/it-programming.html">Lập trình</a>
+        <a href="/Pages/it-hardware.html">Phần cứng</a>
+        <a href="/Pages/it-network.html">Mạng</a>
+        <a href="/contact.html">Liên hệ</a>
+      </nav>
+    </div>
+  </div>
+</header>
+<main id="main-content">
+  <section class="hero">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="container hero-layout">
+      <div class="hero-copy">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Trang chủ</a><span>/</span><a href="/Pages/it-training.html">Đào tạo IT</a><span>/</span><span>Lập trình Web, Python & AI</span></nav>
+        <div class="hero-badge"><i class="fa-solid fa-code"></i> Giai đoạn 5–7 · Tuần 17–26 + AI tuần 30</div>
+        <h1>Từ thuật toán đến <span class="gradient-text">Python, Web &amp; AI</span></h1>
+        <p>Học viên chuyển từ logic trực quan sang lập trình văn bản, tạo website cơ bản và sử dụng AI như công cụ học tập, debug và kiểm thử có kiểm chứng.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="/Pages/it-training.html#consultation"><i class="fa-solid fa-calendar-check"></i> Đăng ký đánh giá đầu vào</a><a class="btn btn-secondary" href="#learning"><i class="fa-solid fa-list-check"></i> Xem nội dung học</a></div>
+      </div>
+      <aside class="hero-panel" aria-label="Tóm tắt chuyên đề"><p class="hero-panel-title"><strong>Vị trí trong lộ trình 40 tuần</strong></p><div class="hero-facts"><div class="hero-fact"><strong>Tuần 17–20</strong><span>Thuật toán & Scratch</span></div><div class="hero-fact"><strong>Tuần 21–24</strong><span>Python Foundation</span></div><div class="hero-fact"><strong>Tuần 25–26</strong><span>HTML/CSS</span></div><div class="hero-fact"><strong>Tuần 30</strong><span>AI có trách nhiệm</span></div></div><div class="note" style="margin-top:1rem">React, Node.js, Flutter và Machine Learning là hướng học tiếp; không được dùng làm chuẩn đầu ra của chương trình nền tảng.</div></aside>
+    </div>
+  </section>
 
-    <section class="py-20 px-4">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-bold text-white text-center mb-12" data-aos="fade-up">Các Mô-đun Đào tạo Lập trình</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Module 1 -->
-                <div class="course-box p-8" data-aos="fade-up" data-aos-delay="0">
-                    <div class="w-14 h-14 bg-blue-500/20 text-blue-400 rounded-2xl flex items-center justify-center text-2xl mb-6">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">1. Lập trình Web Fullstack</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                        Xây dựng ứng dụng web hoàn chỉnh từ giao diện (Frontend) đến hệ thống máy chủ và cơ sở dữ liệu (Backend).
-                    </p>
-                    <ul class="space-y-3 text-sm text-slate-300 border-t border-white/10 pt-6">
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-400"></i> HTML5, CSS3, TailwindCSS, JS (ES6+)</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-400"></i> React.js / Vue.js / Next.js</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-400"></i> Node.js / Express / Python Django</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-blue-400"></i> MongoDB & MySQL Database</li>
-                    </ul>
-                </div>
+  <section id="learning" class="section">
+    <div class="container">
+      <div class="section-heading center"><span class="eyebrow">Nội dung nền tảng</span><h2 class="section-title">Học lập trình theo nhịp tăng dần</h2><p class="section-lead">Mỗi bước đều yêu cầu học viên mô tả mục tiêu, kết quả mong muốn, lỗi thực tế, điều đã thử và bài học sau khi sửa.</p></div>
+      <div class="grid-3"><article class="card"><div class="card-icon"><i class="fa-solid fa-list-ol"></i></div><h3>Tư duy thuật toán</h3><p>Chia nhỏ vấn đề, viết hướng dẫn chính xác, nhận diện điều kiện và vòng lặp.</p></article><article class="card"><div class="card-icon"><i class="fa-solid fa-gamepad"></i></div><h3>Scratch & game logic</h3><p>Sự kiện, chuyển động, âm thanh, điều kiện, biến, điểm số và playtest.</p></article><article class="card"><div class="card-icon"><i class="fa-brands fa-python"></i></div><h3>Python Foundation</h3><p>Chạy chương trình, biến, input, kiểu số, if/elif/else, for/while và kiểm tra dữ liệu.</p></article><article class="card"><div class="card-icon"><i class="fa-solid fa-bug"></i></div><h3>Debug có hệ thống</h3><p>Đọc thông báo lỗi, tạo giả thuyết, dùng test case và ghi lại cách xử lý.</p></article><article class="card"><div class="card-icon"><i class="fa-brands fa-html5"></i></div><h3>HTML & CSS</h3><p>Cấu trúc nội dung, style cơ bản và khái niệm responsive cho website cá nhân.</p></article><article class="card"><div class="card-icon"><i class="fa-solid fa-brain"></i></div><h3>AI Literacy</h3><p>Prompt Canvas, AI Tutor, review code, test case và minh bạch phần AI hỗ trợ.</p></article></div>
+    </div>
+  </section>
 
-                <!-- Module 2 -->
-                <div class="course-box p-8" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-14 h-14 bg-cyan-500/20 text-cyan-400 rounded-2xl flex items-center justify-center text-2xl mb-6">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">2. Phát triển Mobile App</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                        Tạo ra các ứng dụng di động đa nền tảng chạy mượt mà trên cả iOS và Android chỉ với một codebase.
-                    </p>
-                    <ul class="space-y-3 text-sm text-slate-300 border-t border-white/10 pt-6">
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-cyan-400"></i> Flutter & Dart Programming</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-cyan-400"></i> React Native Framework</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-cyan-400"></i> Quản lý trạng thái (Redux, Provider)</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-cyan-400"></i> Đưa App lên App Store & Google Play</li>
-                    </ul>
-                </div>
+  <section class="section section-alt">
+    <div class="container split">
+      <div>
+        <div class="section-heading"><span class="eyebrow">Sản phẩm học tập</span><h2 class="section-title">Portfolio thay cho bài tập rời rạc</h2><p class="section-lead">Học viên lưu phiên bản, mô tả lỗi, cách xử lý và phản hồi cải tiến cho từng sản phẩm.</p></div>
+        <ul class="check-list"><li>Hoạt ảnh Scratch và game có điều kiện, vòng lặp, điểm số.</li><li>Chương trình Python đầu tiên và máy tính mini.</li><li>Chương trình xếp loại có kiểm tra dữ liệu đầu vào.</li><li>Mini Project Python hoàn chỉnh tại tuần 24.</li><li>Website cá nhân HTML/CSS đưa vào Portfolio.</li><li>Một ca debug có AI hỗ trợ nhưng học viên tự sửa và giải trình.</li></ul>
+      </div>
+      <aside class="callout"><h3>Tiêu chí đánh giá</h3><ul class="check-list"><li>Hiểu mục tiêu và quy trình thực hiện.</li><li>Tự thao tác trong phạm vi phù hợp.</li><li>Mô tả được lỗi, giả thuyết và cách kiểm tra.</li><li>Lưu đúng phiên bản và sao lưu sản phẩm.</li><li>Giải trình rõ phần AI hoặc Mentor đã hỗ trợ.</li></ul></aside>
+    </div>
+  </section>
 
-                <!-- Module 3 -->
-                <div class="course-box p-8" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-14 h-14 bg-purple-500/20 text-purple-400 rounded-2xl flex items-center justify-center text-2xl mb-6">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-4">3. Lập trình AI & Data Science</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed mb-6">
-                        Nắm bắt làn sóng AI với kiến thức về Machine Learning, Deep Learning và tích hợp LLM vào ứng dụng thực tế.
-                    </p>
-                    <ul class="space-y-3 text-sm text-slate-300 border-t border-white/10 pt-6">
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-purple-400"></i> Python chuyên sâu cho Data & AI</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-purple-400"></i> Machine Learning với Scikit-Learn</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-purple-400"></i> Xử lý ngôn ngữ tự nhiên (NLP)</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-purple-400"></i> Tích hợp OpenAI / Gemini API vào App</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+  <section class="section">
+    <div class="container split">
+      <div>
+        <div class="section-heading"><span class="eyebrow">Tiến trình</span><h2 class="section-title">Từ block-based đến text-based programming</h2><p class="section-lead">Open Lab tuần 20 dùng cho playtest game; tuần 24 dùng cho debug Mini Project Python; tuần 32 review Portfolio và chọn Capstone.</p></div>
+        <div class="timeline"><div class="timeline-item"><span class="timeline-marker">17–20</span><div class="timeline-content"><h3>Thuật toán & Scratch</h3><p>Logic trực quan, game, kiểm thử và phản ứng khi gặp lỗi.</p></div></div><div class="timeline-item"><span class="timeline-marker">21–24</span><div class="timeline-content"><h3>Python Foundation</h3><p>Biến, dữ liệu, điều kiện, vòng lặp và Mini Project.</p></div></div><div class="timeline-item"><span class="timeline-marker">25–26</span><div class="timeline-content"><h3>Web Foundation</h3><p>HTML, CSS và website cá nhân responsive ở mức khái niệm.</p></div></div><div class="timeline-item"><span class="timeline-marker">30</span><div class="timeline-content"><h3>AI Foundation</h3><p>Dùng AI đúng lúc, viết yêu cầu rõ và kiểm chứng kết quả.</p></div></div><div class="timeline-item"><span class="timeline-marker">33–40</span><div class="timeline-content"><h3>Capstone</h3><p>Chọn hướng Web/Python/AI nếu dữ liệu thiên hướng phù hợp.</p></div></div></div>
+      </div>
+      <aside class="callout"><h3>Quy tắc lập trình & AI</h3><ul class="check-list"><li>Không sao chép mã khi chưa đọc và hiểu từng phần.</li><li>Không cung cấp mật khẩu, OTP, dữ liệu cá nhân hoặc dữ liệu doanh nghiệp cho AI.</li><li>Không chạy lệnh/mã có rủi ro trên máy chính khi chưa kiểm tra.</li><li>Luôn tạo test case, kiểm tra trường hợp biên và lưu phiên bản.</li><li>Ghi rõ phần AI hỗ trợ và phần học viên tự thực hiện.</li></ul><div class="note" style="margin-top:1rem">AI được dùng để giải thích, gợi ý, phản biện và kiểm thử; không được làm thay toàn bộ bài tập hoặc đánh giá.</div></aside>
+    </div>
+  </section>
 
-    <footer id="footer-placeholder"></footer>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 700, once: true });
-        fetch('/components/header.html').then(r=>r.text()).then(h=>{ document.getElementById('header-placeholder').innerHTML=h; });
-        fetch('/components/footer.html').then(r=>r.text()).then(f=>{ document.getElementById('footer-placeholder').innerHTML=f; });
-    </script>
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-heading center"><span class="eyebrow">Sau giai đoạn nền tảng</span><h2 class="section-title">Định hướng học tiếp theo thiên hướng</h2><p class="section-lead">Các công nghệ nâng cao dưới đây là hướng phát triển sau đánh giá, không phải chuẩn đầu ra bắt buộc của lộ trình nền tảng.</p></div>
+      <div class="grid-3"><article class="card"><h3>Web Development</h3><p>Tiếp tục JavaScript, Frontend, Backend và triển khai web khi nền tảng vững.</p><div class="meta-list"><span class="pill">JavaScript</span><span class="pill">Frontend</span><span class="pill">Backend</span></div></article><article class="card"><h3>App Development</h3><p>Mở rộng sang ứng dụng di động sau khi đã có tư duy lập trình.</p><div class="meta-list"><span class="pill">Flutter orientation</span><span class="pill">Mobile UI</span><span class="pill">APIs</span></div></article><article class="card"><h3>Data & AI</h3><p>Đi sâu Python, dữ liệu, Machine Learning và ứng dụng AI có trách nhiệm.</p><div class="meta-list"><span class="pill">Python</span><span class="pill">Data</span><span class="pill">AI/ML orientation</span></div></article></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading center"><span class="eyebrow">FAQ</span><h2 class="section-title">Câu hỏi thường gặp</h2></div>
+      <div class="faq"><details><summary>Học viên chưa biết lập trình có theo được không?</summary><div class="faq-answer"><p>Có. Chương trình bắt đầu bằng thuật toán đời sống và Scratch trước khi chuyển sang Python.</p></div></details>
+<details><summary>Có học React, Node.js hoặc Flutter trong 40 tuần không?</summary><div class="faq-answer"><p>Các công nghệ này chỉ được giới thiệu như hướng tiếp theo; chuẩn đầu ra nền tảng là Scratch, Python và HTML/CSS cơ bản.</p></div></details>
+<details><summary>AI có viết code thay học viên không?</summary><div class="faq-answer"><p>Không. AI có thể giải thích lỗi, gợi ý thuật toán hoặc test case; học viên phải tự viết, chạy thử và giải trình.</p></div></details>
+<details><summary>Học viên tạo được sản phẩm gì?</summary><div class="faq-answer"><p>Game Scratch, các chương trình Python nhỏ, website cá nhân và có thể chọn một Capstone theo thiên hướng.</p></div></details></div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="cta-band"><div><h2>Xây tư duy lập trình trước khi chạy theo framework</h2><p>Nền tảng thuật toán, debug và kiểm chứng giúp học viên học công nghệ mới nhanh và bền vững hơn.</p><div class="meta-list"><a class="card-link" href="/Pages/it-training.html#curriculum">Xem AI trong lộ trình 40 tuần <i class="fa-solid fa-arrow-right"></i></a><a class="card-link" href="/Pages/it-software.html">Xem Phần mềm nền tảng <i class="fa-solid fa-arrow-right"></i></a></div></div><a class="btn btn-primary" href="/Pages/it-training.html#consultation"><i class="fa-solid fa-paper-plane"></i> Nhận tư vấn lộ trình</a></div>
+    </div>
+  </section>
+</main>
+
+<footer id="footer-placeholder">
+  <div class="fallback-footer">
+    <div class="container footer-grid">
+      <div><strong>IVS Academy</strong><br><span>Nền tảng vững · Khám phá đúng · Phát triển dài hạn</span></div>
+      <nav class="footer-links" aria-label="Liên kết cuối trang">
+        <a href="/Pages/it-training.html">Chương trình IT</a>
+        <a href="/contact.html">Tư vấn</a>
+        <a href="https://ivstech.store" target="_blank" rel="noopener">IVS TECH</a>
+      </nav>
+      <div>© <span data-current-year></span> IVS Academy</div>
+    </div>
+  </div>
+</footer>
+<div class="mobile-cta"><a class="btn btn-primary" href="/Pages/it-training.html#consultation"><i class="fa-solid fa-calendar-check"></i> Đăng ký tư vấn lộ trình</a></div>
+<script defer src="../js/it-training-v2.js"></script>
 </body>
 </html>
