@@ -170,8 +170,22 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
         return String(text ?? '').replace(/<[^>]*>/g, ' ');
     }
 
+    function formatTitle(str) {
+        if (!str) return str;
+        return String(str).split(' ').map(word => {
+            if (!word) return word;
+            return word.replace(/^([^\p{L}\p{N}]*)([\p{L}\p{N}])(.*)$/gu, (_, prefix, first, rest) => {
+                const fullWord = (first + rest).toUpperCase();
+                if (fullWord === 'LEGNAXE') return prefix + 'LEGNAXE';
+                if (fullWord === 'EDEN') return prefix + 'Eden';
+                return prefix + first.toUpperCase() + rest.toLowerCase();
+            });
+        }).join(' ');
+    }
+
     function parseChapterData(chapterData, fallbackChapterId = '') {
-        const rawTitle = String(chapterData?.[`title_${lang}`] || chapterData?.title || chapterData?.title_vi || '').trim();
+        const rawTitleStr = String(chapterData?.[`title_${lang}`] || chapterData?.title || chapterData?.title_vi || '').trim();
+        const rawTitle = formatTitle(rawTitleStr);
         const rawContent = String(chapterData?.[`content_${lang}`] || chapterData?.content || chapterData?.content_vi || '').trim();
         const fallbackLabel = fallbackChapterId.startsWith('chapter-')
             ? `${lang === 'vi' ? 'Chương' : 'Chapter'} ${fallbackChapterId.split('-')[1]}`
@@ -221,11 +235,12 @@ function initializeChapterLoader(storyPath, totalChapters, hasSpecialChapter, la
             ? bodyLines.map(p => `<p>${escapeHtml(p)}</p>`).join('')
             : `<p class="text-gray-500 dark:text-gray-400">${lang === 'vi' ? 'Chưa có nội dung.' : 'No content.'}</p>`;
 
+        const formattedTitle = formatTitle(title);
         return {
             chapterId: fallbackChapterId,
             label,
-            title: title || fallbackLabel,
-            fullTitle: title ? `${label}: ${title}` : label,
+            title: formattedTitle || fallbackLabel,
+            fullTitle: formattedTitle ? `${label}: ${formattedTitle}` : label,
             bodyHtml,
             bodyText,
             wordCount: words,

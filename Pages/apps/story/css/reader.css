@@ -487,6 +487,7 @@ html.theme-midnight body {
 body.focus-mode #header-placeholder,
 body.focus-mode #footer-placeholder,
 body.focus-mode .novel-banner-img,
+body.focus-mode .novel-header-container,
 body.focus-mode .novel-main-title {
   display: none !important;
 }

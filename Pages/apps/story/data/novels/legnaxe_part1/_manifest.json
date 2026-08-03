@@ -8,7 +8,7 @@
     {
       "chapter": 1,
       "file": "chapter_01.json",
-      "title_vi": "BẢN GIAO HƯỞNG RẠN VỠ",
+      "title_vi": "Bản Giao Hưởng Rạn Vỡ",
       "title_en": "THE FRACTURED SYMPHONY",
       "vi_words": 5646,
       "en_words": 5225,
@@ -20,7 +20,7 @@
     {
       "chapter": 2,
       "file": "chapter_02.json",
-      "title_vi": "LỜI PHÁN TỪ THIÊN ĐÀNG",
+      "title_vi": "Lời Phán Từ Thiên Đàng",
       "title_en": "THE DECREE FROM HEAVEN",
       "vi_words": 5078,
       "en_words": 4634,
@@ -32,7 +32,7 @@
     {
       "chapter": 3,
       "file": "chapter_03.json",
-      "title_vi": "VẾT NỨT ĐẦU TIÊN",
+      "title_vi": "Vết Nứt Đầu Tiên",
       "title_en": "THE FIRST FRACTURE",
       "vi_words": 5921,
       "en_words": 5505,
@@ -44,7 +44,7 @@
     {
       "chapter": 4,
       "file": "chapter_04.json",
-      "title_vi": "TIẾNG VỌNG SAU TẤM MÀN",
+      "title_vi": "Tiếng Vọng Sau Tấm Màn",
       "title_en": "THE ECHO BEYOND THE VEIL",
       "vi_words": 7181,
       "en_words": 6825,
@@ -56,7 +56,7 @@
     {
       "chapter": 5,
       "file": "chapter_05.json",
-      "title_vi": "NHỮNG CÁI TÊN ĐẦU TIÊN",
+      "title_vi": "Những Cái Tên Đầu Tiên",
       "title_en": "THE FIRST NAMES",
       "vi_words": 7143,
       "en_words": 6708,
@@ -68,7 +68,7 @@
     {
       "chapter": 6,
       "file": "chapter_06.json",
-      "title_vi": "KHÔNG AI ĐỨNG SAU",
+      "title_vi": "Không Ai Đứng Sau",
       "title_en": "NO ONE STANDS BEHIND",
       "vi_words": 5243,
       "en_words": 4731,
@@ -80,7 +80,7 @@
     {
       "chapter": 7,
       "file": "chapter_07.json",
-      "title_vi": "TIẾNG NÓI NGOÀI EDEN",
+      "title_vi": "Tiếng Nói Ngoài Eden",
       "title_en": "THE VOICE BEYOND EDEN",
       "vi_words": 4653,
       "en_words": 4511,
@@ -92,7 +92,7 @@
     {
       "chapter": 8,
       "file": "chapter_08.json",
-      "title_vi": "ĐIỀU KHÔNG THỂ THU HỒI",
+      "title_vi": "Điều Không Thể Thu Hồi",
       "title_en": "WHAT CANNOT BE TAKEN BACK",
       "vi_words": 3396,
       "en_words": 3173,
@@ -104,7 +104,7 @@
     {
       "chapter": 9,
       "file": "chapter_09.json",
-      "title_vi": "HAI NGHĨA CỦA “CÙNG”",
+      "title_vi": "Hai Nghĩa Của “Cùng”",
       "title_en": "TWO MEANINGS OF “TOGETHER”",
       "vi_words": 3631,
       "en_words": 3722,
@@ -116,7 +116,7 @@
     {
       "chapter": 10,
       "file": "chapter_10.json",
-      "title_vi": "LỬA KHÔNG MƯỢN TỪ TRỜI",
+      "title_vi": "Lửa Không Mượn Từ Trời",
       "title_en": "A FIRE NOT BORROWED FROM HEAVEN",
       "vi_words": 3545,
       "en_words": 3558,
@@ -128,7 +128,7 @@
     {
       "chapter": 11,
       "file": "chapter_11.json",
-      "title_vi": "CÁNH CỬA MỞ VỀ HAI PHÍA",
+      "title_vi": "Cánh Cửa Mở Về Hai Phía",
       "title_en": "THE DOOR THAT OPENED BOTH WAYS",
       "vi_words": 3194,
       "en_words": 3024,
@@ -140,7 +140,7 @@
     {
       "chapter": 12,
       "file": "chapter_12.json",
-      "title_vi": "BÀN TAY RỜI KHỎI THEN CÀI",
+      "title_vi": "Bàn Tay Rời Khỏi Then Cài",
       "title_en": "THE HAND WITHDRAWN FROM THE BAR",
       "vi_words": 3135,
       "en_words": 3118,
@@ -152,7 +152,7 @@
     {
       "chapter": 13,
       "file": "chapter_13.json",
-      "title_vi": "NGƯỠNG CỬA KHÔNG GIỮ NGƯỜI",
+      "title_vi": "Ngưỡng Cửa Không Giữ Người",
       "title_en": "THE THRESHOLD THAT HELD NO ONE",
       "vi_words": 3612,
       "en_words": 3407,
@@ -164,7 +164,7 @@
     {
       "chapter": 14,
       "file": "chapter_14.json",
-      "title_vi": "NGƯỜI ĐẾN SAU KHOẢNG TRỐNG",
+      "title_vi": "Người Đến Sau Khoảng Trống",
       "title_en": "THE ONE WHO CAME AFTER THE EMPTINESS",
       "vi_words": 2918,
       "en_words": 2785,
@@ -176,7 +176,7 @@
     {
       "chapter": 15,
       "file": "chapter_15.json",
-      "title_vi": "NƠI CẢNH BÁO DỪNG LẠI",
+      "title_vi": "Nơi Cảnh Báo Dừng Lại",
       "title_en": "WHERE WARNING ENDS",
       "vi_words": 2987,
       "en_words": 2990,
@@ -188,7 +188,7 @@
     {
       "chapter": 16,
       "file": "chapter_16.json",
-      "title_vi": "KHOẢNG TRỐNG SAU LỜI CẤM",
+      "title_vi": "Khoảng Trống Sau Lời Cấm",
       "title_en": "THE SILENCE AFTER THE PROHIBITION",
       "vi_words": 2523,
       "en_words": 2526,
@@ -200,7 +200,7 @@
     {
       "chapter": 17,
       "file": "chapter_17.json",
-      "title_vi": "NƠI CÂU HỎI ĐƯỢC ĐẶT XUỐNG",
+      "title_vi": "Nơi Câu Hỏi Được Đặt Xuống",
       "title_en": "WHERE THE QUESTION WAS SET DOWN",
       "vi_words": 2542,
       "en_words": 2414,
@@ -212,7 +212,7 @@
     {
       "chapter": 18,
       "file": "chapter_18.json",
-      "title_vi": "ĐIỀU KHÔNG TRỞ LẠI",
+      "title_vi": "Điều Không Trở Lại",
       "title_en": "WHAT DID NOT RETURN",
       "vi_words": 2153,
       "en_words": 2142,
@@ -224,7 +224,7 @@
     {
       "chapter": 19,
       "file": "chapter_19.json",
-      "title_vi": "KHÔNG AI ĐI SAU",
+      "title_vi": "Không Ai Đi Sau",
       "title_en": "NEITHER WALKED BEHIND",
       "vi_words": 2365,
       "en_words": 2293,
@@ -236,7 +236,7 @@
     {
       "chapter": 20,
       "file": "chapter_20.json",
-      "title_vi": "DA CŨ Ở LẠI",
+      "title_vi": "Da Cũ Ở Lại",
       "title_en": "THE OLD SKIN REMAINED",
       "vi_words": 2207,
       "en_words": 2012,
@@ -248,7 +248,7 @@
     {
       "chapter": 21,
       "file": "chapter_21.json",
-      "title_vi": "GIỌNG NÓI TRONG DA RỖNG",
+      "title_vi": "Giọng Nói Trong Da Rỗng",
       "title_en": "THE VOICE IN THE EMPTY SKIN",
       "vi_words": 2394,
       "en_words": 2270,
@@ -260,7 +260,7 @@
     {
       "chapter": 22,
       "file": "chapter_22.json",
-      "title_vi": "DẤU VẾT KHÔNG MANG ÁNH SÁNG",
+      "title_vi": "Dấu Vết Không Mang Ánh Sáng",
       "title_en": "THE TRAIL THAT CARRIED NO LIGHT",
       "vi_words": 2229,
       "en_words": 2015,
@@ -272,7 +272,7 @@
     {
       "chapter": 23,
       "file": "chapter_23.json",
-      "title_vi": "NHỮNG KẺ CHƯA ĐƯỢC GỌI LÀ MỘT PHE",
+      "title_vi": "Những Kẻ Chưa Được Gọi Là Một Phe",
       "title_en": "THOSE NOT YET CALLED A FACTION",
       "vi_words": 2485,
       "en_words": 2327,
@@ -284,7 +284,7 @@
     {
       "chapter": 24,
       "file": "chapter_24.json",
-      "title_vi": "LỆNH KHÔNG ĐƯỢC BAN RA",
+      "title_vi": "Lệnh Không Được Ban Ra",
       "title_en": "THE ORDER THAT WAS NOT GIVEN",
       "vi_words": 3228,
       "en_words": 3066,
@@ -296,7 +296,7 @@
     {
       "chapter": 25,
       "file": "chapter_25.json",
-      "title_vi": "VẾT THƯƠNG KHÔNG CÓ KẺ THÙ",
+      "title_vi": "Vết Thương Không Có Kẻ Thù",
       "title_en": "THE WOUND WITHOUT AN ENEMY",
       "vi_words": 3512,
       "en_words": 3269,
@@ -308,7 +308,7 @@
     {
       "chapter": 26,
       "file": "chapter_26.json",
-      "title_vi": "SỰ THẬT QUA BẢY CÁNH CỬA",
+      "title_vi": "Sự Thật Qua Bảy Cánh Cửa",
       "title_en": "TRUTH THROUGH SEVEN DOORS",
       "vi_words": 3216,
       "en_words": 2940,
@@ -320,7 +320,7 @@
     {
       "chapter": 27,
       "file": "chapter_27.json",
-      "title_vi": "RANH GIỚI KHÔNG CÓ QUYỀN CHỌN THAY",
+      "title_vi": "Ranh Giới Không Có Quyền Chọn Thay",
       "title_en": "THE BOUNDARY HAD NO RIGHT TO CHOOSE",
       "vi_words": 2923,
       "en_words": 2721,
@@ -332,7 +332,7 @@
     {
       "chapter": 28,
       "file": "chapter_28.json",
-      "title_vi": "LỜI THỀ ĐI TRƯỚC TỘI LỖI",
+      "title_vi": "Lời Thề Đi Trước Tội Lỗi",
       "title_en": "THE OATH BEFORE THE CRIME",
       "vi_words": 2920,
       "en_words": 2605,
@@ -344,7 +344,7 @@
     {
       "chapter": 29,
       "file": "chapter_29.json",
-      "title_vi": "DANH SÁCH KHÔNG THUỘC VỀ AI",
+      "title_vi": "Danh Sách Không Thuộc Về Ai",
       "title_en": "THE LIST THAT BELONGED TO NO ONE",
       "vi_words": 2736,
       "en_words": 2512,
@@ -356,7 +356,7 @@
     {
       "chapter": 30,
       "file": "chapter_30.json",
-      "title_vi": "LỜI TRIỆU TẬP KHÔNG CÓ NGƯỜI GỬI",
+      "title_vi": "Lời Triệu Tập Không Có Người Gửi",
       "title_en": "THE SUMMONS WITHOUT A SENDER",
       "vi_words": 2778,
       "en_words": 2457,
@@ -368,7 +368,7 @@
     {
       "chapter": 31,
       "file": "chapter_31.json",
-      "title_vi": "NHỮNG NGƯỜI TỰ TRỞ LẠI",
+      "title_vi": "Những Người Tự Trở Lại",
       "title_en": "THOSE WHO RETURNED OF THEIR OWN ACCORD",
       "vi_words": 3094,
       "en_words": 2713,
@@ -380,7 +380,7 @@
     {
       "chapter": 32,
       "file": "chapter_32.json",
-      "title_vi": "VẾT SẸO BIẾT ĐƯỜNG",
+      "title_vi": "Vết Sẹo Biết Đường",
       "title_en": "THE SCAR THAT KNEW THE WAY",
       "vi_words": 4203,
       "en_words": 4073,
@@ -392,7 +392,7 @@
     {
       "chapter": 33,
       "file": "chapter_33.json",
-      "title_vi": "SỰ ĐỒNG THUẬN CHƯA TỪNG ĐƯỢC NÓI",
+      "title_vi": "Sự Đồng Thuận Chưa Từng Được Nói",
       "title_en": "THE CONSENT NO ONE EVER SPOKE",
       "vi_words": 3299,
       "en_words": 2942,
@@ -404,7 +404,7 @@
     {
       "chapter": 34,
       "file": "chapter_34.json",
-      "title_vi": "QUYỀN NÓI CÂU CUỐI",
+      "title_vi": "Quyền Nói Câu Cuối",
       "title_en": "THE RIGHT TO SPEAK LAST",
       "vi_words": 3795,
       "en_words": 3448,
@@ -416,7 +416,7 @@
     {
       "chapter": 35,
       "file": "chapter_35.json",
-      "title_vi": "CÁNH CỬA KHÔNG CHỊU KHÉP",
+      "title_vi": "Cánh Cửa Không Chịu Khép",
       "title_en": "THE DOOR THAT WOULD NOT CLOSE",
       "vi_words": 4483,
       "en_words": 4140,
@@ -428,7 +428,7 @@
     {
       "chapter": 36,
       "file": "chapter_36.json",
-      "title_vi": "NƠI BẢN ĐỒ DỪNG LẠI",
+      "title_vi": "Nơi Bản Đồ Dừng Lại",
       "title_en": "WHERE THE MAP ENDED",
       "vi_words": 3021,
       "en_words": 2808,
@@ -440,7 +440,7 @@
     {
       "chapter": 37,
       "file": "chapter_37.json",
-      "title_vi": "DÒNG NƯỚC MANG ĐIỀU CHƯA BIẾT",
+      "title_vi": "Dòng Nước Mang Điều Chưa Biết",
       "title_en": "THE WATER THAT CARRIED THE UNKNOWN",
       "vi_words": 3825,
       "en_words": 3783,
@@ -452,7 +452,7 @@
     {
       "chapter": 38,
       "file": "chapter_38.json",
-      "title_vi": "LỜI THỈNH CẦU KHÔNG QUỲ XUỐNG",
+      "title_vi": "Lời Thỉnh Cầu Không Quỳ Xuống",
       "title_en": "THE PETITION THAT DID NOT KNEEL",
       "vi_words": 3918,
       "en_words": 3907,
@@ -464,7 +464,7 @@
     {
       "chapter": 39,
       "file": "chapter_39.json",
-      "title_vi": "ĐIỀU KHÔNG PHẢI VẾT THƯƠNG",
+      "title_vi": "Điều Không Phải Vết Thương",
       "title_en": "WHAT WAS NOT A WOUND",
       "vi_words": 4088,
       "en_words": 4204,
@@ -476,7 +476,7 @@
     {
       "chapter": 40,
       "file": "chapter_40.json",
-      "title_vi": "BẬC THANG KHÔNG VỪA MỘT BƯỚC CHÂN",
+      "title_vi": "Bậc Thang Không Vừa Một Bước Chân",
       "title_en": "THE STAIR THAT FIT NO FOOTSTEP",
       "vi_words": 3751,
       "en_words": 3652,
@@ -488,7 +488,7 @@
     {
       "chapter": 41,
       "file": "chapter_41.json",
-      "title_vi": "NƠI QUYỀN HẠN KHÔNG CÓ NỀN ĐẶT",
+      "title_vi": "Nơi Quyền Hạn Không Có Nền Đặt",
       "title_en": "WHERE AUTHORITY HAD NO GROUND TO STAND",
       "vi_words": 3059,
       "en_words": 2952,
@@ -500,7 +500,7 @@
     {
       "chapter": 42,
       "file": "chapter_42.json",
-      "title_vi": "NHỊP THỨ TƯ KHÔNG AI NHẬN",
+      "title_vi": "Nhịp Thứ Tư Không Ai Nhận",
       "title_en": "THE FOURTH BEAT NO ONE CLAIMED",
       "vi_words": 3361,
       "en_words": 3279,
@@ -512,7 +512,7 @@
     {
       "chapter": 43,
       "file": "chapter_43.json",
-      "title_vi": "ĐƯỜNG BỊ BẢN ĐỒ CẮT LÀM HAI",
+      "title_vi": "Đường Bị Bản Đồ Cắt Làm Hai",
       "title_en": "THE LINE THE MAP CUT IN TWO",
       "vi_words": 3499,
       "en_words": 3403,
@@ -524,7 +524,7 @@
     {
       "chapter": 44,
       "file": "chapter_44.json",
-      "title_vi": "ĐIỀU MỘT BƯỚC CHÂN KHÔNG XÓA",
+      "title_vi": "Điều Một Bước Chân Không Xóa",
       "title_en": "WHAT ONE STEP COULD NOT ERASE",
       "vi_words": 3575,
       "en_words": 3355,
@@ -536,7 +536,7 @@
     {
       "chapter": 45,
       "file": "chapter_45.json",
-      "title_vi": "KHI NGUY HIỂM KHÔNG HỎI QUYỀN HẠN",
+      "title_vi": "Khi Nguy Hiểm Không Hỏi Quyền Hạn",
       "title_en": "WHEN DANGER ASKED NO PERMISSION",
       "vi_words": 3480,
       "en_words": 3369,
@@ -548,7 +548,7 @@
     {
       "chapter": 46,
       "file": "chapter_46.json",
-      "title_vi": "NƠI RANH GIỚI KHÔNG CÒN CHẠM ĐẤT",
+      "title_vi": "Nơi Ranh Giới Không Còn Chạm Đất",
       "title_en": "WHERE THE BOUNDARY NO LONGER TOUCHED THE EARTH",
       "vi_words": 3752,
       "en_words": 3555,
@@ -560,7 +560,7 @@
     {
       "chapter": 47,
       "file": "chapter_47.json",
-      "title_vi": "KẺ ĐI QUA KHÔNG MANG LỜI",
+      "title_vi": "Kẻ Đi Qua Không Mang Lời",
       "title_en": "THE ONE WHO CROSSED WITHOUT A WORD",
       "vi_words": 3227,
       "en_words": 3115,
@@ -572,7 +572,7 @@
     {
       "chapter": 48,
       "file": "chapter_48.json",
-      "title_vi": "NƠI BẢN ĐỒ KHÔNG THEO ĐƯỢC SỰ SỐNG",
+      "title_vi": "Nơi Bản Đồ Không Theo Được Sự Sống",
       "title_en": "WHERE THE MAP COULD NOT FOLLOW LIFE",
       "vi_words": 3269,
       "en_words": 3103,
@@ -584,7 +584,7 @@
     {
       "chapter": 49,
       "file": "chapter_49.json",
-      "title_vi": "LỐI RA KHÔNG BỊ KHÉP",
+      "title_vi": "Lối Ra Không Bị Khép",
       "title_en": "THE EXIT THAT WAS NOT CLOSED",
       "vi_words": 2220,
       "en_words": 1996,
@@ -596,7 +596,7 @@
     {
       "chapter": 50,
       "file": "chapter_50.json",
-      "title_vi": "DẤU KHÔNG ĐƯỢC ĐỌC THÀNH LỜI",
+      "title_vi": "Dấu Không Được Đọc Thành Lời",
       "title_en": "THE MARK THAT WAS NOT READ AS A WORD",
       "vi_words": 2532,
       "en_words": 2324,
@@ -608,7 +608,7 @@
     {
       "chapter": 51,
       "file": "chapter_51.json",
-      "title_vi": "CÂU KHÔNG CÓ NGƯỜI NÓI",
+      "title_vi": "Câu Không Có Người Nói",
       "title_en": "THE SENTENCE NO ONE SPOKE",
       "vi_words": 3419,
       "en_words": 3082,
@@ -620,7 +620,7 @@
     {
       "chapter": 52,
       "file": "chapter_52.json",
-      "title_vi": "DẤU CÓ TRƯỚC KẺ VẼ",
+      "title_vi": "Dấu Có Trước Kẻ Vẽ",
       "title_en": "THE MARK BEFORE ITS MAKER",
       "vi_words": 3417,
       "en_words": 2995,
@@ -632,7 +632,7 @@
     {
       "chapter": 53,
       "file": "chapter_53.json",
-      "title_vi": "QUYỀN ĐI QUA",
+      "title_vi": "Quyền Đi Qua",
       "title_en": "",
       "vi_words": 3219,
       "en_words": 0,
@@ -644,7 +644,7 @@
     {
       "chapter": 54,
       "file": "chapter_54.json",
-      "title_vi": "BƯỚC KHÔNG ĐƯỢC NÓI THAY",
+      "title_vi": "Bước Không Được Nói Thay",
       "title_en": "",
       "vi_words": 3885,
       "en_words": 0,
@@ -656,7 +656,7 @@
     {
       "chapter": 55,
       "file": "chapter_55.json",
-      "title_vi": "CÁNH CỬA KHÔNG HỨA ĐƯỜNG VỀ",
+      "title_vi": "Cánh Cửa Không Hứa Đường Về",
       "title_en": "THE DOOR THAT PROMISED NO WAY BACK",
       "vi_words": 1828,
       "en_words": 1806,
@@ -668,7 +668,7 @@
     {
       "chapter": 56,
       "file": "chapter_56.json",
-      "title_vi": "NƠI DẤU QUAY VỀ BỊ CHÔN",
+      "title_vi": "Nơi Dấu Quay Về Bị Chôn",
       "title_en": "WHERE THE RETURN-MARK WAS BURIED",
       "vi_words": 1743,
       "en_words": 1745,
@@ -680,7 +680,7 @@
     {
       "chapter": 57,
       "file": "chapter_57.json",
-      "title_vi": "TÊN KHÔNG CÒN ĐƯỜNG DẪN",
+      "title_vi": "Tên Không Còn Đường Dẫn",
       "title_en": "THE NAME WITH NO PATH LEFT",
       "vi_words": 1767,
       "en_words": 1745,
@@ -692,7 +692,7 @@
     {
       "chapter": 58,
       "file": "chapter_58.json",
-      "title_vi": "NƠI LỜI PHẢN ĐỐI BỊ DÙNG LÀM TRỤ",
+      "title_vi": "Nơi Lời Phản Đối Bị Dùng Làm Trụ",
       "title_en": "WHERE OBJECTION WAS USED AS A PILLAR",
       "vi_words": 2039,
       "en_words": 2093,
@@ -704,7 +704,7 @@
     {
       "chapter": 59,
       "file": "chapter_59.json",
-      "title_vi": "NƠI GÁNH NẶNG KHÔNG ĐƯỢC GHI TÊN",
+      "title_vi": "Nơi Gánh Nặng Không Được Ghi Tên",
       "title_en": "WHERE THE BURDEN WENT UNNAMED",
       "vi_words": 1776,
       "en_words": 1792,
@@ -716,7 +716,7 @@
     {
       "chapter": 60,
       "file": "chapter_60.json",
-      "title_vi": "NƠI VẾT SỬA BỊ ĐỌC THÀNH SỰ ĐỒNG Ý",
+      "title_vi": "Nơi Vết Sửa Bị Đọc Thành Sự Đồng Ý",
       "title_en": "WHERE REPAIR WAS READ AS CONSENT",
       "vi_words": 2158,
       "en_words": 2173,
