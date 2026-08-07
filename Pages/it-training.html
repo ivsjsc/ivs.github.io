@@ -98,24 +98,9 @@
 <body>
     <a class="skip-link" href="#main-content">Bỏ qua điều hướng</a>
 
-    <!-- Header Placeholder with Fallback -->
-    <header id="header-placeholder" aria-label="Điều hướng chính">
-      <div class="fallback-header">
-        <div class="container">
-          <a class="brand" href="/" aria-label="IVS Academy - Trang chủ">
-            <span class="brand-mark">IVS</span>
-            <span>IVS Academy<small>Hệ thống đào tạo công nghệ</small></span>
-          </a>
-          <nav class="fallback-nav" aria-label="Điều hướng dự phòng">
-            <a href="/Pages/it-training.html">Đào tạo IT</a>
-            <a href="/Pages/it-programming.html">Lập trình</a>
-            <a href="/Pages/it-hardware.html">Phần cứng</a>
-            <a href="/Pages/it-network.html">Mạng</a>
-            <a href="/contact.html">Liên hệ</a>
-          </nav>
-        </div>
-      </div>
-    </header>
+    <!-- Header Placeholder -->
+    <header id="header-placeholder" aria-label="Điều hướng chính"></header>
+
 
     <main id="main-content">
         <!-- HERO SECTION -->
@@ -646,20 +631,9 @@
 
     </main>
 
-    <!-- Footer Placeholder with Fallback -->
-    <footer id="footer-placeholder">
-      <div class="fallback-footer">
-        <div class="container footer-grid">
-          <div><strong>IVS Academy</strong><br/><span>Nền tảng vững · Khám phá đúng · Phát triển dài hạn</span></div>
-          <nav class="footer-links" aria-label="Liên kết cuối trang">
-            <a href="/Pages/it-training.html">Chương trình IT</a>
-            <a href="/contact.html">Tư vấn</a>
-            <a href="https://ivstech.store" target="_blank" rel="noopener">IVS TECH</a>
-          </nav>
-          <div>© <span data-current-year></span> IVS Academy</div>
-        </div>
-      </div>
-    </footer>
+    <!-- Footer & FAB Component Placeholders -->
+    <footer id="footer-placeholder"></footer>
+    <div id="fab-container-placeholder"></div>
 
     <!-- Mobile CTA Bar -->
     <div class="mobile-cta">
@@ -673,5 +647,6 @@
     <script>
         AOS.init({ duration: 750, once: true, offset: 60 });
     </script>
+    <script src="/ai/js/loadComponents.js" defer></script>
 </body>
 </html>

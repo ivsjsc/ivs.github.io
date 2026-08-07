@@ -10,26 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     el.textContent = currentYear;
   });
 
-  // 2. Component Loader (Header & Footer)
-  const headerPlaceholder = document.getElementById('header-placeholder');
-  if (headerPlaceholder && !headerPlaceholder.children.length) {
-    fetch('/components/header.html')
-      .then(res => res.text())
-      .then(html => {
-        headerPlaceholder.innerHTML = html;
-      })
-      .catch(err => console.warn('Could not load dynamic header:', err));
-  }
+  // 2. Component Loader (Header & Footer) - handled centrally by /ai/js/loadComponents.js
 
-  const footerPlaceholder = document.getElementById('footer-placeholder');
-  if (footerPlaceholder && !footerPlaceholder.children.length) {
-    fetch('/components/footer.html')
-      .then(res => res.text())
-      .then(html => {
-        footerPlaceholder.innerHTML = html;
-      })
-      .catch(err => console.warn('Could not load dynamic footer:', err));
-  }
 
   // 3. Category Filter Logic (if present on main page)
   const filterBtns = document.querySelectorAll('#course-filter-container .filter-btn');
