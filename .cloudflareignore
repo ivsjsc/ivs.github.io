@@ -1,7 +1,16 @@
 .venv
 node_modules
 .git
+.pytest_cache
+__pycache__
 .backups
 *.bak
 *.bak_auto*
 *.bak_before_*
+*.docx
+mobile_before_open.png
+mobile_open.png
+translation_verification.png
+*.mp4
+*.mp3
+
