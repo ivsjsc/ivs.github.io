@@ -274,6 +274,16 @@ const IVSHeader = {
      * @param {HTMLElement} toggleButton - The button that was clicked.
      */
     toggleMobileSubmenu(toggleButton) {
+        // TEMPORARY DEBUG INSTRUMENTATION
+        const buttonText = toggleButton.querySelector('span')?.textContent || toggleButton.id || 'unknown';
+        const ariaBefore = toggleButton.getAttribute('aria-expanded');
+        console.log('=== SCRIPT.JS HANDLER ===');
+        console.log('HANDLER NAME: IVSHeader.toggleMobileSubmenu');
+        console.log('button text:', buttonText);
+        console.log('aria-expanded BEFORE:', ariaBefore);
+        console.trace();
+        // END TEMPORARY DEBUG INSTRUMENTATION
+
         const targetId = toggleButton.getAttribute('aria-controls');
         const content = document.getElementById(targetId);
         const icon = toggleButton.querySelector('.mobile-submenu-icon');
@@ -301,6 +311,12 @@ const IVSHeader = {
             content.style.maxHeight = content.scrollHeight + 'px';
             if(icon) icon.style.transform = 'rotate(180deg)';
         }
+
+        // TEMPORARY DEBUG INSTRUMENTATION
+        const ariaAfter = toggleButton.getAttribute('aria-expanded');
+        console.log('aria-expanded AFTER:', ariaAfter);
+        console.log('=== END SCRIPT.JS HANDLER ===');
+        // END TEMPORARY DEBUG INSTRUMENTATION
     },
 
     /**

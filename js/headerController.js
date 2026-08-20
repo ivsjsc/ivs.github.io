@@ -70,6 +70,16 @@ const IVSHeaderController = {
 
     // Mở/Đóng Mobile Submenu
     toggleSubmenu(toggle) {
+        // TEMPORARY DEBUG INSTRUMENTATION
+        const buttonText = toggle.querySelector('span')?.textContent || toggle.id || 'unknown';
+        const ariaBefore = toggle.getAttribute('aria-expanded');
+        console.log('=== HEADERCONTROLLER HANDLER ===');
+        console.log('HANDLER NAME: IVSHeaderController.toggleSubmenu');
+        console.log('button text:', buttonText);
+        console.log('aria-expanded BEFORE:', ariaBefore);
+        console.trace();
+        // END TEMPORARY DEBUG INSTRUMENTATION
+
         const targetId = toggle.getAttribute('aria-controls');
         const content = document.getElementById(targetId);
         const icon = toggle.querySelector('.mobile-submenu-icon');
@@ -98,6 +108,12 @@ const IVSHeaderController = {
         }
 
         toggle.setAttribute('aria-expanded', !isExpanded);
+
+        // TEMPORARY DEBUG INSTRUMENTATION
+        const ariaAfter = toggle.getAttribute('aria-expanded');
+        console.log('aria-expanded AFTER:', ariaAfter);
+        console.log('=== END HEADERCONTROLLER HANDLER ===');
+        // END TEMPORARY DEBUG INSTRUMENTATION
 
         if (icon) {
             icon.style.transform = isExpanded ? 'rotate(0deg)' : 'rotate(180deg)';
