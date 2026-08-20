@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Dropdown Debug Audit</title>
+    <style>
+        body {
+            font-family: monospace;
+            background: #1a1a1a;
+            color: #00ff00;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .debug-section {
+            border: 1px solid #00ff00;
+            padding: 15px;
+            margin: 10px 0;
+            background: #0a0a0a;
+        }
+        .debug-section h3 {
+            margin-top: 0;
+            color: #ffff00;
+        }
+        .pre {
+            background: #000;
+            padding: 10px;
+            border: 1px solid #333;
+            overflow-x: auto;
+            white-space: pre-wrap;
+        }
+        .error { color: #ff0000; }
+        .success { color: #00ff00; }
+        .warning { color: #ffff00; }
+        .info { color: #00ffff; }
+        button {
+            background: #00ff00;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-family: monospace;
+            font-weight: bold;
+        }
+        button:hover {
+            background: #ffff00;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mobile Navigation Dropdown Debug Audit</h1>
+    
+    <div class="debug-section">
+        <h3>DOM Structure Verification</h3>
+        <div id="dom-structure" class="pre">Loading...</div>
+    </div>
+    
+    <div class="debug-section">
+        <h3>Button Sibling Check</h3>
+        <div id="sibling-check" class="pre">Loading...</div>
+    </div>
+    
+    <div class="debug-section">
+        <h3>Event Listener Architecture</h3>
+        <div id="event-architecture" class="pre">Loading...</div>
+    </div>
+    
+    <div class="debug-section">
+        <h3>Runtime Audit - "Về IVS" Dropdown</h3>
+        <button onclick="runAudit()">Run Runtime Audit</button>
+        <div id="runtime-audit" class="pre">Click to run audit...</div>
+    </div>
+    
+    <div class="debug-section">
+        <h3>CSS Rules Analysis</h3>
+        <div id="css-analysis" class="pre">Loading...</div>
+    </div>
+    
+    <div class="debug-section">
+        <h3>Console Errors</h3>
+        <div id="console-errors" class="pre">Loading...</div>
+    </div>
+
+    <script>
+        // Load the actual site in an iframe to debug
+        function loadSiteInIframe() {
+            const iframe = document.createElement('iframe');
+            iframe.src = '/index.html';
+            iframe.style.width = '100%';
+            iframe.style.height = '600px';
+            iframe.style.border = '1px solid #00ff00';
+            document.body.appendChild(iframe);
+            
+            iframe.onload = function() {
+                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                debugIframeContent(iframeDoc);
+            };
+        }
+        
+        function debugIframeContent(doc) {
+            // DOM Structure Verification
+            const domStructure = document.getElementById('dom-structure');
+            const submenuToggles = doc.querySelectorAll('.mobile-submenu-toggle');
+            
+            let domOutput = `Found ${submenuToggles.length} mobile submenu toggles:\n\n`;
+            
+            submenuToggles.forEach((toggle, index) => {
+                const buttonText = toggle.textContent.trim();
+                const nextSibling = toggle.nextElementSibling;
+                const ariaControls = toggle.getAttribute('aria-controls');
+                const targetExists = ariaControls ? !!doc.getElementById(ariaControls) : false;
+                
+                domOutput += `Toggle ${index + 1}:\n`;
+                domOutput += `  Button text: "${buttonText}"\n`;
+                domOutput += `  nextElementSibling: ${nextSibling ? nextSibling.tagName + '.' + nextSibling.className : 'null'}\n`;
+                domOutput += `  aria-controls: "${ariaControls}"\n`;
+                domOutput += `  Target exists: ${targetExists ? 'YES' : 'NO'}\n\n`;
+            });
+            
+            domStructure.textContent = domOutput;
+            
+            // Button Sibling Check
+            const siblingCheck = document.getElementById('sibling-check');
+            let siblingOutput = `Button Sibling Analysis:\n\n`;
+            
+            submenuToggles.forEach((toggle, index) => {
+                const nextSibling = toggle.nextElementSibling;
+                const parent = toggle.parentElement;
+                const children = Array.from(parent.children);
+                const buttonIndex = children.indexOf(toggle);
+                
+                siblingOutput += `Toggle ${index + 1}:\n`;
+                siblingOutput += `  Parent: ${parent.tagName}\n`;
+                siblingOutput += `  Parent children: ${children.map(c => c.tagName).join(', ')}\n`;
+                siblingOutput += `  Button index in parent: ${buttonIndex}\n`;
+                siblingOutput += `  Next sibling: ${nextSibling ? nextSibling.tagName + '.' + nextSibling.className : 'null'}\n`;
+                siblingOutput += `  Is next sibling a submenu div? ${nextSibling && nextSibling.classList.contains('mobile-submenu-content') ? 'YES' : 'NO'}\n\n`;
+            });
+            
+            siblingCheck.textContent = siblingOutput;
+            
+            // Event Listener Architecture
+            const eventArch = document.getElementById('event-architecture');
+            let eventOutput = `Event Listener Architecture:\n\n`;
+            
+            // Check if listeners are directly attached
+            const hasDirectListeners = submenuToggles.length > 0 && 
+                (submenuToggles[0].onclick !== null || 
+                 getEventListeners(submenuToggles[0]).click.length > 0);
+            
+            eventOutput += `Direct attachment (querySelectorAll + addEventListener): ${hasDirectListeners ? 'YES' : 'NO'}\n`;
+            eventOutput += `Event delegation used: ${!hasDirectListeners ? 'LIKELY' : 'UNLIKELY'}\n\n`;
+            
+            // Check IVSHeaderController
+            if (iframe.contentWindow.IVSHeaderController) {
+                eventOutput += `IVSHeaderController exists: YES\n`;
+                eventOutput += `IVSHeaderController initialized: ${iframe.contentWindow.IVSHeaderController._ivs_initialized ? 'YES' : 'NO'}\n`;
+            } else {
+                eventOutput += `IVSHeaderController exists: NO\n`;
+            }
+            
+            eventArch.textContent = eventOutput;
+            
+            // CSS Rules Analysis
+            const cssAnalysis = document.getElementById('css-analysis');
+            let cssOutput = `CSS Rules Analysis:\n\n`;
+            
+            const stylesheets = doc.styleSheets;
+            let foundSelector = false;
+            
+            try {
+                for (let sheet of stylesheets) {
+                    try {
+                        const rules = sheet.cssRules || sheet.rules;
+                        for (let rule of rules) {
+                            if (rule.selectorText && rule.selectorText.includes('mobile-submenu-toggle')) {
+                                cssOutput += `Rule: ${rule.selectorText}\n`;
+                                cssOutput += `CSS: ${rule.cssText}\n\n`;
+                                foundSelector = true;
+                            }
+                        }
+                    } catch (e) {
+                        cssOutput += `Cannot access stylesheet (CORS): ${sheet.href}\n`;
+                    }
+                }
+            } catch (e) {
+                cssOutput += `Error accessing stylesheets: ${e.message}\n`;
+            }
+            
+            if (!foundSelector) {
+                cssOutput += `No matching CSS rules found in accessible stylesheets\n`;
+            }
+            
+            cssAnalysis.textContent = cssOutput;
+            
+            // Console Errors
+            const consoleErrors = document.getElementById('console-errors');
+            consoleErrors.textContent = `Console errors would be captured during runtime audit.\n`;
+        }
+        
+        function runAudit() {
+            const auditOutput = document.getElementById('runtime-audit');
+            auditOutput.textContent = `Runtime Audit Results:\n\n`;
+            auditOutput.textContent += `This requires interaction with the live page.\n`;
+            auditOutput.textContent += `Please run this audit in browser DevTools on the actual page.\n\n`;
+            auditOutput.textContent += `Manual Audit Steps:\n`;
+            auditOutput.textContent += `1. Open browser DevTools (F12)\n`;
+            auditOutput.textContent += `2. Navigate to index.html\n`;
+            auditOutput.textContent += `3. Switch to mobile view (Ctrl+Shift+M)\n`;
+            auditOutput.textContent += `4. Open mobile menu\n`;
+            auditOutput.textContent += `5. Select "Về IVS" dropdown button\n`;
+            auditOutput.textContent += `6. Run the following in console:\n\n`;
+            auditOutput.textContent += `
+const button = document.querySelector('.mobile-submenu-toggle');
+const submenu = button.nextElementSibling;
+
+// BEFORE CLICK
+console.log('BEFORE CLICK:');
+console.log('aria-expanded:', button.getAttribute('aria-expanded'));
+console.log('Button classes:', button.className);
+console.log('Submenu classes:', submenu.className);
+console.log('Submenu inline style:', submenu.style.cssText);
+console.log('Computed display:', getComputedStyle(submenu).display);
+console.log('Computed visibility:', getComputedStyle(submenu).visibility);
+console.log('Computed opacity:', getComputedStyle(submenu).opacity);
+console.log('Computed max-height:', getComputedStyle(submenu).maxHeight);
+console.log('Computed height:', getComputedStyle(submenu).height);
+console.log('Computed overflow:', getComputedStyle(submenu).overflow);
+console.log('Computed pointer-events:', getComputedStyle(submenu).pointerEvents);
+
+// CLICK
+button.click();
+
+// AFTER CLICK
+setTimeout(() => {
+    console.log('AFTER CLICK:');
+    console.log('aria-expanded:', button.getAttribute('aria-expanded'));
+    console.log('Button classes:', button.className);
+    console.log('Submenu classes:', submenu.className);
+    console.log('Submenu inline style:', submenu.style.cssText);
+    console.log('Computed display:', getComputedStyle(submenu).display);
+    console.log('Computed visibility:', getComputedStyle(submenu).visibility);
+    console.log('Computed opacity:', getComputedStyle(submenu).opacity);
+    console.log('Computed max-height:', getComputedStyle(submenu).maxHeight);
+    console.log('Computed height:', getComputedStyle(submenu).height);
+    console.log('Computed overflow:', getComputedStyle(submenu).overflow);
+    console.log('Computed pointer-events:', getComputedStyle(submenu).pointerEvents);
+}, 100);
+            `;
+        }
+        
+        // Initialize
+        window.onload = function() {
+            loadSiteInIframe();
+        };
+    </script>
+</body>
+</html>

@@ -74,6 +74,26 @@ const IVSHeaderController = {
         if (!content) return;
 
         const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+        
+        // Accordion behavior: close other open submenus when opening a new one
+        if (!isExpanded) {
+            this.submenuToggles.forEach(otherToggle => {
+                if (otherToggle !== toggle && otherToggle.getAttribute('aria-expanded') === 'true') {
+                    const otherContent = otherToggle.nextElementSibling;
+                    const otherIcon = otherToggle.querySelector('i.fa-chevron-down');
+                    if (otherContent) {
+                        otherToggle.setAttribute('aria-expanded', 'false');
+                        otherContent.style.maxHeight = '0px';
+                        otherContent.style.opacity = '0';
+                        otherContent.classList.remove('submenu-open');
+                    }
+                    if (otherIcon) {
+                        otherIcon.style.transform = 'rotate(0deg)';
+                    }
+                }
+            });
+        }
+        
         toggle.setAttribute('aria-expanded', !isExpanded);
         
         if (icon) {
@@ -84,6 +104,7 @@ const IVSHeaderController = {
             // Đóng submenu
             content.style.maxHeight = '0px';
             content.style.opacity = '0';
+            content.classList.remove('submenu-open');
         } else {
             // Mở submenu
             content.classList.add('submenu-open');

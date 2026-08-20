@@ -37,6 +37,72 @@
 }
 
 /* ==========================================================================
+   1.5. HERO TYPOGRAPHY FOR SMALL VIEWPORTS
+   ========================================================================== */
+
+/* Hero typography for 360-390px viewports */
+@media (max-width: 390px) {
+    .hero-section h1 {
+        font-size: 28px !important;
+        line-height: 1.15;
+    }
+    
+    .hero-section p {
+        font-size: 16px !important;
+    }
+    
+    .hero-section .btn-primary,
+    .hero-section .btn-secondary,
+    .hero-section .btn-tech {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.875rem;
+        min-height: 50px;
+    }
+    
+    .hero-section {
+        padding-inline: 16px;
+    }
+}
+
+/* Hero typography for 400-480px viewports */
+@media (min-width: 391px) and (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 30px !important;
+        line-height: 1.18;
+    }
+    
+    .hero-section p {
+        font-size: 17px !important;
+    }
+    
+    .hero-section .btn-primary,
+    .hero-section .btn-secondary,
+    .hero-section .btn-tech {
+        padding: 0.875rem 1.75rem;
+        font-size: 0.9rem;
+        min-height: 52px;
+    }
+    
+    .hero-section {
+        padding-inline: 18px;
+    }
+}
+
+/* Mobile hero button spacing */
+@media (max-width: 767px) {
+    .hero-section .flex.flex-col {
+        gap: 10px;
+    }
+    
+    .hero-section .btn-primary,
+    .hero-section .btn-secondary,
+    .hero-section .btn-tech {
+        width: 100%;
+        min-height: 52px;
+    }
+}
+
+/* ==========================================================================
    2. TABLET OPTIMIZATIONS (768px - 1024px)
    ========================================================================== */
 

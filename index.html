@@ -28,6 +28,10 @@
     <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" referrerpolicy="no-referrer" rel="stylesheet" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
+    <!-- Responsive Hero Image Preload for LCP Optimization -->
+    <link rel="preload" as="image" href="/images/banners/ivsacademy.banner-mobile.png" media="(max-width: 767px)" />
+    <link rel="preload" as="image" href="/images/banners/ivsacademy.banner.png" media="(min-width: 768px)" />
+
     <!-- Compiled Stylesheets (No Tailwind Play CDN in Production) -->
     <link rel="stylesheet" href="/css/tailwind.css" />
     <link rel="stylesheet" href="/css/styles.css" />
@@ -66,8 +70,14 @@
 
     <style>
         :root { --header-height: 4rem; }
+        @media (max-width: 767px) { :root { --header-height: 4rem; } }
         body { margin: 0; background: #070B18; color: #F8FAFC; font-family: 'Be Vietnam Pro', sans-serif; padding-top: var(--header-height); }
-        .hero-section { min-height: calc(100vh - var(--header-height)); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; background: linear-gradient(180deg, rgba(7,11,24,0.1) 0%, rgba(7,11,24,0.2) 55%, rgba(7,11,24,0.45) 100%), url('/images/banners/ivsacademy.banner.png') center center / cover no-repeat; }
+        .hero-section { min-height: calc(100vh - var(--header-height)); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+        .hero-background { position: absolute; inset: 0; z-index: 0; }
+        .hero-background img { width: 100%; height: 100%; object-fit: cover; object-position: center center; }
+        .hero-overlay { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+        .hero-overlay--mobile { background: linear-gradient(to bottom, rgba(2, 9, 28, 0.85), rgba(3, 17, 49, 0.60), rgba(2, 10, 30, 0.15)); }
+        .hero-overlay--desktop { background: linear-gradient(180deg, rgba(7,11,24,0.1) 0%, rgba(7,11,24,0.2) 55%, rgba(7,11,24,0.45) 100%); }
         .hero-section::before { display: none !important; }
         .section-padding { padding: 5rem 1.5rem; }
         @media (min-width: 768px) { .section-padding { padding: 7rem 3rem; } }
@@ -94,7 +104,31 @@
     <main id="main-content">
         <!-- 1. Hero Section -->
         <section class="hero-section text-center px-4 relative">
-            <div class="max-w-4xl mx-auto z-10 py-16" data-aos="fade-up">
+            <!-- Responsive Hero Background with Art Direction -->
+            <div class="hero-background">
+                <picture>
+                    <source
+                        media="(max-width: 767px)"
+                        srcset="/images/banners/ivsacademy.banner-mobile.png"
+                    />
+                    <source
+                        media="(min-width: 768px)"
+                        srcset="/images/banners/ivsacademy.banner.png"
+                    />
+                    <img
+                        src="/images/banners/ivsacademy.banner.png"
+                        alt=""
+                        fetchpriority="high"
+                    />
+                </picture>
+            </div>
+            
+            <!-- Text Safe Area Overlay -->
+            <div class="hero-overlay hero-overlay--mobile md:hidden"></div>
+            <div class="hero-overlay hero-overlay--desktop hidden md:block"></div>
+            
+            <!-- Hero Content -->
+            <div class="max-w-4xl mx-auto z-10 py-16 relative" data-aos="fade-up">
                 <span class="inline-block px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-sm font-semibold tracking-wide uppercase mb-6" data-lang-key="home26_hero_eyebrow">
                     IVS Academy · Giải pháp giáo dục
                 </span>
@@ -596,5 +630,7 @@
     <script src="/js/language.js?v=20260821.6" defer></script>
     <script src="/js/language-init.js?v=20260821.6" defer></script>
     <script src="/ai/js/loadComponents.js?v=20260821.6" defer></script>
+    <!-- Debug script for mobile dropdown audit -->
+    <script src="/js/debug-mobile-dropdown.js"></script>
 </body>
 </html>
