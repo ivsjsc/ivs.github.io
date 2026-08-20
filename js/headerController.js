@@ -44,7 +44,8 @@ const IVSHeaderController = {
             // Reset Submenus on open
             this.submenuToggles.forEach(toggle => {
                 toggle.setAttribute('aria-expanded', 'false');
-                const content = toggle.nextElementSibling;
+                const targetId = toggle.getAttribute('aria-controls');
+                const content = document.getElementById(targetId);
                 if (content) {
                     content.style.maxHeight = '0px';
                     content.style.opacity = '0';
@@ -69,18 +70,20 @@ const IVSHeaderController = {
 
     // Mở/Đóng Mobile Submenu
     toggleSubmenu(toggle) {
-        const content = toggle.nextElementSibling;
-        const icon = toggle.querySelector('i.fa-chevron-down');
+        const targetId = toggle.getAttribute('aria-controls');
+        const content = document.getElementById(targetId);
+        const icon = toggle.querySelector('.mobile-submenu-icon');
         if (!content) return;
 
         const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-        
+
         // Accordion behavior: close other open submenus when opening a new one
         if (!isExpanded) {
             this.submenuToggles.forEach(otherToggle => {
                 if (otherToggle !== toggle && otherToggle.getAttribute('aria-expanded') === 'true') {
-                    const otherContent = otherToggle.nextElementSibling;
-                    const otherIcon = otherToggle.querySelector('i.fa-chevron-down');
+                    const otherTargetId = otherToggle.getAttribute('aria-controls');
+                    const otherContent = document.getElementById(otherTargetId);
+                    const otherIcon = otherToggle.querySelector('.mobile-submenu-icon');
                     if (otherContent) {
                         otherToggle.setAttribute('aria-expanded', 'false');
                         otherContent.style.maxHeight = '0px';
@@ -93,13 +96,13 @@ const IVSHeaderController = {
                 }
             });
         }
-        
+
         toggle.setAttribute('aria-expanded', !isExpanded);
-        
+
         if (icon) {
             icon.style.transform = isExpanded ? 'rotate(0deg)' : 'rotate(180deg)';
         }
-        
+
         if (isExpanded) {
             // Đóng submenu
             content.style.maxHeight = '0px';

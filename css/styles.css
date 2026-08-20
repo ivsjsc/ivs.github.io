@@ -550,7 +550,8 @@ main {
     transition: max-height var(--transition-slow) ease-in-out;
     padding-left: 1rem;
 }
-.mobile-submenu-toggle[aria-expanded="true"] ~ .mobile-submenu-content {
+.mobile-submenu-toggle[aria-expanded="true"] + .mobile-submenu-content,
+.mobile-submenu-content.active {
     max-height: 800px;
 }
 

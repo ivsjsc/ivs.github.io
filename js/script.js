@@ -204,9 +204,12 @@ const IVSHeader = {
         bottomNavMenuButton?.addEventListener('click', () => this.toggleMobileMenu());
 
         // --- Mobile Submenu Listeners ---
-        document.querySelectorAll('.mobile-submenu-toggle').forEach(button => {
-            button.addEventListener('click', (e) => this.toggleMobileSubmenu(e.currentTarget));
-        });
+        // Only bind if IVSHeaderController is not available
+        if (!window.IVSHeaderController) {
+            document.querySelectorAll('.mobile-submenu-toggle').forEach(button => {
+                button.addEventListener('click', (e) => this.toggleMobileSubmenu(e.currentTarget));
+            });
+        }
 
         // --- Desktop Dropdown Listeners ---
         document.querySelectorAll('.nav-item').forEach(item => {
@@ -271,9 +274,10 @@ const IVSHeader = {
      * @param {HTMLElement} toggleButton - The button that was clicked.
      */
     toggleMobileSubmenu(toggleButton) {
-        const targetId = toggleButton.dataset.target;
+        const targetId = toggleButton.getAttribute('aria-controls');
         const content = document.getElementById(targetId);
         const icon = toggleButton.querySelector('.mobile-submenu-icon');
+        if (!content) return;
         const wasActive = content.classList.contains('active');
 
         // Close all other submenus first
@@ -281,20 +285,21 @@ const IVSHeader = {
             if (activeContent !== content) {
                 activeContent.classList.remove('active');
                 activeContent.style.maxHeight = null;
-                const otherIcon = activeContent.previousElementSibling.querySelector('.mobile-submenu-icon');
-                if(otherIcon) otherIcon.classList.remove('rotate-180');
+                const otherButton = document.querySelector(`.mobile-submenu-toggle[aria-controls="${activeContent.id}"]`);
+                const otherIcon = otherButton ? otherButton.querySelector('.mobile-submenu-icon') : null;
+                if(otherIcon) otherIcon.style.transform = 'rotate(0deg)';
             }
         });
-        
+
         // Toggle the clicked one
         if (wasActive) {
             content.classList.remove('active');
             content.style.maxHeight = null;
-            if(icon) icon.classList.remove('rotate-180');
+            if(icon) icon.style.transform = 'rotate(0deg)';
         } else {
             content.classList.add('active');
             content.style.maxHeight = content.scrollHeight + 'px';
-            if(icon) icon.classList.add('rotate-180');
+            if(icon) icon.style.transform = 'rotate(180deg)';
         }
     },
 
