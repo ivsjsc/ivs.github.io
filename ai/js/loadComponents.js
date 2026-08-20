@@ -22,14 +22,14 @@ function ensureExperienceFoundation() {
     if (!document.querySelector('link[data-ivs-experience]')) {
         const stylesheet = document.createElement('link');
         stylesheet.rel = 'stylesheet';
-        stylesheet.href = '/css/experience.css?v=20260821.5';
+        stylesheet.href = '/css/experience.css?v=20260821.6';
         stylesheet.dataset.ivsExperience = '2026';
         document.head.appendChild(stylesheet);
     }
 
     if (!document.querySelector('script[data-ivs-experience]') && !window.__IVS_EXPERIENCE_INITIALIZED__) {
         const script = document.createElement('script');
-        script.src = '/js/experience.js?v=20260821.5';
+        script.src = '/js/experience.js?v=20260821.6';
         script.defer = true;
         script.dataset.ivsExperience = '2026';
         document.head.appendChild(script);
@@ -181,14 +181,14 @@ async function loadCommonComponents() {
     }
     // Sử dụng đường dẫn Root-Relative Path
     const components = [
-        { id: 'header-placeholder', url: '/components/header.html?v=20260821.5', controller: window.IVSHeaderController },
+        { id: 'header-placeholder', url: '/components/header.html?v=20260821.6', controller: window.IVSHeaderController },
         // Giả định IVSFabController từ fabController.js đã định nghĩa
-        { id: 'fab-container-placeholder', url: '/ai/components/fab-container.html?v=20260821.5', controller: window.IVSFabController },
+        { id: 'fab-container-placeholder', url: '/ai/components/fab-container.html?v=20260821.6', controller: window.IVSFabController },
         // Cookie consent component - site-wide privacy / cookie banner
         { id: 'cookie-consent-placeholder', url: '/components/cookie-consent.html', controller: window.IVSCookieConsentController }
     ];
 
-    const footerComponent = { id: 'footer-placeholder', url: '/components/footer.html?v=20260821.5', controller: window.IVSFooterController };
+    const footerComponent = { id: 'footer-placeholder', url: '/components/footer.html?v=20260821.6', controller: window.IVSFooterController };
 
     // Tải Header và FAB trước
     for (const comp of components) {
@@ -233,7 +233,7 @@ async function loadCommonComponents() {
             // Append near end of body so it's available visually above other elements (fab-topmost ensures stacking)
             document.body.appendChild(ph);
         }
-        const aiSuccess = await loadAndInject('/ai/components/ai-assistant.html?v=20260821.5', 'ai-assistant-placeholder');
+        const aiSuccess = await loadAndInject('/ai/components/ai-assistant.html?v=20260821.6', 'ai-assistant-placeholder');
         if (aiSuccess) {
             window.componentLog('ai-assistant component injected.', 'info');
             // If the assistant class exists, ensure it's initialized now that DOM is present.

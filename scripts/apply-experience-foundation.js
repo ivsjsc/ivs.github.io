@@ -6,7 +6,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const version = '20260821.5';
+const version = '20260821.6';
 
 const pages = [
   'thank-you.html',

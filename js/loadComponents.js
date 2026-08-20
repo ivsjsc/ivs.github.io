@@ -18,7 +18,7 @@
   if (maintainedLoaderPresent) return;
 
   var script = document.createElement('script');
-  script.src = '/ai/js/loadComponents.js?v=20260821.5';
+  script.src = '/ai/js/loadComponents.js?v=20260821.6';
   script.defer = true;
   script.dataset.ivsMaintainedLoader = 'true';
   (current?.parentNode || document.head || document.documentElement).appendChild(script);

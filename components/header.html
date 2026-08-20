@@ -1,6 +1,6 @@
 <link href="/css/tailwind.css" rel="stylesheet"/>
 <link href="/css/vars.css" rel="stylesheet"/>
-<link href="/css/experience.css?v=20260821.5" rel="stylesheet" data-ivs-experience="2026"/>
+<link href="/css/experience.css?v=20260821.6" rel="stylesheet" data-ivs-experience="2026"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer">
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-[#07111F]/90 backdrop-blur-md shadow-md border-b border-white/10" id="ivs-main-header">
@@ -109,6 +109,7 @@
                             <h3 class="font-bold text-ivs-accent border-b border-white/10 pb-2 mb-2" data-lang-key="nav_solutions_tech_title">Công nghệ ứng dụng</h3>
                             <a href="/solutions.html" class="dropdown-item" data-lang-key="nav_solutions_overview"><i class="fas fa-lightbulb fa-fw mr-3 text-ivs-accent/70"></i>Tổng quan</a>
                             <a href="/Pages/ivscelestech.html" class="dropdown-item" data-lang-key="nav_solutions_edtech"><i class="fas fa-code fa-fw mr-3 text-ivs-accent/70"></i>Công nghệ GD</a>
+                            <a href="https://ivslearning.io.vn/" target="_blank" rel="noopener noreferrer" class="dropdown-item" data-lang-key="ux_link_ivslearning"><i class="fas fa-graduation-cap fa-fw mr-3 text-ivs-accent/70"></i>IVS Learn – Nền tảng EdTech</a>
                             <a href="/Pages/upskill.html" class="dropdown-item" data-lang-key="nav_solutions_upskill"><i class="fas fa-arrow-up-right-dots fa-fw mr-3 text-ivs-accent/70"></i>Nâng cao Trình độ</a>
                             <a href="/Pages/bang-gia-tham-khao-gvnn-ivs.html" class="dropdown-item" data-lang-key="nav_solutions_pricing"><i class="fas fa-tags fa-fw mr-3 text-ivs-accent/70"></i>Bảng giá</a>
                             <a href="/Pages/teacher-lists-available.html" class="dropdown-item" data-lang-key="nav_solutions_teacher_list"><i class="fas fa-users-gear fa-fw mr-3 text-ivs-accent/70"></i>Danh sách Giáo viên</a>
@@ -306,12 +307,12 @@
             if (typeof window.changeLanguage === 'function') return Promise.resolve();
             if (window.__ivsLanguageScriptPromise) return window.__ivsLanguageScriptPromise;
 
-            var existingLanguageScript = document.querySelector('script[src*="/js/language.js?v=20260821.5"], script[src^="js/language.js?v=20260821.5"]');
+            var existingLanguageScript = document.querySelector('script[src*="/js/language.js?v=20260821.6"], script[src^="js/language.js?v=20260821.6"]');
             if (existingLanguageScript) return Promise.resolve();
 
             window.__ivsLanguageScriptPromise = new Promise(function(resolve) {
                 var languageScript = document.createElement('script');
-                languageScript.src = '/js/language.js?v=20260821.5';
+                languageScript.src = '/js/language.js?v=20260821.6';
                 languageScript.onload = resolve;
                 languageScript.onerror = resolve;
                 document.head.appendChild(languageScript);
@@ -531,6 +532,7 @@
                     <h5 class="mobile-menu-group-sub">Công nghệ ứng dụng</h5>
                     <a class="mobile-submenu-item" data-lang-key="nav_solutions_overview" href="/solutions.html">Tổng quan</a>
                     <a class="mobile-submenu-item" data-lang-key="nav_solutions_edtech" href="/Pages/ivscelestech.html">Công nghệ GD</a>
+                    <a class="mobile-submenu-item" data-lang-key="ux_link_ivslearning" href="https://ivslearning.io.vn/" target="_blank" rel="noopener noreferrer">IVS Learn – Nền tảng EdTech</a>
                     <a class="mobile-submenu-item" data-lang-key="nav_solutions_upskill" href="/Pages/upskill.html">Nâng cao Trình độ</a>
                     <a class="mobile-submenu-item" data-lang-key="nav_solutions_pricing" href="/Pages/bang-gia-tham-khao-gvnn-ivs.html">Bảng giá</a>
                     <a class="mobile-submenu-item" data-lang-key="nav_solutions_teacher_list" href="/Pages/teacher-lists-available.html">Danh sách Giáo viên</a>

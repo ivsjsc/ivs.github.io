@@ -124,7 +124,7 @@
     window.addEventListener('languageChanged', filter);
 
     try {
-      var response = await fetch('/curriculum/data/teachers.json?v=20260821.5');
+      var response = await fetch('/curriculum/data/teachers.json?v=20260821.6');
       if (!response.ok) throw new Error('Teacher data request failed');
       teachers = await response.json();
       render(teachers);

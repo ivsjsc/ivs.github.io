@@ -38,10 +38,15 @@ class AnalyticsManager {
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         
-        // Configure GA4 with Cross-Domain measurement between ivsacademy.edu.vn and ivstech.store
+        // Configure GA4 cross-domain measurement across the IVS platform ecosystem.
         gtag('config', this.gaId, {
             'linker': {
-                'domains': ['ivsacademy.edu.vn', 'ivstech.store']
+                'domains': [
+                    'ivsacademy.edu.vn',
+                    'ivstech.store',
+                    'ivslearning.io.vn',
+                    'dongnaicity.com.vn'
+                ]
             },
             'anonymize_ip': true
         });
@@ -60,10 +65,13 @@ class AnalyticsManager {
             const href = link.getAttribute('href') || '';
             const linkText = link.innerText.trim();
 
-            if (href.includes('ivstech.store')) {
+            const ecosystemDomains = ['ivstech.store', 'ivslearning.io.vn', 'dongnaicity.com.vn'];
+            const targetSite = ecosystemDomains.find((domain) => href.includes(domain));
+
+            if (targetSite) {
                 this.trackEcosystemNavigation({
                     source_site: 'ivsacademy.edu.vn',
-                    target_site: 'ivstech.store',
+                    target_site: targetSite,
                     placement: link.closest('header') ? 'header' : link.closest('footer') ? 'footer' : 'body',
                     link_text: linkText,
                     link_url: href
@@ -101,7 +109,9 @@ class AnalyticsManager {
      */
     trackEcosystemNavigation(params) {
         this.trackEvent('ecosystem_navigation', params);
-        this.trackEvent('academy_to_tech_click', params);
+        if (params.target_site === 'ivstech.store') {
+            this.trackEvent('academy_to_tech_click', params);
+        }
     }
 
     /**
