@@ -1,6 +1,6 @@
 
 // Language initialization script
-document.addEventListener('translationsLoaded', function() {
+function initializePreferredLanguage() {
     try {
         // Get saved language preference
         const savedLang = localStorage.getItem('userPreferredLanguage');
@@ -20,4 +20,11 @@ document.addEventListener('translationsLoaded', function() {
         // Fallback to Vietnamese
         window.changeLanguage('vi');
     }
-});
+}
+
+window.addEventListener('translationsLoaded', initializePreferredLanguage);
+
+// Handle pages where language.js finished before this helper was evaluated.
+if (window.langSystem?.isLoaded) {
+    initializePreferredLanguage();
+}

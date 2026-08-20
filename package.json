@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "cd webapp && npm run dev",
     "build": "cd webapp && npm run build",
+    "check:ux": "node scripts/validate-experience.js",
+    "check:i18n": "node check-translations.js",
     "deploy": "sh deploy.sh all"
   },
   "dependencies": {

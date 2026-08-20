@@ -14,6 +14,28 @@ if (typeof window.debounce !== 'function') {
     window.debounce = (func) => func;
 }
 
+/**
+ * Load the shared UX foundation once. This keeps legacy pages on one responsive,
+ * accessible baseline without forcing every historical HTML file to be rewritten.
+ */
+function ensureExperienceFoundation() {
+    if (!document.querySelector('link[data-ivs-experience]')) {
+        const stylesheet = document.createElement('link');
+        stylesheet.rel = 'stylesheet';
+        stylesheet.href = '/css/experience.css?v=20260821.5';
+        stylesheet.dataset.ivsExperience = '2026';
+        document.head.appendChild(stylesheet);
+    }
+
+    if (!document.querySelector('script[data-ivs-experience]') && !window.__IVS_EXPERIENCE_INITIALIZED__) {
+        const script = document.createElement('script');
+        script.src = '/js/experience.js?v=20260821.5';
+        script.defer = true;
+        script.dataset.ivsExperience = '2026';
+        document.head.appendChild(script);
+    }
+}
+
 // =================================================================
 // COMPONENT LOADER CORE
 // =================================================================
@@ -140,6 +162,8 @@ async function loadCommonComponents() {
     if (window.__IVS_components_loadingStarted) return;
     window.__IVS_components_loadingStarted = true;
 
+    ensureExperienceFoundation();
+
     window.componentLog("Initializing component sequence...", "info");
     // Ensure common placeholders exist so components can be injected even on pages
     // that didn't include placeholders explicitly in their HTML.
@@ -157,14 +181,14 @@ async function loadCommonComponents() {
     }
     // Sử dụng đường dẫn Root-Relative Path
     const components = [
-        { id: 'header-placeholder', url: '/components/header.html?v=20260706', controller: window.IVSHeaderController },
+        { id: 'header-placeholder', url: '/components/header.html?v=20260821.5', controller: window.IVSHeaderController },
         // Giả định IVSFabController từ fabController.js đã định nghĩa
-        { id: 'fab-container-placeholder', url: '/ai/components/fab-container.html', controller: window.IVSFabController },
+        { id: 'fab-container-placeholder', url: '/ai/components/fab-container.html?v=20260821.5', controller: window.IVSFabController },
         // Cookie consent component - site-wide privacy / cookie banner
         { id: 'cookie-consent-placeholder', url: '/components/cookie-consent.html', controller: window.IVSCookieConsentController }
     ];
 
-    const footerComponent = { id: 'footer-placeholder', url: '/components/footer.html', controller: window.IVSFooterController };
+    const footerComponent = { id: 'footer-placeholder', url: '/components/footer.html?v=20260821.5', controller: window.IVSFooterController };
 
     // Tải Header và FAB trước
     for (const comp of components) {
@@ -209,7 +233,7 @@ async function loadCommonComponents() {
             // Append near end of body so it's available visually above other elements (fab-topmost ensures stacking)
             document.body.appendChild(ph);
         }
-        const aiSuccess = await loadAndInject('/ai/components/ai-assistant.html', 'ai-assistant-placeholder');
+        const aiSuccess = await loadAndInject('/ai/components/ai-assistant.html?v=20260821.5', 'ai-assistant-placeholder');
         if (aiSuccess) {
             window.componentLog('ai-assistant component injected.', 'info');
             // If the assistant class exists, ensure it's initialized now that DOM is present.
@@ -251,14 +275,18 @@ async function loadCommonComponents() {
     // Thực hiện callback của trang cụ thể
     window.onPageComponentsLoadedCallback?.();
 
+    window.dispatchEvent(new CustomEvent('componentsLoaded', {
+        detail: { source: 'loadComponents' }
+    }));
+
     window.componentLog("Component sequence complete.", "info");
 }
 
 // Gán hàm loader chính vào biến global mà trang HTML gọi
 window.loadComponentsAndInitialize = loadCommonComponents;
 
-// Tự động khởi động khi DOMContentLoaded, nếu chưa được khởi động
-document.addEventListener('DOMContentLoaded', function() {
+// Tự động khởi động khi DOM sẵn sàng, kể cả khi compatibility loader được tải động.
+function startComponentLoader() {
     // Defensive: if multiple <script> tags referencing loadComponents.js were accidentally
     // inserted into the page (some pages historically contain both "js/loadComponents.js"
     // and "/js/loadComponents.js"), dedupe them now to avoid double initialization
@@ -293,4 +321,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!window.__IVS_components_loadingStarted) {
         loadCommonComponents().catch(err => window.componentLog(`Error during automatic component loading: ${err.message}`, 'error'));
     }
-});
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', startComponentLoader, { once: true });
+} else {
+    startComponentLoader();
+}

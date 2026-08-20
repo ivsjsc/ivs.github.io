@@ -1,5 +1,6 @@
 <link href="/css/tailwind.css" rel="stylesheet"/>
 <link href="/css/vars.css" rel="stylesheet"/>
+<link href="/css/experience.css?v=20260821.5" rel="stylesheet" data-ivs-experience="2026"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" crossorigin="anonymous" referrerpolicy="no-referrer">
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-[#07111F]/90 backdrop-blur-md shadow-md border-b border-white/10" id="ivs-main-header">
@@ -49,6 +50,7 @@
         <!-- Desktop Navigation Bar -->
         <nav id="main-navigation" class="hidden md:flex items-center space-x-1 lg:space-x-2" role="navigation" aria-label="Main navigation">
             <a href="/index.html" class="desktop-nav-link" data-lang-key="nav_home">Trang Chủ</a>
+            <a href="/#service-directory" class="desktop-nav-link" data-lang-key="ux_nav_all_services">Tất cả dịch vụ</a>
             
             <!-- Dropdown "Về IVS" -->
             <div class="desktop-dropdown-container">
@@ -304,12 +306,12 @@
             if (typeof window.changeLanguage === 'function') return Promise.resolve();
             if (window.__ivsLanguageScriptPromise) return window.__ivsLanguageScriptPromise;
 
-            var existingLanguageScript = document.querySelector('script[src$="js/language.js"]');
+            var existingLanguageScript = document.querySelector('script[src*="/js/language.js?v=20260821.5"], script[src^="js/language.js?v=20260821.5"]');
             if (existingLanguageScript) return Promise.resolve();
 
             window.__ivsLanguageScriptPromise = new Promise(function(resolve) {
                 var languageScript = document.createElement('script');
-                languageScript.src = '/js/language.js';
+                languageScript.src = '/js/language.js?v=20260821.5';
                 languageScript.onload = resolve;
                 languageScript.onerror = resolve;
                 document.head.appendChild(languageScript);
@@ -478,17 +480,14 @@
         </div>
         <nav class="flex-grow p-2 space-y-4 overflow-y-auto" id="ivs-mobile-main-nav">
             <div class="mobile-menu-group card-menu-group">
-                <h4 class="mobile-menu-group-title">Điều hướng nhanh</h4>
+                <h4 class="mobile-menu-group-title" data-lang-key="ux_nav_quick">Điều hướng nhanh</h4>
                 <div class="grid grid-cols-2 gap-2">
-                    <a class="mobile-nav-link justify-center text-center text-sm" href="/index.html#capabilities">Năng lực</a>
-                    <a class="mobile-nav-link justify-center text-center text-sm" href="/index.html#business-units">Đơn vị</a>
-                    <a class="mobile-nav-link justify-center text-center text-sm" href="/index.html#platforms">Nền tảng</a>
-                    <a class="mobile-nav-link justify-center text-center text-sm" href="/index.html#education">Giáo dục</a>
-                    <a class="mobile-nav-link justify-center text-center text-sm" href="/index.html#technology">Công nghệ</a>
-                    <a class="mobile-nav-link justify-center text-center text-sm" href="/index.html#projects">Dự án</a>
-                    <a class="mobile-nav-link justify-center text-center text-sm" href="/index.html#process">Quy trình</a>
-                    <a class="mobile-nav-link justify-center text-center text-sm" href="/index.html#partnerships">Hợp tác</a>
-                    <a class="mobile-nav-link col-span-2 justify-center text-center text-sm bg-ivs-accent text-white hover:bg-ivs-accent-dark" href="/index.html#contact">Liên hệ</a>
+                    <a class="mobile-nav-link col-span-2 justify-center text-center text-sm" data-lang-key="ux_nav_all_services" href="/index.html#service-directory">Tất cả dịch vụ</a>
+                    <a class="mobile-nav-link justify-center text-center text-sm" data-lang-key="ux_nav_programs" href="/index.html#programs">Chương trình</a>
+                    <a class="mobile-nav-link justify-center text-center text-sm" data-lang-key="ux_nav_teachers" href="/ivs-global-teacher-hub.html">Giáo viên</a>
+                    <a class="mobile-nav-link justify-center text-center text-sm" data-lang-key="ux_nav_resources" href="/learning-materials.html">Tài nguyên</a>
+                    <a class="mobile-nav-link justify-center text-center text-sm" data-lang-key="ux_nav_apps" href="/Pages/apps/ivsapps.html">Ứng dụng</a>
+                    <a class="mobile-nav-link col-span-2 justify-center text-center text-sm bg-ivs-accent text-white hover:bg-ivs-accent-dark" data-lang-key="nav_contact" href="/contact.html">Liên hệ</a>
                 </div>
             </div>
             <div class="mobile-menu-group card-menu-group">

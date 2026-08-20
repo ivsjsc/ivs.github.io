@@ -25,6 +25,7 @@
         }
         window.langSystem.translations[lang] = await response.json();
       }
+      window.langSystem.isLoaded = true;
       // Dispatch a custom event when translations are loaded
       window.dispatchEvent(new CustomEvent('translationsLoaded'));
     } catch (error) {
@@ -35,30 +36,27 @@
   // Load translations when the script is executed
   loadTranslations();
 
-  // translate(key, lang?) — returns translated string, fallback to defaultLanguage if missing,
-  // explicit null => empty string, completely missing => return key
+  function isUsableTranslation(value, key) {
+    if (value === null) return true;
+    if (typeof value !== 'string' || value.trim() === '') return false;
+    const normalized = value.trim();
+    if (normalized === key) return false;
+    return !/^(?:translated\s+|translate\s+|title$|description$|text$|subtitle$|label$|button$|content$)/i.test(normalized);
+  }
+
+  // translate(key, lang?) — skips legacy placeholder values and falls back to
+  // another complete locale before ever exposing a raw translation key.
   function translate(key, lang) {
     lang = lang || window.langSystem.currentLanguage;
 
-    const translationsForLang = window.langSystem.translations?.[lang];
-
-    // If we have an object for the requested language, check value
-    if (translationsForLang && Object.prototype.hasOwnProperty.call(translationsForLang, key)) {
-      const value = translationsForLang[key];
-      // Treat an explicit null as an intentional empty string
+    const fallbackOrder = lang === 'zh' ? ['zh', 'en', 'vi'] : (lang === 'en' ? ['en', 'vi'] : ['vi', 'en']);
+    for (const candidate of fallbackOrder) {
+      const locale = window.langSystem.translations?.[candidate];
+      if (!locale || !Object.prototype.hasOwnProperty.call(locale, key)) continue;
+      const value = locale[key];
+      if (!isUsableTranslation(value, key)) continue;
       if (value === null) return '';
       return value;
-    }
-
-    // Not found in requested language — try fallback (defaultLanguage)
-    const def = window.langSystem.defaultLanguage;
-    if (lang !== def) {
-      const translationsForDefault = window.langSystem.translations?.[def];
-      if (translationsForDefault && Object.prototype.hasOwnProperty.call(translationsForDefault, key)) {
-        const value = translationsForDefault[key];
-        if (value === null) return '';
-        return value;
-      }
     }
 
     // No translation found — return key (caller can detect this)
@@ -67,6 +65,30 @@
 
   // Expose globally for tests and application code
   window.translate = translate;
+
+  function setElementTranslation(elem, translated) {
+    if (elem.tagName === 'META') {
+      elem.setAttribute('content', translated);
+    } else if (elem.tagName === 'INPUT' || elem.tagName === 'TEXTAREA') {
+      elem.placeholder = translated;
+    } else if (elem.children.length > 0) {
+      const directTextNodes = Array.from(elem.childNodes).filter(function(node) {
+        return node.nodeType === Node.TEXT_NODE && node.textContent.trim();
+      });
+      if (directTextNodes.length) {
+        directTextNodes[0].textContent = ' ' + translated + ' ';
+        directTextNodes.slice(1).forEach(function(node) { node.remove(); });
+      } else {
+        elem.textContent = translated;
+      }
+    } else {
+      elem.textContent = translated;
+    }
+
+    if (elem.hasAttribute('data-lang-aria-label')) {
+      elem.setAttribute('aria-label', translated);
+    }
+  }
 
   // Change the current language and update UI/storage
   // Returns a Promise that resolves after language change is complete
@@ -89,17 +111,14 @@
       }
       
       // Update HTML lang attribute
-      document.documentElement.lang = newLang;
+      document.documentElement.lang = newLang === 'zh' ? 'zh-CN' : newLang;
       
       // Update all elements with data-lang-key attribute
       document.querySelectorAll('[data-lang-key]').forEach(function(elem) {
         const key = elem.getAttribute('data-lang-key');
         const translated = translate(key, newLang);
-        if (elem.tagName === 'INPUT' || elem.tagName === 'TEXTAREA') {
-          elem.placeholder = translated;
-        } else {
-          elem.textContent = translated;
-        }
+        if (translated === key) return;
+        setElementTranslation(elem, translated);
       });
       
       // Dispatch custom event so other components can react to language change

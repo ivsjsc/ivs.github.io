@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#070B18" />
 
-    <title>IVS Academy - Giải Pháp Giáo Dục Cho Trường Học & Trung Tâm</title>
-    <meta name="description" content="IVS Academy cung cấp chương trình đào tạo, giáo viên, hoạt động giáo dục và các mô hình hợp tác phù hợp với nhu cầu của từng đơn vị." />
+    <title data-lang-key="home26_page_title">IVS Academy - Giải pháp giáo dục cho Trường học và Trung tâm</title>
+    <meta name="description" data-lang-key="home26_meta_desc" content="IVS Academy cung cấp chương trình đào tạo, giáo viên, hoạt động giáo dục và các mô hình hợp tác phù hợp với nhu cầu của từng đơn vị." />
     <meta name="keywords" content="IVS Academy, giải pháp giáo dục, liên kết trường học, trung tâm ngoại ngữ, cung ứng giáo viên nước ngoài, STEAM, giáo trình K-12, tư vấn giáo dục" />
     <meta name="author" content="IVS Academy" />
     <link rel="canonical" href="https://ivsacademy.edu.vn/" />
@@ -94,112 +94,193 @@
         <!-- 1. Hero Section -->
         <section class="hero-section text-center px-4 relative">
             <div class="max-w-4xl mx-auto z-10 py-16" data-aos="fade-up">
-                <span class="inline-block px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-sm font-semibold tracking-wide uppercase mb-6">
-                    IVS Academy · Education Solutions
+                <span class="inline-block px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-sm font-semibold tracking-wide uppercase mb-6" data-lang-key="home26_hero_eyebrow">
+                    IVS Academy · Giải pháp giáo dục
                 </span>
-                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight mb-6">
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight mb-6" data-lang-key="home26_hero_title">
                     Giải pháp giáo dục dành cho trường học, trung tâm và tổ chức đào tạo
                 </h1>
-                <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto font-normal leading-relaxed mb-10">
+                <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto font-normal leading-relaxed mb-10" data-lang-key="home26_hero_desc">
                     IVS Academy cung cấp chương trình đào tạo, giáo viên, hoạt động giáo dục và các mô hình hợp tác phù hợp với nhu cầu của từng đơn vị.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <a href="#contact" class="btn-primary w-full sm:w-auto">
                         <i class="fas fa-paper-plane" aria-hidden="true"></i>
-                        Đăng ký tư vấn giáo dục
+                        <span data-lang-key="home26_cta_consult">Đăng ký tư vấn giáo dục</span>
                     </a>
                     <a href="#programs" class="btn-secondary w-full sm:w-auto">
                         <i class="fas fa-book-open" aria-hidden="true"></i>
-                        Khám phá chương trình
+                        <span data-lang-key="home26_cta_programs">Khám phá chương trình</span>
                     </a>
                     <a href="https://ivstech.store" class="btn-tech w-full sm:w-auto" target="_blank" rel="noopener noreferrer" aria-label="Truy cập IVS Tech, mở trong tab mới">
                         <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
-                        IVS Tech
+                        <span data-lang-key="home26_cta_ivstech">IVS Tech</span>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- 2. Target Audience Section -->
+        <!-- 2. Complete service directory -->
+        <section class="ivs-service-directory section-padding" id="service-directory" aria-labelledby="service-directory-title">
+            <div class="max-w-6xl mx-auto">
+                <div class="ivs-service-directory__header">
+                    <div>
+                        <p class="ivs-service-directory__eyebrow" data-lang-key="ux_services_eyebrow">Hệ sinh thái dịch vụ IVS</p>
+                        <h2 class="ivs-service-directory__title" id="service-directory-title" data-lang-key="ux_services_title">Tìm đúng giải pháp cho nhu cầu của bạn</h2>
+                        <p class="ivs-service-directory__intro" data-lang-key="ux_services_intro">Khám phá đầy đủ chương trình giáo dục, giáo viên, đào tạo công nghệ, tài nguyên và các dịch vụ hỗ trợ của IVS.</p>
+                    </div>
+                    <div class="ivs-service-search">
+                        <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
+                        <input id="service-directory-search" type="search" autocomplete="off" data-lang-key="ux_services_search" placeholder="Tìm dịch vụ, chương trình hoặc tài nguyên" aria-label="Tìm dịch vụ, chương trình hoặc tài nguyên" />
+                        <p class="ivs-service-directory__status" aria-live="polite" data-result-template="{count} dịch vụ"></p>
+                    </div>
+                </div>
+
+                <div class="ivs-service-groups">
+                    <details class="ivs-service-group" open>
+                        <summary><span class="ivs-service-group__icon"><i class="fas fa-school" aria-hidden="true"></i></span><span data-lang-key="ux_group_education">Liên kết giáo dục</span></summary>
+                        <div class="ivs-service-links">
+                            <a class="ivs-service-link" href="/Pages/lkmamnon.html"><span class="ivs-service-link__copy"><span class="ivs-service-link__title" data-lang-key="ux_link_preschool">Liên kết Mầm non</span></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a class="ivs-service-link" href="/Pages/lktieuhoc.html"><span class="ivs-service-link__copy"><span class="ivs-service-link__title" data-lang-key="ux_link_primary">Liên kết Tiểu học</span></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a class="ivs-service-link" href="/Pages/lkthcsthpt.html"><span class="ivs-service-link__copy"><span class="ivs-service-link__title" data-lang-key="ux_link_secondary">Liên kết THCS &amp; THPT</span></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a class="ivs-service-link" href="/Pages/lkttnn.html"><span class="ivs-service-link__copy"><span class="ivs-service-link__title" data-lang-key="ux_link_language_centers">Liên kết Trung tâm Ngoại ngữ</span></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a class="ivs-service-link" href="/Pages/english-placement.html"><span class="ivs-service-link__copy"><span class="ivs-service-link__title" data-lang-key="ux_link_placement">Kiểm tra năng lực tiếng Anh</span></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a class="ivs-service-link" href="/Pages/international-partnership.html"><span class="ivs-service-link__copy"><span class="ivs-service-link__title" data-lang-key="ux_link_international">Hợp tác quốc tế</span></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </details>
+
+                    <details class="ivs-service-group" open>
+                        <summary><span class="ivs-service-group__icon"><i class="fas fa-chalkboard-user" aria-hidden="true"></i></span><span data-lang-key="ux_group_teachers">Giáo viên và chương trình</span></summary>
+                        <div class="ivs-service-links">
+                            <a class="ivs-service-link" href="/ivs-global-teacher-hub.html"><span class="ivs-service-link__copy"><span class="ivs-service-link__title" data-lang-key="ux_link_foreign_teachers">Giáo viên quốc tế</span></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a class="ivs-service-link" href="/Pages/teacher-lists-available.html"><span class="ivs-service-link__copy"><span class="ivs-service-link__title" data-lang-key="ux_link_teacher_directory">Danh sách giáo viên</span></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a class="ivs-service-link" href="/Pages/foreign-teacher-services.html"><span class="ivs-service-link__copy"><span class="ivs-service-link__title" data-lang-key="ux_link_work_permit">Hồ sơ và giấy phép lao động</span></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a class="ivs-service-link" href="/Pages/teachertrain.html"><span class="ivs-service-link__copy"><span class="ivs-service-link__title" data-lang-key="ux_link_teacher_training">Đào tạo giáo viên</span></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a class="ivs-service-link" href="/Pages/rnd-curriculum.html"><span class="ivs-service-link__copy"><span class="ivs-service-link__title" data-lang-key="ux_link_curriculum">R&amp;D chương trình và giáo trình</span></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a class="ivs-service-link" href="/Pages/ivslifeminds.html"><span class="ivs-service-link__copy"><span class="ivs-service-link__title" data-lang-key="ux_link_lifeminds">IVS LifeMinds</span></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </details>
+
+                    <details class="ivs-service-group" open>
+                        <summary><span class="ivs-service-group__icon"><i class="fas fa-microchip" aria-hidden="true"></i></span><span data-lang-key="ux_group_digital">Công nghệ và kỹ năng số</span></summary>
+                        <div class="ivs-service-links">
+                            <a class="ivs-service-link" href="/Pages/it-training.html"><span class="ivs-service-link__copy"><span class="ivs-service-link__title" data-lang-key="ux_link_it_training">Đào tạo IT tổng quan</span></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a class="ivs-service-link" href="/Pages/it-programming.html"><span class="ivs-service-link__copy"><span class="ivs-service-link__title" data-lang-key="ux_link_programming">Lập trình Web, App và AI</span></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a class="ivs-service-link" href="/Pages/it-robotics.html"><span class="ivs-service-link__copy"><span class="ivs-service-link__title" data-lang-key="ux_link_robotics">Robotics và STEM</span></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a class="ivs-service-link" href="/Pages/it-hardware.html"><span class="ivs-service-link__copy"><span class="ivs-service-link__title" data-lang-key="ux_link_hardware">Phần cứng và điện tử</span></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a class="ivs-service-link" href="/Pages/it-software.html"><span class="ivs-service-link__copy"><span class="ivs-service-link__title" data-lang-key="ux_link_software">Phần mềm và ứng dụng</span></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a class="ivs-service-link" href="/Pages/it-network.html"><span class="ivs-service-link__copy"><span class="ivs-service-link__title" data-lang-key="ux_link_network">Mạng máy tính và bảo mật</span></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </details>
+
+                    <details class="ivs-service-group" open>
+                        <summary><span class="ivs-service-group__icon"><i class="fas fa-folder-open" aria-hidden="true"></i></span><span data-lang-key="ux_group_resources">Tài nguyên và ứng dụng</span></summary>
+                        <div class="ivs-service-links">
+                            <a class="ivs-service-link" href="/learning-materials.html"><span class="ivs-service-link__copy"><span class="ivs-service-link__title" data-lang-key="ux_link_learning_materials">Tài liệu học tập</span></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a class="ivs-service-link" href="/gallery.html"><span class="ivs-service-link__copy"><span class="ivs-service-link__title" data-lang-key="ux_link_gallery">Thư viện hình ảnh</span></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a class="ivs-service-link" href="/news-archive.html"><span class="ivs-service-link__copy"><span class="ivs-service-link__title" data-lang-key="ux_link_news">Tin tức và bài viết</span></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a class="ivs-service-link" href="/Pages/apps/story/"><span class="ivs-service-link__copy"><span class="ivs-service-link__title" data-lang-key="ux_link_stories">Kho truyện</span></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a class="ivs-service-link" href="/Pages/games/ivsgames.html"><span class="ivs-service-link__copy"><span class="ivs-service-link__title" data-lang-key="ux_link_games">IVS Games</span></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a class="ivs-service-link" href="/Pages/apps/ivsapps.html"><span class="ivs-service-link__copy"><span class="ivs-service-link__title" data-lang-key="ux_link_apps">IVS Apps</span></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
+                    </details>
+
+                    <details class="ivs-service-group" open>
+                        <summary><span class="ivs-service-group__icon"><i class="fas fa-building" aria-hidden="true"></i></span><span data-lang-key="ux_group_organization">Doanh nghiệp và hỗ trợ</span></summary>
+                        <div class="ivs-service-links">
+                            <a class="ivs-service-link" href="/about.html"><span class="ivs-service-link__copy"><span class="ivs-service-link__title" data-lang-key="ux_link_about">Về IVS Academy</span></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a class="ivs-service-link" href="/Pages/thanhlaptrungtam.html"><span class="ivs-service-link__copy"><span class="ivs-service-link__title" data-lang-key="ux_link_center_setup">Thành lập trung tâm</span></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a class="ivs-service-link" href="/Pages/legal_consulting.html"><span class="ivs-service-link__copy"><span class="ivs-service-link__title" data-lang-key="ux_link_legal">Tư vấn pháp lý</span></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a class="ivs-service-link" href="/Pages/careervn.html"><span class="ivs-service-link__copy"><span class="ivs-service-link__title" data-lang-key="ux_link_careers">Cơ hội nghề nghiệp</span></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a class="ivs-service-link" href="/profile-company-ivsjsc.html"><span class="ivs-service-link__copy"><span class="ivs-service-link__title" data-lang-key="ux_link_profile">Hồ sơ năng lực</span></span><i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                            <a class="ivs-service-link" href="https://ivstech.store" target="_blank" rel="noopener noreferrer"><span class="ivs-service-link__copy"><span class="ivs-service-link__title" data-lang-key="ux_link_ivstech">IVS Tech và chuyển đổi số</span></span><i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                        </div>
+                    </details>
+                </div>
+                <div class="ivs-service-directory__empty" data-lang-key="ux_services_empty">Không tìm thấy dịch vụ phù hợp. Hãy thử một từ khóa khác hoặc liên hệ IVS để được tư vấn.</div>
+            </div>
+        </section>
+
+        <!-- 3. Target Audience Section -->
         <section class="section-padding bg-slate-950/60 border-t border-white/5">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-16" data-aos="fade-up">
-                    <h2 class="text-2xl sm:text-4xl font-extrabold text-white mb-4">Đối Tượng Khách Hàng & Đối Tác Đồng Hành</h2>
-                    <p class="text-slate-400 max-w-2xl mx-auto">IVS Academy đáp ứng linh hoạt các yêu cầu chuyên môn cho từng mô hình tổ chức giáo dục.</p>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold text-white mb-4" data-lang-key="home26_audience_title">Đối tượng khách hàng và đối tác đồng hành</h2>
+                    <p class="text-slate-400 max-w-2xl mx-auto" data-lang-key="home26_audience_desc">IVS Academy đáp ứng linh hoạt các yêu cầu chuyên môn cho từng mô hình tổ chức giáo dục.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="soft-card p-8 text-left" data-aos="fade-up" data-aos-delay="100">
                         <div class="w-14 h-14 rounded-2xl bg-blue-600/20 flex items-center justify-center text-blue-400 text-2xl mb-6">
                             <i class="fas fa-school" aria-hidden="true"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Trường Học (Mầm Non - THPT)</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">Tích hợp chương trình Tiếng Anh tăng cường, STEAM, kỹ năng sống và đội ngũ giáo viên bản ngữ chuyên nghiệp.</p>
+                        <h3 class="text-xl font-bold text-white mb-3" data-lang-key="home26_audience_school_title">Trường học từ Mầm non đến THPT</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed" data-lang-key="home26_audience_school_desc">Tích hợp chương trình tiếng Anh tăng cường, STEAM, kỹ năng sống và đội ngũ giáo viên quốc tế chuyên nghiệp.</p>
                     </div>
                     <div class="soft-card p-8 text-left" data-aos="fade-up" data-aos-delay="200">
                         <div class="w-14 h-14 rounded-2xl bg-emerald-600/20 flex items-center justify-center text-emerald-400 text-2xl mb-6">
                             <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Trung Tâm Ngoại Ngữ</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">Chuyển giao bộ giáo trình chuẩn hóa, đánh giá năng lực đầu vào và tư vấn giải pháp vận hành đào tạo tối ưu.</p>
+                        <h3 class="text-xl font-bold text-white mb-3" data-lang-key="home26_audience_center_title">Trung tâm Ngoại ngữ</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed" data-lang-key="home26_audience_center_desc">Chuyển giao bộ giáo trình chuẩn hóa, đánh giá năng lực đầu vào và tư vấn giải pháp vận hành đào tạo tối ưu.</p>
                     </div>
                     <div class="soft-card p-8 text-left" data-aos="fade-up" data-aos-delay="300">
                         <div class="w-14 h-14 rounded-2xl bg-purple-600/20 flex items-center justify-center text-purple-400 text-2xl mb-6">
                             <i class="fas fa-building" aria-hidden="true"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-white mb-3">Tổ Chức Giáo Dục & Doanh Nghiệp</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed">Đào tạo nâng cao trình độ (Upskill), tư vấn thành lập trung tâm và hợp tác triển khai các dự án giáo dục cộng đồng.</p>
+                        <h3 class="text-xl font-bold text-white mb-3" data-lang-key="home26_audience_org_title">Tổ chức giáo dục và doanh nghiệp</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed" data-lang-key="home26_audience_org_desc">Đào tạo nâng cao năng lực, tư vấn thành lập trung tâm và hợp tác triển khai các dự án giáo dục cộng đồng.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 3. Educational Programs Section -->
+        <!-- 4. Educational Programs Section -->
         <section id="programs" class="section-padding relative">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-16" data-aos="fade-up">
-                    <span class="text-blue-400 font-semibold text-sm uppercase tracking-wider">Chương Trình Đào Tạo</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-4">Các Giải Pháp Liên Kết Giáo Dục K-12</h2>
-                    <p class="text-slate-400 max-w-2xl mx-auto">Được nghiên cứu và thiết kế theo chuẩn quốc tế, phù hợp với định hướng phát triển năng lực học sinh.</p>
+                    <span class="text-blue-400 font-semibold text-sm uppercase tracking-wider" data-lang-key="home26_programs_eyebrow">Chương trình đào tạo</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-4" data-lang-key="home26_programs_title">Giải pháp liên kết giáo dục K–12</h2>
+                    <p class="text-slate-400 max-w-2xl mx-auto" data-lang-key="home26_programs_desc">Được nghiên cứu theo định hướng quốc tế và điều chỉnh phù hợp với mục tiêu phát triển năng lực học sinh.</p>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     <div class="soft-card p-6 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
                         <div>
-                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-pink-500/20 text-pink-300">Mầm Nông</span>
-                            <h3 class="text-lg font-bold text-white mt-4 mb-3">Liên Kết Mầm Non</h3>
-                            <p class="text-slate-400 text-xs leading-relaxed mb-6">Giáo dục sớm, phản xạ tiếng Anh tự nhiên và phát triển giác quan cho trẻ từ 3-6 tuổi.</p>
+                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-pink-500/20 text-pink-300" data-lang-key="home26_level_preschool">Mầm non</span>
+                            <h3 class="text-lg font-bold text-white mt-4 mb-3" data-lang-key="ux_link_preschool">Liên kết Mầm non</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-6" data-lang-key="home26_preschool_desc">Giáo dục sớm, phát triển phản xạ tiếng Anh tự nhiên và năng lực cảm nhận cho trẻ từ 3–6 tuổi.</p>
                         </div>
                         <a href="/Pages/lkmamnon.html" class="text-blue-400 font-semibold text-sm hover:underline inline-flex items-center gap-1">
-                            Xem chi tiết <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
+                                <span data-lang-key="home26_view_details">Xem chi tiết</span> <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
                         </a>
                     </div>
                     <div class="soft-card p-6 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
                         <div>
-                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-blue-500/20 text-blue-300">Tiểu Học</span>
-                            <h3 class="text-lg font-bold text-white mt-4 mb-3">Liên Kết Tiểu Học</h3>
-                            <p class="text-slate-400 text-xs leading-relaxed mb-6">Chương trình Tiếng Anh tích hợp, STEAM thực hành và xây dựng nền tảng ngữ pháp chuẩn.</p>
+                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-blue-500/20 text-blue-300" data-lang-key="home26_level_primary">Tiểu học</span>
+                            <h3 class="text-lg font-bold text-white mt-4 mb-3" data-lang-key="ux_link_primary">Liên kết Tiểu học</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-6" data-lang-key="home26_primary_desc">Chương trình tiếng Anh tích hợp, STEAM thực hành và nền tảng ngôn ngữ phù hợp với lứa tuổi.</p>
                         </div>
                         <a href="/Pages/lktieuhoc.html" class="text-blue-400 font-semibold text-sm hover:underline inline-flex items-center gap-1">
-                            Xem chi tiết <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
+                                <span data-lang-key="home26_view_details">Xem chi tiết</span> <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
                         </a>
                     </div>
                     <div class="soft-card p-6 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300">
                         <div>
-                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-purple-500/20 text-purple-300">THCS & THPT</span>
-                            <h3 class="text-lg font-bold text-white mt-4 mb-3">Liên Kết THCS & THPT</h3>
-                            <p class="text-slate-400 text-xs leading-relaxed mb-6">Anh ngữ thuật ngữ chuyên ngành, định hướng chứng chỉ IELTS/Cambridge và kỹ năng toàn cầu.</p>
+                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-purple-500/20 text-purple-300" data-lang-key="home26_level_secondary">THCS và THPT</span>
+                            <h3 class="text-lg font-bold text-white mt-4 mb-3" data-lang-key="ux_link_secondary">Liên kết THCS và THPT</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-6" data-lang-key="home26_secondary_desc">Tiếng Anh học thuật, định hướng chứng chỉ quốc tế và phát triển kỹ năng toàn cầu.</p>
                         </div>
                         <a href="/Pages/lkthcsthpt.html" class="text-blue-400 font-semibold text-sm hover:underline inline-flex items-center gap-1">
-                            Xem chi tiết <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
+                                <span data-lang-key="home26_view_details">Xem chi tiết</span> <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
                         </a>
                     </div>
                     <div class="soft-card p-6 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="400">
                         <div>
-                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-amber-500/20 text-amber-300">Trung Tâm</span>
-                            <h3 class="text-lg font-bold text-white mt-4 mb-3">Trung Tâm Ngoại Ngữ</h3>
-                            <p class="text-slate-400 text-xs leading-relaxed mb-6">Cung cấp bộ chương trình giảng dạy, tài liệu kiểm tra và giáo viên chất lượng cao.</p>
+                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-amber-500/20 text-amber-300" data-lang-key="home26_level_center">Trung tâm</span>
+                            <h3 class="text-lg font-bold text-white mt-4 mb-3" data-lang-key="ux_link_language_centers">Trung tâm Ngoại ngữ</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-6" data-lang-key="home26_center_program_desc">Chương trình giảng dạy, học liệu đánh giá và giải pháp nhân sự phù hợp với mô hình trung tâm.</p>
                         </div>
                         <a href="/Pages/lkttnn.html" class="text-blue-400 font-semibold text-sm hover:underline inline-flex items-center gap-1">
-                            Xem chi tiết <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
+                                <span data-lang-key="home26_view_details">Xem chi tiết</span> <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -210,45 +291,43 @@
         <section class="section-padding bg-slate-950/80 border-t border-b border-white/5">
             <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div data-aos="fade-right">
-                    <span class="text-emerald-400 font-semibold text-sm uppercase tracking-wider">Teacher Solutions</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-6">Cung Ứng & Quản Lý Giáo Viên Nước Ngoài</h2>
-                    <p class="text-slate-300 leading-relaxed mb-6">
-                        Dịch vụ **TeacherMatch** của IVS Academy cung cấp đội ngũ Giáo viên Nước ngoài (GVNN) đạt chuẩn bằng cấp TESOL/TEFL/CELTA, có chứng lý tư pháp đầy đủ và được tập huấn phương pháp sư phạm phù hợp với học sinh Việt Nam.
-                    </p>
+                    <span class="text-emerald-400 font-semibold text-sm uppercase tracking-wider" data-lang-key="home26_teachers_eyebrow">Giải pháp giáo viên</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-6" data-lang-key="home26_teachers_title">Cung ứng và quản lý giáo viên quốc tế</h2>
+                    <p class="text-slate-300 leading-relaxed mb-6" data-lang-key="home26_teachers_desc">TeacherMatch kết nối các đơn vị giáo dục với giáo viên quốc tế phù hợp, đồng thời hỗ trợ hồ sơ, tập huấn và quản lý chất lượng trong quá trình hợp tác.</p>
                     <ul class="space-y-3 text-slate-300 mb-8">
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-emerald-400" aria-hidden="true"></i> 100% Giáo viên bản ngữ & quốc tế có đầy đủ bằng cấp sư phạm</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-emerald-400" aria-hidden="true"></i> Hỗ trợ trọn gói thủ tục Giấy phép lao động (Work Permit) & Thẻ tạm trú</li>
-                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-emerald-400" aria-hidden="true"></i> Dự phòng giáo viên thay thế, đảm bảo tiến độ giảng dạy không bị ngắt quãng</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-emerald-400" aria-hidden="true"></i><span data-lang-key="home26_teacher_bullet_1">Hồ sơ chuyên môn và pháp lý được kiểm tra theo yêu cầu của từng vị trí</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-emerald-400" aria-hidden="true"></i><span data-lang-key="home26_teacher_bullet_2">Hỗ trợ thủ tục giấy phép lao động và hồ sơ liên quan</span></li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-emerald-400" aria-hidden="true"></i><span data-lang-key="home26_teacher_bullet_3">Theo dõi chất lượng và phối hợp phương án nhân sự thay thế khi cần</span></li>
                     </ul>
                     <div class="flex flex-wrap gap-4">
                         <a href="/ivs-global-teacher-hub.html" class="btn-primary">
-                            <i class="fas fa-user-tie" aria-hidden="true"></i> Đăng ký Nhu cầu GVNN
+                            <i class="fas fa-user-tie" aria-hidden="true"></i><span data-lang-key="home26_teacher_cta">Đăng ký nhu cầu giáo viên</span>
                         </a>
                         <a href="/Pages/foreign-teacher-services.html" class="btn-secondary">
-                            Xem Dịch vụ Pháp lý
+                            <span data-lang-key="home26_legal_cta">Xem dịch vụ hồ sơ pháp lý</span>
                         </a>
                     </div>
                 </div>
                 <div class="soft-card p-8 text-center" data-aos="fade-left">
                     <i class="fas fa-globe-americas text-6xl text-emerald-400 mb-6" aria-hidden="true"></i>
-                    <h3 class="text-2xl font-bold text-white mb-4">Quy Trình Tuyển Chọn Nghiêm Ngặt</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">IVS Academy áp dụng quy trình kiểm tra năng lực 4 vòng đối với mọi ứng viên giáo viên nước ngoài trước khi bàn giao cho trường học hoặc trung tâm đối tác.</p>
+                    <h3 class="text-2xl font-bold text-white mb-4" data-lang-key="home26_screening_title">Quy trình tuyển chọn có kiểm soát</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-6" data-lang-key="home26_screening_desc">Ứng viên được đánh giá theo hồ sơ, năng lực giảng dạy, mức độ phù hợp văn hóa và yêu cầu cụ thể của đơn vị tiếp nhận.</p>
                     <div class="grid grid-cols-2 gap-4 text-left">
                         <div class="p-4 rounded-xl bg-slate-900/60 border border-white/5">
                             <span class="text-emerald-400 font-bold text-lg">01</span>
-                            <p class="text-xs text-slate-300 font-medium mt-1">Xác minh Bằng cấp & Visa</p>
+                            <p class="text-xs text-slate-300 font-medium mt-1" data-lang-key="home26_screening_1">Xác minh hồ sơ và bằng cấp</p>
                         </div>
                         <div class="p-4 rounded-xl bg-slate-900/60 border border-white/5">
                             <span class="text-emerald-400 font-bold text-lg">02</span>
-                            <p class="text-xs text-slate-300 font-medium mt-1">Phỏng vấn Sư phạm & Demo</p>
+                            <p class="text-xs text-slate-300 font-medium mt-1" data-lang-key="home26_screening_2">Phỏng vấn và dạy thử</p>
                         </div>
                         <div class="p-4 rounded-xl bg-slate-900/60 border border-white/5">
                             <span class="text-emerald-400 font-bold text-lg">03</span>
-                            <p class="text-xs text-slate-300 font-medium mt-1">Tập huấn Văn hóa & Khóa học</p>
+                            <p class="text-xs text-slate-300 font-medium mt-1" data-lang-key="home26_screening_3">Định hướng văn hóa và chương trình</p>
                         </div>
                         <div class="p-4 rounded-xl bg-slate-900/60 border border-white/5">
                             <span class="text-emerald-400 font-bold text-lg">04</span>
-                            <p class="text-xs text-slate-300 font-medium mt-1">Bàn giao & Dự phòng 24/7</p>
+                            <p class="text-xs text-slate-300 font-medium mt-1" data-lang-key="home26_screening_4">Bàn giao và hỗ trợ vận hành</p>
                         </div>
                     </div>
                 </div>
@@ -263,20 +342,20 @@
                         <div class="w-12 h-12 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-xl mb-6">
                             <i class="fas fa-lightbulb" aria-hidden="true"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-4">R&D Chương Trình & Giáo Trình</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6">Đội ngũ chuyên gia chuyên môn tại IVS Academy trực tiếp nghiên cứu, biên soạn và chuẩn hóa bộ tài liệu học tập, giáo trình STEAM, ngân hàng câu hỏi kiểm tra cho các đơn vị liên kết.</p>
+                        <h3 class="text-2xl font-bold text-white mb-4" data-lang-key="ux_link_curriculum">R&amp;D chương trình và giáo trình</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6" data-lang-key="home26_curriculum_desc">Nghiên cứu, biên soạn và chuẩn hóa học liệu, chương trình STEAM cùng công cụ đánh giá theo nhu cầu triển khai thực tế.</p>
                         <a href="/Pages/rnd-curriculum.html" class="text-blue-400 font-semibold text-sm hover:underline inline-flex items-center gap-1">
-                            Tìm hiểu R&D Giáo trình <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
+                            <span data-lang-key="home26_curriculum_cta">Tìm hiểu dịch vụ R&amp;D</span> <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
                         </a>
                     </div>
                     <div class="soft-card p-8" data-aos="fade-up" data-aos-delay="100">
                         <div class="w-12 h-12 rounded-xl bg-rose-500/20 text-rose-400 flex items-center justify-center text-xl mb-6">
                             <i class="fas fa-heart" aria-hidden="true"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-white mb-4">IVS LifeMinds - Kỹ Năng Sống</h3>
-                        <p class="text-slate-300 text-sm leading-relaxed mb-6">Chương trình trải nghiệm thực tế, rèn luyện kỹ năng tự lập, tư duy phản biện và khả năng giao tiếp toàn cầu thông qua các sự kiện ngoại khóa và trại hè giáo dục chuyên sâu.</p>
+                        <h3 class="text-2xl font-bold text-white mb-4" data-lang-key="home26_lifeminds_title">IVS LifeMinds – Kỹ năng sống</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6" data-lang-key="home26_lifeminds_desc">Hoạt động trải nghiệm giúp người học phát triển tính tự lập, tư duy phản biện và năng lực giao tiếp trong môi trường đa văn hóa.</p>
                         <a href="/Pages/ivslifeminds.html" class="text-blue-400 font-semibold text-sm hover:underline inline-flex items-center gap-1">
-                            Khám phá IVS LifeMinds <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
+                            <span data-lang-key="home26_lifeminds_cta">Khám phá IVS LifeMinds</span> <i class="fas fa-arrow-right text-xs" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -287,25 +366,25 @@
         <section class="section-padding bg-slate-950/40 border-t border-white/5 text-center">
             <div class="max-w-6xl mx-auto">
                 <div class="mb-12" data-aos="fade-up">
-                    <span class="text-blue-400 font-semibold text-sm uppercase tracking-wider">Hợp Tác Thực Tế</span>
-                    <h2 class="text-3xl font-extrabold text-white mt-2">Kinh Nghiệm Đồng Hành Cùng Các Tổ Chức Giáo Dục</h2>
+                    <span class="text-blue-400 font-semibold text-sm uppercase tracking-wider" data-lang-key="home26_proof_eyebrow">Kinh nghiệm hợp tác</span>
+                    <h2 class="text-3xl font-extrabold text-white mt-2" data-lang-key="home26_proof_title">Đồng hành cùng các tổ chức giáo dục</h2>
                 </div>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                     <div class="p-6 rounded-2xl bg-slate-900/40 border border-white/5">
                         <div class="text-4xl font-extrabold text-blue-400 mb-2">50+</div>
-                        <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Trường học & Trung tâm đối tác</p>
+                        <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold" data-lang-key="home26_stat_partners">Trường học và trung tâm đối tác</p>
                     </div>
                     <div class="p-6 rounded-2xl bg-slate-900/40 border border-white/5">
                         <div class="text-4xl font-extrabold text-emerald-400 mb-2">200+</div>
-                        <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Giáo viên quốc tế được quản lý</p>
+                        <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold" data-lang-key="home26_stat_teachers">Giáo viên quốc tế được quản lý</p>
                     </div>
                     <div class="p-6 rounded-2xl bg-slate-900/40 border border-white/5">
                         <div class="text-4xl font-extrabold text-purple-400 mb-2">15.000+</div>
-                        <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Học sinh tham gia chương trình</p>
+                        <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold" data-lang-key="home26_stat_students">Học sinh tham gia chương trình</p>
                     </div>
                     <div class="p-6 rounded-2xl bg-slate-900/40 border border-white/5">
                         <div class="text-4xl font-extrabold text-amber-400 mb-2">100%</div>
-                        <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Đảm bảo tuân thủ pháp lý & Work Permit</p>
+                        <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold" data-lang-key="home26_stat_compliance">Tuân thủ hồ sơ và quy trình pháp lý</p>
                     </div>
                 </div>
             </div>
@@ -315,29 +394,29 @@
         <section class="section-padding">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-16" data-aos="fade-up">
-                    <span class="text-blue-400 font-semibold text-sm uppercase tracking-wider">Quy Trình Triển Khai</span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">4 Bước Hợp Tác Chuyên Nghiệp</h2>
+                    <span class="text-blue-400 font-semibold text-sm uppercase tracking-wider" data-lang-key="home26_process_eyebrow">Quy trình triển khai</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2" data-lang-key="home26_process_title">Bốn bước hợp tác rõ ràng</h2>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
                     <div class="soft-card p-6 relative" data-aos="fade-up" data-aos-delay="100">
                         <span class="text-4xl font-black text-blue-500/20 absolute top-4 right-4">01</span>
-                        <h3 class="text-lg font-bold text-white mb-2">Khảo Sát Nhu Cầu</h3>
-                        <p class="text-slate-400 text-xs leading-relaxed">Tiếp nhận yêu cầu từ trường học/trung tâm, khảo sát thực trạng và mục tiêu đào tạo cụ thể.</p>
+                        <h3 class="text-lg font-bold text-white mb-2" data-lang-key="home26_process_1_title">Khảo sát nhu cầu</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed" data-lang-key="home26_process_1_desc">Làm rõ hiện trạng, đối tượng học và mục tiêu đào tạo của đơn vị.</p>
                     </div>
                     <div class="soft-card p-6 relative" data-aos="fade-up" data-aos-delay="200">
                         <span class="text-4xl font-black text-blue-500/20 absolute top-4 right-4">02</span>
-                        <h3 class="text-lg font-bold text-white mb-2">Xây Dựng Đề Xuất</h3>
-                        <p class="text-slate-400 text-xs leading-relaxed">Thiết kế mô hình liên kết, lộ trình học tập, khung chương trình và kế hoạch nhân sự phù hợp.</p>
+                        <h3 class="text-lg font-bold text-white mb-2" data-lang-key="home26_process_2_title">Xây dựng đề xuất</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed" data-lang-key="home26_process_2_desc">Thiết kế mô hình, lộ trình, chương trình và kế hoạch nhân sự phù hợp.</p>
                     </div>
                     <div class="soft-card p-6 relative" data-aos="fade-up" data-aos-delay="300">
                         <span class="text-4xl font-black text-blue-500/20 absolute top-4 right-4">03</span>
-                        <h3 class="text-lg font-bold text-white mb-2">Bàn Giao & Triển Khai</h3>
-                        <p class="text-slate-400 text-xs leading-relaxed">Ký kết hợp đồng, bàn giao đội ngũ giáo viên, giáo trình và tiến hành đào tạo theo lộ trình.</p>
+                        <h3 class="text-lg font-bold text-white mb-2" data-lang-key="home26_process_3_title">Bàn giao và triển khai</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed" data-lang-key="home26_process_3_desc">Thống nhất phạm vi, bàn giao nguồn lực và vận hành theo kế hoạch đã duyệt.</p>
                     </div>
                     <div class="soft-card p-6 relative" data-aos="fade-up" data-aos-delay="400">
                         <span class="text-4xl font-black text-blue-500/20 absolute top-4 right-4">04</span>
-                        <h3 class="text-lg font-bold text-white mb-2">Giám Sát & Báo Cáo</h3>
-                        <p class="text-slate-400 text-xs leading-relaxed">Đánh giá định kỳ chất lượng giảng dạy, hỗ trợ chuyên môn 24/7 và báo cáo tiến độ chi tiết.</p>
+                        <h3 class="text-lg font-bold text-white mb-2" data-lang-key="home26_process_4_title">Theo dõi và báo cáo</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed" data-lang-key="home26_process_4_desc">Đánh giá định kỳ, hỗ trợ chuyên môn và cập nhật tiến độ cho các bên liên quan.</p>
                     </div>
                 </div>
             </div>
@@ -355,29 +434,29 @@
         <!-- 8. Component: Hệ sinh thái Giáo dục và Công nghệ IVS -->
         <section class="section-padding bg-gradient-to-b from-slate-950 to-slate-900 border-t border-white/10">
             <div class="max-w-5xl mx-auto text-center" data-aos="fade-up">
-                <span class="px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-wider inline-block mb-4">
-                    Master Ecosystem
+                <span class="px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xs font-bold uppercase tracking-wider inline-block mb-4" data-lang-key="home26_ecosystem_eyebrow">
+                    Hệ sinh thái IVS
                 </span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Hệ sinh thái Giáo dục và Công nghệ IVS</h2>
-                <p class="text-slate-300 max-w-3xl mx-auto text-base leading-relaxed mb-12">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4" data-lang-key="home26_ecosystem_title">Hệ sinh thái giáo dục và công nghệ IVS</h2>
+                <p class="text-slate-300 max-w-3xl mx-auto text-base leading-relaxed mb-12" data-lang-key="home26_ecosystem_desc">
                     IVS kết hợp chuyên môn giáo dục và năng lực công nghệ để cung cấp chương trình, nền tảng và hệ thống vận hành phù hợp với trường học, trung tâm và doanh nghiệp.
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
                     <!-- Card 1: IVS Academy -->
                     <div class="soft-card p-8 border-2 border-blue-500/40 relative overflow-hidden flex flex-col justify-between">
-                        <div class="absolute top-0 right-0 px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded-bl-xl">Trang Hiện Tại</div>
+                        <div class="absolute top-0 right-0 px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded-bl-xl" data-lang-key="home26_current_area">Lĩnh vực hiện tại</div>
                         <div>
                             <div class="flex items-center gap-3 mb-4">
                                 <img src="/images/logo/logo.svg" alt="IVS Logo" class="h-8 w-auto" onerror="this.onerror=null; this.src='https://placehold.co/32x32/1f2937/ffffff?text=IVS';" />
                                 <h3 class="text-2xl font-bold text-white">IVS Academy</h3>
                             </div>
-                            <p class="text-slate-300 text-sm leading-relaxed mb-8">
+                            <p class="text-slate-300 text-sm leading-relaxed mb-8" data-lang-key="home26_academy_desc">
                                 Chương trình đào tạo, hợp tác giáo dục, giáo viên, hoạt động trải nghiệm và giải pháp vận hành dành cho trường học, trung tâm và tổ chức giáo dục.
                             </p>
                         </div>
                         <a href="https://ivsacademy.edu.vn/" class="btn-primary w-full text-center text-sm">
-                            Khám phá Lĩnh vực Giáo dục
+                            <span data-lang-key="home26_academy_cta">Khám phá lĩnh vực giáo dục</span>
                         </a>
                     </div>
 
@@ -388,12 +467,12 @@
                                 <div class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold text-sm">Tech</div>
                                 <h3 class="text-2xl font-bold text-white">IVS Tech</h3>
                             </div>
-                            <p class="text-slate-300 text-sm leading-relaxed mb-8">
+                            <p class="text-slate-300 text-sm leading-relaxed mb-8" data-lang-key="home26_tech_desc">
                                 Website, phần mềm quản lý, LMS, CRM, AI, automation và giải pháp chuyển đổi số dành cho tổ chức giáo dục và doanh nghiệp.
                             </p>
                         </div>
                         <a href="https://ivstech.store/" target="_blank" rel="noopener" class="btn-secondary w-full text-center text-sm flex items-center justify-center gap-2 hover:border-cyan-500 hover:text-cyan-300">
-                            Khám phá Lĩnh vực Công nghệ <i class="fas fa-external-link-alt text-xs" aria-hidden="true"></i>
+                            <span data-lang-key="home26_tech_cta">Khám phá lĩnh vực công nghệ</span> <i class="fas fa-external-link-alt text-xs" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
@@ -403,9 +482,9 @@
         <!-- 9. Educational Consultation Form Section -->
         <section id="contact" class="section-padding relative bg-slate-950 border-t border-white/10">
             <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
-                <span class="text-blue-400 font-semibold text-sm uppercase tracking-wider">Tư Vấn Chuyên Sâu</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-4">Đăng Ký Tư Vấn Giải Pháp Giáo Dục</h2>
-                <p class="text-slate-400 max-w-2xl mx-auto mb-10">Liên hệ ngay với IVS Academy để nhận đề xuất mô hình liên kết đào tạo và chương trình giáo dục phù hợp cho đơn vị của bạn.</p>
+                <span class="text-blue-400 font-semibold text-sm uppercase tracking-wider" data-lang-key="home26_contact_eyebrow">Tư vấn chuyên sâu</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2 mb-4" data-lang-key="home26_contact_title">Đăng ký tư vấn giải pháp giáo dục</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto mb-10" data-lang-key="home26_contact_desc">Chia sẻ nhu cầu của đơn vị để IVS Academy đề xuất mô hình hợp tác và chương trình phù hợp.</p>
 
                 <div class="soft-card p-8 sm:p-10 text-left max-w-2xl mx-auto">
                     <form id="education-consultation-form" action="https://formspree.io/f/xzdlwwvq" method="POST" class="space-y-6" novalidate>
@@ -414,48 +493,48 @@
                         <input type="text" name="botField" tabindex="-1" autocomplete="off" aria-hidden="true" class="hidden" />
 
                         <div>
-                            <label for="form-name" class="block text-sm font-semibold text-slate-200 mb-2">Họ và Tên người đại diện *</label>
-                            <input type="text" id="form-name" name="name" required placeholder="Nguyễn Văn A" class="w-full rounded-xl bg-slate-900 border border-slate-700 px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm" />
+                                <label for="form-name" class="block text-sm font-semibold text-slate-200 mb-2" data-lang-key="home26_form_name_label">Họ và tên người đại diện *</label>
+                                <input type="text" id="form-name" name="name" required data-lang-key="home26_form_name_placeholder" placeholder="Nguyễn Văn A" class="w-full rounded-xl bg-slate-900 border border-slate-700 px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm" />
                         </div>
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div>
-                                <label for="form-email" class="block text-sm font-semibold text-slate-200 mb-2">Email công việc *</label>
+                                <label for="form-email" class="block text-sm font-semibold text-slate-200 mb-2" data-lang-key="home26_form_email_label">Email công việc *</label>
                                 <input type="email" id="form-email" name="email" required placeholder="name@school.edu.vn" class="w-full rounded-xl bg-slate-900 border border-slate-700 px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm" />
                             </div>
                             <div>
-                                <label for="form-phone" class="block text-sm font-semibold text-slate-200 mb-2">Số điện thoại liên hệ *</label>
+                                <label for="form-phone" class="block text-sm font-semibold text-slate-200 mb-2" data-lang-key="home26_form_phone_label">Số điện thoại liên hệ *</label>
                                 <input type="tel" id="form-phone" name="phone" required placeholder="0901 234 567" class="w-full rounded-xl bg-slate-900 border border-slate-700 px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm" />
                             </div>
                         </div>
 
                         <div>
-                            <label for="form-org" class="block text-sm font-semibold text-slate-200 mb-2">Tên Trường / Trung tâm / Tổ chức *</label>
-                            <input type="text" id="form-org" name="organization" required placeholder="Trường THCS / Trung tâm Ngoại ngữ..." class="w-full rounded-xl bg-slate-900 border border-slate-700 px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm" />
+                            <label for="form-org" class="block text-sm font-semibold text-slate-200 mb-2" data-lang-key="home26_form_org_label">Tên trường, trung tâm hoặc tổ chức *</label>
+                            <input type="text" id="form-org" name="organization" required data-lang-key="home26_form_org_placeholder" placeholder="Trường THCS / Trung tâm Ngoại ngữ..." class="w-full rounded-xl bg-slate-900 border border-slate-700 px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm" />
                         </div>
 
                         <div>
-                            <label for="form-service" class="block text-sm font-semibold text-slate-200 mb-2">Nhu cầu hợp tác chính *</label>
+                            <label for="form-service" class="block text-sm font-semibold text-slate-200 mb-2" data-lang-key="home26_form_service_label">Nhu cầu hợp tác chính *</label>
                             <select id="form-service" name="service_interest" required class="w-full rounded-xl bg-slate-900 border border-slate-700 px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm">
-                                <option value="" disabled selected>-- Chọn nhóm dịch vụ quan tâm --</option>
-                                <option value="Chương trình Liên kết Mầm non">Chương trình Liên kết Mầm non</option>
-                                <option value="Chương trình Liên kết Tiểu học & THCS/THPT">Chương trình Liên kết Tiểu học & THCS/THPT</option>
-                                <option value="Cung ứng Giáo viên Nước ngoài (TeacherMatch)">Cung ứng Giáo viên Nước ngoài (TeacherMatch)</option>
-                                <option value="R&D Giáo trình & Ngân hàng đề">R&D Giáo trình & Ngân hàng đề</option>
-                                <option value="Tư vấn Thành lập & Vận hành Trung tâm">Tư vấn Thành lập & Vận hành Trung tâm</option>
-                                <option value="Chương trình Kỹ năng sống IVS LifeMinds">Chương trình Kỹ năng sống IVS LifeMinds</option>
+                                <option value="" disabled selected data-lang-key="home26_form_service_placeholder">-- Chọn nhóm dịch vụ quan tâm --</option>
+                                <option value="Chương trình Liên kết Mầm non" data-lang-key="ux_link_preschool">Chương trình Liên kết Mầm non</option>
+                                <option value="Chương trình Liên kết Tiểu học & THCS/THPT" data-lang-key="ux_link_secondary">Chương trình Liên kết Tiểu học & THCS/THPT</option>
+                                <option value="Cung ứng Giáo viên Nước ngoài (TeacherMatch)" data-lang-key="ux_link_foreign_teachers">Cung ứng Giáo viên Nước ngoài (TeacherMatch)</option>
+                                <option value="R&D Giáo trình & Ngân hàng đề" data-lang-key="ux_link_curriculum">R&amp;D Giáo trình &amp; Ngân hàng đề</option>
+                                <option value="Tư vấn Thành lập & Vận hành Trung tâm" data-lang-key="ux_link_center_setup">Tư vấn Thành lập &amp; Vận hành Trung tâm</option>
+                                <option value="Chương trình Kỹ năng sống IVS LifeMinds" data-lang-key="ux_link_lifeminds">Chương trình Kỹ năng sống IVS LifeMinds</option>
                             </select>
                         </div>
 
                         <div>
-                            <label for="form-message" class="block text-sm font-semibold text-slate-200 mb-2">Ghi chú yêu cầu thêm</label>
-                            <textarea id="form-message" name="message" rows="3" placeholder="Số lượng học sinh, mục tiêu đào tạo..." class="w-full rounded-xl bg-slate-900 border border-slate-700 px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm"></textarea>
+                            <label for="form-message" class="block text-sm font-semibold text-slate-200 mb-2" data-lang-key="home26_form_message_label">Ghi chú yêu cầu thêm</label>
+                            <textarea id="form-message" name="message" rows="3" data-lang-key="home26_form_message_placeholder" placeholder="Số lượng học sinh, mục tiêu đào tạo..." class="w-full rounded-xl bg-slate-900 border border-slate-700 px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 text-sm"></textarea>
                         </div>
 
                         <button type="submit" class="btn-primary w-full py-4 text-base font-bold">
-                            <i class="fas fa-paper-plane" aria-hidden="true"></i> Gửi Yêu Cầu Tư Vấn Giáo Dục
+                                <i class="fas fa-paper-plane" aria-hidden="true"></i><span data-lang-key="home26_form_submit">Gửi yêu cầu tư vấn giáo dục</span>
                         </button>
-                        <p class="text-xs text-slate-500 text-center mt-3">Cam kết bảo mật thông tin theo Điều khoản & Chính sách của IVS Academy.</p>
+                            <p class="text-xs text-slate-500 text-center mt-3" data-lang-key="home26_form_privacy">Thông tin được xử lý theo Điều khoản và Chính sách bảo mật của IVS Academy.</p>
                     </form>
                 </div>
             </div>
@@ -479,8 +558,8 @@
             }
         });
     </script>
-    <script src="/js/language.js" defer></script>
-    <script src="/js/language-init.js" defer></script>
-    <script src="/ai/js/loadComponents.js" defer></script>
+    <script src="/js/language.js?v=20260821.5" defer></script>
+    <script src="/js/language-init.js?v=20260821.5" defer></script>
+    <script src="/ai/js/loadComponents.js?v=20260821.5" defer></script>
 </body>
 </html>

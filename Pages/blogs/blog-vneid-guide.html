@@ -1,6 +1,6 @@
 html
 <html class="dark scroll-smooth" lang="en">
-<head><link crossorigin="" href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="//fonts.gstatic.com" rel="dns-prefetch"/><link href="//unpkg.com" rel="dns-prefetch"/><link href="//cdn.jsdelivr.net" rel="dns-prefetch"/><link href="//cdnjs.cloudflare.com" rel="dns-prefetch"/><link as="style" href="css/style.css" rel="preload"/>
+<head><link crossorigin="" href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="//fonts.gstatic.com" rel="dns-prefetch"/><link href="//unpkg.com" rel="dns-prefetch"/><link href="//cdn.jsdelivr.net" rel="dns-prefetch"/><link href="//cdnjs.cloudflare.com" rel="dns-prefetch"/><link as="style" href="/css/style.css" rel="preload"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>IVS JSC Blog - VNeID Level 2 Registration Guide for Forei...</title>
@@ -13,8 +13,8 @@ html
 <link href="https://cdnjs.cloudflare.com" rel="preconnect"/>
  Tailwind CSS 
  External Stylesheet for custom effects 
-<link href="css/tailwind.css" rel="stylesheet"/>
-<link href="css/styles.css" rel="stylesheet"/>
+<link href="/css/tailwind.css" rel="stylesheet"/>
+<link href="/css/styles.css" rel="stylesheet"/>
 <style>
         /* CSS từ website chính đá»ƒ ngÄƒn cuá»™n nền */
         body.menu-open {
@@ -71,8 +71,8 @@ html
         }
     </style>
  CSS 
-<link href="css/style.css" rel="stylesheet"/>
-<link href="css/animations.css" rel="stylesheet"/>
+<link href="/css/style.css" rel="stylesheet"/>
+<link href="/css/animations.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
 <meta content="Blog chia sẻ xu hưá»›ng giáo dục má»›i nhạt, phưÆ¡ng pháp học tập hiá»‡u quả và  kinh nghiá»‡m từ các chuyàªn gia giáo dục hà ng đầu." name="description"/><meta content="IVS JSC Blog - VNeID Level 2 Registration Guide for Forei..." property="og:title"/><meta content="Blog chia sẻ xu hưá»›ng giáo dục má»›i nhạt, phưÆ¡ng pháp học tập hiá»‡u quả và  kinh nghiá»‡m từ các chuyàªn gia giáo dục hà ng đầu." property="og:description"/><meta content="website" property="og:type"/></head>
 <body class="bg-ivs-bg text-ivs-text-primary antialiased">
@@ -269,13 +269,13 @@ html
  &lt;script src="https://cdn.jsdelivr.net/npm/chart.js"&gt;&lt;/script&gt; 
  Core Application Scripts - Thá»© tự tải rạt quan trọng 
  1. Firebase Init (náº¿u type="module", tải đầu tiàªn) 
-<script src="js/firebase-init.js" type="module"></script>
+<script src="/js/firebase-init.js" type="module"></script>
  2. Global Utilities (componentLog, debounce) 
-<script defer="" src="js/utils.js"></script>
+<script defer="" src="/js/utils.js"></script>
  3. Language System (tự khá»Ÿi tão, cần cho Header) 
-<script defer="" src="js/language.js"></script>
+<script defer="" src="/js/language.js?v=20260821.5"></script>
  4. Specific Controllers (phải tải trưá»›c khi loadComponents.js gọi init của chúng) 
-<script defer="" src="ai/js/fabController.js"></script>
+<script defer="" src="/ai/js/fabController.js"></script>
  Thàªm chatbotController.js náº¿u có 
  &lt;script src="js/chatbotController.js" defer&gt;&lt;/script&gt; 
  5. Component Loader (tải HTML và  sau đó gọi init của controller) 
@@ -447,7 +447,7 @@ html
             }
         });
     </script>
-<script defer="" src="/ai/js/loadComponents.js"></script>
+<script defer="" src="/ai/js/loadComponents.js?v=20260821.5"></script>
 </body>
 </html>
 

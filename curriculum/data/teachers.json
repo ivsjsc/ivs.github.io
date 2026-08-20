@@ -7,7 +7,7 @@
         "specialization": "MBA (Quản trị Kinh doanh)",
         "accent": "Anh-Mỹ",
         "expectation": "",
-        "image": "../images/pages/team/kimball-allen-thomson.png",
+        "image": "/images/team/kimball-allen-thomson.jpg",
         "profile_link": "https://ivsacademy.edu.vn/Blogs/aboutkimballallenthomson.html"
     },
     {
@@ -18,7 +18,7 @@
         "specialization": "Công nghệ máy tính",
         "accent": "Anh-Anh",
         "expectation": "",
-        "image": "../images/pages/team/rachid-belferar.png",
+        "image": "/images/team/rachid-belferar.jpg",
         "profile_link": null
     },
     {
@@ -29,7 +29,7 @@
         "specialization": "Văn Hóa Xã Hội , Ngôn Ngữ Anh",
         "accent": "Anh-Mỹ",
         "expectation": "",
-        "image": "../images/pages/team/salma-mahzoum.png",
+        "image": "/images/team/salma-mahzoum.jpg",
         "profile_link": null
     }
 ]
