@@ -1,0 +1,295 @@
+.ivs-photo-gallery {
+    background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+}
+
+.dark .ivs-photo-gallery {
+    background: linear-gradient(180deg, #111827 0%, #0f172a 100%);
+}
+
+.ivs-photo-gallery__eyebrow {
+    display: inline-flex;
+    padding: 0.45rem 0.9rem;
+    border: 1px solid rgba(200, 156, 74, 0.45);
+    border-radius: 999px;
+    color: #8a641f;
+    background: rgba(200, 156, 74, 0.1);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.dark .ivs-photo-gallery__eyebrow {
+    color: #f5d58e;
+}
+
+.ivs-photo-gallery__count {
+    margin-top: 1rem;
+    color: #64748b;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.dark .ivs-photo-gallery__count {
+    color: #94a3b8;
+}
+
+.ivs-photo-gallery__filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.65rem;
+    margin-bottom: 2rem;
+}
+
+.ivs-photo-gallery__filter {
+    min-height: 44px;
+    padding: 0.65rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 999px;
+    color: #334155;
+    background: #fff;
+    font-size: 0.875rem;
+    font-weight: 700;
+    transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.ivs-photo-gallery__filter:hover,
+.ivs-photo-gallery__filter:focus-visible {
+    border-color: #0a3d4a;
+    transform: translateY(-1px);
+    outline: none;
+}
+
+.ivs-photo-gallery__filter.is-active {
+    border-color: #0a3d4a;
+    color: #fff;
+    background: #0a3d4a;
+    box-shadow: 0 8px 18px rgba(10, 61, 74, 0.2);
+}
+
+.dark .ivs-photo-gallery__filter {
+    border-color: #334155;
+    color: #cbd5e1;
+    background: #1e293b;
+}
+
+.dark .ivs-photo-gallery__filter.is-active {
+    border-color: #c89c4a;
+    color: #10222a;
+    background: #c89c4a;
+}
+
+.ivs-photo-gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
+}
+
+.ivs-photo-gallery__item {
+    position: relative;
+    min-width: 0;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border: 0;
+    border-radius: 0.9rem;
+    padding: 0;
+    background: #dbe4ec;
+    box-shadow: 0 7px 20px rgba(15, 23, 42, 0.09);
+    cursor: zoom-in;
+    isolation: isolate;
+}
+
+.ivs-photo-gallery__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 350ms ease, filter 350ms ease;
+}
+
+.ivs-photo-gallery__item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(180deg, transparent 52%, rgba(3, 18, 25, 0.78) 100%);
+    pointer-events: none;
+}
+
+.ivs-photo-gallery__item:hover img,
+.ivs-photo-gallery__item:focus-visible img {
+    transform: scale(1.045);
+    filter: saturate(1.08);
+}
+
+.ivs-photo-gallery__item:focus-visible {
+    outline: 3px solid #c89c4a;
+    outline-offset: 3px;
+}
+
+.ivs-photo-gallery__caption {
+    position: absolute;
+    right: 0.75rem;
+    bottom: 0.65rem;
+    left: 0.75rem;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-align: left;
+}
+
+.ivs-photo-gallery__caption i {
+    flex: 0 0 auto;
+    color: #f5d58e;
+}
+
+.ivs-gallery-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: rgba(2, 8, 16, 0.94);
+    backdrop-filter: blur(10px);
+}
+
+.ivs-gallery-lightbox.is-open {
+    display: flex;
+}
+
+.ivs-gallery-lightbox__figure {
+    display: flex;
+    width: min(1120px, 100%);
+    max-height: calc(100vh - 2rem);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.ivs-gallery-lightbox__image {
+    display: block;
+    max-width: 100%;
+    max-height: calc(100vh - 7rem);
+    border-radius: 0.75rem;
+    object-fit: contain;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+}
+
+.ivs-gallery-lightbox__caption {
+    margin-top: 0.8rem;
+    color: #e2e8f0;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.ivs-gallery-lightbox__button {
+    position: absolute;
+    display: inline-flex;
+    width: 46px;
+    height: 46px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 999px;
+    color: #fff;
+    background: rgba(15, 23, 42, 0.72);
+    font-size: 1.15rem;
+    transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.ivs-gallery-lightbox__button:hover,
+.ivs-gallery-lightbox__button:focus-visible {
+    background: #c89c4a;
+    transform: scale(1.05);
+    outline: none;
+}
+
+.ivs-gallery-lightbox__close {
+    top: 1rem;
+    right: 1rem;
+}
+
+.ivs-gallery-lightbox__previous,
+.ivs-gallery-lightbox__next {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.ivs-gallery-lightbox__previous:hover,
+.ivs-gallery-lightbox__previous:focus-visible,
+.ivs-gallery-lightbox__next:hover,
+.ivs-gallery-lightbox__next:focus-visible {
+    transform: translateY(-50%) scale(1.05);
+}
+
+.ivs-gallery-lightbox__previous {
+    left: 1rem;
+}
+
+.ivs-gallery-lightbox__next {
+    right: 1rem;
+}
+
+@media (min-width: 768px) {
+    .ivs-photo-gallery__grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.25rem;
+    }
+
+    .ivs-photo-gallery__caption {
+        right: 1rem;
+        bottom: 0.85rem;
+        left: 1rem;
+        font-size: 0.875rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .ivs-photo-gallery__grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 639px) {
+    .ivs-gallery-lightbox__previous,
+    .ivs-gallery-lightbox__next {
+        top: auto;
+        bottom: 1rem;
+        transform: none;
+    }
+
+    .ivs-gallery-lightbox__previous:hover,
+    .ivs-gallery-lightbox__previous:focus-visible,
+    .ivs-gallery-lightbox__next:hover,
+    .ivs-gallery-lightbox__next:focus-visible {
+        transform: scale(1.05);
+    }
+
+    .ivs-gallery-lightbox__previous {
+        left: calc(50% - 58px);
+    }
+
+    .ivs-gallery-lightbox__next {
+        right: calc(50% - 58px);
+    }
+
+    .ivs-gallery-lightbox__image {
+        max-height: calc(100vh - 9rem);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ivs-photo-gallery__item img,
+    .ivs-photo-gallery__filter,
+    .ivs-gallery-lightbox__button {
+        transition: none;
+    }
+}

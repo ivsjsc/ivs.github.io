@@ -22,6 +22,24 @@
       element.setAttribute('content', translated);
     } else if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
       element.placeholder = translated;
+    } else if (/\*\*(.+?)\*\*/.test(translated)) {
+      var pattern = /\*\*(.+?)\*\*/g;
+      var cursor = 0;
+      var match;
+      var fragment = document.createDocumentFragment();
+      while ((match = pattern.exec(translated)) !== null) {
+        if (match.index > cursor) {
+          fragment.appendChild(document.createTextNode(translated.slice(cursor, match.index)));
+        }
+        var strong = document.createElement('strong');
+        strong.textContent = match[1];
+        fragment.appendChild(strong);
+        cursor = pattern.lastIndex;
+      }
+      if (cursor < translated.length) {
+        fragment.appendChild(document.createTextNode(translated.slice(cursor)));
+      }
+      element.replaceChildren(fragment);
     } else if (element.children.length > 0) {
       var textNodes = Array.from(element.childNodes).filter(function (node) {
         return node.nodeType === Node.TEXT_NODE && node.textContent.trim();

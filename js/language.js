@@ -66,11 +66,35 @@
   // Expose globally for tests and application code
   window.translate = translate;
 
+  function setMarkdownEmphasisTranslation(elem, translated) {
+    const pattern = /\*\*(.+?)\*\*/g;
+    let cursor = 0;
+    let match;
+    const fragment = document.createDocumentFragment();
+
+    while ((match = pattern.exec(translated)) !== null) {
+      if (match.index > cursor) {
+        fragment.appendChild(document.createTextNode(translated.slice(cursor, match.index)));
+      }
+      const strong = document.createElement('strong');
+      strong.textContent = match[1];
+      fragment.appendChild(strong);
+      cursor = pattern.lastIndex;
+    }
+
+    if (cursor < translated.length) {
+      fragment.appendChild(document.createTextNode(translated.slice(cursor)));
+    }
+    elem.replaceChildren(fragment);
+  }
+
   function setElementTranslation(elem, translated) {
     if (elem.tagName === 'META') {
       elem.setAttribute('content', translated);
     } else if (elem.tagName === 'INPUT' || elem.tagName === 'TEXTAREA') {
       elem.placeholder = translated;
+    } else if (/\*\*(.+?)\*\*/.test(translated)) {
+      setMarkdownEmphasisTranslation(elem, translated);
     } else if (elem.children.length > 0) {
       const directTextNodes = Array.from(elem.childNodes).filter(function(node) {
         return node.nodeType === Node.TEXT_NODE && node.textContent.trim();

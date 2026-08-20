@@ -67,7 +67,8 @@
     <style>
         :root { --header-height: 4rem; }
         body { margin: 0; background: #070B18; color: #F8FAFC; font-family: 'Be Vietnam Pro', sans-serif; padding-top: var(--header-height); }
-        .hero-section { min-height: calc(100vh - var(--header-height)); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; background: linear-gradient(180deg, rgba(7,11,24,0.16) 0%, rgba(7,11,24,0.28) 55%, rgba(7,11,24,0.58) 100%), url('/images/banners/ivsacademy.banner.png') center center / cover no-repeat; }
+        .hero-section { min-height: calc(100vh - var(--header-height)); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; background: linear-gradient(180deg, rgba(7,11,24,0.1) 0%, rgba(7,11,24,0.2) 55%, rgba(7,11,24,0.45) 100%), url('/images/banners/ivsacademy.banner.png') center center / cover no-repeat; }
+        .hero-section::before { display: none !important; }
         .section-padding { padding: 5rem 1.5rem; }
         @media (min-width: 768px) { .section-padding { padding: 7rem 3rem; } }
         .soft-card { background: rgba(15, 23, 42, 0.75); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 1.5rem; transition: all 0.3s ease; }
