@@ -1,199 +1,527 @@
 <!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thư viện Tài liệu Giáo dục | IVS Academy</title>
+  <meta name="description" content="Khám phá tài liệu STEAM, kỹ năng sống, IT Foundation, nghiên cứu và quản lý giáo dục được tuyển chọn bởi IVS Academy.">
+  <link rel="canonical" href="https://ivsacademy.edu.vn/Pages/tailieu">
+  <meta property="og:title" content="Thư viện Tài liệu Giáo dục | IVS Academy">
+  <meta property="og:description" content="Học liệu chuyên sâu về STEAM, kỹ năng sống, công nghệ và nghiên cứu giáo dục từ IVS Academy.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ivsacademy.edu.vn/Pages/tailieu">
+  <meta property="og:image" content="https://ivsacademy.edu.vn/images/logo/logo.svg">
+  <link rel="icon" href="/images/logo/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;family=Lexend:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="/css/tailwind.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+  <link href="/css/animations.css" rel="stylesheet">
+  <style>
+    :root {
+      --library-blue: #0756a6;
+      --library-blue-dark: #063b73;
+      --library-cyan: #0ea5c6;
+      --library-ink: #10243e;
+      --library-muted: #5c6f85;
+      --library-line: #dce6f0;
+      --library-surface: #ffffff;
+      --library-bg: #f4f8fc;
+      --header-height: 4rem;
+    }
 
-<html lang="vi">
-<head><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="//cdnjs.cloudflare.com" rel="dns-prefetch"/><link href="//unpkg.com" rel="dns-prefetch"/><link href="//fonts.googleapis.com" rel="dns-prefetch"/><link as="style" href="/css/style.css" rel="preload"/>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Thư Viện Tài Liệu IVS Academy</title>
-<!-- Tailwind CSS CDN -->
-<style>
-        .hero-text-shadow { text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); }
-        .section-title { font-family: 'Lexend', sans-serif; }
-        .hub-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-            border: 1px solid transparent;
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding-top: var(--header-height);
+      color: var(--library-ink);
+      background: var(--library-bg);
+      font-family: "Be Vietnam Pro", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    #header-placeholder {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 1000;
+      min-height: var(--header-height);
+      background: #0a0a0a;
+      border-bottom: 1px solid #1f2937;
+    }
+    .library-shell { width: min(1180px, calc(100% - 32px)); margin-inline: auto; }
+    .library-hero {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      padding: clamp(56px, 8vw, 96px) 0 72px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 82% 20%, rgba(82, 208, 225, .32), transparent 30%),
+        linear-gradient(135deg, #052e5c 0%, #0756a6 58%, #087e9e 100%);
+    }
+    .library-hero::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 360px;
+      aspect-ratio: 1;
+      right: -100px;
+      bottom: -190px;
+      border: 54px solid rgba(255, 255, 255, .08);
+      border-radius: 50%;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 18px;
+      padding: 8px 13px;
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 999px;
+      background: rgba(255,255,255,.09);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .library-hero h1 {
+      max-width: 840px;
+      margin: 0;
+      font-family: Lexend, sans-serif;
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 1.08;
+      letter-spacing: -.035em;
+    }
+    .library-hero p {
+      max-width: 720px;
+      margin: 22px 0 0;
+      color: rgba(255,255,255,.86);
+      font-size: clamp(16px, 2vw, 19px);
+      line-height: 1.75;
+    }
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px 28px;
+      margin-top: 34px;
+    }
+    .hero-stat strong { display: block; font: 700 24px/1 Lexend, sans-serif; }
+    .hero-stat span { display: block; margin-top: 6px; color: rgba(255,255,255,.72); font-size: 13px; }
+
+    .library-main { padding: 0 0 80px; }
+    .library-toolbar {
+      position: relative;
+      z-index: 5;
+      margin-top: -30px;
+      padding: 22px;
+      border: 1px solid rgba(220,230,240,.8);
+      border-radius: 20px;
+      background: rgba(255,255,255,.96);
+      box-shadow: 0 18px 45px rgba(16,36,62,.12);
+      backdrop-filter: blur(14px);
+    }
+    .search-wrap { position: relative; }
+    .search-wrap svg {
+      position: absolute;
+      left: 17px;
+      top: 50%;
+      width: 20px;
+      transform: translateY(-50%);
+      color: #71849a;
+      pointer-events: none;
+    }
+    #document-search {
+      width: 100%;
+      min-height: 52px;
+      padding: 13px 16px 13px 50px;
+      color: var(--library-ink);
+      border: 1px solid var(--library-line);
+      border-radius: 13px;
+      outline: none;
+      background: #f9fbfd;
+      transition: border-color .2s, box-shadow .2s, background .2s;
+    }
+    #document-search:focus {
+      border-color: var(--library-blue);
+      background: #fff;
+      box-shadow: 0 0 0 4px rgba(7,86,166,.12);
+    }
+    .filter-list { display: flex; gap: 9px; margin-top: 16px; overflow-x: auto; scrollbar-width: thin; padding-bottom: 2px; }
+    .filter-button {
+      flex: 0 0 auto;
+      padding: 9px 14px;
+      color: #486077;
+      border: 1px solid var(--library-line);
+      border-radius: 999px;
+      background: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+    .filter-button:hover { border-color: #8fb7da; color: var(--library-blue); }
+    .filter-button[aria-pressed="true"] { color: #fff; border-color: var(--library-blue); background: var(--library-blue); }
+
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin: 58px 0 22px; }
+    .section-heading h2 { margin: 0; font: 700 clamp(25px, 4vw, 34px)/1.2 Lexend, sans-serif; letter-spacing: -.025em; }
+    .section-heading p { margin: 8px 0 0; color: var(--library-muted); line-height: 1.6; }
+    #result-count { flex: 0 0 auto; color: var(--library-muted); font-size: 14px; font-weight: 600; }
+
+    .featured-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .featured-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 235px;
+      padding: 26px;
+      color: #fff;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #063d75, #087da0);
+      box-shadow: 0 16px 35px rgba(7,69,125,.18);
+    }
+    .featured-card:nth-child(2n) { background: linear-gradient(135deg, #214d70, #4b6f91); }
+    .featured-card::after {
+      content: attr(data-format);
+      position: absolute;
+      right: -9px;
+      bottom: -24px;
+      color: rgba(255,255,255,.08);
+      font: 800 76px/1 Lexend, sans-serif;
+    }
+    .featured-card > * { position: relative; z-index: 1; }
+    .featured-card h3 { max-width: 480px; margin: 18px 0 10px; font: 700 22px/1.35 Lexend, sans-serif; }
+    .featured-card p { max-width: 520px; margin: 0; color: rgba(255,255,255,.78); font-size: 14px; line-height: 1.65; }
+    .featured-card .preview-button { margin-top: 24px; color: var(--library-blue-dark); background: #fff; }
+
+    .document-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+    .document-card {
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--library-line);
+      border-radius: 18px;
+      background: var(--library-surface);
+      box-shadow: 0 6px 22px rgba(16,36,62,.055);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .document-card:hover { transform: translateY(-5px); border-color: #b3cce3; box-shadow: 0 16px 35px rgba(16,36,62,.12); }
+    .document-cover {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      min-height: 178px;
+      padding: 18px;
+      overflow: hidden;
+      color: #fff;
+      background: linear-gradient(145deg, #064986, #0d9cba);
+    }
+    .document-card[data-category="lifeskills"] .document-cover { background: linear-gradient(145deg, #7b2848, #d76c68); }
+    .document-card[data-category="it"] .document-cover { background: linear-gradient(145deg, #193b63, #4f7da5); }
+    .document-card[data-category="research"] .document-cover { background: linear-gradient(145deg, #2f4c47, #608176); }
+    .document-cover::after {
+      content: "";
+      position: absolute;
+      width: 150px;
+      aspect-ratio: 1;
+      right: -50px;
+      top: -64px;
+      border: 25px solid rgba(255,255,255,.1);
+      border-radius: 50%;
+    }
+    .document-cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .document-cover img + .cover-shade { position: absolute; inset: 0; background: linear-gradient(to top, rgba(8,24,43,.88), rgba(8,24,43,.08) 70%); }
+    .format-badge, .category-badge {
+      position: relative;
+      z-index: 2;
+      display: inline-flex;
+      width: max-content;
+      align-items: center;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .format-badge { padding: 7px 10px; color: #fff; background: rgba(7,26,48,.55); backdrop-filter: blur(8px); }
+    .category-badge { padding: 6px 9px; color: var(--library-blue-dark); background: #eaf4ff; }
+    .document-body { display: flex; flex: 1; flex-direction: column; padding: 20px; }
+    .document-body h3 { margin: 12px 0 9px; font: 700 18px/1.45 Lexend, sans-serif; letter-spacing: -.015em; }
+    .document-description { margin: 0; color: var(--library-muted); font-size: 14px; line-height: 1.65; }
+    .document-meta { display: flex; flex-wrap: wrap; gap: 8px 14px; margin-top: 18px; color: #718398; font-size: 12px; }
+    .document-actions { display: flex; gap: 9px; margin-top: auto; padding-top: 20px; }
+    .preview-button, .drive-link {
+      display: inline-flex;
+      min-height: 42px;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: .2s ease;
+    }
+    .preview-button { flex: 1; color: #fff; border: 1px solid var(--library-blue); background: var(--library-blue); }
+    .preview-button:hover { border-color: var(--library-blue-dark); background: var(--library-blue-dark); }
+    .drive-link { color: var(--library-blue); border: 1px solid var(--library-line); background: #fff; }
+    .drive-link:hover { border-color: #8fb7da; background: #f4f9ff; }
+    .empty-state { display: none; padding: 48px 20px; text-align: center; border: 1px dashed #b8c9d9; border-radius: 18px; color: var(--library-muted); background: #fff; }
+    .empty-state.is-visible { display: block; }
+
+    #document-viewer {
+      width: min(1120px, calc(100% - 24px));
+      height: min(88vh, 850px);
+      padding: 0;
+      overflow: hidden;
+      border: 0;
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: 0 28px 90px rgba(0,0,0,.35);
+    }
+    #document-viewer::backdrop { background: rgba(4,15,29,.78); backdrop-filter: blur(5px); }
+    .viewer-shell { display: grid; height: 100%; grid-template-rows: auto 1fr; }
+    .viewer-header { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-bottom: 1px solid var(--library-line); }
+    .viewer-title { min-width: 0; flex: 1; margin: 0; overflow: hidden; font: 700 15px/1.4 Lexend, sans-serif; text-overflow: ellipsis; white-space: nowrap; }
+    .viewer-open, .viewer-close { display: inline-flex; min-height: 40px; align-items: center; justify-content: center; border-radius: 10px; font-size: 13px; font-weight: 700; }
+    .viewer-open { padding: 9px 13px; color: var(--library-blue); border: 1px solid var(--library-line); text-decoration: none; }
+    .viewer-close { width: 40px; color: #52677e; border: 1px solid var(--library-line); background: #fff; font-size: 22px; }
+    #viewer-frame { width: 100%; height: 100%; border: 0; background: #edf2f7; }
+
+    @media (max-width: 900px) {
+      .document-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .featured-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 620px) {
+      .library-shell { width: min(100% - 22px, 1180px); }
+      .library-hero { padding-top: 48px; }
+      .library-toolbar { padding: 14px; border-radius: 16px; }
+      .document-grid { grid-template-columns: 1fr; }
+      .section-heading { align-items: flex-start; flex-direction: column; margin-top: 44px; }
+      .document-cover { min-height: 164px; }
+      .viewer-open { display: none; }
+      #document-viewer { height: calc(100vh - 20px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <main>
+    <section class="library-hero" aria-labelledby="library-title">
+      <div class="library-shell">
+        <p class="eyebrow">IVS Academy · Open Knowledge</p>
+        <h1 id="library-title">Thư viện tài liệu giáo dục</h1>
+        <p>Kho học liệu được IVS Academy tuyển chọn và phân loại, hỗ trợ học tập, giảng dạy, nghiên cứu và phát triển chương trình giáo dục.</p>
+        <div class="hero-stats" aria-label="Thống kê thư viện">
+          <div class="hero-stat"><strong id="document-total">9</strong><span>Tài liệu công khai</span></div>
+          <div class="hero-stat"><strong>4</strong><span>Nhóm chuyên môn</span></div>
+          <div class="hero-stat"><strong>VI · EN</strong><span>Học liệu đa ngôn ngữ</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="library-main">
+      <div class="library-shell">
+        <section class="library-toolbar" aria-label="Tìm và lọc tài liệu">
+          <label class="search-wrap">
+            <span class="sr-only">Tìm kiếm tài liệu</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+            <input id="document-search" type="search" placeholder="Tìm theo tên, nội dung hoặc ngôn ngữ…" autocomplete="off">
+          </label>
+          <div class="filter-list" role="group" aria-label="Lọc theo danh mục">
+            <button class="filter-button" type="button" data-filter="all" aria-pressed="true">Tất cả</button>
+            <button class="filter-button" type="button" data-filter="steam" aria-pressed="false">STEAM &amp; Giáo dục</button>
+            <button class="filter-button" type="button" data-filter="lifeskills" aria-pressed="false">Kỹ năng sống</button>
+            <button class="filter-button" type="button" data-filter="it" aria-pressed="false">IT Foundation</button>
+            <button class="filter-button" type="button" data-filter="research" aria-pressed="false">Nghiên cứu</button>
+          </div>
+        </section>
+
+        <section id="featured-section" aria-labelledby="featured-title">
+          <div class="section-heading">
+            <div><h2 id="featured-title">Tài liệu nổi bật</h2><p>Các học liệu tiêu biểu trong hệ sinh thái đào tạo và nghiên cứu của IVS.</p></div>
+          </div>
+          <div id="featured-grid" class="featured-grid"></div>
+        </section>
+
+        <section aria-labelledby="all-documents-title">
+          <div class="section-heading">
+            <div><h2 id="all-documents-title">Khám phá thư viện</h2><p>Xem trực tiếp tài liệu mà không cần rời khỏi website.</p></div>
+            <span id="result-count" aria-live="polite"></span>
+          </div>
+          <div id="document-grid" class="document-grid"></div>
+          <div id="empty-state" class="empty-state" role="status">
+            <strong>Không tìm thấy tài liệu phù hợp.</strong>
+            <p>Hãy thử từ khóa ngắn hơn hoặc chọn một danh mục khác.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <dialog id="document-viewer" aria-labelledby="viewer-title">
+    <div class="viewer-shell">
+      <header class="viewer-header">
+        <h2 id="viewer-title" class="viewer-title">Xem tài liệu</h2>
+        <a id="viewer-open" class="viewer-open" href="#" target="_blank" rel="noopener noreferrer">Mở trên Drive</a>
+        <button id="viewer-close" class="viewer-close" type="button" aria-label="Đóng trình xem">×</button>
+      </header>
+      <iframe id="viewer-frame" title="Trình xem tài liệu Google Drive" loading="lazy" allow="autoplay"></iframe>
+    </div>
+  </dialog>
+
+  <div id="fab-container-placeholder"></div>
+  <div id="footer-placeholder"></div>
+
+  <script src="/js/tailieu-data.js"></script>
+  <script>
+    (function () {
+      "use strict";
+
+      const documents = Array.isArray(window.IVS_DOCUMENTS) ? window.IVS_DOCUMENTS : [];
+      const categories = {
+        steam: "STEAM & Giáo dục",
+        lifeskills: "Kỹ năng sống",
+        it: "IT Foundation",
+        research: "Nghiên cứu"
+      };
+      const grid = document.getElementById("document-grid");
+      const featuredGrid = document.getElementById("featured-grid");
+      const featuredSection = document.getElementById("featured-section");
+      const searchInput = document.getElementById("document-search");
+      const resultCount = document.getElementById("result-count");
+      const emptyState = document.getElementById("empty-state");
+      const viewer = document.getElementById("document-viewer");
+      const viewerFrame = document.getElementById("viewer-frame");
+      const viewerTitle = document.getElementById("viewer-title");
+      const viewerOpen = document.getElementById("viewer-open");
+      let activeFilter = "all";
+
+      const driveViewUrl = id => `https://drive.google.com/file/d/${encodeURIComponent(id)}/view`;
+      const drivePreviewUrl = id => `https://drive.google.com/file/d/${encodeURIComponent(id)}/preview`;
+      const normalize = value => String(value || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
+      function createElement(tag, className, text) {
+        const element = document.createElement(tag);
+        if (className) element.className = className;
+        if (text) element.textContent = text;
+        return element;
+      }
+
+      function createPreviewButton(documentItem, className) {
+        const button = createElement("button", className || "preview-button", "Xem trực tiếp");
+        button.type = "button";
+        button.addEventListener("click", () => openViewer(documentItem));
+        return button;
+      }
+
+      function createCover(documentItem) {
+        const cover = createElement("div", "document-cover");
+        if (documentItem.coverId) {
+          const image = document.createElement("img");
+          image.src = `https://drive.google.com/thumbnail?id=${encodeURIComponent(documentItem.coverId)}&sz=w800`;
+          image.alt = `Bìa ${documentItem.title}`;
+          image.loading = "lazy";
+          image.referrerPolicy = "no-referrer";
+          image.addEventListener("error", () => image.remove());
+          cover.append(image, createElement("span", "cover-shade"));
         }
-        .hub-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
-            border-color: var(--tw-color-primary);
-        }
-        .dark .hub-card:hover {
-             border-color: var(--tw-color-secondary);
-        }
-    </style>
-<!-- CSS -->
-<link href="/css/tailwind.css" rel="stylesheet"/>
-<link href="/css/style.css" rel="stylesheet"/>
-<link href="/css/animations.css" rel="stylesheet"/>
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<!-- Icons -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
-<meta content="IVS JSC cung cấp dịch vụ giáo dục chất lượng cao, đào tạo tiếng Anh, giải pháp công nghệ giáo dục và tư vấn phát triển trường học tại Việt Nam." name="description"/><meta content="Thư Viện Tài Liệu IVS Academy" property="og:title"/><meta content="IVS JSC cung cấp dịch vụ giáo dục chất lượng cao, đào tạo tiếng Anh, giải pháp công nghệ giáo dục và tư vấn phát triển trường học tại Việt Nam." property="og:description"/><meta content="website" property="og:type"/></head>
-<body class="bg-neutral-50 dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 antialiased">
-<div id="header-placeholder"></div>
-<body class="antialiased text-gray-800">
-<div class="min-h-screen flex items-center justify-center p-4 sm:p-6 lg:p-8">
-<div class="w-full max-w-4xl bg-white rounded-xl container-shadow p-6 sm:p-8 lg:p-10">
-<!-- Header Section -->
-<header class="text-center mb-8">
-<h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">Thư Viện Tài Liệu</h1>
-<p class="text-lg text-gray-600">Nơi tập hợp các giáo trình, bài giảng, nghiên cứu và học liệu chuyên sâu, hỗ trợ đắc lực cho việc học tập và giảng dạy.</p>
-</header>
-<!-- Google Drive Display Section -->
-<section class="mb-8">
-<h2 class="text-2xl font-semibold text-gray-800 mb-4">Các Danh Mục Tài Liệu</h2>
-<p class="text-gray-700 mb-6">
-                        Dưới đây là khu vực hiển thị các tệp và thư mục từ Google Drive, được tổ chức theo từng danh mục chính.
-                    </p>
-<!-- Instructions for embedding Google Drive files -->
-<div class="bg-blue-50 border border-blue-200 text-blue-800 p-4 rounded-lg mb-6">
-<p class="font-medium mb-2">Hướng dẫn nhúng tệp/thư mục Google Drive:</p>
-<ol class="list-decimal list-inside text-sm space-y-1">
-<li>Mở tệp hoặc thư mục bạn muốn nhúng trên Google Drive.</li>
-<li>Đảm bảo quyền chia sẻ của tệp/thư mục là "Bất kỳ ai có đường liên kết đều có thể xem" (hoặc quyền phù hợp).</li>
-<li>Đối với tệp: Chọn "Tệp" &gt; "Nhúng" &gt; "Nhúng mục này" (hoặc tương tự) để lấy mã iframe.</li>
-<li>Đối với thư mục: Chọn thư mục, nhấp chuột phải, chọn "Chia sẻ", sau đó tìm tùy chọn "Nhúng thư mục" (tùy chọn này có thể không có sẵn trực tiếp cho tất cả các loại thư mục, bạn có thể cần chia sẻ từng tệp hoặc sử dụng các công cụ bên thứ ba để nhúng thư mục).</li>
-<li>Sao chép mã iframe và dán vào vị trí của đoạn mã placeholder dưới mỗi đầu mục.</li>
-</ol>
-</div>
-<!-- File Categories/Sections based on provided image -->
-<div class="space-y-8" id="file-categories">
-<!-- Category 1: Giáo trình & Bài giảng -->
-<div class="file-category bg-white p-6 rounded-xl border border-gray-200">
-<h3 class="text-xl font-semibold text-gray-800 mb-4">Giáo trình &amp; Bài giảng</h3>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<!-- File Item for Giáo trình Tiếng Anh cơ bản -->
-<div class="file-item bg-gray-50 p-4 rounded-lg border border-gray-100">
-<h4 class="text-lg font-medium text-gray-700 mb-3">Giáo trình Tiếng Anh cơ bản</h4>
-<div class="iframe-container">
-<!-- REPLACE THIS IFRAME WITH YOUR ACTUAL GOOGLE DRIVE EMBED CODE -->
-<p class="text-base text-gray-500 flex items-center justify-center h-full">
-<span class="block text-center">Dán mã nhúng giáo trình Tiếng Anh cơ bản tại đây.</span>
-</p>
-<!-- Example for a Google Doc: -->
-<!-- <iframe src="https://docs.google.com/document/d/e/2PACX-1vR_YOUR_DOCUMENT_ID/pub?embedded=true" class="w-full h-full" frameborder="0"></iframe> -->
-</div>
-</div>
-<!-- File Item for Bài giảng Ngữ pháp -->
-<div class="file-item bg-gray-50 p-4 rounded-lg border border-gray-100">
-<h4 class="text-lg font-medium text-gray-700 mb-3">Bài giảng Ngữ pháp nâng cao</h4>
-<div class="iframe-container">
-<!-- REPLACE THIS IFRAME WITH YOUR ACTUAL GOOGLE DRIVE EMBED CODE -->
-<p class="text-base text-gray-500 flex items-center justify-center h-full">
-<span class="block text-center">Dán mã nhúng bài giảng Ngữ pháp nâng cao tại đây.</span>
-</p>
-<!-- Example for a Google Slides presentation: -->
-<!-- <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR_YOUR_PRESENTATION_ID/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe> -->
-</div>
-</div>
-</div>
-</div>
-<!-- Category 2: Nghiên cứu & Báo cáo -->
-<div class="file-category bg-white p-6 rounded-xl border border-gray-200">
-<h3 class="text-xl font-semibold text-gray-800 mb-4">Nghiên cứu &amp; Báo cáo</h3>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<!-- File Item for Báo cáo thị trường giáo dục -->
-<div class="file-item bg-gray-50 p-4 rounded-lg border border-gray-100">
-<h4 class="text-lg font-medium text-gray-700 mb-3">Báo cáo thị trường giáo dục 2024</h4>
-<div class="iframe-container">
-<!-- REPLACE THIS IFRAME WITH YOUR ACTUAL GOOGLE DRIVE EMBED CODE -->
-<p class="text-base text-gray-500 flex items-center justify-center h-full">
-<span class="block text-center">Dán mã nhúng báo cáo thị trường tại đây.</span>
-</p>
-<!-- Example for a Google Doc: -->
-<!-- <iframe src="https://docs.google.com/document/d/e/2PACX-1vR_YOUR_DOCUMENT_ID/pub?embedded=true" class="w-full h-full" frameborder="0"></iframe> -->
-</div>
-</div>
-<!-- File Item for Nghiên cứu phương pháp STEAM -->
-<div class="file-item bg-gray-50 p-4 rounded-lg border border-gray-100">
-<h4 class="text-lg font-medium text-gray-700 mb-3">Nghiên cứu phương pháp STEAM</h4>
-<div class="iframe-container">
-<!-- REPLACE THIS IFRAME WITH YOUR ACTUAL GOOGLE DRIVE EMBED CODE -->
-<p class="text-base text-gray-500 flex items-center justify-center h-full">
-<span class="block text-center">Dán mã nhúng nghiên cứu STEAM tại đây.</span>
-</p>
-<!-- Example for a Google Sheet: -->
-<!-- <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR_YOUR_SHEET_ID/pubhtml?widget=true&amp;headers=false" class="w-full h-full" frameborder="0"></iframe> -->
-</div>
-</div>
-</div>
-</div>
-<!-- Category 3: Tài liệu Tham khảo -->
-<div class="file-category bg-white p-6 rounded-xl border border-gray-200">
-<h3 class="text-xl font-semibold text-gray-800 mb-4">Tài liệu Tham khảo</h3>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<!-- File Item for Cẩm nang học tập hiệu quả -->
-<div class="file-item bg-gray-50 p-4 rounded-lg border border-gray-100">
-<h4 class="text-lg font-medium text-gray-700 mb-3">Cẩm nang học tập hiệu quả</h4>
-<div class="iframe-container">
-<!-- REPLACE THIS IFRAME WITH YOUR ACTUAL GOOGLE DRIVE EMBED CODE -->
-<p class="text-base text-gray-500 flex items-center justify-center h-full">
-<span class="block text-center">Dán mã nhúng cẩm nang học tập tại đây.</span>
-</p>
-<!-- Example for a Google Doc: -->
-<!-- <iframe src="https://docs.google.com/document/d/e/2PACX-1vR_YOUR_DOCUMENT_ID/pub?embedded=true" class="w-full h-full" frameborder="0"></iframe> -->
-</div>
-</div>
-<!-- File Item for Hướng dẫn sử dụng thư viện -->
-<div class="file-item bg-gray-50 p-4 rounded-lg border border-gray-100">
-<h4 class="text-lg font-medium text-gray-700 mb-3">Hướng dẫn sử dụng thư viện</h4>
-<div class="iframe-container">
-<!-- REPLACE THIS IFRAME WITH YOUR ACTUAL GOOGLE DRIVE EMBED CODE -->
-<p class="text-base text-gray-500 flex items-center justify-center h-full">
-<span class="block text-center">Dán mã nhúng hướng dẫn sử dụng thư viện tại đây.</span>
-</p>
-<!-- Example for a Google Doc: -->
-<!-- <iframe src="https://docs.google.com/document/d/e/2PACX-1vR_YOUR_DOCUMENT_ID/pub?embedded=true" class="w-full h-full" frameborder="0"></iframe> -->
-</div>
-</div>
-</div>
-</div>
-<!-- You can add more categories or individual files as needed by duplicating the 'file-category' or 'file-item' div -->
-</div>
-</section>
-<div id="fab-container-placeholder"></div>
-<div id="footer-placeholder"></div>
-<!-- Scripts -->
+        cover.append(createElement("span", "format-badge", documentItem.format));
+        return cover;
+      }
 
-</div></div></body>
-<!-- Chèn vào cuối <body> của mọi trang -->
-<div id="fab-container-placeholder"></div>
+      function createDocumentCard(documentItem) {
+        const card = createElement("article", "document-card");
+        card.dataset.category = documentItem.category;
+        card.append(createCover(documentItem));
 
+        const body = createElement("div", "document-body");
+        body.append(createElement("span", "category-badge", categories[documentItem.category]));
+        body.append(createElement("h3", "", documentItem.title));
+        body.append(createElement("p", "document-description", documentItem.description));
 
+        const meta = createElement("div", "document-meta");
+        meta.append(createElement("span", "", documentItem.language));
+        meta.append(createElement("span", "", `${documentItem.format} · ${documentItem.size}`));
+        body.append(meta);
 
-<script src="/js/loadComponents.js?v=20260821.6" defer></script>
-</body></html>
-<script defer src="/js/utils.js"></script>
-<script defer src="/js/language.js?v=20260821.6"></script>
+        const actions = createElement("div", "document-actions");
+        actions.append(createPreviewButton(documentItem));
+        const driveLink = createElement("a", "drive-link", "Drive ↗");
+        driveLink.href = driveViewUrl(documentItem.id);
+        driveLink.target = "_blank";
+        driveLink.rel = "noopener noreferrer";
+        driveLink.setAttribute("aria-label", `Mở ${documentItem.title} trên Google Drive`);
+        actions.append(driveLink);
+        body.append(actions);
+        card.append(body);
+        return card;
+      }
 
-<script defer>
-    document.addEventListener('DOMContentLoaded', function() {
-        if (typeof window.loadCommonComponents === 'function') {
-            window.loadCommonComponents().then(() => {
-                console.log('Page components loaded successfully');
-                
-                // Initialize AOS if available
-                if (typeof AOS !== 'undefined') {
-                    AOS.init({
-                        duration: 700,
-                        once: true,
-                        offset: 50,
-                        easing: 'ease-out-cubic'
-                    });
-                }
-                
-                // Call page callback if exists
-                if (typeof window.onPageComponentsLoadedCallback === 'function') {
-                    window.onPageComponentsLoadedCallback();
-                }
-            }).catch(error => {
-                console.error('Failed to load components:', error);
-            });
-        }
-    });
-</script>
+      function createFeaturedCard(documentItem) {
+        const card = createElement("article", "featured-card");
+        card.dataset.format = documentItem.format;
+        card.append(createElement("span", "format-badge", categories[documentItem.category]));
+        card.append(createElement("h3", "", documentItem.title));
+        card.append(createElement("p", "", documentItem.description));
+        card.append(createPreviewButton(documentItem));
+        return card;
+      }
 
+      function openViewer(documentItem) {
+        viewerTitle.textContent = documentItem.title;
+        viewerOpen.href = driveViewUrl(documentItem.id);
+        viewerFrame.src = drivePreviewUrl(documentItem.id);
+        if (typeof viewer.showModal === "function") viewer.showModal();
+        else window.open(driveViewUrl(documentItem.id), "_blank", "noopener,noreferrer");
+      }
 
+      function closeViewer() {
+        viewer.close();
+        viewerFrame.src = "about:blank";
+      }
 
+      function renderFeatured() {
+        const featured = documents.filter(item => item.featured).slice(0, 4);
+        featuredGrid.replaceChildren(...featured.map(createFeaturedCard));
+        featuredSection.hidden = featured.length === 0;
+      }
+
+      function renderDocuments() {
+        const query = normalize(searchInput.value.trim());
+        const filtered = documents.filter(item => {
+          const inCategory = activeFilter === "all" || item.category === activeFilter;
+          const searchable = normalize(`${item.title} ${item.description} ${item.language} ${categories[item.category]}`);
+          return inCategory && (!query || searchable.includes(query));
+        });
+        grid.replaceChildren(...filtered.map(createDocumentCard));
+        resultCount.textContent = `${filtered.length} / ${documents.length} tài liệu`;
+        emptyState.classList.toggle("is-visible", filtered.length === 0);
+      }
+
+      document.querySelectorAll(".filter-button").forEach(button => {
+        button.addEventListener("click", () => {
+          activeFilter = button.dataset.filter;
+          document.querySelectorAll(".filter-button").forEach(item => item.setAttribute("aria-pressed", String(item === button)));
+          renderDocuments();
+        });
+      });
+      searchInput.addEventListener("input", renderDocuments);
+      document.getElementById("viewer-close").addEventListener("click", closeViewer);
+      viewer.addEventListener("click", event => { if (event.target === viewer) closeViewer(); });
+      viewer.addEventListener("close", () => { viewerFrame.src = "about:blank"; });
+      document.getElementById("document-total").textContent = String(documents.length);
+
+      renderFeatured();
+      renderDocuments();
+    }());
+  </script>
+  <script src="/js/loadComponents.js?v=20260821.6" defer></script>
+  <script src="/js/utils.js" defer></script>
+  <script src="/js/language.js?v=20260821.6" defer></script>
+</body>
+</html>
