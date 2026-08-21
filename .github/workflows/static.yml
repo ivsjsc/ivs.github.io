@@ -31,22 +31,39 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Normalize Global Teacher Hub clean URLs
+        shell: bash
+        run: |
+          set -euo pipefail
+          while IFS= read -r -d '' file; do
+            sed -i 's#/ivs-global-teacher-hub\.html#/ivs-global-teacher-hub#g' "$file"
+          done < <(find . -type f \( -name '*.html' -o -name '*.js' -o -name '*.ts' -o -name '*.tsx' -o -name '*.json' \) -not -path './.git/*' -print0)
+          echo "Remaining legacy Teacher Hub links:"
+          grep -R --line-number --fixed-strings '/ivs-global-teacher-hub.html' . \
+            --include='*.html' --include='*.js' --include='*.ts' --include='*.tsx' --include='*.json' \
+            --exclude-dir=.git || true
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
         continue-on-error: true
+
       - name: Setup Node 18 for webapp build
         uses: actions/setup-node@v4
         with:
           node-version: '18'
+
       - name: Show Node & npm versions
         run: |
           echo "Node version:"; node --version
           echo "npm version:"; npm --version
+
       - name: Build webapp (create webapp-dist)
         working-directory: ./webapp
         run: |
           npm ci
           npm run build
+
       - name: Verify webapp-dist exists
         # Run from repository root (defaults to working-directory), the Vite build is configured
         # to write the output to ../webapp-dist so the repo root should now contain `webapp-dist`.
@@ -59,11 +76,29 @@ jobs:
           fi
           echo "webapp-dist exists — listing contents (truncated):"
           ls -laR webapp-dist | sed -n '1,200p' || true
+
+      - name: Optimize Teacher Hub social thumbnail for deployment
+        shell: bash
+        run: |
+          set -euo pipefail
+          image="images/social/ivs-global-teacher-hub-og.png"
+          if [ -f "$image" ]; then
+            before=$(stat -c%s "$image")
+            sudo apt-get update -qq
+            sudo apt-get install -y -qq pngquant
+            pngquant --quality=68-82 --speed 1 --force --output "$image" "$image" || true
+            after=$(stat -c%s "$image")
+            echo "Teacher Hub social image: ${before} bytes -> ${after} bytes"
+          else
+            echo "Teacher Hub social thumbnail not found; skipping optimization."
+          fi
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
+          # Upload entire repository after production-only URL normalization and asset optimization.
           path: '.'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
