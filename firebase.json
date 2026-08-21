@@ -33,11 +33,15 @@
       { "source": "/Pages/education.html", "destination": "/education.html", "type": 301 },
       { "source": "/Pages/ivslanguages.html", "destination": "/education.html", "type": 301 },
       { "source": "/Pages/education-partnership.html", "destination": "/education.html", "type": 301 },
-      { "source": "/Pages/international-teachers.html", "destination": "/ivs-global-teacher-hub.html", "type": 301 },
+      { "source": "/Pages/international-teachers.html", "destination": "/ivs-global-teacher-hub", "type": 301 },
       { "source": "/served_index.html", "destination": "/", "type": 301 },
       { "source": "/served_index_after.html", "destination": "/", "type": 301 }
     ],
     "rewrites": [
+      {
+        "source": "/ivs-global-teacher-hub",
+        "destination": "/ivs-global-teacher-hub.html"
+      },
       {
         "source": "/Pages/ivstech",
         "destination": "/Pages/ivstech.html"
