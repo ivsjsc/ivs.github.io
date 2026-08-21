@@ -91,7 +91,7 @@ export function DigitalHub() {
   const t = copy[language]
   const links = useMemo(() => [
     { key: 'home', desc: 'homeDesc', icon: 'fa-graduation-cap', href: '/' },
-    { key: 'teachers', desc: 'teachersDesc', icon: 'fa-chalkboard-user', href: '/ivs-global-teacher-hub.html' },
+    { key: 'teachers', desc: 'teachersDesc', icon: 'fa-chalkboard-user', href: '/ivs-global-teacher-hub' },
     { key: 'learning', desc: 'learningDesc', icon: 'fa-book-open', href: '/learning-materials.html' },
     { key: 'apps', desc: 'appsDesc', icon: 'fa-layer-group', href: '/Pages/apps/ivsapps.html' },
     { key: 'technology', desc: 'technologyDesc', icon: 'fa-microchip', href: 'https://ivstech.store/' }
