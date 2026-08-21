@@ -32,13 +32,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Normalize Global Teacher Hub clean URLs
+      - name: Normalize Global Teacher Hub URLs and cache version
         shell: bash
         run: |
           set -euo pipefail
           while IFS= read -r -d '' file; do
             sed -i 's#/ivs-global-teacher-hub\.html#/ivs-global-teacher-hub#g' "$file"
           done < <(find . -type f \( -name '*.html' -o -name '*.js' -o -name '*.ts' -o -name '*.tsx' \) -not -path './.git/*' -print0)
+
+          # Keep pages that still reference an older component-loader query on the current cache key.
+          while IFS= read -r -d '' file; do
+            sed -i 's#/ai/js/loadComponents\.js?v=20260821\.6#/ai/js/loadComponents.js?v=20260821.8#g' "$file"
+            sed -i 's#/ai/js/loadComponents\.js?v=20260821\.7#/ai/js/loadComponents.js?v=20260821.8#g' "$file"
+          done < <(find . -type f -name '*.html' -not -path './.git/*' -print0)
+
           echo "Remaining legacy Teacher Hub links in deployable content:"
           grep -R --line-number --fixed-strings '/ivs-global-teacher-hub.html' . \
             --include='*.html' --include='*.js' --include='*.ts' --include='*.tsx' \
@@ -85,12 +92,25 @@ jobs:
           if [ -f "$image" ]; then
             before=$(stat -c%s "$image")
             sudo apt-get update -qq
-            sudo apt-get install -y -qq pngquant
+            sudo apt-get install -y -qq imagemagick pngquant
+
+            tmp="${image%.png}.tmp.png"
+            convert "$image" -auto-orient -resize '1200x630^' -gravity center -extent 1200x630 -strip "$tmp"
+            mv "$tmp" "$image"
+
             pngquant --quality=68-82 --speed 1 --force --output "$image" "$image" || true
+
+            dimensions=$(identify -format '%wx%h' "$image")
+            if [ "$dimensions" != "1200x630" ]; then
+              echo "ERROR: Teacher Hub thumbnail is $dimensions; expected 1200x630."
+              exit 1
+            fi
+
             after=$(stat -c%s "$image")
-            echo "Teacher Hub social image: ${before} bytes -> ${after} bytes"
+            echo "Teacher Hub social image: ${before} bytes -> ${after} bytes (${dimensions})"
           else
-            echo "Teacher Hub social thumbnail not found; skipping optimization."
+            echo "ERROR: Teacher Hub social thumbnail not found."
+            exit 1
           fi
 
       - name: Upload artifact
