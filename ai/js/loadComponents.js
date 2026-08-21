@@ -203,6 +203,35 @@ async function loadTeacherHubIvsTechServices() {
     }
 }
 
+async function loadHomeGlobalTeacherHubSection() {
+    const isHome = /^\/(?:index\.html)?$/.test(window.location.pathname);
+    if (!isHome || document.getElementById('home-global-teacher-hub-placeholder')) return;
+
+    const main = document.getElementById('main-content') || document.querySelector('main');
+    if (!main) return;
+
+    const placeholder = document.createElement('div');
+    placeholder.id = 'home-global-teacher-hub-placeholder';
+
+    const contactSection = document.getElementById('contact');
+    if (contactSection && contactSection.parentNode) {
+        contactSection.parentNode.insertBefore(placeholder, contactSection);
+    } else {
+        main.appendChild(placeholder);
+    }
+
+    await loadAndInject('/components/home-global-teacher-hub.html?v=20260821.1', 'home-global-teacher-hub-placeholder');
+
+    // Existing homepage CTA is recruitment-oriented, so route it to Aivy TeacherMatch rather than the guide hub.
+    const teacherCtaLabel = document.querySelector('[data-lang-key="home26_teacher_cta"]');
+    const teacherCta = teacherCtaLabel?.closest('a');
+    if (teacherCta) {
+        teacherCta.href = 'https://ivslearning.top/';
+        teacherCta.target = '_blank';
+        teacherCta.rel = 'noopener noreferrer';
+    }
+}
+
 /**
  * Loads common components (header, fab-container, footer) and initializes their controllers.
  */
@@ -262,7 +291,7 @@ async function loadCommonComponents() {
             // Only attempt to load the assistant into the actual container to avoid replacing the placeholder
             const assistantSuccess = await loadAndInject('/components/fab-assistant.html', 'fab-container');
             if (assistantSuccess) {
-                window.componentLog('fab-assistant loaded into #fab-container', 'info');
+                window.componentLog('fab-assistant loaded into #fab-container.', 'info');
                 // Try to init FAB controller if available
                 if (window.IVSFabController && typeof window.IVSFabController.init === 'function') {
                     await safeInitController(window.IVSFabController, 'fab-container');
@@ -312,6 +341,13 @@ async function loadCommonComponents() {
         await loadTeacherHubIvsTechServices();
     } catch (err) {
         window.componentLog('Failed to inject Teacher Hub IVS TECH services: ' + (err && err.message ? err.message : err), 'warn');
+    }
+
+    // Surface Global Teacher Hub on the main homepage, before the consultation form.
+    try {
+        await loadHomeGlobalTeacherHubSection();
+    } catch (err) {
+        window.componentLog('Failed to inject homepage Global Teacher Hub section: ' + (err && err.message ? err.message : err), 'warn');
     }
 
     // Tải Footer sau cùng
