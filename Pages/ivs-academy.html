@@ -1,449 +1,1486 @@
 <!DOCTYPE html>
-
 <html class="scroll-smooth" lang="vi">
-<head><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="//cdnjs.cloudflare.com" rel="dns-prefetch"/><link href="//unpkg.com" rel="dns-prefetch"/><link href="//fonts.googleapis.com" rel="dns-prefetch"/><link as="style" href="/css/style.css" rel="preload"/>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>IVS Academy - Giải Pháp Công Nghệ Giáo Dục Tiên Tiến</title>
-<meta content="Khám phá các tính năng EdTech tiên tiến: AI Personal Tutor, VR/AR Learning, Gamification, và nhiều hơn nữa IVS Academy cung cấp khóa học tiếng Anh chất lượng ca" name="description"/>
-<meta content="EdTech, AI Education, VR Learning, AR Education, Gamification, Personalized Learning" name="keywords"/>
-<meta content="IVS Academy - Hệ sinh thái giáo dục toàn diện, cung cấp giải pháp ngôn ngữ, kỹ năng và công nghệ giáo dục tiên tiến." name="description"/>
-<meta content="IVS, giáo dục, học tiếng Anh, học tiếng Trung, EdTech, IVS Academy" name="keywords"/>
-<link href="/images/logo/logo.svg" rel="icon" type="image/svg+xml"/>
-<link href="/manifest.json" rel="manifest"/>
-<link href="/images/logo/logo-192.jpg" rel="apple-touch-icon"/>
-<link href="/css/tailwind.css" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;family=Poppins:wght@700;800;900&amp;display=swap" rel="stylesheet"/>
-<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" referrerpolicy="no-referrer" rel="stylesheet"/>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="#070B18" name="theme-color"/>
+    
+    <title>IVS Academy - Giải Pháp Công Nghệ Giáo Dục Tiên Tiến | Next-Gen EdTech Ecosystem</title>
+    <meta content="Khám phá nền tảng giáo dục thông minh IVS Academy 2.0: AI Personal Tutor, VR/AR Immersive Learning, Gamification RPG, Microlearning và Phân tích học tập tương thích hàng đầu." name="description"/>
+    <meta content="IVS Academy, EdTech, AI Education, VR Learning, AR Education, Gamification, Personalized Learning, LMS thông minh, chuyển đổi số giáo dục" name="keywords"/>
+    <meta content="IVS JSC" name="author"/>
+    <meta content="index,follow,max-image-preview:large" name="robots"/>
+    <link rel="canonical" href="https://ivsacademy.edu.vn/Pages/ivs-academy.html"/>
 
-<!-- Microsoft Clarity -->
-<script src="/js/clarity.js"></script>
+    <!-- Open Graph / Facebook -->
+    <meta content="website" property="og:type"/>
+    <meta content="vi_VN" property="og:locale"/>
+    <meta content="IVS Academy" property="og:site_name"/>
+    <meta content="IVS Academy - Giải Pháp Công Nghệ Giáo Dục Tiên Tiến | Next-Gen EdTech Ecosystem" property="og:title"/>
+    <meta content="Khám phá nền tảng giáo dục thông minh IVS Academy 2.0: AI Personal Tutor, VR/AR Immersive Learning, Gamification RPG, Microlearning và Phân tích học tập tương thích." property="og:description"/>
+    <meta content="https://ivsacademy.edu.vn/Pages/ivs-academy.html" property="og:url"/>
+    <meta content="https://ivsacademy.edu.vn/images/ivs-academy.jpg" property="og:image"/>
 
-<style>
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-        }
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        .glow {
-            box-shadow: 0 0 20px rgba(96, 165, 250, 0.5);
-        }
-    </style>
-    <style>
-        /* Shared layout adjustments from index.html */
-        :root { --header-height: 4rem; }
-        body { padding-top: var(--header-height); }
-        #header-placeholder { position: fixed; top:0; left:0; width:100%; height:var(--header-height); z-index:1000; background:#0A0A0A; border-bottom:1px solid #1f2937 }
-        .hero-section-banner-container, .hero-section { position: relative; min-height: calc(100vh - var(--header-height)); overflow:hidden; display:flex; align-items:center; justify-content:center; text-align:center; background-color:#000 }
-        .hero-overlay { position:absolute; inset:0; background: linear-gradient(to top, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.2) 50%, rgba(10,10,10,0.85) 100%); z-index:2 }
-        .hero-content { position:relative; z-index:3; max-width:90%; }
-    </style>
-<!-- CSS -->
-<link href="/css/style.css" rel="stylesheet"/>
-<link href="/css/animations.css" rel="stylesheet"/>
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<!-- Icons -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
-</link><meta content="IVS Academy - Giải Pháp Công Nghệ Giáo Dục Tiên Tiến" property="og:title"/><meta content="Khám phá các tính năng EdTech tiên tiến: AI Personal Tutor, VR/AR Learning, Gamification, và nhiều hơn nữa IVS Academy cung cấp khóa học tiếng Anh chất lượng ca" property="og:description"/><meta content="website" property="og:type"/></head>
-<body class="bg-ivs-bg text-ivs-text-primary">
-<!-- Header -->
-<div id="header-placeholder"></div>
-<!-- Hero Section -->
-<section class="hero-section">
-<div class="hero-overlay"></div>
-<div class="hero-content relative min-h-screen flex items-center justify-center overflow-hidden gradient-bg">
-<div class="absolute inset-0 bg-black opacity-50"></div>
-<!-- Animated Background Elements -->
-<div class="absolute top-20 left-10 w-32 h-32 bg-blue-500 rounded-full opacity-20 floating"></div>
-<div class="absolute bottom-20 right-10 w-24 h-24 bg-purple-500 rounded-full opacity-20 floating" style="animation-delay: 1s"></div>
-<div class="absolute top-1/2 left-1/4 w-16 h-16 bg-green-500 rounded-full opacity-20 floating" style="animation-delay: 2s"></div>
-<div class="relative container mx-auto px-6 lg:px-8 text-center">
-<div class="max-w-5xl mx-auto" data-aos="fade-up">
-<h1 class="text-5xl md:text-7xl font-bold font-display text-white mb-6">
-                    IVS Academy <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">2.0</span>
-</h1>
-<p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-                    Nâng cấp EdTech với AI, VR/AR, Gamification và các tính năng tiên tiến
-                </p>
-<div class="flex flex-col sm:flex-row gap-6 justify-center">
-<button class="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 shadow-lg glow">
-<i class="fas fa-rocket mr-2"></i>Khám Phá Ngay
-                    </button>
-<button class="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg transition-all">
-<i class="fas fa-play-circle mr-2"></i>Xem Demo
-                    </button>
-</div>
-</div>
-</div>
-</section>
-<!-- Features Overview -->
-<section class="py-20 bg-ivs-bg">
-<div class="container mx-auto px-6 lg:px-8">
-<div class="text-center mb-16" data-aos="fade-up">
-<h2 class="text-4xl md:text-5xl font-bold font-display mb-6">
-                    10 Nâng Cấp <span class="text-ivs-blue">Đột Phá</span>
-</h2>
-<p class="text-xl text-ivs-text-secondary max-w-3xl mx-auto">
-                    Khám phá các tính năng học tập tiên tiến nhất, được thiết kế để tạo ra trải nghiệm giáo dục hoàn toàn mới
-                </p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<!-- Feature 1: AI Personal Tutor -->
-<div class="feature-card bg-ivs-card p-8 rounded-2xl border border-ivs-border transition-all duration-300 hover:border-ivs-blue" data-aos="fade-up" data-aos-delay="100">
-<div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6">
-<i class="fas fa-robot text-2xl text-white"></i>
-</div>
-<h3 class="text-2xl font-bold mb-4">🤖 AI Personal Tutor</h3>
-<p class="text-ivs-text-secondary mb-6">
-                        Gia sư AI thông minh với khả năng hiểu cảm xúc, phát hiện phong cách học tập và cung cấp hướng dẫn cá nhân hóa
-                    </p>
-<ul class="space-y-2 text-sm">
-<li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Phát hiện phong cách học tập</li>
-<li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Hỗ trợ cảm xúc thông minh</li>
-<li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Giảng dạy Socratic</li>
-<li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Tương tác đa phương tiện</li>
-</ul>
-</div>
-<!-- Feature 2: Gamification Engine -->
-<div class="feature-card bg-ivs-card p-8 rounded-2xl border border-ivs-border transition-all duration-300 hover:border-ivs-green" data-aos="fade-up" data-aos-delay="200">
-<div class="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl flex items-center justify-center mb-6">
-<i class="fas fa-gamepad text-2xl text-white"></i>
-</div>
-<h3 class="text-2xl font-bold mb-4">🎮 Gamification Engine</h3>
-<p class="text-ivs-text-secondary mb-6">
-                        Hệ thống game hóa tiên tiến với RPG progression, achievements, leaderboards và social challenges
-                    </p>
-<ul class="space-y-2 text-sm">
-<li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Hệ thống RPG với levels</li>
-<li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Badges &amp; Achievements</li>
-<li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Leaderboards công bằng</li>
-<li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Team challenges</li>
-</ul>
-</div>
-<!-- Feature 3: VR/AR Learning -->
-<div class="feature-card bg-ivs-card p-8 rounded-2xl border border-ivs-border transition-all duration-300 hover:border-ivs-purple" data-aos="fade-up" data-aos-delay="300">
-<div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6">
-<i class="fas fa-vr-cardboard text-2xl text-white"></i>
-</div>
-<h3 class="text-2xl font-bold mb-4">🥽 VR/AR Learning</h3>
-<p class="text-ivs-text-secondary mb-6">
-                        Học tập nhập vai với thực tế ảo và thực tế tăng cường, từ khám phá lịch sử đến thí nghiệm khoa học
-                    </p>
-<ul class="space-y-2 text-sm">
-<li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Virtual time machine</li>
-<li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>3D science labs</li>
-<li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Language immersion</li>
-<li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>AR textbook overlay</li>
-</ul>
-</div>
-<!-- Feature 4: Personalized Learning Paths -->
-<div class="feature-card bg-ivs-card p-8 rounded-2xl border border-ivs-border transition-all duration-300 hover:border-ivs-orange" data-aos="fade-up" data-aos-delay="400">
-<div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mb-6">
-<i class="fas fa-route text-2xl text-white"></i>
-</div>
-<h3 class="text-2xl font-bold mb-4">🎯 Personalized Learning</h3>
-<p class="text-ivs-text-secondary mb-6">
-                        Lộ trình học tập được cá nhân hóa hoàn toàn bởi AI, thích ứng với phong cách và tốc độ học của từng người
-                    </p>
-<ul class="space-y-2 text-sm">
-<li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>AI-powered curriculum</li>
-<li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Adaptive difficulty</li>
-<li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Learning style detection</li>
-<li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Zone of Proximal Development</li>
-</ul>
-</div>
-<!-- Feature 5: Collaborative Learning -->
-<div class="feature-card bg-ivs-card p-8 rounded-2xl border border-ivs-border transition-all duration-300 hover:border-ivs-yellow" data-aos="fade-up" data-aos-delay="500">
-<div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6">
-<i class="fas fa-users text-2xl text-white"></i>
-</div>
-<h3 class="text-2xl font-bold mb-4">👥 Collaborative Learning</h3>
-<p class="text-ivs-text-secondary mb-6">
-                        Nền tảng học tập hợp tác với study groups, peer tutoring và virtual classrooms tương tác
-                    </p>
-<ul class="space-y-2 text-sm">
-<li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Smart study group matching</li>
-<li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Peer tutoring system</li>
-<li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Virtual classrooms</li>
-<li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Collaborative projects</li>
-</ul>
-</div>
-<!-- Feature 6: Microlearning -->
-<div class="feature-card bg-ivs-card p-8 rounded-2xl border border-ivs-border transition-all duration-300 hover:border-ivs-blue" data-aos="fade-up" data-aos-delay="600">
-<div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-6">
-<i class="fas fa-bolt text-2xl text-white"></i>
-</div>
-<h3 class="text-2xl font-bold mb-4">⚡ Microlearning</h3>
-<p class="text-ivs-text-secondary mb-6">
-                        Học tập theo từng mảnh nhỏ với spaced repetition, just-in-time learning và contextual delivery
-                    </p>
-<ul class="space-y-2 text-sm">
-<li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>2-5 minute lessons</li>
-<li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Spaced repetition AI</li>
-<li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Contextual learning</li>
-<li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i>Smart notifications</li>
-</ul>
-</div>
-</div>
-<!-- More Features -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-<div class="feature-card bg-ivs-card p-6 rounded-xl border border-ivs-border transition-all duration-300" data-aos="fade-up" data-aos-delay="700">
-<div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center mb-4">
-<i class="fas fa-chart-line text-white"></i>
-</div>
-<h4 class="text-lg font-bold mb-2">📊 Advanced Analytics</h4>
-<p class="text-sm text-ivs-text-secondary">Predictive analytics và learning pattern recognition</p>
-</div>
-<div class="feature-card bg-ivs-card p-6 rounded-xl border border-ivs-border transition-all duration-300" data-aos="fade-up" data-aos-delay="800">
-<div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-lg flex items-center justify-center mb-4">
-<i class="fab fa-universal-access text-white"></i>
-</div>
-<h4 class="text-lg font-bold mb-2">♿ Smart Accessibility</h4>
-<p class="text-sm text-ivs-text-secondary">AI-powered adaptive interfaces và cognitive support</p>
-</div>
-<div class="feature-card bg-ivs-card p-6 rounded-xl border border-ivs-border transition-all duration-300" data-aos="fade-up" data-aos-delay="900">
-<div class="w-12 h-12 bg-gradient-to-br from-red-500 to-pink-600 rounded-lg flex items-center justify-center mb-4">
-<i class="fas fa-clock text-white"></i>
-</div>
-<h4 class="text-lg font-bold mb-2">⚡ Real-time Features</h4>
-<p class="text-sm text-ivs-text-secondary">Live collaboration và instant feedback systems</p>
-</div>
-<div class="feature-card bg-ivs-card p-6 rounded-xl border border-ivs-border transition-all duration-300" data-aos="fade-up" data-aos-delay="1000">
-<div class="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-600 rounded-lg flex items-center justify-center mb-4">
-<i class="fas fa-certificate text-white"></i>
-</div>
-<h4 class="text-lg font-bold mb-2">🎓 Digital Credentials</h4>
-<p class="text-sm text-ivs-text-secondary">Blockchain certificates và industry recognition</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Technology Stack -->
-<section class="py-20 bg-ivs-card">
-<div class="container mx-auto px-6 lg:px-8">
-<div class="text-center mb-16" data-aos="fade-up">
-<h2 class="text-4xl md:text-5xl font-bold font-display mb-6">
-                    Công Nghệ <span class="text-ivs-purple">Tiên Tiến</span>
-</h2>
-<p class="text-xl text-ivs-text-secondary max-w-3xl mx-auto">
-                    Được xây dựng trên nền tảng công nghệ hàng đầu thế giới
-                </p>
-</div>
-<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-<div class="text-center" data-aos="zoom-in" data-aos-delay="100">
-<div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-<i class="fab fa-python text-2xl text-white"></i>
-</div>
-<h4 class="font-semibold">TensorFlow</h4>
-<p class="text-sm text-ivs-text-secondary">Machine Learning</p>
-</div>
-<div class="text-center" data-aos="zoom-in" data-aos-delay="200">
-<div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-<i class="fab fa-unity text-2xl text-white"></i>
-</div>
-<h4 class="font-semibold">Unity</h4>
-<p class="text-sm text-ivs-text-secondary">VR/AR Development</p>
-</div>
-<div class="text-center" data-aos="zoom-in" data-aos-delay="300">
-<div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-<i class="fab fa-react text-2xl text-white"></i>
-</div>
-<h4 class="font-semibold">React</h4>
-<p class="text-sm text-ivs-text-secondary">Frontend Framework</p>
-</div>
-<div class="text-center" data-aos="zoom-in" data-aos-delay="400">
-<div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-<i class="fab fa-node-js text-2xl text-white"></i>
-</div>
-<h4 class="font-semibold">Node.js</h4>
-<p class="text-sm text-ivs-text-secondary">Backend Platform</p>
-</div>
-<div class="text-center" data-aos="zoom-in" data-aos-delay="500">
-<div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-<i class="fas fa-database text-2xl text-white"></i>
-</div>
-<h4 class="font-semibold">MongoDB</h4>
-<p class="text-sm text-ivs-text-secondary">Database</p>
-</div>
-<div class="text-center" data-aos="zoom-in" data-aos-delay="600">
-<div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-<i class="fas fa-cube text-2xl text-white"></i>
-</div>
-<h4 class="font-semibold">Blockchain</h4>
-<p class="text-sm text-ivs-text-secondary">Certificates</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Implementation Roadmap -->
-<section class="py-20 bg-ivs-bg">
-<div class="container mx-auto px-6 lg:px-8">
-<div class="text-center mb-16" data-aos="fade-up">
-<h2 class="text-4xl md:text-5xl font-bold font-display mb-6">
-                    Roadmap <span class="text-ivs-green">Triển Khai</span>
-</h2>
-<p class="text-xl text-ivs-text-secondary max-w-3xl mx-auto">
-                    Kế hoạch từng bước để nâng cấp IVS Academy lên phiên bản 2.0
-                </p>
-</div>
-<div class="max-w-4xl mx-auto">
-<div class="space-y-8">
-<!-- Phase 1 -->
-<div class="flex items-center space-x-6" data-aos="fade-right">
-<div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                            1
-                        </div>
-<div class="flex-1 bg-ivs-card p-6 rounded-xl border border-ivs-border">
-<h3 class="text-xl font-bold mb-2">Phase 1: AI Foundation (Tháng 1-2)</h3>
-<p class="text-ivs-text-secondary mb-4">Xây dựng nền tảng AI và machine learning cơ bản</p>
-<div class="flex flex-wrap gap-2">
-<span class="px-3 py-1 bg-blue-500 bg-opacity-20 text-blue-400 rounded-full text-sm">AI Personal Tutor</span>
-<span class="px-3 py-1 bg-blue-500 bg-opacity-20 text-blue-400 rounded-full text-sm">Personalized Paths</span>
-<span class="px-3 py-1 bg-blue-500 bg-opacity-20 text-blue-400 rounded-full text-sm">Analytics</span>
-</div>
-</div>
-</div>
-<!-- Phase 2 -->
-<div class="flex items-center space-x-6" data-aos="fade-left">
-<div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                            2
-                        </div>
-<div class="flex-1 bg-ivs-card p-6 rounded-xl border border-ivs-border">
-<h3 class="text-xl font-bold mb-2">Phase 2: Gamification &amp; Social (Tháng 3-4)</h3>
-<p class="text-ivs-text-secondary mb-4">Tích hợp game hóa và tính năng xã hội</p>
-<div class="flex flex-wrap gap-2">
-<span class="px-3 py-1 bg-green-500 bg-opacity-20 text-green-400 rounded-full text-sm">Gamification Engine</span>
-<span class="px-3 py-1 bg-green-500 bg-opacity-20 text-green-400 rounded-full text-sm">Collaborative Learning</span>
-<span class="px-3 py-1 bg-green-500 bg-opacity-20 text-green-400 rounded-full text-sm">Real-time Features</span>
-</div>
-</div>
-</div>
-<!-- Phase 3 -->
-<div class="flex items-center space-x-6" data-aos="fade-right">
-<div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                            3
-                        </div>
-<div class="flex-1 bg-ivs-card p-6 rounded-xl border border-ivs-border">
-<h3 class="text-xl font-bold mb-2">Phase 3: Immersive Tech (Tháng 5-6)</h3>
-<p class="text-ivs-text-secondary mb-4">Triển khai VR/AR và công nghệ nhập vai</p>
-<div class="flex flex-wrap gap-2">
-<span class="px-3 py-1 bg-purple-500 bg-opacity-20 text-purple-400 rounded-full text-sm">VR/AR Learning</span>
-<span class="px-3 py-1 bg-purple-500 bg-opacity-20 text-purple-400 rounded-full text-sm">3D Interactions</span>
-<span class="px-3 py-1 bg-purple-500 bg-opacity-20 text-purple-400 rounded-full text-sm">Simulations</span>
-</div>
-</div>
-</div>
-<!-- Phase 4 -->
-<div class="flex items-center space-x-6" data-aos="fade-left">
-<div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                            4
-                        </div>
-<div class="flex-1 bg-ivs-card p-6 rounded-xl border border-ivs-border">
-<h3 class="text-xl font-bold mb-2">Phase 4: Advanced Features (Tháng 7-8)</h3>
-<p class="text-ivs-text-secondary mb-4">Hoàn thiện các tính năng tiên tiến</p>
-<div class="flex flex-wrap gap-2">
-<span class="px-3 py-1 bg-orange-500 bg-opacity-20 text-orange-400 rounded-full text-sm">Microlearning</span>
-<span class="px-3 py-1 bg-orange-500 bg-opacity-20 text-orange-400 rounded-full text-sm">Smart Accessibility</span>
-<span class="px-3 py-1 bg-orange-500 bg-opacity-20 text-orange-400 rounded-full text-sm">Digital Credentials</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- CTA Section -->
-<section class="py-20 bg-gradient-to-r from-blue-600 to-purple-700">
-<div class="container mx-auto px-6 lg:px-8 text-center">
-<div class="max-w-4xl mx-auto" data-aos="fade-up">
-<h2 class="text-4xl md:text-5xl font-bold font-display text-white mb-6">
-                    Sẵn Sàng Trải Nghiệm Tương Lai Giáo Dục?
-                </h2>
-<p class="text-xl text-blue-100 mb-8">
-                    Tham gia cùng chúng tôi xây dựng nền tảng EdTech tiên tiến nhất Việt Nam
-                </p>
-<div class="flex flex-col sm:flex-row gap-6 justify-center">
-<button class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 shadow-lg">
-<i class="fas fa-rocket mr-2"></i>Bắt Đầu Beta Test
-                    </button>
-<button class="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-xl font-semibold text-lg transition-all">
-<i class="fas fa-phone mr-2"></i>Liên Hệ Tư Vấn
-                    </button>
-</div>
-</div>
-</div>
-</section>
-<!-- Footer -->
-<div id="footer-placeholder"></div>
-<div id="fab-placeholder"></div>
-<div id="assistant-placeholder"></div>
-<!-- Scripts -->
-<script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script defer src="/js/utils.js"></script>
-<script defer src="/js/language.js?v=20260821.6"></script>
-<script defer src="/js/dark-mode-toggle.js"></script>
-<script defer src="/js/advanced-learning-features.js"></script>
-<script defer src="/ai/js/fabController.js"></script>
-<script defer src="/js/app.js"></script>
-<script>
-    // Initialize AOS
-    AOS.init({
-        duration: 800,
-        once: true,
-        offset: 100
-    });
+    <!-- Twitter Card -->
+    <meta content="summary_large_image" name="twitter:card"/>
+    <meta content="IVS Academy - Giải Pháp Công Nghệ Giáo Dục Tiên Tiến | Next-Gen EdTech Ecosystem" name="twitter:title"/>
+    <meta content="Nâng cấp toàn diện trải nghiệm học tập với AI, VR/AR, Gamification và Hệ thống Phân tích dữ liệu học tập cá nhân hóa." name="twitter:description"/>
+    <meta content="https://ivsacademy.edu.vn/images/ivs-academy.jpg" name="twitter:image"/>
 
-    // Add interactive hover effects
-    document.addEventListener('DOMContentLoaded', function() {
-        const featureCards = document.querySelectorAll('.feature-card');
-        
-        featureCards.forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px) scale(1.02)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
+    <!-- Icons & Manifest -->
+    <link href="/images/logo/logo.svg" rel="icon" type="image/svg+xml"/>
+    <link href="/favicon.ico" rel="alternate icon" type="image/x-icon"/>
+    <link href="/manifest.json" rel="manifest"/>
 
-        // Scroll-triggered animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+    <!-- Preconnect Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800;900&family=Poppins:wght@600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" referrerpolicy="no-referrer" rel="stylesheet"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-pulse');
-                    setTimeout(() => {
-                        entry.target.classList.remove('animate-pulse');
-                    }, 1000);
+    <!-- Tailwind CDN with Custom Config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ivs-bg': '#070B18',
+                        'ivs-deep': '#050814',
+                        'ivs-card': '#0F172A',
+                        'ivs-card-hover': '#162238',
+                        'ivs-border': '#1E293B',
+                        'ivs-border-glow': 'rgba(56, 189, 248, 0.3)',
+                        'ivs-blue': '#2563EB',
+                        'ivs-cyan': '#06B6D4',
+                        'ivs-purple': '#8B5CF6',
+                        'ivs-emerald': '#10B981',
+                        'ivs-amber': '#F59E0B',
+                        'ivs-rose': '#F43F5E',
+                        'ivs-text-primary': '#F8FAFC',
+                        'ivs-text-secondary': '#94A3B8',
+                        'ivs-text-muted': '#64748B'
+                    },
+                    fontFamily: {
+                        display: ['Poppins', 'Be Vietnam Pro', 'sans-serif'],
+                        sans: ['Be Vietnam Pro', 'Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    },
+                    boxShadow: {
+                        'glow-cyan': '0 0 35px -5px rgba(6, 182, 212, 0.45)',
+                        'glow-purple': '0 0 35px -5px rgba(139, 92, 246, 0.45)',
+                        'glow-blue': '0 0 35px -5px rgba(37, 99, 235, 0.45)',
+                        'glow-emerald': '0 0 35px -5px rgba(16, 185, 129, 0.45)',
+                        'card-depth': '0 20px 45px -15px rgba(0, 0, 0, 0.7)'
+                    }
                 }
-            });
-        }, observerOptions);
+            }
+        };
+    </script>
 
-        // Observe tech stack items
-        document.querySelectorAll('[data-aos="zoom-in"]').forEach(el => {
-            observer.observe(el);
+    <!-- Microsoft Clarity -->
+    <script src="/js/clarity.js"></script>
+
+    <style>
+        :root {
+            --header-height: 4rem;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            padding-top: var(--header-height);
+            background-color: #070B18;
+            color: #F8FAFC;
+            font-family: 'Be Vietnam Pro', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        #header-placeholder {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            z-index: 1000;
+            background: rgba(7, 11, 24, 0.94);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Ambient Background Gradients */
+        .ambient-grid {
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .glow-orb {
+            position: absolute;
+            border-radius: 9999px;
+            filter: blur(80px);
+            pointer-events: none;
+            opacity: 0.25;
+            z-index: 0;
+        }
+
+        /* Floating animation */
+        @keyframes float-slow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-14px) rotate(1.5deg); }
+        }
+        .animate-float {
+            animation: float-slow 7s ease-in-out infinite;
+        }
+
+        /* Gradient text utilities */
+        .gradient-text-cyan {
+            background: linear-gradient(135deg, #38BDF8 0%, #06B6D4 50%, #3B82F6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-text-purple {
+            background: linear-gradient(135deg, #C084FC 0%, #8B5CF6 50%, #6366F1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-text-amber {
+            background: linear-gradient(135deg, #FCD34D 0%, #F59E0B 50%, #F97316 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-text-emerald {
+            background: linear-gradient(135deg, #6EE7B7 0%, #10B981 50%, #059669 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Glassmorphism Cards */
+        .glass-card {
+            background: rgba(15, 23, 42, 0.72);
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glass-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 20px 40px -15px rgba(6, 182, 212, 0.25);
+        }
+
+        /* Interactive Tab Buttons */
+        .demo-tab-btn.active {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%);
+            border-color: #06B6D4;
+            color: #38BDF8;
+            box-shadow: 0 0 20px -5px rgba(6, 182, 212, 0.5);
+        }
+
+        /* Roadmap Timeline Line */
+        .roadmap-line::before {
+            content: '';
+            position: absolute;
+            top: 2rem;
+            bottom: 2rem;
+            left: 2rem;
+            width: 2px;
+            background: linear-gradient(180deg, #06B6D4 0%, #8B5CF6 50%, #10B981 100%);
+            opacity: 0.3;
+        }
+        @media (min-width: 768px) {
+            .roadmap-line::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Pulse badge */
+        .pulse-ping {
+            animation: ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+        @keyframes ping {
+            75%, 100% {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+    </style>
+
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "IVS Academy",
+          "alternateName": "Integrate Vision Synergy Academy",
+          "url": "https://ivsacademy.edu.vn",
+          "logo": "https://ivsacademy.edu.vn/images/logo/logo.svg",
+          "description": "Hệ sinh thái công nghệ giáo dục toàn diện tích hợp AI Personal Tutor, VR/AR Immersive Learning và Gamification.",
+          "sameAs": [
+            "https://ivstech.store",
+            "https://ivsacademy.edu.vn"
+          ]
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "IVS Academy 2.0 EdTech Platform",
+          "applicationCategory": "EducationalApplication",
+          "operatingSystem": "Web, iOS, Android, Meta Quest VR",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "VND"
+          },
+          "featureList": [
+            "AI Personal Tutor Socratic Dialogue",
+            "Gamification RPG Progression Engine",
+            "VR/AR 3D Interactive Science Labs",
+            "Adaptive Personalized Learning Paths",
+            "Predictive Learning Pattern Analytics",
+            "Blockchain-verified Digital Credentials"
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "IVS Academy 2.0 có những giải pháp công nghệ nổi bật nào?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Nền tảng IVS Academy 2.0 tích hợp 10 trụ cột công nghệ đột phá bao gồm: Gia sư AI cá nhân hóa (AI Tutor), Thực tế ảo/tăng cường (VR/AR Labs), Game hóa học tập (Gamification RPG), Lộ trình thích ứng (Adaptive Learning), Microlearning và Chứng chỉ số Blockchain."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Trường học và trung tâm đào tạo có thể tích hợp IVS Academy vào hệ thống hiện có không?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Có. Nền tảng được thiết kế theo kiến trúc Microservices và RESTful / GraphQL API mở, cho phép đồng bộ liền mạch với các hệ thống LMS (Moodle, Canvas), SIS, CRM và Cổng thông tin đào tạo hiện hữu của đơn vị."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Công nghệ AI Tutor hỗ trợ học viên như thế nào?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "AI Personal Tutor của IVS đóng vai trò như người cố vấn 24/7 áp dụng phương pháp Socratic (gợi mở tư duy thay vì cho đáp án ngay), phát hiện điểm hổng kiến thức theo thời gian thực và cá nhân hóa tốc độ học cho từng học viên."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body class="bg-ivs-bg text-ivs-text-primary selection:bg-cyan-500 selection:text-black">
+    <!-- Header Placeholder (Loaded automatically by loadComponents.js) -->
+    <header id="header-placeholder" aria-label="Thanh điều hướng chính"></header>
+
+    <main id="main-content" class="relative overflow-hidden">
+        <!-- Background Ambient Grid and Orbs -->
+        <div class="absolute inset-0 ambient-grid pointer-events-none opacity-60 z-0"></div>
+        <div class="glow-orb w-96 h-96 bg-cyan-500 top-20 -left-20"></div>
+        <div class="glow-orb w-96 h-96 bg-purple-600 top-1/3 -right-20"></div>
+        <div class="glow-orb w-96 h-96 bg-blue-600 bottom-1/4 left-1/3"></div>
+
+        <!-- ========================================== -->
+        <!-- 1. HERO SECTION                            -->
+        <!-- ========================================== -->
+        <section class="relative z-10 pt-16 pb-20 md:pt-24 md:pb-28 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto text-center">
+                <!-- Status Badge -->
+                <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs sm:text-sm font-semibold mb-8 backdrop-blur-md shadow-inner" data-aos="fade-down">
+                    <span class="relative flex h-2.5 w-2.5">
+                        <span class="pulse-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-500"></span>
+                    </span>
+                    <i class="fas fa-microchip"></i>
+                    <span>IVS Academy 2.0 · Next-Gen EdTech Ecosystem</span>
+                </div>
+
+                <!-- Main Heading -->
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-display leading-[1.12] tracking-tight mb-6 max-w-5xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    <span class="text-white">Kiến Tạo Tương Lai Giáo Dục Với</span><br/>
+                    <span class="gradient-text-cyan">Nền Tảng EdTech</span>
+                    <span class="text-white"> &amp; </span>
+                    <span class="gradient-text-purple">Trí Tuệ Nhân Tạo</span>
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="text-base sm:text-xl text-ivs-text-secondary max-w-3xl mx-auto mb-10 leading-relaxed font-normal" data-aos="fade-up" data-aos-delay="200">
+                    Hệ sinh thái công nghệ giáo dục đột phá: Tích hợp <strong class="text-cyan-300">AI Personal Tutor 24/7</strong>, không gian thực tế ảo <strong class="text-purple-300">VR/AR 3D Labs</strong>, cơ chế <strong class="text-emerald-300">Gamification RPG</strong> và <strong class="text-amber-300">Adaptive Analytics</strong> nhằm cá nhân hóa và nâng tầm hiệu quả học tập.
+                </p>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mb-16" data-aos="fade-up" data-aos-delay="300">
+                    <a href="#breakthrough-features" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold text-base text-white bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 hover:from-cyan-400 hover:to-purple-500 transition-all duration-300 transform hover:-translate-y-1 shadow-lg shadow-cyan-500/25">
+                        <i class="fas fa-sparkles"></i>
+                        <span>Khám Phá 10 Đột Phá</span>
+                    </a>
+                    <a href="#interactive-demo" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold text-base text-cyan-300 bg-slate-900/80 hover:bg-slate-800 border border-cyan-500/30 hover:border-cyan-400 transition-all duration-300 transform hover:-translate-y-1 backdrop-blur-md">
+                        <i class="fas fa-play-circle text-cyan-400"></i>
+                        <span>Trải Nghiệm Demo Sandbox</span>
+                    </a>
+                    <a href="#consult-section" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl font-bold text-base text-ivs-text-secondary hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-300">
+                        <i class="fas fa-paper-plane text-purple-400"></i>
+                        <span>Đăng Ký Tư Vấn</span>
+                    </a>
+                </div>
+
+                <!-- Stats Strip / Key Metrics -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-5xl mx-auto pt-8 border-t border-white/10" data-aos="fade-up" data-aos-delay="400">
+                    <div class="glass-card p-5 rounded-2xl text-center">
+                        <div class="text-3xl sm:text-4xl font-extrabold gradient-text-cyan font-display mb-1">10+</div>
+                        <div class="text-xs sm:text-sm text-ivs-text-secondary font-medium">Trụ Cột EdTech Đột Phá</div>
+                    </div>
+                    <div class="glass-card p-5 rounded-2xl text-center">
+                        <div class="text-3xl sm:text-4xl font-extrabold gradient-text-purple font-display mb-1">100%</div>
+                        <div class="text-xs sm:text-sm text-ivs-text-secondary font-medium">Cá Nhân Hóa Lộ Trình</div>
+                    </div>
+                    <div class="glass-card p-5 rounded-2xl text-center">
+                        <div class="text-3xl sm:text-4xl font-extrabold gradient-text-emerald font-display mb-1">85%+</div>
+                        <div class="text-xs sm:text-sm text-ivs-text-secondary font-medium">Tăng Mức Độ Tương Tác</div>
+                    </div>
+                    <div class="glass-card p-5 rounded-2xl text-center">
+                        <div class="text-3xl sm:text-4xl font-extrabold gradient-text-amber font-display mb-1">24/7</div>
+                        <div class="text-xs sm:text-sm text-ivs-text-secondary font-medium">AI Socratic Đồng Hành</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 2. INTERACTIVE DEMO SANDBOX                -->
+        <!-- ========================================== -->
+        <section id="interactive-demo" class="relative z-10 py-20 px-4 sm:px-6 lg:px-8 bg-ivs-deep/80 border-y border-white/5">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-300 text-xs font-semibold uppercase tracking-wider mb-4">
+                        <i class="fas fa-laptop-code"></i> Live Simulation Sandbox
+                    </div>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold font-display text-white mb-4">
+                        Trải Nghiệm <span class="gradient-text-cyan">Mô Phỏng Tương Tác</span>
+                    </h2>
+                    <p class="text-ivs-text-secondary text-base sm:text-lg">
+                        Khám phá cách các mô-đun công nghệ của IVS Academy 2.0 hoạt động trong môi trường học tập thực tế.
+                    </p>
+                </div>
+
+                <!-- Tab Selector -->
+                <div class="flex flex-wrap items-center justify-center gap-3 mb-10" data-aos="fade-up">
+                    <button class="demo-tab-btn active px-5 py-3 rounded-xl border border-white/10 bg-ivs-card text-ivs-text-secondary text-sm font-semibold flex items-center gap-2.5 transition-all duration-300" onclick="switchDemoTab('ai-tutor', this)">
+                        <i class="fas fa-robot text-cyan-400"></i>
+                        <span>1. AI Personal Tutor</span>
+                    </button>
+                    <button class="demo-tab-btn px-5 py-3 rounded-xl border border-white/10 bg-ivs-card text-ivs-text-secondary text-sm font-semibold flex items-center gap-2.5 transition-all duration-300" onclick="switchDemoTab('vr-lab', this)">
+                        <i class="fas fa-vr-cardboard text-purple-400"></i>
+                        <span>2. VR/AR 3D Lab</span>
+                    </button>
+                    <button class="demo-tab-btn px-5 py-3 rounded-xl border border-white/10 bg-ivs-card text-ivs-text-secondary text-sm font-semibold flex items-center gap-2.5 transition-all duration-300" onclick="switchDemoTab('gamification', this)">
+                        <i class="fas fa-gamepad text-emerald-400"></i>
+                        <span>3. Gamification RPG</span>
+                    </button>
+                    <button class="demo-tab-btn px-5 py-3 rounded-xl border border-white/10 bg-ivs-card text-ivs-text-secondary text-sm font-semibold flex items-center gap-2.5 transition-all duration-300" onclick="switchDemoTab('analytics', this)">
+                        <i class="fas fa-chart-line text-amber-400"></i>
+                        <span>4. Adaptive Analytics</span>
+                    </button>
+                </div>
+
+                <!-- Sandbox Container -->
+                <div class="glass-card rounded-3xl p-6 sm:p-8 lg:p-10 border border-white/15 shadow-2xl relative overflow-hidden" data-aos="zoom-in">
+                    
+                    <!-- TAB 1: AI TUTOR SIMULATION -->
+                    <div id="tab-ai-tutor" class="demo-tab-content block">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                            <div class="lg:col-span-5 space-y-5">
+                                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-semibold">
+                                    <i class="fas fa-brain"></i> Socratic Method · Emotion AI
+                                </div>
+                                <h3 class="text-2xl sm:text-3xl font-bold font-display text-white">
+                                    Gia Sư AI Cá Nhân Hóa Đa Phương Thức
+                                </h3>
+                                <p class="text-ivs-text-secondary text-sm sm:text-base leading-relaxed">
+                                    AI không đưa ra câu trả lời thụ động, mà sử dụng phương pháp gợi mở <strong class="text-white">Socratic</strong>, phân tích cảm xúc và tốc độ tư duy của học viên để điều chỉnh hướng dẫn từng bước.
+                                </p>
+                                <div class="space-y-3 pt-2">
+                                    <div class="flex items-start gap-3 text-sm text-slate-300">
+                                        <i class="fas fa-check-circle text-cyan-400 mt-1"></i>
+                                        <span>Tự động nhận diện lỗ hổng kiến thức qua câu trả lời</span>
+                                    </div>
+                                    <div class="flex items-start gap-3 text-sm text-slate-300">
+                                        <i class="fas fa-check-circle text-cyan-400 mt-1"></i>
+                                        <span>Hỗ trợ song ngữ (Anh - Việt), phát âm chuẩn IPA</span>
+                                    </div>
+                                    <div class="flex items-start gap-3 text-sm text-slate-300">
+                                        <i class="fas fa-check-circle text-cyan-400 mt-1"></i>
+                                        <span>Tạo câu đố thử thách mini ngay trong cuộc trò chuyện</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Live Chat Mockup -->
+                            <div class="lg:col-span-7 bg-slate-950/90 rounded-2xl border border-cyan-500/20 p-5 sm:p-6 shadow-inner font-sans">
+                                <!-- Chat Header -->
+                                <div class="flex items-center justify-between pb-4 mb-4 border-b border-white/10">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center text-white shadow-lg">
+                                            <i class="fas fa-robot text-base"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-sm font-bold text-white flex items-center gap-2">
+                                                <span>AIVY · Smart Tutor</span>
+                                                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                                            </div>
+                                            <div class="text-xs text-ivs-text-muted">Chế độ: Gợi mở tư duy Socratic</div>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs text-cyan-400 px-2.5 py-1 rounded bg-cyan-950/60 border border-cyan-800/50">Level 4 · Algorithmic Thinking</span>
+                                </div>
+
+                                <!-- Chat Messages -->
+                                <div id="demo-chat-stream" class="space-y-4 text-sm max-h-72 overflow-y-auto pr-2">
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-cyan-600 flex items-center justify-center text-white text-xs shrink-0">AI</div>
+                                        <div class="bg-slate-900 border border-slate-800 rounded-2xl rounded-tl-none p-3.5 text-slate-200">
+                                            Chào bạn! Trong bài học về <strong>Vòng lặp (Loops)</strong> hôm nay, nếu bạn muốn một chú robot đi tuần tra 4 góc của một hình vuông, bạn sẽ dùng cấu trúc nào để tối ưu số dòng lệnh nhất?
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-3 justify-end">
+                                        <div class="bg-blue-600/80 rounded-2xl rounded-tr-none p-3.5 text-white">
+                                            Mình nghĩ là dùng 4 lệnh <code>moveForward()</code> và <code>turnRight(90)</code> lặp lại!
+                                        </div>
+                                        <div class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-white text-xs shrink-0">Bạn</div>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-cyan-600 flex items-center justify-center text-white text-xs shrink-0">AI</div>
+                                        <div class="bg-slate-900 border border-slate-800 rounded-2xl rounded-tl-none p-3.5 text-slate-200">
+                                            🎯 <strong class="text-cyan-300">Chính xác về logic!</strong> Nhưng nếu hình vẽ là 100 góc thay vì 4 góc, bạn sẽ viết 100 lần sao? Hãy thử cú pháp vòng lặp <code>for (i = 0; i &lt; 4; i++)</code> xem nhé!
+                                            <div class="mt-2.5 pt-2 border-t border-slate-800 flex items-center gap-2 text-xs text-emerald-400">
+                                                <i class="fas fa-check"></i> Đã kích hoạt điểm thưởng: +25 XP Tư duy tối ưu
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Quick Chat Simulation Action -->
+                                <div class="mt-4 pt-3 border-t border-white/10 flex items-center gap-2">
+                                    <input type="text" id="demo-user-input" value="Thử đặt câu hỏi cho AI..." class="bg-slate-900 border border-slate-700 text-sm text-slate-300 rounded-xl px-4 py-2.5 w-full focus:outline-none focus:border-cyan-400" readonly/>
+                                    <button class="px-4 py-2.5 bg-cyan-500 hover:bg-cyan-400 text-black font-bold rounded-xl text-sm transition-all" onclick="simulateNewChatPrompt()">
+                                        <i class="fas fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 2: VR/AR LAB -->
+                    <div id="tab-vr-lab" class="demo-tab-content hidden">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                            <div class="lg:col-span-5 space-y-5">
+                                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-xs font-semibold">
+                                    <i class="fas fa-cube"></i> Immersive 3D Simulations
+                                </div>
+                                <h3 class="text-2xl sm:text-3xl font-bold font-display text-white">
+                                    Phòng Thí Nghiệm &amp; Không Gian Nhập Vai 3D
+                                </h3>
+                                <p class="text-ivs-text-secondary text-sm sm:text-base leading-relaxed">
+                                    Học viên có thể trực tiếp tương tác với các mô hình 3D vật lý, hóa học, giải phẫu sinh học và cấu trúc vi mạch bán dẫn mà không gặp rủi ro hay tốn chi phí trang thiết bị đắt đỏ.
+                                </p>
+                                <div class="space-y-3 pt-2">
+                                    <div class="flex items-start gap-3 text-sm text-slate-300">
+                                        <i class="fas fa-check-circle text-purple-400 mt-1"></i>
+                                        <span>Tương thích Meta Quest, Apple Vision Pro, WebXR &amp; Mobile AR</span>
+                                    </div>
+                                    <div class="flex items-start gap-3 text-sm text-slate-300">
+                                        <i class="fas fa-check-circle text-purple-400 mt-1"></i>
+                                        <span>Mô phỏng phản ứng vật lý 6-DOF thời gian thực</span>
+                                    </div>
+                                    <div class="flex items-start gap-3 text-sm text-slate-300">
+                                        <i class="fas fa-check-circle text-purple-400 mt-1"></i>
+                                        <span>Chuyến du hành thời gian khám phá lịch sử văn minh nhân loại</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="lg:col-span-7 bg-slate-950/90 rounded-2xl border border-purple-500/20 p-6 shadow-inner text-center relative overflow-hidden">
+                                <div class="h-64 rounded-xl bg-gradient-to-b from-purple-950/40 via-slate-900 to-black border border-purple-800/30 flex flex-col items-center justify-center p-6 relative">
+                                    <!-- Rotating 3D Holo Representation -->
+                                    <div class="w-24 h-24 rounded-2xl bg-gradient-to-tr from-purple-500 to-pink-500 flex items-center justify-center text-white text-4xl shadow-glow-purple animate-float mb-4">
+                                        <i class="fas fa-atom"></i>
+                                    </div>
+                                    <div class="text-base font-bold text-white mb-1">Mô Hình Tương Tác: Cấu Trúc Nguyên Tử &amp; Bán Dẫn</div>
+                                    <div class="text-xs text-purple-300">Hỗ trợ xoay 360°, phóng to chi tiết hạt electron, tương tác lực hút</div>
+                                    <div class="mt-4 flex gap-3">
+                                        <span class="px-3 py-1 bg-purple-900/60 border border-purple-700 text-purple-200 text-xs rounded-full cursor-pointer hover:bg-purple-800"><i class="fas fa-sync-alt mr-1"></i> Xoay 360°</span>
+                                        <span class="px-3 py-1 bg-purple-900/60 border border-purple-700 text-purple-200 text-xs rounded-full cursor-pointer hover:bg-purple-800"><i class="fas fa-search-plus mr-1"></i> Zoom 10x</span>
+                                        <span class="px-3 py-1 bg-purple-900/60 border border-purple-700 text-purple-200 text-xs rounded-full cursor-pointer hover:bg-purple-800"><i class="fas fa-hand-pointer mr-1"></i> Tách Lớp</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 3: GAMIFICATION RPG -->
+                    <div id="tab-gamification" class="demo-tab-content hidden">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                            <div class="lg:col-span-5 space-y-5">
+                                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold">
+                                    <i class="fas fa-trophy"></i> RPG Quests &amp; Guild Battles
+                                </div>
+                                <h3 class="text-2xl sm:text-3xl font-bold font-display text-white">
+                                    Hệ Thống Game Hóa RPG Kích Thích Đam Mê
+                                </h3>
+                                <p class="text-ivs-text-secondary text-sm sm:text-base leading-relaxed">
+                                    Biến quá trình học tập thành một hành trình phiêu lưu nhập vai: Tích lũy điểm kinh nghiệm (XP), giữ chuỗi ngày học liên tục (Streak), mở khóa cây kỹ năng và thi đấu nhóm học tập công bằng.
+                                </p>
+                                <div class="space-y-3 pt-2">
+                                    <div class="flex items-start gap-3 text-sm text-slate-300">
+                                        <i class="fas fa-check-circle text-emerald-400 mt-1"></i>
+                                        <span>Chuỗi ngày học liên tục (Streak Booster) duy trì thói quen</span>
+                                    </div>
+                                    <div class="flex items-start gap-3 text-sm text-slate-300">
+                                        <i class="fas fa-check-circle text-emerald-400 mt-1"></i>
+                                        <span>Bảng xếp hạng theo giải đấu tuần (Bronze, Silver, Diamond)</span>
+                                    </div>
+                                    <div class="flex items-start gap-3 text-sm text-slate-300">
+                                        <i class="fas fa-check-circle text-emerald-400 mt-1"></i>
+                                        <span>Huy hiệu thành tựu mở khóa phần thưởng thực tế</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="lg:col-span-7 bg-slate-950/90 rounded-2xl border border-emerald-500/20 p-6 shadow-inner font-sans">
+                                <!-- Gamified Dashboard Mockup -->
+                                <div class="flex items-center justify-between pb-4 border-b border-white/10 mb-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-600 flex items-center justify-center text-white text-xl font-bold">
+                                            Lv.8
+                                        </div>
+                                        <div>
+                                            <div class="text-sm font-bold text-white">Hiệp Sĩ Thuật Toán (Algorithm Knight)</div>
+                                            <div class="text-xs text-emerald-400"><i class="fas fa-fire mr-1 text-orange-400"></i> Chuỗi 14 ngày học liên tục!</div>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-xs text-ivs-text-muted">Kinh nghiệm hiện tại</div>
+                                        <div class="text-sm font-bold text-emerald-400">2,450 / 3,000 XP</div>
+                                    </div>
+                                </div>
+
+                                <!-- Progress Bar -->
+                                <div class="w-full bg-slate-900 rounded-full h-3 mb-6 p-0.5 border border-slate-800">
+                                    <div class="bg-gradient-to-r from-emerald-400 to-cyan-400 h-2 rounded-full" style="width: 82%"></div>
+                                </div>
+
+                                <!-- Quest List Mockup -->
+                                <div class="space-y-3">
+                                    <div class="flex items-center justify-between p-3 rounded-xl bg-slate-900/80 border border-slate-800">
+                                        <div class="flex items-center gap-3">
+                                            <span class="w-8 h-8 rounded-lg bg-emerald-950 text-emerald-400 flex items-center justify-center text-sm"><i class="fas fa-code"></i></span>
+                                            <div>
+                                                <div class="text-xs font-semibold text-white">Nhiệm vụ: Hoàn thành 3 bài Lab Python</div>
+                                                <div class="text-[11px] text-ivs-text-muted">Tiến độ: 3/3 bài (Đã hoàn thành)</div>
+                                            </div>
+                                        </div>
+                                        <span class="px-2.5 py-1 bg-emerald-500/20 text-emerald-300 text-xs rounded-full font-bold">+100 XP</span>
+                                    </div>
+
+                                    <div class="flex items-center justify-between p-3 rounded-xl bg-slate-900/80 border border-slate-800">
+                                        <div class="flex items-center gap-3">
+                                            <span class="w-8 h-8 rounded-lg bg-cyan-950 text-cyan-400 flex items-center justify-center text-sm"><i class="fas fa-microphone"></i></span>
+                                            <div>
+                                                <div class="text-xs font-semibold text-white">Nhiệm vụ: Luyện nói 5 phút với AI Tutor</div>
+                                                <div class="text-[11px] text-ivs-text-muted">Tiến độ: 4/5 phút</div>
+                                            </div>
+                                        </div>
+                                        <span class="px-2.5 py-1 bg-cyan-500/20 text-cyan-300 text-xs rounded-full font-bold">+50 XP</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 4: ADAPTIVE ANALYTICS -->
+                    <div id="tab-analytics" class="demo-tab-content hidden">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                            <div class="lg:col-span-5 space-y-5">
+                                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 text-xs font-semibold">
+                                    <i class="fas fa-chart-pie"></i> Predictive Learning Dashboard
+                                </div>
+                                <h3 class="text-2xl sm:text-3xl font-bold font-display text-white">
+                                    Báo Cáo Tiến Độ &amp; Phân Tích Thích Ứng
+                                </h3>
+                                <p class="text-ivs-text-secondary text-sm sm:text-base leading-relaxed">
+                                    Hệ thống tự động vẽ biểu đồ Radar năng lực, phát hiện các điểm nghẽn nhận thức và đề xuất bài tập củng cố chính xác theo định lý Vùng phát triển gần nhất (ZPD).
+                                </p>
+                                <div class="space-y-3 pt-2">
+                                    <div class="flex items-start gap-3 text-sm text-slate-300">
+                                        <i class="fas fa-check-circle text-amber-400 mt-1"></i>
+                                        <span>Dự đoán sớm nguy cơ tụt hậu để can thiệp kịp thời</span>
+                                    </div>
+                                    <div class="flex items-start gap-3 text-sm text-slate-300">
+                                        <i class="fas fa-check-circle text-amber-400 mt-1"></i>
+                                        <span>Báo cáo trực quan cho Giáo viên, Phụ huynh và Học sinh</span>
+                                    </div>
+                                    <div class="flex items-start gap-3 text-sm text-slate-300">
+                                        <i class="fas fa-check-circle text-amber-400 mt-1"></i>
+                                        <span>Tự động điều chỉnh độ khó bài thi theo năng lực thực tế</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="lg:col-span-7 bg-slate-950/90 rounded-2xl border border-amber-500/20 p-6 shadow-inner font-sans">
+                                <div class="text-sm font-bold text-white mb-4 flex items-center justify-between">
+                                    <span>Radar Đánh Giá Năng Lực Học Viên</span>
+                                    <span class="text-xs text-amber-400 bg-amber-950/60 px-2.5 py-1 rounded border border-amber-800/40">Cập nhật thời gian thực</span>
+                                </div>
+                                
+                                <div class="grid grid-cols-2 gap-4 mb-4">
+                                    <div class="p-3 bg-slate-900 rounded-xl border border-slate-800">
+                                        <div class="text-xs text-slate-400 mb-1">Tư duy thuật toán</div>
+                                        <div class="text-lg font-bold text-cyan-400">92% <span class="text-xs text-slate-400 font-normal">(Mastery)</span></div>
+                                    </div>
+                                    <div class="p-3 bg-slate-900 rounded-xl border border-slate-800">
+                                        <div class="text-xs text-slate-400 mb-1">Thao tác phần cứng IoT</div>
+                                        <div class="text-lg font-bold text-emerald-400">84% <span class="text-xs text-slate-400 font-normal">(Proficient)</span></div>
+                                    </div>
+                                    <div class="p-3 bg-slate-900 rounded-xl border border-slate-800">
+                                        <div class="text-xs text-slate-400 mb-1">Kỹ năng phản xạ tiếng Anh</div>
+                                        <div class="text-lg font-bold text-purple-400">88% <span class="text-xs text-slate-400 font-normal">(Advanced)</span></div>
+                                    </div>
+                                    <div class="p-3 bg-slate-900 rounded-xl border border-slate-800">
+                                        <div class="text-xs text-slate-400 mb-1">An toàn số &amp; Bảo mật</div>
+                                        <div class="text-lg font-bold text-amber-400">95% <span class="text-xs text-slate-400 font-normal">(Expert)</span></div>
+                                    </div>
+                                </div>
+
+                                <div class="p-3 bg-cyan-950/30 border border-cyan-800/30 rounded-xl text-xs text-cyan-300 flex items-center gap-2">
+                                    <i class="fas fa-lightbulb text-amber-400 text-sm"></i>
+                                    <span>Gợi ý AI: Học viên nắm rất vững tư duy cấu trúc, sẵn sàng chuyển tiếp sang Lập trình hướng đối tượng OOP.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 3. 10 BREAKTHROUGH UPGRADES                -->
+        <!-- ========================================== -->
+        <section id="breakthrough-features" class="relative z-10 py-24 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-semibold uppercase tracking-wider mb-4">
+                        <i class="fas fa-layer-group"></i> Comprehensive EdTech Suite
+                    </div>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold font-display text-white mb-6">
+                        10 Nâng Cấp <span class="gradient-text-cyan">Đột Phá Toàn Diện</span>
+                    </h2>
+                    <p class="text-ivs-text-secondary text-base sm:text-lg leading-relaxed">
+                        Từng tính năng được nghiên cứu và thiết kế chuyên sâu để giải quyết triệt để các rào cản trong dạy và học hiện đại, tạo nên trải nghiệm giáo dục chuẩn quốc tế.
+                    </p>
+                </div>
+
+                <!-- 10 Feature Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                    
+                    <!-- Feature 1 -->
+                    <div class="glass-card p-8 rounded-3xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="50">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white text-2xl mb-6 shadow-glow-cyan transition-transform duration-300 group-hover:scale-110">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="inline-block text-xs font-bold text-cyan-400 uppercase tracking-wider mb-2">Trụ Cột 01</div>
+                        <h3 class="text-xl font-bold font-display text-white mb-3 group-hover:text-cyan-300 transition-colors">
+                            AI Personal Tutor &amp; Socratic Dialogue
+                        </h3>
+                        <p class="text-ivs-text-secondary text-sm leading-relaxed mb-6">
+                            Gia sư AI thông minh với khả năng nhận diện cảm xúc, phát hiện phong cách học tập (Visual/Auditory/Kinesthetic) và giảng dạy theo phương pháp Socratic gợi mở tư duy.
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-slate-300 border-t border-white/5 pt-4">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-400"></i> Đối thoại giọng nói &amp; văn bản tự nhiên</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-400"></i> Hỗ trợ giải đáp bài học tức thì 24/7</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-400"></i> Thích ứng linh hoạt theo tốc độ học viên</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="glass-card p-8 rounded-3xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white text-2xl mb-6 shadow-glow-emerald transition-transform duration-300 group-hover:scale-110">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <div class="inline-block text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2">Trụ Cột 02</div>
+                        <h3 class="text-xl font-bold font-display text-white mb-3 group-hover:text-emerald-300 transition-colors">
+                            Gamification RPG &amp; Quest Progression
+                        </h3>
+                        <p class="text-ivs-text-secondary text-sm leading-relaxed mb-6">
+                            Động lực hóa quá trình học với hệ thống RPG Leveling, Huy hiệu thành tựu (Badges), Bảng xếp hạng liên lớp và nhiệm vụ đồng đội hấp dẫn.
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-slate-300 border-t border-white/5 pt-4">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Cây kỹ năng (Skill Trees) phân nhánh</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Chuỗi học tập duy trì thói quen (Streak)</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Đổi thưởng vật phẩm học tập giá trị</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="glass-card p-8 rounded-3xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="150">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center text-white text-2xl mb-6 shadow-glow-purple transition-transform duration-300 group-hover:scale-110">
+                            <i class="fas fa-vr-cardboard"></i>
+                        </div>
+                        <div class="inline-block text-xs font-bold text-purple-400 uppercase tracking-wider mb-2">Trụ Cột 03</div>
+                        <h3 class="text-xl font-bold font-display text-white mb-3 group-hover:text-purple-300 transition-colors">
+                            VR/AR Immersive 3D Science Labs
+                        </h3>
+                        <p class="text-ivs-text-secondary text-sm leading-relaxed mb-6">
+                            Phòng thí nghiệm thực tế ảo và sách giáo khoa AR tương tác 3D. Học sinh khám phá vũ trụ, giải phẫu sinh học và thí nghiệm an toàn tuyệt đối.
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-slate-300 border-t border-white/5 pt-4">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-purple-400"></i> Khám phá lịch sử &amp; địa lý nhập vai</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-purple-400"></i> Thí nghiệm hóa học &amp; vật lý không độc hại</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-purple-400"></i> AR Overlay trên sách giáo trình thực</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="glass-card p-8 rounded-3xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white text-2xl mb-6 transition-transform duration-300 group-hover:scale-110">
+                            <i class="fas fa-route"></i>
+                        </div>
+                        <div class="inline-block text-xs font-bold text-amber-400 uppercase tracking-wider mb-2">Trụ Cột 04</div>
+                        <h3 class="text-xl font-bold font-display text-white mb-3 group-hover:text-amber-300 transition-colors">
+                            Dynamic Personalized Learning Paths
+                        </h3>
+                        <p class="text-ivs-text-secondary text-sm leading-relaxed mb-6">
+                            Lộ trình học tập tự động điều chỉnh theo thời gian thực dựa trên kết quả trắc nghiệm và hành vi học tập, không còn cảnh học dồn hay học vượt quá sức.
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-slate-300 border-t border-white/5 pt-4">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-amber-400"></i> Độ khó thích ứng (Adaptive Difficulty)</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-amber-400"></i> Tự động bù đắp kiến thức còn yếu</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-amber-400"></i> Tối ưu hóa thời gian đạt mục tiêu</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 5 -->
+                    <div class="glass-card p-8 rounded-3xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="250">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white text-2xl mb-6 shadow-glow-blue transition-transform duration-300 group-hover:scale-110">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="inline-block text-xs font-bold text-blue-400 uppercase tracking-wider mb-2">Trụ Cột 05</div>
+                        <h3 class="text-xl font-bold font-display text-white mb-3 group-hover:text-blue-300 transition-colors">
+                            Collaborative Learning &amp; Smart Study Groups
+                        </h3>
+                        <p class="text-ivs-text-secondary text-sm leading-relaxed mb-6">
+                            Hệ thống ghép nhóm học tập thông minh (AI matching) theo trình độ, mục tiêu và thời gian rảnh; tạo môi trường học đôi bạn cùng tiến (Peer Tutoring).
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-slate-300 border-t border-white/5 pt-4">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> Lớp học ảo tương tác đa điểm (Virtual Class)</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> Bảng trắng cộng tác thời gian thực</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-blue-400"></i> Thảo luận có AI điều phối viên</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 6 -->
+                    <div class="glass-card p-8 rounded-3xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-400 to-teal-500 flex items-center justify-center text-white text-2xl mb-6 shadow-glow-cyan transition-transform duration-300 group-hover:scale-110">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="inline-block text-xs font-bold text-cyan-300 uppercase tracking-wider mb-2">Trụ Cột 06</div>
+                        <h3 class="text-xl font-bold font-display text-white mb-3 group-hover:text-cyan-200 transition-colors">
+                            Microlearning &amp; Spaced Repetition AI
+                        </h3>
+                        <p class="text-ivs-text-secondary text-sm leading-relaxed mb-6">
+                            Chia nhỏ bài học thành các module tinh gọn từ 2 đến 5 phút, kết hợp thuật toán lặp lại ngắt quãng (Spaced Repetition) giúp não bộ ghi nhớ dài hạn bền vững.
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-slate-300 border-t border-white/5 pt-4">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-300"></i> Bài học cô đọng chuẩn Just-in-Time</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-300"></i> Nhắc bài thông minh đúng thời điểm quên</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-cyan-300"></i> Tối ưu hóa học tập mọi lúc, mọi nơi</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 7 -->
+                    <div class="glass-card p-8 rounded-3xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="350">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white text-2xl mb-6 transition-transform duration-300 group-hover:scale-110">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="inline-block text-xs font-bold text-indigo-400 uppercase tracking-wider mb-2">Trụ Cột 07</div>
+                        <h3 class="text-xl font-bold font-display text-white mb-3 group-hover:text-indigo-300 transition-colors">
+                            Predictive Learning Analytics &amp; Patterns
+                        </h3>
+                        <p class="text-ivs-text-secondary text-sm leading-relaxed mb-6">
+                            Công cụ phân tích dữ liệu chuyên sâu nhận diện mô hình hành vi học tập, cảnh báo sớm học sinh có nguy cơ đuối sức và hỗ trợ giáo viên đưa ra can thiệp kịp thời.
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-slate-300 border-t border-white/5 pt-4">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-400"></i> Dashboard đa chiều cho nhà trường</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-400"></i> Đánh giá chính xác năng lực thực chất</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-400"></i> Xuất báo cáo chi tiết tự động</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 8 -->
+                    <div class="glass-card p-8 rounded-3xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="400">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center text-white text-2xl mb-6 transition-transform duration-300 group-hover:scale-110">
+                            <i class="fab fa-universal-access"></i>
+                        </div>
+                        <div class="inline-block text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2">Trụ Cột 08</div>
+                        <h3 class="text-xl font-bold font-display text-white mb-3 group-hover:text-emerald-300 transition-colors">
+                            Universal Smart Accessibility (WCAG 2.2)
+                        </h3>
+                        <p class="text-ivs-text-secondary text-sm leading-relaxed mb-6">
+                            Giao diện thông minh tự thích ứng với học viên có khiếm khuyết thị giác, thính giác hoặc chứng khó đọc (Dyslexia); đảm bảo cơ hội giáo dục bình đẳng cho mọi người.
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-slate-300 border-t border-white/5 pt-4">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Hỗ trợ Text-to-Speech &amp; Speech-to-Text</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Tùy biến font chữ và độ tương phản cao</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-emerald-400"></i> Điều hướng bàn phím &amp; chuẩn màn hình đọc</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 9 -->
+                    <div class="glass-card p-8 rounded-3xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="450">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-rose-500 to-red-600 flex items-center justify-center text-white text-2xl mb-6 transition-transform duration-300 group-hover:scale-110">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="inline-block text-xs font-bold text-rose-400 uppercase tracking-wider mb-2">Trụ Cột 09</div>
+                        <h3 class="text-xl font-bold font-display text-white mb-3 group-hover:text-rose-300 transition-colors">
+                            Real-Time Multi-User Synchronous Feedback
+                        </h3>
+                        <p class="text-ivs-text-secondary text-sm leading-relaxed mb-6">
+                            Hệ thống kiểm tra và phản hồi đồng bộ tức thì dưới 50ms, hỗ trợ thi đấu đối kháng trực tiếp, làm bài tập nhóm cùng lúc trên cùng một màn hình thao tác.
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-slate-300 border-t border-white/5 pt-4">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-rose-400"></i> WebSocket độ trễ siêu thấp</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-rose-400"></i> Chấm điểm tự động và sửa lỗi code tức thì</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-rose-400"></i> Bỏ phiếu và tương tác trực tiếp trong lớp học</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 10 -->
+                    <div class="glass-card p-8 rounded-3xl relative overflow-hidden group md:col-span-2 lg:col-span-3" data-aos="fade-up" data-aos-delay="500">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                            <div class="lg:col-span-8">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white text-xl shadow-glow-amber">
+                                        <i class="fas fa-certificate"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs font-bold text-amber-400 uppercase tracking-wider">Trụ Cột 10</div>
+                                        <h3 class="text-2xl font-bold font-display text-white">Blockchain-Verified Digital Credentials &amp; e-Portfolio</h3>
+                                    </div>
+                                </div>
+                                <p class="text-ivs-text-secondary text-sm sm:text-base leading-relaxed">
+                                    Chứng chỉ hoàn thành khóa học và hồ sơ năng lực số (e-Portfolio) được mã hóa bất biến trên nền tảng Blockchain. Doanh nghiệp và đối tác quốc tế có thể xác thực tính xác thực tức thì qua mã QR/Hash.
+                                </p>
+                            </div>
+                            <div class="lg:col-span-4 flex flex-col gap-2.5 bg-slate-950/80 p-5 rounded-2xl border border-amber-500/20 text-xs">
+                                <div class="flex items-center gap-2 text-amber-300 font-semibold">
+                                    <i class="fas fa-shield-alt"></i> Tiêu chuẩn W3C Verifiable Credentials
+                                </div>
+                                <div class="text-slate-300">Không thể làm giả hay can thiệp kết quả</div>
+                                <div class="text-slate-300">Tích hợp sẵn LinkedIn &amp; CV số tự động</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 4. 4-LAYER TECHNOLOGY ARCHITECTURE         -->
+        <!-- ========================================== -->
+        <section class="relative z-10 py-20 px-4 sm:px-6 lg:px-8 bg-ivs-deep/90 border-t border-white/5">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-semibold uppercase tracking-wider mb-4">
+                        <i class="fas fa-sitemap"></i> High-Performance Architecture
+                    </div>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold font-display text-white mb-6">
+                        Kiến Trúc Nền Tảng <span class="gradient-text-cyan">4 Tầng Bền Vững</span>
+                    </h2>
+                    <p class="text-ivs-text-secondary text-base sm:text-lg">
+                        Được thiết kế theo tiêu chuẩn công nghệ hiện đại, có khả năng mở rộng phục vụ hàng triệu người dùng đồng thời với độ trễ cực thấp.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" data-aos="fade-up">
+                    <!-- Layer 1 -->
+                    <div class="glass-card p-6 rounded-2xl border-t-4 border-t-cyan-400">
+                        <div class="text-xs font-mono text-cyan-400 mb-2">LAYER 01</div>
+                        <h4 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
+                            <i class="fas fa-desktop text-cyan-400"></i> Client &amp; Immersive
+                        </h4>
+                        <p class="text-xs text-ivs-text-secondary mb-4">Giao diện đa nền tảng tối ưu trải nghiệm người dùng</p>
+                        <div class="space-y-1.5 text-xs text-slate-300">
+                            <div class="p-2 rounded bg-slate-900/80">Web SPA / PWA (Next.js)</div>
+                            <div class="p-2 rounded bg-slate-900/80">iOS &amp; Android Native</div>
+                            <div class="p-2 rounded bg-slate-900/80">VR/AR Headsets (WebXR)</div>
+                            <div class="p-2 rounded bg-slate-900/80">Bảng tương tác Smartboard</div>
+                        </div>
+                    </div>
+
+                    <!-- Layer 2 -->
+                    <div class="glass-card p-6 rounded-2xl border-t-4 border-t-purple-400">
+                        <div class="text-xs font-mono text-purple-400 mb-2">LAYER 02</div>
+                        <h4 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
+                            <i class="fas fa-brain text-purple-400"></i> Intelligent Core
+                        </h4>
+                        <p class="text-xs text-ivs-text-secondary mb-4">Bộ xử lý trí tuệ nhân tạo và thuật toán học tập</p>
+                        <div class="space-y-1.5 text-xs text-slate-300">
+                            <div class="p-2 rounded bg-slate-900/80">AI Socratic Tutor Engine</div>
+                            <div class="p-2 rounded bg-slate-900/80">Spaced Repetition Algorithm</div>
+                            <div class="p-2 rounded bg-slate-900/80">Speech &amp; Pronunciation AI</div>
+                            <div class="p-2 rounded bg-slate-900/80">Automated Code Evaluator</div>
+                        </div>
+                    </div>
+
+                    <!-- Layer 3 -->
+                    <div class="glass-card p-6 rounded-2xl border-t-4 border-t-emerald-400">
+                        <div class="text-xs font-mono text-emerald-400 mb-2">LAYER 03</div>
+                        <h4 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
+                            <i class="fas fa-network-wired text-emerald-400"></i> Collaboration &amp; LMS
+                        </h4>
+                        <p class="text-xs text-ivs-text-secondary mb-4">Hệ thống quản trị học vụ &amp; tương tác thời gian thực</p>
+                        <div class="space-y-1.5 text-xs text-slate-300">
+                            <div class="p-2 rounded bg-slate-900/80">LMS &amp; Gradebook Core</div>
+                            <div class="p-2 rounded bg-slate-900/80">Gamification Quest Engine</div>
+                            <div class="p-2 rounded bg-slate-900/80">WebSocket Live Sync</div>
+                            <div class="p-2 rounded bg-slate-900/80">Peer Tutoring Matching</div>
+                        </div>
+                    </div>
+
+                    <!-- Layer 4 -->
+                    <div class="glass-card p-6 rounded-2xl border-t-4 border-t-amber-400">
+                        <div class="text-xs font-mono text-amber-400 mb-2">LAYER 04</div>
+                        <h4 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
+                            <i class="fas fa-shield-alt text-amber-400"></i> Cloud &amp; Security
+                        </h4>
+                        <p class="text-xs text-ivs-text-secondary mb-4">Hạ tầng đám mây phân tán và bảo mật dữ liệu</p>
+                        <div class="space-y-1.5 text-xs text-slate-300">
+                            <div class="p-2 rounded bg-slate-900/80">Kubernetes Auto-scaling</div>
+                            <div class="p-2 rounded bg-slate-900/80">Mã hóa AES-256 / GDPR Ready</div>
+                            <div class="p-2 rounded bg-slate-900/80">Blockchain Credential Vault</div>
+                            <div class="p-2 rounded bg-slate-900/80">API Gateway &amp; OAuth 2.0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 5. COMPARISON: TRADITIONAL VS IVS ACADEMY  -->
+        <!-- ========================================== -->
+        <section class="relative z-10 py-24 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-semibold uppercase tracking-wider mb-4">
+                        <i class="fas fa-balance-scale"></i> Value Comparison
+                    </div>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold font-display text-white mb-6">
+                        Khác Biệt Vượt Trội Cùng <span class="gradient-text-cyan">IVS Academy 2.0</span>
+                    </h2>
+                    <p class="text-ivs-text-secondary text-base sm:text-lg">
+                        So sánh chi tiết giữa phương thức đào tạo truyền thống và nền tảng EdTech thế hệ mới của IVS.
+                    </p>
+                </div>
+
+                <!-- Comparison Table -->
+                <div class="glass-card rounded-3xl overflow-hidden border border-white/10 shadow-2xl" data-aos="zoom-in">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="border-b border-white/10 bg-slate-950/60">
+                                    <th class="py-5 px-6 text-sm font-bold text-white uppercase tracking-wider">Tiêu Chí Đánh Giá</th>
+                                    <th class="py-5 px-6 text-sm font-bold text-rose-400 uppercase tracking-wider bg-rose-950/20">Giáo Dục Truyền Thống</th>
+                                    <th class="py-5 px-6 text-sm font-bold text-cyan-400 uppercase tracking-wider bg-cyan-950/30">Nền Tảng IVS Academy 2.0</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-white/5 text-sm">
+                                <tr class="hover:bg-white/[0.02] transition-colors">
+                                    <td class="py-4 px-6 font-semibold text-white">1. Mức độ cá nhân hóa</td>
+                                    <td class="py-4 px-6 text-slate-400 bg-rose-950/10">Một giáo án chung cho cả lớp, khó theo sát từng em</td>
+                                    <td class="py-4 px-6 text-cyan-300 font-medium bg-cyan-950/20"><i class="fas fa-check-circle text-cyan-400 mr-2"></i>100% Lộ trình thích ứng linh hoạt theo từng cá nhân</td>
+                                </tr>
+                                <tr class="hover:bg-white/[0.02] transition-colors">
+                                    <td class="py-4 px-6 font-semibold text-white">2. Gia sư &amp; Hỗ trợ giải đáp</td>
+                                    <td class="py-4 px-6 text-slate-400 bg-rose-950/10">Phụ thuộc lịch dạy của giáo viên, phản hồi chậm</td>
+                                    <td class="py-4 px-6 text-cyan-300 font-medium bg-cyan-950/20"><i class="fas fa-check-circle text-cyan-400 mr-2"></i>AI Personal Tutor hỗ trợ Socratic tức thì 24/7</td>
+                                </tr>
+                                <tr class="hover:bg-white/[0.02] transition-colors">
+                                    <td class="py-4 px-6 font-semibold text-white">3. Tương tác &amp; Động lực học</td>
+                                    <td class="py-4 px-6 text-slate-400 bg-rose-950/10">Học thụ động, dễ nhàm chán, tỷ lệ bỏ dở cao</td>
+                                    <td class="py-4 px-6 text-cyan-300 font-medium bg-cyan-950/20"><i class="fas fa-check-circle text-cyan-400 mr-2"></i>Gamification RPG &amp; VR/AR nhập vai tăng 85% gắn kết</td>
+                                </tr>
+                                <tr class="hover:bg-white/[0.02] transition-colors">
+                                    <td class="py-4 px-6 font-semibold text-white">4. Đo lường &amp; Phân tích tiến độ</td>
+                                    <td class="py-4 px-6 text-slate-400 bg-rose-950/10">Chỉ có điểm thi định kỳ, khó phát hiện lỗ hổng sớm</td>
+                                    <td class="py-4 px-6 text-cyan-300 font-medium bg-cyan-950/20"><i class="fas fa-check-circle text-cyan-400 mr-2"></i>Dashboard thời gian thực dự đoán và cảnh báo chính xác</td>
+                                </tr>
+                                <tr class="hover:bg-white/[0.02] transition-colors">
+                                    <td class="py-4 px-6 font-semibold text-white">5. Chứng nhận năng lực</td>
+                                    <td class="py-4 px-6 text-slate-400 bg-rose-950/10">Bằng giấy dễ thất lạc hoặc làm giả</td>
+                                    <td class="py-4 px-6 text-cyan-300 font-medium bg-cyan-950/20"><i class="fas fa-check-circle text-cyan-400 mr-2"></i>Chứng chỉ số mã hóa Blockchain xác thực toàn cầu</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 6. TECH STACK & GLOBAL STANDARDS           -->
+        <!-- ========================================== -->
+        <section class="relative z-10 py-20 px-4 sm:px-6 lg:px-8 bg-ivs-deep/80 border-y border-white/5">
+            <div class="max-w-7xl mx-auto text-center">
+                <div class="text-center max-w-3xl mx-auto mb-14" data-aos="fade-up">
+                    <h2 class="text-3xl sm:text-4xl font-bold font-display text-white mb-4">
+                        Nền Tảng Công Nghệ <span class="gradient-text-purple">Chuẩn Quốc Tế</span>
+                    </h2>
+                    <p class="text-ivs-text-secondary text-base">
+                        Được xây dựng trên những bộ khung công nghệ vững chắc, tân tiến và an toàn nhất hiện nay.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6" data-aos="zoom-in">
+                    <div class="glass-card p-5 rounded-2xl flex flex-col items-center justify-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center text-blue-400 text-2xl">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div class="font-bold text-sm text-white">TensorFlow &amp; PyTorch</div>
+                        <div class="text-[11px] text-ivs-text-muted">AI &amp; Machine Learning</div>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-2xl flex flex-col items-center justify-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center text-purple-400 text-2xl">
+                            <i class="fab fa-unity"></i>
+                        </div>
+                        <div class="font-bold text-sm text-white">Unity &amp; WebXR</div>
+                        <div class="text-[11px] text-ivs-text-muted">VR/AR 3D Simulations</div>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-2xl flex flex-col items-center justify-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/20 flex items-center justify-center text-cyan-400 text-2xl">
+                            <i class="fab fa-react"></i>
+                        </div>
+                        <div class="font-bold text-sm text-white">React &amp; Next.js</div>
+                        <div class="text-[11px] text-ivs-text-muted">Interactive Modern Frontend</div>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-2xl flex flex-col items-center justify-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 text-2xl">
+                            <i class="fab fa-node-js"></i>
+                        </div>
+                        <div class="font-bold text-sm text-white">Node.js &amp; FastAPI</div>
+                        <div class="text-[11px] text-ivs-text-muted">High-speed Microservices</div>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-2xl flex flex-col items-center justify-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-400 text-2xl">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="font-bold text-sm text-white">MongoDB &amp; Redis</div>
+                        <div class="text-[11px] text-ivs-text-muted">Distributed Fast Cache</div>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-2xl flex flex-col items-center justify-center gap-3">
+                        <div class="w-12 h-12 rounded-xl bg-rose-500/20 flex items-center justify-center text-rose-400 text-2xl">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <div class="font-bold text-sm text-white">Blockchain Vault</div>
+                        <div class="text-[11px] text-ivs-text-muted">Verifiable Credentials</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 7. IMPLEMENTATION ROADMAP                  -->
+        <!-- ========================================== -->
+        <section class="relative z-10 py-24 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 text-xs font-semibold uppercase tracking-wider mb-4">
+                        <i class="fas fa-calendar-alt"></i> Systematic Deployment
+                    </div>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold font-display text-white mb-6">
+                        Lộ Trình Triển Khai <span class="gradient-text-cyan">4 Giai Đoạn</span>
+                    </h2>
+                    <p class="text-ivs-text-secondary text-base sm:text-lg">
+                        Kế hoạch chuyển đổi số giáo dục từng bước bài bản, đảm bảo hiệu quả ứng dụng và tính ổn định cao nhất.
+                    </p>
+                </div>
+
+                <!-- Timeline List -->
+                <div class="space-y-8 relative roadmap-line">
+                    
+                    <!-- Step 1 -->
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 glass-card p-6 sm:p-8 rounded-3xl relative z-10" data-aos="fade-up">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white font-extrabold text-2xl shrink-0 shadow-glow-cyan">
+                            01
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                                <h3 class="text-xl font-bold font-display text-white">Giai đoạn 1: Nền Tảng AI &amp; Lộ Trình Thích Ứng</h3>
+                                <span class="px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-bold">Tháng 1 - 2</span>
+                            </div>
+                            <p class="text-ivs-text-secondary text-sm mb-4">
+                                Triển khai hệ thống đánh giá đầu vào, cấu hình AI Personal Tutor, thiết lập cây kỹ năng chuẩn và kết nối cơ sở dữ liệu học tập.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 border border-slate-800">AI Personal Tutor</span>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 border border-slate-800">Adaptive Paths</span>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 border border-slate-800">Core Diagnostic</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 glass-card p-6 sm:p-8 rounded-3xl relative z-10" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white font-extrabold text-2xl shrink-0 shadow-glow-emerald">
+                            02
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                                <h3 class="text-xl font-bold font-display text-white">Giai đoạn 2: Gamification &amp; Không Gian Tương Tác Xã Hội</h3>
+                                <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold">Tháng 3 - 4</span>
+                            </div>
+                            <p class="text-ivs-text-secondary text-sm mb-4">
+                                Tích hợp bộ máy game hóa RPG, hệ thống Streak, nhiệm vụ nhóm học tập và lớp học tương tác trực tuyến thời gian thực.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 border border-slate-800">Gamification Engine</span>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 border border-slate-800">Smart Study Groups</span>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 border border-slate-800">Real-time WebSockets</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 glass-card p-6 sm:p-8 rounded-3xl relative z-10" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center text-white font-extrabold text-2xl shrink-0 shadow-glow-purple">
+                            03
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                                <h3 class="text-xl font-bold font-display text-white">Giai đoạn 3: Không Gian Thực Tế Ảo VR/AR &amp; 3D Labs</h3>
+                                <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-xs font-bold">Tháng 5 - 6</span>
+                            </div>
+                            <p class="text-ivs-text-secondary text-sm mb-4">
+                                Cài đặt các phòng thí nghiệm 3D ảo, tích hợp bài giảng thực tế tăng cường AR trên thiết bị di động và kính thực tế ảo chuyên dụng.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 border border-slate-800">VR Science Lab</span>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 border border-slate-800">AR Textbook 3D</span>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 border border-slate-800">Spatial Audio</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 glass-card p-6 sm:p-8 rounded-3xl relative z-10" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white font-extrabold text-2xl shrink-0">
+                            04
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                                <h3 class="text-xl font-bold font-display text-white">Giai đoạn 4: Mở Rộng Quy Mô, Analytics &amp; Blockchain</h3>
+                                <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold">Tháng 7 - 8</span>
+                            </div>
+                            <p class="text-ivs-text-secondary text-sm mb-4">
+                                Kích hoạt hệ thống báo cáo dự đoán nâng cao (Predictive Analytics), chuẩn chứng chỉ số Blockchain và mở cổng API cho các đối tác thứ ba.
+                            </p>
+                            <div class="flex flex-wrap gap-2 text-xs">
+                                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 border border-slate-800">Blockchain Credentials</span>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 border border-slate-800">Predictive Analytics</span>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-900 text-slate-300 border border-slate-800">Global Partner API</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 8. FREQUENTLY ASKED QUESTIONS (FAQ)        -->
+        <!-- ========================================== -->
+        <section class="relative z-10 py-20 px-4 sm:px-6 lg:px-8 bg-ivs-deep/70 border-t border-white/5">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-14" data-aos="fade-up">
+                    <h2 class="text-3xl sm:text-4xl font-bold font-display text-white mb-4">
+                        Giải Đáp <span class="gradient-text-cyan">Thắc Mắc Thường Gặp</span>
+                    </h2>
+                    <p class="text-ivs-text-secondary text-base">
+                        Những câu hỏi quan trọng về cách ứng dụng và triển khai nền tảng IVS Academy.
+                    </p>
+                </div>
+
+                <div class="space-y-4" data-aos="fade-up">
+                    <!-- FAQ 1 -->
+                    <div class="glass-card rounded-2xl p-5 cursor-pointer" onclick="toggleFaq(this)">
+                        <div class="flex items-center justify-between font-bold text-base sm:text-lg text-white">
+                            <span>IVS Academy 2.0 phù hợp với những đối tượng nào?</span>
+                            <i class="fas fa-chevron-down text-cyan-400 transition-transform duration-300"></i>
+                        </div>
+                        <div class="faq-answer hidden mt-3 pt-3 border-t border-white/10 text-sm text-ivs-text-secondary leading-relaxed">
+                            Nền tảng được thiết kế linh hoạt cho 4 nhóm đối tượng chính: (1) Trường phổ thông K-12 &amp; Đại học muốn số hóa lớp học; (2) Các trung tâm Ngoại ngữ, Tin học và STEM; (3) Doanh nghiệp đào tạo nội bộ và nâng cao kỹ năng cho nhân viên; (4) Học viên tự học với sự hỗ trợ của AI Personal Tutor 24/7.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="glass-card rounded-2xl p-5 cursor-pointer" onclick="toggleFaq(this)">
+                        <div class="flex items-center justify-between font-bold text-base sm:text-lg text-white">
+                            <span>Có yêu cầu thiết bị đắt tiền để trải nghiệm các tính năng VR/AR không?</span>
+                            <i class="fas fa-chevron-down text-cyan-400 transition-transform duration-300"></i>
+                        </div>
+                        <div class="faq-answer hidden mt-3 pt-3 border-t border-white/10 text-sm text-ivs-text-secondary leading-relaxed">
+                            Không bắt buộc. Mặc dù nền tảng hỗ trợ các loại kính thực tế ảo cao cấp (như Meta Quest), học sinh vẫn hoàn toàn có thể trải nghiệm mô hình 3D và AR tương tác trực tiếp ngay trên trình duyệt máy tính cá nhân hoặc điện thoại thông minh thông qua công nghệ WebXR và AR di động phổ thông.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="glass-card rounded-2xl p-5 cursor-pointer" onclick="toggleFaq(this)">
+                        <div class="flex items-center justify-between font-bold text-base sm:text-lg text-white">
+                            <span>Dữ liệu học tập và thông tin người dùng được bảo mật như thế nào?</span>
+                            <i class="fas fa-chevron-down text-cyan-400 transition-transform duration-300"></i>
+                        </div>
+                        <div class="faq-answer hidden mt-3 pt-3 border-t border-white/10 text-sm text-ivs-text-secondary leading-relaxed">
+                            Toàn bộ dữ liệu được mã hóa đầu cuối theo tiêu chuẩn AES-256 trên đường truyền và lưu trữ. Chúng tôi tuân thủ nghiêm ngặt các quy định bảo vệ dữ liệu cá nhân, đảm bảo không chia sẻ thông tin học tập của học viên cho bên thứ ba khi chưa có sự đồng thuận.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="glass-card rounded-2xl p-5 cursor-pointer" onclick="toggleFaq(this)">
+                        <div class="flex items-center justify-between font-bold text-base sm:text-lg text-white">
+                            <span>Thời gian triển khai giải pháp cho một trường học hoặc trung tâm là bao lâu?</span>
+                            <i class="fas fa-chevron-down text-cyan-400 transition-transform duration-300"></i>
+                        </div>
+                        <div class="faq-answer hidden mt-3 pt-3 border-t border-white/10 text-sm text-ivs-text-secondary leading-relaxed">
+                            Với hạ tầng Cloud và kiến trúc Microservices đóng gói sẵn, thời gian triển khai một cổng học tập riêng (White-label Portal) chỉ mất từ 3 đến 7 ngày làm việc. Thời gian đào tạo chuyển giao giáo viên và tích hợp dữ liệu dao động từ 1 đến 2 tuần.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- 9. CTA & CONSULTATION SECTION              -->
+        <!-- ========================================== -->
+        <section id="consult-section" class="relative z-10 py-24 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto">
+                <div class="rounded-3xl bg-gradient-to-br from-blue-900/90 via-indigo-950/90 to-purple-950/90 border border-cyan-500/30 p-8 sm:p-12 lg:p-14 shadow-2xl shadow-cyan-950/40 relative overflow-hidden" data-aos="zoom-in">
+                    <div class="glow-orb w-72 h-72 bg-cyan-400 -top-20 -right-20 opacity-30"></div>
+
+                    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                        <div class="lg:col-span-6 space-y-6 text-left">
+                            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-400/20 text-cyan-300 text-xs font-bold uppercase tracking-wider">
+                                <i class="fas fa-rocket"></i> Đồng Hành Cùng IVS Academy
+                            </div>
+                            <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white leading-tight">
+                                Sẵn Sàng Kiến Tạo Chuẩn Mực Giáo Dục Mới?
+                            </h2>
+                            <p class="text-blue-100/90 text-sm sm:text-base leading-relaxed">
+                                Đăng ký nhận bản thử nghiệm trải nghiệm sớm (Beta Test) hoặc đặt lịch tư vấn triển khai giải pháp EdTech cho tổ chức của bạn ngay hôm nay.
+                            </p>
+                            <div class="space-y-3 text-xs sm:text-sm text-blue-200">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-phone-alt text-cyan-300 w-5"></i>
+                                    <span>Hotline Hỗ Trợ: <strong class="text-white">0938 123 456</strong> (Zalo/Call)</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-envelope text-cyan-300 w-5"></i>
+                                    <span>Email Chuyên Gia: <strong class="text-white">contact@ivsacademy.edu.vn</strong></span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-globe text-cyan-300 w-5"></i>
+                                    <span>Hệ Sinh Thái: <strong class="text-white">ivsacademy.edu.vn · ivstech.store</strong></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Consultation Form -->
+                        <div class="lg:col-span-6 bg-slate-950/85 p-6 sm:p-8 rounded-2xl border border-white/10 shadow-xl backdrop-blur-md">
+                            <form id="academy-consult-form" onsubmit="handleConsultSubmit(event)" class="space-y-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Họ và Tên của bạn *</label>
+                                    <input type="text" id="consult-name" required placeholder="Ví dụ: Nguyễn Văn A" class="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors"/>
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs font-semibold text-slate-300 mb-1.5">Số điện thoại *</label>
+                                        <input type="tel" id="consult-phone" required placeholder="0901234567" class="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors"/>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-semibold text-slate-300 mb-1.5">Email liên hệ *</label>
+                                        <input type="email" id="consult-email" required placeholder="name@example.com" class="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors"/>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Mô hình quan tâm *</label>
+                                    <select id="consult-topic" class="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors">
+                                        <option value="school">Trường học K-12 / Đại học</option>
+                                        <option value="center">Trung tâm Ngoại ngữ / Tin học / STEM</option>
+                                        <option value="corporate">Đào tạo Doanh nghiệp (Corporate Training)</option>
+                                        <option value="individual">Học viên / Phụ huynh cá nhân</option>
+                                        <option value="other">Hợp tác phân phối &amp; Chuyển giao công nghệ</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Nhu cầu chi tiết (Tùy chọn)</label>
+                                    <textarea id="consult-note" rows="2" placeholder="Chia sẻ mục tiêu hoặc quy mô triển khai..." class="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors"></textarea>
+                                </div>
+                                <button type="submit" class="w-full py-3.5 px-6 rounded-xl font-bold text-sm text-black bg-gradient-to-r from-cyan-400 via-teal-300 to-emerald-400 hover:from-cyan-300 hover:to-emerald-300 transition-all duration-300 transform hover:scale-[1.02] shadow-lg shadow-cyan-500/25">
+                                    <i class="fas fa-paper-plane mr-2"></i> Gửi Yêu Cầu Tư Vấn &amp; Trải Nghiệm
+                                </button>
+                                <div id="consult-success-msg" class="hidden text-center text-xs text-emerald-400 font-semibold pt-2">
+                                    <i class="fas fa-check-circle mr-1"></i> Cảm ơn bạn! Chuyên viên IVS Academy sẽ liên hệ trong 24h.
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Placeholder (Loaded automatically by loadComponents.js) -->
+    <div id="footer-placeholder"></div>
+    <div id="fab-placeholder"></div>
+    <div id="assistant-placeholder"></div>
+
+    <!-- Scripts -->
+    <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script defer src="/js/utils.js"></script>
+    <script defer src="/js/language.js?v=20260821.6"></script>
+    <script defer src="/js/dark-mode-toggle.js"></script>
+    <script defer src="/ai/js/fabController.js"></script>
+    <script defer src="/js/loadComponents.js?v=20260821.6"></script>
+
+    <!-- Page Interactive Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS
+            if (window.AOS) {
+                AOS.init({
+                    duration: 750,
+                    once: true,
+                    offset: 80
+                });
+            }
         });
-    });
-</script>
-<script src="/js/loadComponents.js?v=20260821.6" defer></script>
+
+        // Switch Interactive Demo Tabs
+        function switchDemoTab(tabId, btnElement) {
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.demo-tab-content');
+            contents.forEach(el => {
+                el.classList.add('hidden');
+                el.classList.remove('block');
+            });
+
+            // Deactivate all tab buttons
+            const buttons = document.querySelectorAll('.demo-tab-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Show target tab content
+            const target = document.getElementById('tab-' + tabId);
+            if (target) {
+                target.classList.remove('hidden');
+                target.classList.add('block');
+            }
+
+            // Activate clicked button
+            if (btnElement) {
+                btnElement.classList.add('active');
+            }
+        }
+
+        // Toggle FAQ Accordion
+        function toggleFaq(element) {
+            const answer = element.querySelector('.faq-answer');
+            const icon = element.querySelector('i.fa-chevron-down');
+            if (answer) {
+                const isHidden = answer.classList.contains('hidden');
+                // Close other open FAQs
+                document.querySelectorAll('.faq-answer').forEach(el => el.classList.add('hidden'));
+                document.querySelectorAll('.glass-card i.fa-chevron-down').forEach(i => i.style.transform = 'rotate(0deg)');
+
+                if (isHidden) {
+                    answer.classList.remove('hidden');
+                    if (icon) icon.style.transform = 'rotate(180deg)';
+                }
+            }
+        }
+
+        // Simulate Chat Prompt in Demo
+        const demoPrompts = [
+            {
+                user: "Thầy ơi, vì sao bài toán đệ quy lại dễ bị tràn bộ nhớ stack?",
+                ai: "💡 Câu hỏi rất sắc bén! Đệ quy xảy ra khi một hàm tự gọi chính nó. Nếu thiếu <strong>Điều kiện dừng (Base case)</strong> hoặc bài toán quá sâu, mỗi lần gọi sẽ chiếm một Stack Frame cho đến khi cạn kiệt bộ nhớ. Bạn thử tìm xem điều kiện dừng trong bài toán tính giai thừa là gì?"
+            },
+            {
+                user: "Làm thế nào để phân biệt mảng (Array) và danh sách liên kết (Linked List)?",
+                ai: "🎯 Hãy hình dung: <strong>Array</strong> như một dãy ghế rạp chiếu phim liền kề (truy cập cực nhanh O(1) qua số ghế, nhưng khó chèn thêm ở giữa). Còn <strong>Linked List</strong> như một đoàn tàu mà mỗi toa chỉ giữ sợi dây nối toa tiếp theo (chèn/xóa cực nhanh, nhưng phải đi tuần tự). Bạn thấy cấu trúc nào hợp lý hơn cho một playlist bài hát?"
+            }
+        ];
+        let currentPromptIndex = 0;
+
+        function simulateNewChatPrompt() {
+            const chatStream = document.getElementById('demo-chat-stream');
+            const inputField = document.getElementById('demo-user-input');
+            const promptData = demoPrompts[currentPromptIndex];
+
+            if (chatStream && promptData) {
+                // Add user message
+                const userMsg = document.createElement('div');
+                userMsg.className = 'flex items-start gap-3 justify-end';
+                userMsg.innerHTML = `
+                    <div class="bg-blue-600/80 rounded-2xl rounded-tr-none p-3.5 text-white">${promptData.user}</div>
+                    <div class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center text-white text-xs shrink-0">Bạn</div>
+                `;
+                chatStream.appendChild(userMsg);
+
+                // Simulate AI response after slight delay
+                setTimeout(() => {
+                    const aiMsg = document.createElement('div');
+                    aiMsg.className = 'flex items-start gap-3';
+                    aiMsg.innerHTML = `
+                        <div class="w-8 h-8 rounded-full bg-cyan-600 flex items-center justify-center text-white text-xs shrink-0">AI</div>
+                        <div class="bg-slate-900 border border-slate-800 rounded-2xl rounded-tl-none p-3.5 text-slate-200">
+                            ${promptData.ai}
+                        </div>
+                    `;
+                    chatStream.appendChild(aiMsg);
+                    chatStream.scrollTop = chatStream.scrollHeight;
+                }, 400);
+
+                currentPromptIndex = (currentPromptIndex + 1) % demoPrompts.length;
+                inputField.value = "Nhấn để thử tình huống đối thoại tiếp theo...";
+                chatStream.scrollTop = chatStream.scrollHeight;
+            }
+        }
+
+        // Form Submission Handler
+        function handleConsultSubmit(event) {
+            event.preventDefault();
+            const successMsg = document.getElementById('consult-success-msg');
+            const form = document.getElementById('academy-consult-form');
+            if (successMsg) {
+                successMsg.classList.remove('hidden');
+                form.reset();
+                setTimeout(() => {
+                    successMsg.classList.add('hidden');
+                }, 6000);
+            }
+        }
+    </script>
 </body>
 </html>
-
-
-
