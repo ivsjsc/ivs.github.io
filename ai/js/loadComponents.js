@@ -183,6 +183,25 @@ async function safeInitController(controller, id) {
     window.componentLog(`safeInitController: Failed to initialize controller for ${id} after ${maxAttempts} attempts.`, 'error');
 }
 
+async function loadTeacherHubIvsTechServices() {
+    const isTeacherHub = /^\/ivs-global-teacher-hub(?:\.html)?\/?$/.test(window.location.pathname);
+    if (!isTeacherHub) return;
+
+    if (!document.getElementById('ivs-tech-services-placeholder')) {
+        const placeholder = document.createElement('div');
+        placeholder.id = 'ivs-tech-services-placeholder';
+        const target = document.getElementById('community') || document.getElementById('official-sources');
+        if (target && target.parentNode) {
+            target.parentNode.insertBefore(placeholder, target);
+        } else {
+            document.querySelector('main')?.appendChild(placeholder);
+        }
+    }
+
+    if (document.getElementById('ivs-tech-services-placeholder')) {
+        await loadAndInject('/components/teacher-hub-ivs-services.html?v=20260821.1', 'ivs-tech-services-placeholder');
+    }
+}
 
 /**
  * Loads common components (header, fab-container, footer) and initializes their controllers.
@@ -212,7 +231,6 @@ async function loadCommonComponents() {
         const ph2 = document.createElement('div');
         ph2.id = 'ai-assistant-placeholder';
         document.body.appendChild(ph2);
-        window.componentLog('Created missing #ai-assistant-placeholder dynamically.', 'info');
     }
     // Sử dụng đường dẫn Root-Relative Path
     const components = [
@@ -287,6 +305,13 @@ async function loadCommonComponents() {
         }
     } catch (err) {
         window.componentLog('Failed to inject ai-assistant component: ' + (err && err.message ? err.message : err), 'warn');
+    }
+
+    // Inject IVS TECH services only on the Global Teacher Hub.
+    try {
+        await loadTeacherHubIvsTechServices();
+    } catch (err) {
+        window.componentLog('Failed to inject Teacher Hub IVS TECH services: ' + (err && err.message ? err.message : err), 'warn');
     }
 
     // Tải Footer sau cùng
