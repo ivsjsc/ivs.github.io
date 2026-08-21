@@ -38,10 +38,10 @@ jobs:
           set -euo pipefail
           while IFS= read -r -d '' file; do
             sed -i 's#/ivs-global-teacher-hub\.html#/ivs-global-teacher-hub#g' "$file"
-          done < <(find . -type f \( -name '*.html' -o -name '*.js' -o -name '*.ts' -o -name '*.tsx' -o -name '*.json' \) -not -path './.git/*' -print0)
-          echo "Remaining legacy Teacher Hub links:"
+          done < <(find . -type f \( -name '*.html' -o -name '*.js' -o -name '*.ts' -o -name '*.tsx' \) -not -path './.git/*' -print0)
+          echo "Remaining legacy Teacher Hub links in deployable content:"
           grep -R --line-number --fixed-strings '/ivs-global-teacher-hub.html' . \
-            --include='*.html' --include='*.js' --include='*.ts' --include='*.tsx' --include='*.json' \
+            --include='*.html' --include='*.js' --include='*.ts' --include='*.tsx' \
             --exclude-dir=.git || true
 
       - name: Setup Pages
