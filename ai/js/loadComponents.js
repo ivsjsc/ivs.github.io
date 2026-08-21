@@ -36,6 +36,35 @@ function ensureExperienceFoundation() {
     }
 }
 
+function ensureHeaderController() {
+    if (window.IVSHeaderController) return Promise.resolve(window.IVSHeaderController);
+    if (window.__ivsHeaderControllerPromise) return window.__ivsHeaderControllerPromise;
+
+    window.__ivsHeaderControllerPromise = new Promise((resolve, reject) => {
+        const existingScript = document.querySelector('script[src^="/js/headerController.js"]');
+        const script = existingScript || document.createElement('script');
+
+        const handleLoad = () => {
+            if (window.IVSHeaderController) {
+                resolve(window.IVSHeaderController);
+            } else {
+                reject(new Error('IVSHeaderController did not register after loading'));
+            }
+        };
+
+        script.addEventListener('load', handleLoad, { once: true });
+        script.addEventListener('error', () => reject(new Error('Failed to load IVSHeaderController')), { once: true });
+
+        if (!existingScript) {
+            script.src = '/js/headerController.js?v=20260821.7';
+            script.defer = true;
+            document.head.appendChild(script);
+        }
+    });
+
+    return window.__ivsHeaderControllerPromise;
+}
+
 // =================================================================
 // COMPONENT LOADER CORE
 // =================================================================
@@ -164,6 +193,12 @@ async function loadCommonComponents() {
 
     ensureExperienceFoundation();
 
+    try {
+        await ensureHeaderController();
+    } catch (error) {
+        window.componentLog(`Header controller unavailable: ${error.message}`, 'error');
+    }
+
     window.componentLog("Initializing component sequence...", "info");
     // Ensure common placeholders exist so components can be injected even on pages
     // that didn't include placeholders explicitly in their HTML.
@@ -181,7 +216,7 @@ async function loadCommonComponents() {
     }
     // Sử dụng đường dẫn Root-Relative Path
     const components = [
-        { id: 'header-placeholder', url: '/components/header.html?v=20260821.6', controller: window.IVSHeaderController },
+        { id: 'header-placeholder', url: '/components/header.html?v=20260821.7', controller: window.IVSHeaderController },
         // Giả định IVSFabController từ fabController.js đã định nghĩa
         { id: 'fab-container-placeholder', url: '/ai/components/fab-container.html?v=20260821.6', controller: window.IVSFabController },
         // Cookie consent component - site-wide privacy / cookie banner

@@ -203,14 +203,6 @@ const IVSHeader = {
         mobileMenuScrim?.addEventListener('click', () => this.toggleMobileMenu(false));
         bottomNavMenuButton?.addEventListener('click', () => this.toggleMobileMenu());
 
-        // --- Mobile Submenu Listeners ---
-        // Only bind if IVSHeaderController is not available
-        if (!window.IVSHeaderController) {
-            document.querySelectorAll('.mobile-submenu-toggle').forEach(button => {
-                button.addEventListener('click', (e) => this.toggleMobileSubmenu(e.currentTarget));
-            });
-        }
-
         // --- Desktop Dropdown Listeners ---
         document.querySelectorAll('.nav-item').forEach(item => {
             const button = item.querySelector('button');
@@ -267,56 +259,6 @@ const IVSHeader = {
             document.body.style.overflow = '';
             toggleButton.setAttribute('aria-expanded', 'false');
         }
-    },
-
-    /**
-     * Toggles a mobile submenu.
-     * @param {HTMLElement} toggleButton - The button that was clicked.
-     */
-    toggleMobileSubmenu(toggleButton) {
-        // TEMPORARY DEBUG INSTRUMENTATION
-        const buttonText = toggleButton.querySelector('span')?.textContent || toggleButton.id || 'unknown';
-        const ariaBefore = toggleButton.getAttribute('aria-expanded');
-        console.log('=== SCRIPT.JS HANDLER ===');
-        console.log('HANDLER NAME: IVSHeader.toggleMobileSubmenu');
-        console.log('button text:', buttonText);
-        console.log('aria-expanded BEFORE:', ariaBefore);
-        console.trace();
-        // END TEMPORARY DEBUG INSTRUMENTATION
-
-        const targetId = toggleButton.getAttribute('aria-controls');
-        const content = document.getElementById(targetId);
-        const icon = toggleButton.querySelector('.mobile-submenu-icon');
-        if (!content) return;
-        const wasActive = content.classList.contains('active');
-
-        // Close all other submenus first
-        document.querySelectorAll('.mobile-submenu-content.active').forEach(activeContent => {
-            if (activeContent !== content) {
-                activeContent.classList.remove('active');
-                activeContent.style.maxHeight = null;
-                const otherButton = document.querySelector(`.mobile-submenu-toggle[aria-controls="${activeContent.id}"]`);
-                const otherIcon = otherButton ? otherButton.querySelector('.mobile-submenu-icon') : null;
-                if(otherIcon) otherIcon.style.transform = 'rotate(0deg)';
-            }
-        });
-
-        // Toggle the clicked one
-        if (wasActive) {
-            content.classList.remove('active');
-            content.style.maxHeight = null;
-            if(icon) icon.style.transform = 'rotate(0deg)';
-        } else {
-            content.classList.add('active');
-            content.style.maxHeight = content.scrollHeight + 'px';
-            if(icon) icon.style.transform = 'rotate(180deg)';
-        }
-
-        // TEMPORARY DEBUG INSTRUMENTATION
-        const ariaAfter = toggleButton.getAttribute('aria-expanded');
-        console.log('aria-expanded AFTER:', ariaAfter);
-        console.log('=== END SCRIPT.JS HANDLER ===');
-        // END TEMPORARY DEBUG INSTRUMENTATION
     },
 
     /**
@@ -393,12 +335,6 @@ const IVSHeader = {
             if (link.getAttribute('href') === currentPath || (link.getAttribute('href') !== '/' && currentPath.startsWith(link.getAttribute('href')))) {
                 link.classList.add('active');
                 
-                // If it's a submenu link, also open the parent submenu
-                const parentSubmenuContent = link.closest('.mobile-submenu-content');
-                if(parentSubmenuContent) {
-                    const toggleButton = parentSubmenuContent.previousElementSibling;
-                    this.toggleMobileSubmenu(toggleButton);
-                }
             } else {
                 link.classList.remove('active');
             }

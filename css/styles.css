@@ -312,7 +312,6 @@ main {
 .mobile-submenu-content {
     padding-left: 0.5rem;
     margin: 0.125rem 0;
-    opacity: 0.9;
 }
 
 /* Close button refinements */
@@ -473,7 +472,7 @@ main {
     opacity: 0;
     pointer-events: none;
 }
-#ivs-mobile-menu-panel:not(.hidden) #ivs-mobile-menu-backdrop {
+#ivs-mobile-menu-panel[aria-hidden="false"] #ivs-mobile-menu-backdrop {
     opacity: 1;
     pointer-events: auto;
 }
@@ -490,7 +489,7 @@ main {
     display: flex;
     flex-direction: column;
 }
-#ivs-mobile-menu-panel:not(.hidden) #ivs-mobile-menu-container {
+#ivs-mobile-menu-panel[aria-hidden="false"] #ivs-mobile-menu-container {
     transform: translateX(0);
 }
 
@@ -546,13 +545,20 @@ main {
 /* Mobile submenu animation */
 .mobile-submenu-content {
     max-height: 0;
+    opacity: 0;
     overflow: hidden;
-    transition: max-height var(--transition-slow) ease-in-out;
+    transition: max-height var(--transition-slow) ease-in-out, opacity var(--transition-base) ease-out;
     padding-left: 1rem;
 }
-.mobile-submenu-toggle[aria-expanded="true"] + .mobile-submenu-content,
-.mobile-submenu-content.active {
-    max-height: 800px;
+.mobile-submenu-toggle[aria-expanded="true"] + .mobile-submenu-content {
+    max-height: 1200px;
+    opacity: 1;
+}
+.mobile-submenu-icon {
+    transition: transform var(--transition-base) ease-out;
+}
+.mobile-submenu-toggle[aria-expanded="true"] .mobile-submenu-icon {
+    transform: rotate(180deg);
 }
 
 /* Utility: prevent scroll when menu open */
@@ -814,7 +820,6 @@ html {
 .mobile-submenu-content {
     padding-left: 0.2rem;
     margin: 0.08rem 0 0.18rem 0;
-    opacity: 0.9;
 }
 
 /* Group header for submenu */

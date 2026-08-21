@@ -193,83 +193,6 @@
             if (el.dataset) el.dataset.ivsListenerAttached = '1';
         }
 
-        var mobileMenuState = window.__ivsMobileMenuState || (window.__ivsMobileMenuState = {
-            isOpen: false,
-            closeTimer: null
-        });
-
-        function getMobileMenuElements() {
-            return {
-                panel: document.getElementById('ivs-mobile-menu-panel'),
-                container: document.getElementById('ivs-mobile-menu-container'),
-                openBtn: document.getElementById('mobile-menu-open-btn'),
-                closeBtn: document.getElementById('mobile-menu-close-btn'),
-                nav: document.getElementById('ivs-mobile-main-nav')
-            };
-        }
-
-        function ensureMobileMenuMounted() {
-            var elements = getMobileMenuElements();
-            if (!elements.panel) return;
-            if (elements.panel.parentElement !== document.body) {
-                document.body.appendChild(elements.panel);
-            }
-        }
-
-        ensureMobileMenuMounted();
-
-        function setMobileMenuState(open) {
-            var elements = getMobileMenuElements();
-            if (!elements.panel || !elements.container) return;
-
-            if (mobileMenuState.closeTimer) {
-                clearTimeout(mobileMenuState.closeTimer);
-                mobileMenuState.closeTimer = null;
-            }
-
-            mobileMenuState.isOpen = open;
-            elements.panel.setAttribute('aria-hidden', String(!open));
-            if (elements.openBtn) elements.openBtn.setAttribute('aria-expanded', String(open));
-            document.body.classList.toggle('menu-open', open);
-
-            if (open) {
-                elements.panel.classList.remove('hidden');
-                window.requestAnimationFrame(function(){
-                    elements.panel.classList.remove('opacity-0');
-                    elements.container.classList.remove('translate-x-full');
-                });
-                return;
-            }
-
-            elements.panel.classList.add('opacity-0');
-            elements.container.classList.add('translate-x-full');
-            mobileMenuState.closeTimer = window.setTimeout(function(){
-                var currentElements = getMobileMenuElements();
-                if (currentElements.panel) {
-                    currentElements.panel.classList.add('hidden');
-                }
-            }, 320);
-        }
-
-        function openMobileMenu(e) {
-            if (e) e.preventDefault();
-            if (mobileMenuState.isOpen) return;
-            if (typeof closeLanguageDropdowns === 'function') closeLanguageDropdowns();
-            setMobileMenuState(true);
-        }
-
-        function closeMobileMenu() {
-            if (!mobileMenuState.isOpen) return;
-            setMobileMenuState(false);
-        }
-
-        var currentMobileMenu = getMobileMenuElements();
-        addOnce(currentMobileMenu.openBtn, 'click', openMobileMenu);
-        addOnce(currentMobileMenu.closeBtn, 'click', function(e){
-            e.preventDefault();
-            closeMobileMenu();
-        });
-
         // Desktop dropdown toggles (click support)
         document.querySelectorAll('.desktop-nav-dropdown-toggle').forEach(function(toggle){
             if (toggle.dataset.ivsDesktopAttached) return;
@@ -367,7 +290,9 @@
                 e.preventDefault();
                 e.stopPropagation();
                 var isOpen = !dropdown.classList.contains('hidden');
-                if (!isOpen) closeMobileMenu();
+                if (!isOpen && window.IVSHeaderController) {
+                    window.IVSHeaderController.toggleMobileMenu(false);
+                }
                 closeLanguageDropdowns(isOpen ? undefined : control.dropdownId);
                 dropdown.classList.toggle('hidden', isOpen);
                 button.setAttribute('aria-expanded', String(!isOpen));
@@ -461,7 +386,7 @@
 <!-- Mobile Menu Panel -->
 <div aria-hidden="true" aria-modal="true" aria-labelledby="mobile-menu-title" class="fixed inset-0 md:hidden hidden" id="ivs-mobile-menu-panel" role="dialog" style="z-index:99999;">
     <!-- Backdrop with blur effect and background image -->
-    <div aria-hidden="true" class="absolute inset-0 bg-black/60 backdrop-blur-md transition-opacity duration-400 opacity-0" id="ivs-mobile-menu-backdrop" style="background: url('/images/ivsacademy.jpg') center/cover no-repeat, rgba(0,0,0,0.7); pointer-events: none;"></div>
+    <div aria-hidden="true" class="absolute inset-0 bg-black/60 backdrop-blur-md transition-opacity duration-400 opacity-0" id="ivs-mobile-menu-backdrop" style="background: url('/images/ivsacademy.jpg') center/cover no-repeat, rgba(0,0,0,0.7);"></div>
     <div class="relative w-[88vw] max-w-[380px] h-full bg-[#07111F] ml-auto flex flex-col transform translate-x-full transition-transform duration-400 ease-[cubic-bezier(0.4,0,0.2,1)] rounded-l-3xl shadow-2xl p-2 md:p-4 glass-menu-panel" id="ivs-mobile-menu-container" style="pointer-events: auto; z-index: 100000;">
         <div class="flex items-center justify-between gap-3 p-4 border-b border-white/10">
             <div class="flex min-w-0 items-center gap-2">
@@ -785,7 +710,7 @@
         -webkit-backdrop-filter: blur(10px);
         opacity: 0.98;
         transition: opacity 0.3s;
-        pointer-events: none;
+        pointer-events: auto;
     }
 
     #ivs-mobile-menu-container {
@@ -803,7 +728,7 @@
         z-index: 100000;
     }
 
-    #ivs-mobile-menu-panel:not(.hidden) #ivs-mobile-menu-container {
+    #ivs-mobile-menu-panel[aria-hidden="false"] #ivs-mobile-menu-container {
         transform: translateX(0) !important;
     }
 
